@@ -55,7 +55,7 @@ Domain-Driven Design é um conjunto de práticas e padrões de software cujo foc
 
 **Quem chama o Serviço de Domínio?** O Caso de Uso — ele é o único coordenador com acesso às interfaces de infraestrutura, e repassa essas interfaces ao Serviço de Domínio quando necessário.
 
-**Exemplo de uso do Serviço de Domínio**: regra de nome único no banco de dados não cabe em VO (exige acesso ao banco) nem na Entidade (um único objeto). O Caso de Uso chama um `ValidateUniqueNameService`, injetando a interface do repositório.
+**Exemplo de uso do Serviço de Domínio**: regra de nome único no banco de dados. Não cabe em VO (exige acesso ao banco) nem na Entidade (um único objeto). O Caso de Uso chama um `ValidateUniqueNameService`, injetando a interface do repositório.
 
 ### Domínio, Subdomínios e Categorias
 

@@ -62,7 +62,7 @@ packages/
   shared/        ← código compartilhado (VOs base, interfaces genéricas)
   auth/          ← módulo de autenticação
     src/
-      user/
+      user/      ← agregado
         model/   ← entidade + VOs
         usecase/ ← casos de uso
       group/
