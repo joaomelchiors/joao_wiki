@@ -3,8 +3,8 @@ title: "IA Generativa (Modelos baseados em Transformer)"
 type: concept
 status: active
 created: 2026-04-27
-updated: 2026-04-28
-tags: ["ia-generativa", "transformer", "tokenização", "embeddings", "deep-learning", "llm", "ai-driven-development"]
+updated: 2026-07-19
+tags: ["ia-generativa", "transformer", "tokenização", "embeddings", "deep-learning", "llm", "ai-driven-development", "skills", "spec-driven-development", "harness", "mcp", "github-copilot"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-01-IntroducaoDesenvolvimentoIA-IaGenerativa01.md
   - raw/sources/2026-04-25_transcrição-IA-02-IntroducaoDesenvolvimentoIA-IaGenerativa02.md
@@ -14,6 +14,19 @@ source_files:
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
   - raw/sources/2026-04-27_transcrição-IA-08-ContextoRulesSkill-engenhariaDeContexto.md
   - raw/sources/2026-04-27_transcrição-IA-10-ContextoRulesSkill-ruleSkill.md
+  - raw/sources/2026-05-04_transcrição-IA-11-ContextoRulesSkill-exemploSkill.md
+  - raw/sources/2026-05-04_transcrição-IA-12-ContextoRulesSkill-tiposDeSkill.md
+  - raw/sources/2026-05-04_transcrição-IA-13-SkillModulos-IntroducaoEModulos.md
+  - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-01-PastasDasSkills.md
+  - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-02-SkillBasica copy.md
+  - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-03-.SkillComCodigo.md
+  - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-04-SkillNoCodex.md
+  - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-05-EspecificacaoSimples.md
+  - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-06-HarnessParte1.md
+  - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-07-HarnessParte2.md
+  - raw/sources/2026-05-07_transcricao_VisualStudio+Copilot.md
+  - raw/sources/2026-05-07_transcricao_VisualStudio+Copilot_Pratica.md
+  - raw/sources/2026-07-18_transcrição-IA-ClaudeCode-MelhoresPraticas.md
 related_pages:
   - ../sources/2026-04-27_source-dev-ai-ia-generativa-01.md
   - ../sources/2026-04-27_source-dev-ai-ia-generativa-02.md
@@ -23,8 +36,16 @@ related_pages:
   - ../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
   - ../sources/2026-04-29_source-dev-ai-engenharia-de-contexto.md
   - ../sources/2026-04-29_source-dev-ai-rule-skill.md
+  - ../sources/2026-05-04_source-dev-ai-exemplo-skill.md
+  - ../sources/2026-05-04_source-dev-ai-tipos-de-skill.md
+  - ../sources/2026-05-05_source-dev-ai-skill-modulos-intro.md
+  - ../sources/2026-07-17_source-ferramentas-agenticas.md
+  - ../sources/2026-07-17_source-ferramentas-agenticas-harness.md
+  - ../sources/2026-05-07_source-palestra-github-copilot.md
   - ../entities/formacao-dev.md
   - ../entities/matt-pocock.md
+  - ../entities/github-copilot.md
+  - ../sources/2026-07-18_source-claude-code-melhores-praticas.md
 ---
 
 # IA Generativa (Modelos baseados em Transformer)
@@ -270,6 +291,95 @@ Dois instrumentos de engenharia de contexto com natures distintas (definições 
 
 **Independência de ferramenta**: Rule e Skill são conceitos agnósticos. Cursor, Claude Code, Codex e Antigravity implementam os mesmos princípios com nomes ou mecanismos ligeiramente diferentes. O conceito importa mais que a ferramenta.
 
+#### Formato Prático de uma Skill (Aula IA-11 — Cursor)
+
+No Cursor, uma Skill é um arquivo Markdown salvo em `.cursor/skills/<nome-da-skill>.md`. Estrutura mínima observada na aula:
+
+```markdown
+---
+nome: criar-entidade-completa
+descricao: Cria a estrutura completa de entidade (Entity + DTO + Repository + Service + Controller)
+---
+
+# Criar Entidade Completa
+
+## Quando usar
+Quando o usuário pedir para criar uma nova entidade no sistema.
+
+## Processo
+Executar nessa ordem:
+1. Criar classe entidade que estende BaseEntity (propriedades e tipagem, zero lógica)
+2. Criar DTO com campos de entrada
+3. Criar repositório com `findById` e `findAll`
+4. Criar service com lógica de negócio
+5. Criar controller com rotas HTTP
+6. Aplicar todas as Rules de nomenclatura e estrutura
+```
+
+**Observações da demonstração**:
+- Uma Skill **sem exemplos few-shot** funciona, mas produz resultado menos preciso — o instrutor admite que a Skill do exemplo é intencionalmente fraca.
+- A Skill pode referenciar explicitamente uma Rule (`cursorRulesNomenclaturaEestrutura.md`); no Cursor isso é redundante (o Cursor já lê as Rules), mas a referência explícita é válida e portável para ferramentas que não têm separação automática Rule/Skill.
+- Ao executar a Skill, o Cursor criou a hierarquia de pastas, seguiu as nomenclaturas definidas nas Rules e até gerou um `BaseEntity` ausente no projeto — porque a Skill referenciava um arquivo inexistente.
+
+#### Ciclo de Criação de Skills
+
+**Método preferido (engenharia reversa de código existente)**:
+1. Ter exemplos reais de código já implementados no projeto.
+2. Pedir ao LLM: *"Baseado nestes arquivos de entidade, faça engenharia reversa e gere uma Skill que captura a estrutura básica de uma entidade do meu projeto."*
+3. O LLM gera uma Skill com vários exemplos few-shot ricos.
+4. Usar a Skill para criar novas entidades mantendo consistência.
+
+**Criação do zero** (alternativa): descrever o processo ao LLM e pedir exemplos; funciona, mas produz Skill com menos contexto.
+
+**Heurística de granularidade**: Skills específicas são mais reutilizáveis. Skills que fazem "tudo de uma vez" funcionam para CRUDs simples, mas dificultam reutilização — Spec Driven Development é mais adequado para composição de Skills parciais em fluxos complexos.
+
+#### Tipos de Skill (Aula IA-12)
+
+As Skills são classificadas em três tipos conforme o grau de autonomia concedida ao agente:
+
+| Tipo | Descrição | Quando usar |
+|---|---|---|
+| **Determinística** | Contém um script que o agente simplesmente executa (ex.: `run.js` via Node). Resultado fixo e previsível. | Automações repetíveis com resultado pré-definido (ex.: scaffold de projeto, copiar estrutura de arquivos, criar worktree Git) |
+| **Híbrida** | Parte do processo é determinística (script); parte é delegada ao agente via instrução textual. | Criação de módulos onde a estrutura base é fixa, mas a integração com código existente requer raciocínio |
+| **Aberta** | Processo 100% textual — o agente decide como executar cada passo. | Forma mais comum; adequada para Skills de código onde o contexto varia por projeto |
+
+**Skills como contêiner de arquivos**: uma pasta de Skill pode conter múltiplos arquivos além do `skill.md`:
+- Scripts (`run.js`, `createproject.js`) para execução determinística.
+- Assets e configurações pré-definidas (ex.: `.prettierrc`, imagens padrão, Dockerfile).
+- Projetos-template completos que o script copia para o destino.
+
+**Exemplo real**: script `paralelo.js` dentro de uma Skill que cria git worktrees para que múltiplos agentes trabalhem em paralelo em branches isoladas — exemplo de Skill determinística/híbrida para infraestrutura de desenvolvimento.
+
+**Encadeamento de Skills (Spec Driven Development)**: cada task no Spec Driven Development pode carregar uma Skill diferente, permitindo composição de comportamentos especializados:
+
+```
+Skill 1 + Task 1 → executar
+Skill 2 + Task 2 → executar
+...
+Skill N + Task N → executar
+```
+
+#### Skills Práticas do Capítulo 3: Criar Projeto e Criar Módulo (Aula IA-13)
+
+O Capítulo 3 da trilha Dev AI tem como objetivo construir duas Skills centrais reutilizáveis:
+
+| Skill | Propósito | Tipo |
+|---|---|---|
+| **Criar projeto do zero** | Scaffold e configuração completa de novo projeto | Determinística + Híbrida |
+| **Criar módulo** | Adicionar novo módulo a projeto existente, com integração contextual | Determinística + Híbrida |
+
+Ambas demonstram na prática a combinação determinística + híbrida introduzida na Aula IA-12.
+
+**Modularização como espectro gradual** (insight da Aula IA-13): modularização não é binária — é uma gradação progressiva conforme a maturidade do projeto e do desenvolvedor:
+
+| Nível | Estrutura | Quando usar |
+|---|---|---|
+| 1 | Um único módulo | Projetos pequenos; iniciante no conceito |
+| 2 | Dois módulos (ex.: `auth` + `app`) | Separação mínima de responsabilidades |
+| 3+ | Múltiplos módulos com fronteiras claras | Equipes grandes; complexidade real de negócio |
+
+**Princípio**: não atrasar o deploy por perfeccionismo estrutural. Levar a aplicação ao ar e refatorar progressivamente ("trocar a asa com o avião voando").
+
 #### Spec Driven Development como Engenharia de Contexto em Escala
 
 Quando uma tarefa é complexa demais para um único prompt (context rot), o **Spec Driven Development** divide a execução em múltiplas `tasks` menores, com injeção de contexto antes de cada uma:
@@ -287,7 +397,257 @@ Quando uma tarefa é complexa demais para um único prompt (context rot), o **Sp
 - O resultado final ainda pode variar (processo estatístico), mas permanece dentro das restrições definidas.
 - Ferramentas modernas de agentes adicionam verificação automática ao final de cada task e se autocorrigem se necessário.
 
+#### Infraestrutura Prática de Skills por Ferramenta (Módulo Ferramentas Agênticas)
+
+**Pastas de Skills** — onde as ferramentas procuram Skills no projeto:
+
+| Ferramenta | Pasta |
+|---|---|
+| **Claude Code** | `.claude/skills/<nome-da-skill>/skill.md` |
+| **Codex** | `.agents/skills/<nome-da-skill>/skill.md` |
+
+> Nota: pastas com ponto (`.claude`, `.agents`) são ocultas no macOS/Linux; no Windows aparecem normalmente no VS Code. Para compartilhar Skills entre projetos, usar **git submodules**.
+
+**Estrutura mínima de um arquivo `skill.md`**:
+
+```markdown
+---
+name: nome-da-skill
+description: Descrição detalhada usada como gatilho automático e resumo da Skill.
+---
+
+Corpo da Skill: instruções, exemplos few-shot, padrões a seguir, passos.
+```
+
+**Formas de acionar uma Skill**:
+
+| Forma | Como funciona | Recomendação do instrutor |
+|---|---|---|
+| **Explícita** | `/nome-da-skill` no chat | Preferida — sem ambiguidade |
+| **Implícita** | Palavras-chave da `description` são detectadas e a Skill é chamada automaticamente | Útil para disparo contextual; cuidado com falsos positivos |
+
+A `description` serve tanto de resumo da Skill quanto de gatilho implícito. Se a description contém "estilo do Seu Lunga", qualquer mensagem com essa expressão pode acionar a Skill automaticamente.
+
+**Skills com múltiplos arquivos (determinísticas)**:
+
+Uma pasta de Skill pode conter qualquer arquivo além do `skill.md`. O instrutor demonstrou adicionar `index.js` para criar uma Skill que instrui o agente a executar o script e retornar o resultado:
+
+```
+.claude/skills/executar-codigo/
+├── skill.md       ← ponto de entrada obrigatório
+└── index.js       ← script executado pelo agente via Node.js
+```
+
+**Analogia central**: Skill = **função/procedure** na programação procedural. O maior divisor de águas não foi o OOP, mas a *procedure* — trecho de código reutilizável e acionável. Skills são o equivalente para LLMs.
+
+**Comportamento no Codex**: idêntico ao Claude Code. Skills na pasta `.agents/skills/` têm o mesmo comportamento de frontmatter, gatilho e chamada explícita.
+
+#### Spec-Driven Development na Prática (Especificação Simples — Aula 05)
+
+**Estrutura de pasta recomendada**:
+
+```
+specs/
+├── changes/
+│   └── <nome-da-mudança>/
+│       └── spec.md       ← arquivo de especificação ativo
+└── archive/
+    └── 2026-07-17_<nome-da-mudança>/
+        └── spec.md       ← spec concluída (movida com data no nome)
+```
+
+**Estrutura de um arquivo `spec.md`**:
+
+```markdown
+# Nome da Mudança
+
+## Orientações
+
+Execute as tarefas abaixo em sequência.
+Marque os passos concluídos.
+Coloque uma evidência abaixo de cada passo com data e hora.
+
+## Tarefas
+
+- [ ] Tarefa 1: descrição detalhada / usar Skill X
+- [ ] Tarefa 2: descrição detalhada / usar Skill Y
+- [ ] Tarefa 3: descrição detalhada
+```
+
+**Como executar**: enviar o caminho relativo do `spec.md` para o agente. Ele lê e executa cada tarefa, marcando com `[x]` ao concluir.
+
+**Modos de execução**:
+- **Sequencial**: padrão; o agente executa tarefa por tarefa.
+- **Paralelo**: adicionar orientação "execute os passos usando subagentes em paralelo".
+- **Contexto independente por passo**: "execute de forma sequencial, utilizando subagentes, cada passo em um contexto independente" — cada step começa com contexto fresco.
+
+**Evidências**: o instrutor confirma ter executado 10 especificações encadeadas, cada uma com 10–15 passos, sem falhas de rastreamento.
+
+#### Harness: A Infraestrutura do Agente
+
+**Harness** (arreios): camada de software que **envolve o LLM** e o transforma em um agente capaz de perceber o ambiente, tomar decisões e agir. O LLM sozinho é apenas um preditor de texto stateless; o harness é tudo ao redor que dá a ele "pernas, braços e olhos".
+
+**Analogia central**: cavalo + arreios. O arreio conduz o cavalo (LLM) pelo caminho correto; sem arreios, o cavalo vai em qualquer direção.
+
+**Exemplos de harnesses**: Claude Code, Codex, Cursor, Antigravity, LangChain, AutoGPT, Claude Agent SDK.
+
+##### Componentes do Harness
+
+| Componente | Função |
+|---|---|
+| **LLM** (stateless) | Recebe contexto, decide próxima ação |
+| **Contexto** | Prompt atual + histórico + memória + ferramentas disponíveis + Skills carregadas |
+| **Ferramentas** | Sistema de arquivos (FS), terminal (Bash), APIs externas, MCP, Skills |
+| **Loop de execução** | Ciclo: LLM decide → ferramenta executa → resultado vai pro contexto → LLM decide novamente |
+| **Gestão de contexto** | Montagem, compressão (quando janela excede limite), injeção de system prompt |
+| **Memória/Estado** | Histórico de sessão, arquivos de memória |
+
+##### Loop de Execução
+
+```
+Prompt do usuário
+     ↓
+Montagem do Contexto:
+  [prompt + histórico + memória + ferramentas disponíveis + Skills]
+     ↓
+LLM (stateless) → toma decisão:
+  → "preciso ler a pasta X"
+  → "preciso executar o arquivo Y"
+  → "preciso chamar a Skill Z"
+     ↓
+Harness executa a ferramenta solicitada
+     ↓
+Resultado da ferramenta → volta para o contexto
+     ↓
+[LOOP: monta novo contexto → LLM → ação → resultado → ...]
+     ↓
+LLM decide: "já tenho tudo, posso dar resposta final"
+     ↓
+Resumo final para o usuário
+```
+
+**A ordem do contexto importa**: itens mais recentes (final do contexto) têm mais peso na tomada de decisão do LLM. Por isso carregar uma Skill no final de cada passo de uma spec aumenta sua relevância.
+
+##### Compressão de Contexto
+
+Quando o contexto excede a **janela de contexto** (limite de tokens do modelo), o harness realiza compressão automática:
+- Remove informações não relevantes para os próximos passos
+- Sumariza o conteúdo anterior (analogia: resumir reunião de 8h em meia hora)
+- No Claude Code: `/context` mostra o percentual da janela já utilizado na sessão atual
+- Subagentes: cada subagente tem uma janela de contexto independente (com algum compartilhamento da sessão)
+
+##### Responsabilidades Embutidas vs. Responsabilidade do Desenvolvedor
+
+**Embutidas na ferramenta** (já entregues pelo harness):
+1. Loop de execução — recebe saída do modelo, executa ação, devolve resultado, chama o modelo novamente
+2. Exposição de ferramentas — passa lista de ferramentas disponíveis para o LLM decidir
+3. Gestão de contexto — monta prompt, injeta system prompt, comprime quando necessário
+4. Permissões e confirmação — decide o que o agente executa autonomamente vs. o que pede confirmação
+5. Roteamento — interpreta chamadas de ferramentas e direciona para o código correto
+6. Memória e estado — mantém histórico, arquivos de memória, sessões
+
+**Responsabilidade do desenvolvedor** — adicionar "sensores" via Skills e specs:
+- Pedir cobertura de testes ≥ 90% ao criar uma classe (instrução na Skill)
+- Adicionar passo de "execute os testes do projeto" após passos críticos nas specs
+- Pedir testes de integração em pontos estratégicos da especificação
+- Instruir o agente a abrir browser interno para validar UI (Claude Code tem browser embutido)
+- Usar subagente diferente para criar testes (contexto limpo evita viés de confirmação)
+
+**Distinção importante**: harness ≠ arquivo ou técnica. A técnica é **Skills + Spec-Driven Development**; o harness é a infraestrutura. As verificações inseridas nas Skills e specs **fortalecem o harness**.
+
+#### Melhores Práticas Operacionais do Claude Code (Documentação Anthropic)
+
+*(Fonte: vídeo de Augusto Galego, digest da documentação oficial Anthropic, 2026-07)*
+
+A Anthropic documenta ~20 melhores práticas operacionais para o Claude Code. As mais relevantes para o trabalho com agentes:
+
+**Práticas de prompt**:
+- **Incluir método de verificação no prompt**: inserir instrução de autoverificação no próprio prompt — ex.: "ao terminar, rode os testes; compare screenshot com o original e liste as diferenças". A Anthropic chama isso de *ground truth* do resultado esperado.
+- **Descrever estado desejado, não passos**: "diga o que você quer e deixe o Claude encontrar os arquivos" — descrever *resultado* supera prescrever *sequência de ações*. Para modelos mais pesados (Opus), focar em resultado, limitações e evidências é ainda mais eficaz.
+- **Incrementos testáveis**: fazer reparações em pequenos incrementos; validar cada passo antes de avançar.
+- **Interromper cedo**: ao detectar presunção errada ou caminho incorreto, redirecionar imediatamente — quanto antes, menos dano ao contexto.
+- **Regras específicas, não vagas**: "utilize clean code" < "se acessar URL, use a classe `HttpClient` desta forma" — precisão supera generalidade nas Rules.
+
+**Gestão de contexto e sessões**:
+- **Contexto novo para tarefas não relacionadas**: usar `/clear` antes de iniciar tarefa sem relação com o histórico atual — evita poluição.
+- **Menor diretório possível**: iniciar o Claude Code no diretório mais específico para a tarefa (ex.: `backend/` em vez da raiz do monorepo) — contexto menor, menos ruído.
+- **Monitorar contexto com `/context`**: exibe percentual da janela ocupado e o conteúdo atual — permite identificar e remover informações irrelevantes antes que compressão automática degrade a qualidade.
+- **Sessões nomeadas e persistentes**: usar `/rename` para nomear sessões antes de abandoná-las; `claude resume <nome>` para retomar com contexto completo. Sessões ficam salvas em `.claude/projects` por **30 dias** (configurável) — o contexto de decisões é um ativo preservável, não descartável.
+- **Checkpoints e `/rewind`**: o Claude Code mantém histórico interno; o comando `/rewind` permite voltar a um ponto anterior na conversa — útil quando a segunda metade de uma sessão longa degringolou sem precisar reverter no Git.
+
+**Hierarquia de modelos e objetivos**:
+- **Modelos por tipo de tarefa**: Opus para planejamento/arquitetura/revisão (alta alavancagem); Sonnet para implementação rotineira. Workflow documentado: Opus planeja e divide em tarefas → Sonnet implementa cada tarefa em paralelo. Alinha com o padrão HITL/AFK de Matt Pocock, agora confirmado pela Anthropic.
+- **`/goal` para objetivos verificáveis**: para tarefas grandes com estado final claro (ex.: "CI com zero erros e testes passando"), usar `/goal` para manter o agente trabalhando de forma autônoma até atingir o objetivo.
+
+**Infraestrutura e segurança**:
+- **`.claude` do projeto versionado**: commitar o diretório `.claude` do projeto (não o pessoal/global) garante que toda a equipe opera com as mesmas Rules, Skills e configurações.
+- **`review.md` dedicado para code review**: arquivo `.claude/review.md` deve conter *apenas* informações pertinentes a code reviews; informações gerais do projeto pertencem ao `CLAUDE.md` — separação de responsabilidades no nível dos arquivos de configuração.
+- **Sandbox para auto mode**: a Anthropic recomenda rodar o Claude Code em VM ou container ao operar sem interrupção (auto mode prolongado) para evitar hot loops destrutivos — confirma a responsabilidade do desenvolvedor no harness.
+- **Ferramentas detectadas automaticamente**: não é necessário nomear ferramentas no prompt; basta descrever o objetivo ("teste o browser" → Claude Code infere Playwright).
+
+### MCP (Model Context Protocol) e Perspectiva Corporativa
+
+*(Fonte: Palestra Microsoft/GitHub para a Caixa Econômica Federal, 2026-05)*
+
+#### MCP — Protocolo de Integração de Ferramentas
+
+**MCP = "USB-C da IA"** — padrão aberto (2024, Anthropic) para integrar ferramentas externas a agentes de IA.
+
+**Evolução histórica**: REST API (apps web, 2000s) → LSP — Language Server Protocol (IDEs, ferramentas de linguagem) → **MCP** (agentes de IA, 2024).
+
+**Arquitetura em três camadas**:
+
+| Camada | Descrição | Exemplos |
+|---|---|---|
+| **Hosts** | Ambientes de desenvolvimento onde o dev trabalha | VS Code, Visual Studio, IntelliJ |
+| **Clients** | Agentes/apps que consomem o MCP para acessar ferramentas | Copilot Agent Mode, Coding Agent |
+| **Servers** | Ferramentas e sistemas externos expostos via MCP | GitHub, Playwright, Azure, Jira, Slack |
+
+**Interação**: sempre em **linguagem natural** — o agente detecta automaticamente qual ferramenta usar para atender o prompt. Não é REST manual (GET/POST).
+
+**Dois tipos de servidor MCP**:
+- **Local** (ex: Playwright): executa localmente, sem autenticação, abre browser via motor Chromium/Edge/Firefox
+- **Remoto** (ex: GitHub): requer OAuth; as permissões do MCP = permissões do usuário autenticado
+
+**Benefícios**: reduz alucinações (contexto mais preciso via dados externos em tempo real), permite compartilhar informações entre times (Jira, Zendesk, Azure), reduz tempo de integração (padrão universal).
+
+**Configuração no VS Code**: arquivo `.vscode/mcp.json` lista os servidores MCP. Ferramentas expostas ficam visíveis na interface da extensão.
+
+#### Modo Agente vs. Coding Agent: Dois Níveis de Autonomia
+
+Uma distinção importante observada na perspectiva corporativa do GitHub Copilot:
+
+| | **Modo Agente** (extensão) | **Coding Agent** (GitHub.com) |
+|---|---|---|
+| **Execução** | No IDE local do desenvolvedor | Ambiente efêmero no GitHub.com (GitHub Actions) |
+| **Ambiente** | Ambiente real do dev | Isolado, criado e destruido por sessão |
+| **Interação** | Interativa (IDE, tempo real) | Background / assíncrona (Mission Control) |
+| **Paralelismo** | Uma tarefa por vez | N sessões em paralelo simultaneamente |
+| **Output** | Edições locais | Pull Requests com resumo + screenshots |
+| **Segurança** | Ambiente do dev | Code Scanning (CodeQL) integrado |
+
+**Coding Agent** como "funcionário a mais": cada dev vira gerente de uma equipe de agentes especializados — agentes de teste, documentação, debugging, implementação, design rodando em paralelo.
+
+**Mission Control**: painel no GitHub.com para monitorar, interagir e acompanhar múltiplas sessões do Coding Agent em paralelo.
+
+#### Copilot Instructions como Análogo Corporativo de Rules + Skills
+
+O GitHub Copilot (versão corporativa) usa **Instructions** como mecanismo equivalente às Rules e Skills do formacao.dev:
+
+| Conceito formacao.dev | Equiv. Copilot/GitHub | Local | Escopo |
+|---|---|---|---|
+| Rule (`.claude/rules/`) | `copilot-instructions.md` | `.github/` | Repositório inteiro, sempre aplicado |
+| Rule por contexto | `*.instructions.md` | `.github/instructions/` | Definido pelo campo `applyTo` (glob pattern) |
+| Skill (`.agents/skills/`) | `*.md` em agents folder | `.github/agents/` | Agentes customizados usando Coding Agent como motor |
+
+**Complementaridade**: instruction global + instruction específica por arquivo/diretório são **acumulativas** (não se excluem).
+
+**Prática**: dizer o que **NÃO** fazer é tão ou mais importante do que dizer o que fazer nas Instructions.
+
+**Copilot Spaces**: contexto especializado e curado compartilhável entre times (instruções + repositórios + arquivos + issues). Trazido para o IDE via MCP. Equivale funcionalmente a uma Skill de contexto de equipe.
+
 ### AI-Driven Development: Práticas de Engenharia (Matt Pocock)
+
 
 **Tese central**: "Base de código ruim = agentes de IA ruins." Fundamentos clássicos de engenharia de software continuam essenciais na era da IA.
 
@@ -469,12 +829,19 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - [Dev AI — Aula 08: Engenharia de Prompt e Contexto](../sources/2026-04-28_source-dev-ai-engenharia-de-prompt.md)
 - [Dev AI — Aula 09: Engenharia de Contexto (Rules, Skills, Spec Driven Development)](../sources/2026-04-29_source-dev-ai-engenharia-de-contexto.md)
 - [Dev AI — Aula 10: Rule vs. Skill — Definições Canônicas](../sources/2026-04-29_source-dev-ai-rule-skill.md)
+- [Dev AI — Aula 11: Exemplo Prático de Skill (Cursor)](../sources/2026-05-04_source-dev-ai-exemplo-skill.md)
+- [Dev AI — Aula 12: Tipos de Skill](../sources/2026-05-04_source-dev-ai-tipos-de-skill.md)
+- [Dev AI — Aula 13: Skill e Módulos — Introdução ao Capítulo](../sources/2026-05-05_source-dev-ai-skill-modulos-intro.md)
+- [Dev AI — Ferramentas Agênticas (Aulas 01–07)](../sources/2026-07-17_source-ferramentas-agenticas.md)
+- [Dev AI — Ferramentas Agênticas: Harness (Partes 1 e 2)](../sources/2026-07-17_source-ferramentas-agenticas-harness.md)
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
+- [Palestra Microsoft — GitHub Copilot: Visão Geral e Aula Prática](../sources/2026-05-07_source-palestra-github-copilot.md)
 
 ## Entidades Relacionadas
 
 - [formacao.dev](../entities/formacao-dev.md): plataforma onde o curso "Dev AI" é ministrado
 - [Matt Pocock](../entities/matt-pocock.md): especialista em TypeScript e AI-Driven Development; criador do Sand Castle e Skills para Claude Code
+- [GitHub Copilot](../entities/github-copilot.md): assistente de IA da GitHub (Microsoft); plataforma com Code Completion, Modo Agente, Coding Agent, MCP, Instructions, Copilot Spaces e extensão de modernização
 
 ## Questões Não Resolvidas
 
@@ -497,10 +864,24 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - **Limite de paralelização**: há limite prático de quantos agentes simultâneos? Custo/latência?
 - **Push vs. Pull**: como implementar sistema de Pull (Skills consultáveis) na prática? MCP? Arquivos `.md` no repo?
 - ~~**Rule vs. Skill**: qual é a diferença formal com exemplos concretos?~~ → **Resolvida na Aula IA-10**: Rule = declarativa (convenção/restrição contextual passiva); Skill = ativa (processo passo a passo com few-shot); Skill pode referenciar Rules internamente.
-- **Skill na prática**: qual formato exato de Markdown? Quantos exemplos few-shot são suficientes?
-- **Referência Rule→Skill por ferramenta**: como uma Skill referencia uma Rule no Cursor vs. Claude Code vs. Codex?
-- **Spec Driven Development na prática**: qual ferramenta, estrutura de arquivo e convenções são usadas? Limites de tasks antes do context rot?
+- ~~**Skill na prática**: qual formato exato de Markdown? Quantos exemplos few-shot são suficientes?~~ → **Parcialmente resolvida na Aula IA-11**: Skill = arquivo `.cursor/skills/<nome>.md` com frontmatter (nome, descrição) + seções "Quando usar" e "Processo" ordenado. Skills sem few-shot funcionam mas são fracas; o ideal é partir de código existente via engenharia reversa para obter exemplos ricos.
+- ~~**Referência Rule→Skill por ferramenta**: como uma Skill referencia uma Rule no Cursor vs. Claude Code vs. Codex?~~ → **Parcialmente resolvida na Aula IA-11 (Cursor)**: no Cursor, a Skill pode mencionar explicitamente o arquivo de Rule (ex.: `cursorRulesNomenclaturaEestrutura.md`); isso é redundante no Cursor (que já lê Rules automaticamente) mas portável para outras ferramentas. Comportamento no Claude Code e Codex ainda não documentado.
+- ~~**Spec Driven Development na prática**: qual ferramenta, estrutura de arquivo e convenções são usadas?~~ → **Parcialmente resolvida no módulo Ferramentas Agênticas (Aula 05)**: pasta `specs/changes/<nome>/spec.md`, checkboxes de tarefa, orientações embutidas na spec, execução sequencial ou em paralelo com subagentes; specs concluídas movidas para `specs/archive/`. Limites de tasks antes do context rot: ainda não formalizados.
 - **Otimização de contexto por task**: como combinar Mentions + Rules + Skills minimizando tokens sem perder contexto relevante?
+- **Skill no Cursor**: quais metadados são obrigatórios vs. opcionais no frontmatter? Como o Cursor injeta a Skill no contexto — automaticamente ou via `@skill`?
+- ~~**Skills complexas**: qual estrutura de pasta para Skills com subpastas de referências?~~ → **Parcialmente resolvida na Aula IA-12**: uma pasta de Skill pode conter múltiplos arquivos (scripts como `run.js`, assets, configurações, projetos-template). Skills que chamam outras Skills não foram formalizadas.
+- **Skill determinística vs. híbrida**: quando exatamente preferir uma à outra? A linha divisória ainda é subjetiva.
+- **Execução de scripts em Skills**: como o agente sabe quando executar um script vs. seguir instruções textuais? Há conflito possível entre os dois modos?
+- **Versionamento de scripts em Skills**: como atualizar `run.js` sem quebrar Skills existentes que dependem dele?
+- **Paralelização com git worktrees (Skill interna)**: detalhes de configuração do script `paralelo.js` mencionado pelo instrutor não foram documentados.
+- ~~**Harness**: conceito mencionado como próximo tema após Spec-Driven Development, mas Aula 06 (Harness Parte 1) estava vazia — sem conteúdo disponível.~~ → **Resolvida nas Aulas 06 e 07**: harness = camada de software que envolve o LLM (ferramentas como Claude Code, Codex, Cursor são harnesses); loop de execução detalhado; compressão automática de contexto; responsabilidade do desenvolvedor via verificações em Skills e specs.
+- ~~**MCP (Model Context Protocol)**: como integrar servidores MCP para estender capacidades de leitura de dados externos ao harness sem sobrecarregar o contexto?~~ → **Parcialmente resolvida na palestra Microsoft/GitHub**: MCP = padrão aberto arquitetura host/client/server; interação em linguagem natural; dois tipos (local: Playwright; remoto: GitHub/OAuth); configuração via `.vscode/mcp.json`. Pendênte: como os servidores MCP são governados em ambientes corporativos com restrições de firewall.
+- **Copilot Spaces vs. Copilot Instructions**: qual a linha divisória entre o que deve estar em Instructions (sempre ativo) vs. em Spaces (contextó curado compartilhado)? Quando é melhor criar um Space vs. um instruction específico por diretório?
+- **Coding Agent e conflitos de merge**: como o Coding Agent lida com conflitos quando múltiplas sessões paralelas tocam os mesmos arquivos?
+- **Self-hosted runners + Coding Agent**: como o runner acessa o código se há restrições de firewall? (mencionado como novo recurso, mas não detalhado na palestra)
+- **Recarregamento de Skills**: Claude Code apresentou instabilidade ao recarregar Skills após edição de arquivo (instrutor precisou fechar/abrir o app ou executar `/reload skills`). Comportamento esperado em produção não documentado.
+- **Skills entre projetos**: como compartilhar Skills via git submodules — mencionado mas não demonstrado.
+- **Conflitos em subagentes paralelos**: como evitar conflitos quando múltiplos subagentes escrevem nos mesmos arquivos em paralelo dentro de uma spec.
 
 ## Notas de Atualização
 
@@ -514,3 +895,10 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - 2026-04-28: adicionada seção sobre AI-Driven Development (práticas de Matt Pocock): smart zone/dumb zone, HITL vs. AFK, fluxo completo (Grill Me → PRD → Tracer Bullets → Implementação AFK → QA), módulos profundos vs. rasos, TDD essencial, Push vs. Pull, Skills — a partir da palestra "Essential Skills for AI Coding".
 - 2026-04-29: expandida seção de Engenharia de Contexto com context rot, distinção formal Rule vs. Skill, e Spec Driven Development como aplicação em escala (tasks + injeção de contexto por step) — a partir da Aula IA-09.
 - 2026-04-29: atualizada seção Rule vs. Skill com definições canônicas (declarativa vs. ativa), técnica few-shot, relação Rule→Skill e independência de ferramenta; questão "Rule vs. Skill" marcada como resolvida — a partir da Aula IA-10.
+- 2026-05-04: adicionado formato prático de Skill no Cursor (arquivo `.cursor/skills/*.md`, frontmatter, seções "Quando usar" + "Processo"), ciclo de criação por engenharia reversa, heurística de granularidade e fraqueza de Skills sem few-shot; questões "Skill na prática" e "Referência Rule→Skill por ferramenta (Cursor)" marcadas como parcialmente resolvidas — a partir da Aula IA-11.
+- 2026-05-04: adicionada taxonomia de tipos de Skill (determinística, híbrida, aberta), conceito de Skill como contêiner de arquivos (scripts, assets, templates), encadeamento de Skills no Spec Driven Development; questão "Skills complexas" parcialmente resolvida — a partir da Aula IA-12.
+- 2026-05-05: adicionadas Skills práticas do Capítulo 3 (criar projeto e criar módulo) e conceito de modularização como espectro gradual (1 → 2 → n módulos); princípio de não atrasar deploy por perfeccionismo — a partir da Aula IA-13.
+- 2026-07-17: adicionada seção sobre infraestrutura prática de Skills (Ferramentas Agênticas, Aulas 01–06): pastas concretas por ferramenta (`.claude/skills/` vs `.agents/skills/`), estrutura mínima de Skill (skill.md + frontmatter name/description), gatilho implícito via description vs. chamada explícita, Skills determinísticas com scripts executáveis, analogia Skill = função/procedure, e Spec-Driven Development prático (pasta `specs/changes/`, checkboxes, paralelização, arquivamento); questão "Spec Driven Development na prática" parcialmente resolvida.
+- 2026-07-18: adicionada seção sobre Harness (Aulas 06–07): definição formal (camada de software que envolve o LLM), anatomia (LLM, contexto, ferramentas, loop, compressão, memória), loop de execução detalhado com diagrama textual, compressão automática de contexto (`/context` no Claude Code), responsabilidades embutidas vs. responsabilidade do desenvolvedor (verificações em Skills e specs), analogia cavalo/arreios; questão "Harness" marcada como resolvida; nova questão aberta sobre MCP.
+- 2026-07-18: adicionada seção sobre MCP e perspectiva corporativa (Palestra Microsoft/GitHub para Caixa): arquitetura MCP (host/client/server), dois tipos de servidor (local Playwright, remoto GitHub OAuth), Modo Agente vs. Coding Agent (comparativo tabular), Copilot Instructions como análogo corporativo de Rules + Skills, Copilot Spaces como contexto curado compartilhável; questão MCP marcada como parcialmente resolvida; novas questões sobre Spaces vs. Instructions, conflitos do Coding Agent, self-hosted runners; nova entidade GitHub Copilot criada.
+- 2026-07-19: adicionada subseção "Melhores Práticas Operacionais do Claude Code" na seção de Harness (digest da documentação oficial Anthropic via vídeo de Augusto Galego): método de verificação no prompt, descrever estado desejado vs. passos, incrementos testáveis, hierarquia de modelos por tipo de tarefa (Opus=planejamento/Sonnet=implementação, confirmando HITL/AFK), checkpoints e `/rewind`, gerenciamento de sessões nomeadas persistentes, `/goal` para objetivos verificáveis, `.claude` do projeto versionado, `review.md` dedicado para code review, permissões granulares (flag `S`), sandbox para auto mode; nova fonte adicionada ao frontmatter.

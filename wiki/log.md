@@ -3,7 +3,7 @@ title: "Registro"
 type: maintenance
 status: active
 created: 2026-04-07
-updated: 2026-04-29
+updated: 2026-07-19
 tags: ["log"]
 source_files: []
 related_pages:
@@ -331,3 +331,155 @@ Este arquivo é um log cronológico apenas para anexação. Adicione novas entra
   - Como Skill referencia Rule concretamente por ferramenta (Cursor vs. Claude Code vs. Codex).
   - Configuração prática do Spec Driven Development.
   - Exemplo concreto de Rule + Skill prometido para a próxima aula.
+
+## [2026-05-04] ingest | Dev AI — Aula 11: Exemplo Prático de Skill (Cursor)
+
+- **Material**: `2026-05-04_transcrição-IA-11-ContextoRulesSkill-exemploSkill.md` — aula prática demonstrando a criação de uma Skill chamada `criar-entidade-completa` no Cursor e sua execução em projeto vazio (formacao.dev, módulo "Agentes, Skills & Eng. de Contexto").
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-05-04_source-dev-ai-exemplo-skill.md`
+  - Atualizado `concepts/ia-generativa.md`: adicionadas subseções "Formato Prático de uma Skill (Cursor)" (estrutura mínima de arquivo Markdown com frontmatter + "Quando usar" + "Processo", observações da demonstração) e "Ciclo de Criação de Skills" (engenharia reversa de código existente como método preferido vs. criação do zero, heurística de granularidade); questões "Skill na prática" e "Referência Rule→Skill por ferramenta" marcadas como parcialmente resolvidas; duas novas questões abertas adicionadas (metadados do Cursor, Skills complexas).
+  - Atualizado `wiki/index.md`: nova fonte adicionada; contagem atualizada (19 fontes); descrição de `ia-generativa.md` revisada; datas atualizadas.
+  - Atualizado `wiki/log.md`: esta entrada.
+- **Conteúdo coberto**: estrutura física de Skill no Cursor (pasta `.cursor/skills/`, arquivo Markdown com metadados); ciclo de criação por engenharia reversa de código existente (método preferido pelo instrutor); criação do zero como alternativa menos eficaz; fraqueza de Skills sem exemplos few-shot; referência explícita de Rule dentro de uma Skill (redundante no Cursor mas portável); heurística de granularidade (Skills específicas > Skills genéricas); demonstração de execução (nomenclaturas respeitadas, hierarquia de pastas criada, BaseEntity gerado).
+- **Sem contradições** com fontes anteriores — concretiza e aprofunda conceitos formalizados nas Aulas IA-09 (context rot, ingestão de Rule + Skill) e IA-10 (definições canônicas de Rule e Skill).
+- **Marco**: com esta ingestão, todos os materiais disponíveis em `raw/sources/` estão processados (19/19). A wiki está totalmente atualizada.
+- **O que permanece não resolvido**:
+  - Metadados obrigatórios vs. opcionais no frontmatter de Skills no Cursor.
+  - Como o Cursor injeta a Skill no contexto — automaticamente ou via `@skill`?
+  - Skills complexas com subpastas de referências — mencionadas mas não demonstradas.
+  - Referência Rule→Skill no Claude Code e Codex — comportamento não documentado.
+  - Configuração prática do Spec Driven Development.
+
+## [2026-05-04] ingest | Dev AI — Aula 12: Tipos de Skill (Determinística, Híbrida e Aberta)
+
+- **Material**: `2026-05-04_transcrição-IA-12-ContextoRulesSkill-tiposDeSkill.md` — aula de fechamento do capítulo "Agentes, Skills & Eng. de Contexto" da trilha Dev AI (formacao.dev). Formaliza uma taxonomia de três tipos de Skills e expande o conceito de Skill como contêiner de arquivos.
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-05-04_source-dev-ai-tipos-de-skill.md`
+  - Atualizado `concepts/ia-generativa.md`: adicionada subseção "Tipos de Skill (Aula IA-12)" com tabela comparativa (determinística / híbrida / aberta), conceito de Skill como contêiner de arquivos (scripts, assets, templates), exemplo real de `paralelo.js` para git worktrees, e diagrama de encadeamento de Skills no Spec Driven Development; questão "Skills complexas" marcada como parcialmente resolvida; quatro novas questões abertas adicionadas (linha divisória determinística/híbrida, execução de scripts, versionamento, git worktrees); nova nota de atualização.
+  - Atualizado `wiki/index.md`: nova fonte adicionada; contagem atualizada (20 fontes); descrição de `ia-generativa.md` revisada.
+  - Atualizado `wiki/log.md`: esta entrada.
+- **Conteúdo coberto**: taxonomia de três tipos de Skill — (1) **determinísticas** (script fixo executado pelo agente; ex.: scaffold, Docker, npm), (2) **híbridas** (parte script + parte instrução textual; ex.: criar módulo com integração no projeto), (3) **abertas** (100% textual; forma mais comum); Skills como contêiner de arquivos (pasta pode ter `.prettierrc`, projetos-template, scripts); exemplo real de `paralelo.js` para criar git worktrees paralelos; reforço da definição de Skill como "bloco de instruções, regras, contexto e, às vezes, código/ferramentas"; encadeamento Skill+Task no Spec Driven Development.
+- **Sem contradições** com fontes anteriores — reforça e estende a Aula IA-11 (formato prático) e a Aula IA-10 (definições canônicas).
+- **Marco**: com esta ingestão, todos os materiais disponíveis em `raw/sources/` estão processados (20/20). A wiki está totalmente atualizada.
+- **O que permanece não resolvido**:
+  - Skill determinística vs. híbrida — linha divisória ainda subjetiva.
+  - Como o agente sabe quando executar um script vs. seguir instruções textuais dentro de uma Skill?
+  - Versionamento de scripts em Skills — não abordado.
+  - Detalhes do script `paralelo.js` para git worktrees — mencionado mas não documentado.
+  - Configuração prática do Spec Driven Development — continua pendente.
+
+## [2026-05-05] ingest | Dev AI — Aula 13: Skill e Módulos — Introdução ao Capítulo
+
+- **Material**: `2026-05-04_transcrição-IA-13-SkillModulos-IntroducaoEModulos.md` — aula introdutória do Capítulo 3 da trilha Dev AI (formacao.dev, módulo "Skill e Módulos"). Não apresenta conceitos técnicos novos; o conteúdo é de orientação pedagógica e alinhamento de expectativas.
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-05-05_source-dev-ai-skill-modulos-intro.md`
+  - Atualizado `concepts/ia-generativa.md`: adicionada subseção "Skills Práticas do Capítulo 3" (tabela com as duas Skills anunciadas: criar projeto + criar módulo) e conceito de **modularização como espectro gradual** (nível 1 = 1 módulo, nível 2 = 2 módulos, nível 3+ = múltiplos módulos) com o princípio de não atrasar deploy por perfeccionismo ("trocar a asa com o avião voando"); nova fonte adicionada ao frontmatter; nova nota de atualização.
+  - Atualizado `wiki/index.md`: nova fonte adicionada; contagem atualizada (21 fontes); descrição de `ia-generativa.md` revisada; datas atualizadas.
+  - Atualizado `wiki/log.md`: esta entrada.
+- **Conteúdo coberto**: anúncio das duas Skills do capítulo (criar projeto do zero + criar módulo); validação pós-gravação pelo instrutor ("vim do futuro"); modularização como escolha gradual (não binário); Histórico de evolução esperado (1 módulo → 2 módulos → n módulos); crítica ao perfeccionismo prematuro; metáfora "trocar a asa com o avião voando".
+- **Nenhuma contradição** com fontes anteriores — reforça e contextualiza os tipos de Skill (IA-12) e a conexão DDD+IA (modularização como pilar #1, IA-06).
+- **Marco**: com esta ingestão, todos os materiais disponíveis em `raw/sources/` estão processados (21/21 arquivos de conteúdo). A wiki está totalmente atualizada.
+- **O que permanece não resolvido**:
+  - Estrutura concreta das duas Skills prometidas (criar projeto e criar módulo) — serão apresentadas nas próximas aulas do capítulo.
+  - Critérios precisos para decidir entre 1, 2 ou múltiplos módulos — prometidos "mais lah na frente".
+  - Como a Skill de criação de módulo se adapta a projetos com 1 vs. n módulos (mesma Skill, orientações diferentes — detalhe não fornecido).
+
+## [2026-07-18] ingest | Dev AI — Módulo Ferramentas Agênticas (Aulas 01–06)
+
+- **Material**: 6 transcrições do módulo "Ferramentas Agênticas" do curso Dev AI (formacao.dev, instrutor Leonardo). Aulas 01–05 com conteúdo; Aula 06 (Harness Parte 1) sem transcrição.
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-07-17_source-ferramentas-agenticas.md`
+  - Atualizado `concepts/ia-generativa.md`: adicionadas duas novas subseções — **Infraestrutura Prática de Skills por Ferramenta** (pastas `.claude/skills/` vs `.agents/skills/`, estrutura mínima de `skill.md`, gatilho implícito via description vs. chamada explícita, Skills determinísticas com scripts executáveis, analogia Skill = função/procedure) e **Spec-Driven Development na Prática** (estrutura de pasta `specs/changes/`, formato de `spec.md` com checkboxes, modos de execução sequencial/paralelo/contexto independente, rastreabilidade); questão "Spec Driven Development na prática" marcada como parcialmente resolvida; novas questões abertas sobre Harness, recarregamento de Skills, git submodules e conflitos em subagentes paralelos; nova fonte adicionada ao frontmatter e notas de atualização.
+  - Atualizado `wiki/index.md`: nova fonte adicionada (contagem: 22 fontes); descrição de `ia-generativa.md` revisada com novos detalhes.
+  - Atualizado `wiki/log.md`: esta entrada.
+- **Conteúdo coberto**: pastas de Skills por ferramenta (Claude Code: `.claude/skills/`, Codex: `.agents/skills/`); pastas ocultas no macOS/Linux, visíveis no Windows; compartilhamento via git submodules; estrutura mínima de `skill.md` (frontmatter com `name` e `description`); `description` como gatilho implícito (palavras-chave disparam Skill automaticamente); chamada explícita preferida pelo instrutor (`/nome-da-skill`); Skills com múltiplos arquivos (determinísticas com `index.js` executado via Node.js); analogia Skill = função/procedure da programação procedural; comportamento idêntico no Codex; especificação simples (`specs/changes/<nome>/spec.md`); checkboxes de rastreamento; execução por subagentes sequencial ou paralela; arquivamento de specs em `specs/archive/`; evidência de 10 especificações encadeadas com 10–15 passos cada.
+- **Nenhuma contradição** com fontes anteriores — concretiza e aprofunda os conceitos introduzidos nas Aulas IA-09 a IA-13 (context rot, Rule vs. Skill, formatos de Skill, tipos de Skill, Spec Driven Development).
+- **O que permanece não resolvido**:
+  - Conteúdo de "Harness" — Aula 06 estava vazia; conceito mencionado mas não documentado.
+  - Instabilidade de recarregamento de Skills no Claude Code (instrutor precisou fechar/abrir app ou executar `/reload skills`).
+  - Como compartilhar Skills entre projetos via git submodules — mencionado mas não demonstrado.
+  - Conflitos de escrita quando múltiplos subagentes paralelos modificam os mesmos arquivos.
+  - Limite prático de especificações encadeadas ou subagentes paralelos.
+
+## [2026-07-18] ingest | Dev AI — Módulo Ferramentas Agênticas: Harness Partes 1 e 2 (Aulas 06–07)
+
+- **Material**: 2 transcrições das aulas de Harness do módulo "Ferramentas Agênticas" (formacao.dev, instrutor Leonardo). Aula 06 (Harness Parte 1) anteriormente vazia, agora com conteúdo completo; Aula 07 (Harness Parte 2, arquivo novo `2026-07-17_transcrição-FerramentasAgenticas-07-HarnessParte2.md`).
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-07-17_source-ferramentas-agenticas-harness.md`
+  - Atualizado `concepts/ia-generativa.md`: adicionada nova seção **Harness** com definição formal, anatomia (componentes: LLM stateless, contexto, ferramentas, loop, compressão, memória), diagrama textual do loop de execução, compressão automática de contexto, dois modelos mentais (visão estrutural e visão de fluxo), responsabilidades embutidas na ferramenta vs. responsabilidade do desenvolvedor (verificações em Skills e specs); questão "Harness" marcada como resolvida; nova questão aberta sobre MCP; novos source_files e related_pages adicionados ao frontmatter; nota de atualização appended.
+  - Atualizado `wiki/index.md`: nova fonte adicionada (contagem: 23 fontes); descrição de `ia-generativa.md` revisada com Harness.
+  - Atualizado `wiki/log.md`: esta entrada.
+- **Conteúdo coberto (Parte 1 — Aula 06)**: definição de harness = camada de software que envolve o LLM (analogia cavalo/arreios); LLM sozinho é stateless (apenas recebe e gera texto); harness = pernas, braços e olhos do LLM; componentes: contexto gerenciado, ferramentas (FS, terminal, APIs, MCP), loop de execução; loop: prompt → LLM decide ação → ferramenta executa → resultado vai pro contexto → LLM decide novamente; exemplos de ferramentas: ler pasta, ler arquivo, alterar arquivo, deletar, chamar MCP; responsabilidades do harness: loop, exposição de ferramentas, gestão de contexto (montagem + compressão), permissões, roteamento, memória/estado; analogia: modelo = motor, harness = resto do carro; ferramentas = sensores (erro no terminal redireciona o caminho); a grande evolução foi o harness, não apenas o modelo.
+- **Conteúdo coberto (Parte 2 — Aula 07)**: fluxo detalhado do loop (prompt + histórico + memória + ferramentas + Skills → montagem de contexto → LLM → decisão → ferramenta → resultado → novo contexto → ...); LLM é stateless — contexto é tudo; ordem do contexto importa (itens mais recentes têm mais peso, por isso Skill carregada no final do passo tem mais relevância); compressão de contexto quando janela excede limite (sumarização, analogia de reunião de 8h); `/context` no Claude Code mostra percentual da janela usada; subagentes têm janela de contexto independente; dois modelos mentais (visão estrutural + visão de fluxo em sequência de passos); harness ≠ arquivo ou técnica — a técnica é Skills + Spec-Driven Development; a grande revolução do desenvolvimento de software foi o harness; "preditor de texto → agente que percebe, decide e age".
+- **Harness do desenvolvedor**: pedir cobertura de testes ≥ 90% nas Skills; testes de integração em pontos estratégicos das specs; browser interno do Claude Code para validação de UI; subagente separado para criar testes (contexto limpo evita viés de confirmação).
+- **Nenhuma contradição** com fontes anteriores — formaliza e nomeia o loop iterativo de agentes já documentado na Aula IA-07.
+- **O que permanece não resolvido**:
+  - MCP (Model Context Protocol): integração de ferramentas externas ao harness — deixado para o próximo projeto.
+  - Estratégias específicas de compressão de contexto (algoritmo/heurística exata do Claude Code).
+  - Como os arquivos de memória do harness funcionam na prática.
+  - Critérios exatos para decidir entre execução autônoma vs. confirmação do usuário.
+
+## [2026-07-18] ingest | Palestra Microsoft/GitHub — GitHub Copilot: Visão Geral e Aula Prática
+
+- **Material**: 2 transcrições de sessões de treinamento Microsoft/GitHub para a Caixa Econômica Federal (apresentadores: Jean/CSM e Caio Queiroz/CSA). Sessão Teórica (Visão Geral) + Sessão Prática.
+  - `raw/sources/2026-05-07_transcricao_VisualStudio+Copilot.md`
+  - `raw/sources/2026-05-07_transcricao_VisualStudio+Copilot_Pratica.md`
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-05-07_source-palestra-github-copilot.md`
+  - Criada nova entidade: `wiki/entities/github-copilot.md`
+  - Atualizado `concepts/ia-generativa.md`: nova seção **MCP (Model Context Protocol) e Perspectiva Corporativa** com subseções:
+    - MCP: arquitetura host/client/server, dois tipos de servidor (local: Playwright; remoto: GitHub/OAuth), `.vscode/mcp.json`, interação em linguagem natural
+    - Modo Agente vs. Coding Agent (comparativo tabular: execução, ambiente, interação, paralelismo, output, segurança)
+    - Copilot Instructions como análogo corporativo de Rules + Skills (tabela de equivalências)
+    - Copilot Spaces como contexto curado compartilhável via MCP
+    - Questão MCP marcada como parcialmente resolvida; 3 novas questões abertas (Spaces vs. Instructions, conflitos Coding Agent, self-hosted runners)
+  - Atualizado `wiki/index.md`: nova fonte (contagem: 25), nova entidade (contagem: 3), ia-generativa revisada com MCP e Copilot
+  - Atualizado `wiki/log.md`: esta entrada
+- **Conteúdo coberto (Sessão Teórica)**:
+  - GitHub Copilot = assistente de IA com múltiplos LLMs como motor (OpenAI, Anthropic, Google)
+  - Modos: Code Completion (inline), Chat Ask, Chat Plan (só planeja), Chat Agent (loop autônomo), Inline Chat, Copilot CLI
+  - Fluxo de request: contexto → proxy (valida PII, ética, vulnerabilidades) → LLM → sugestão
+  - Instructions: `.github/copilot-instructions.md` (global, sempre) + `.github/instructions/*.instructions.md` (por padrão de arquivo `applyTo`), complementares
+  - Modo Agente: loop plan→act→observe, ferramentas (FS, terminal, browser via Playwright, GitHub MCP), descobre contexto automaticamente
+  - Coding Agent: agente autônomo em ambiente efêmero (GitHub Actions); background e paralelo; output = PRs com screenshots; Mission Control para monitoramento; disparo via IDE, GitHub.com ou issues
+  - Code Review Agent: revisor automático de PRs; contexto completo do projeto; CodeQL integrado; guiado por Instructions
+  - MCP: padrão aberto arquitetura host/client/server; linguagem natural; Playwright (local) vs. GitHub (remoto/OAuth); `.vscode/mcp.json`
+  - Copilot Spaces: contexto curado e compartilhável (instruções + repositórios + arquivos + issues); trazido para IDE via MCP
+  - Custom Agents: `.github/agents/*.md` usando Coding Agent como motor; agentes especializados em paralelo
+  - Licenças: Business (300 premium requests) / Enterprise (1000); modo "auto" + 10% desconto
+- **Conteúdo coberto (Sessão Prática)**:
+  - Demo: loja virtual → modo Plan → carrinho de compras → perguntas do agente → Start Implementation → modo Agent
+  - MCP na prática: iniciar Playwright + GitHub MCP no `.vscode/mcp.json`; listar issues do repositório em linguagem natural
+  - GitHub Copilot Modernization: extensão separada para Java e .NET; Start Assessment → cloud readiness → upgrade Java 8→21
+  - Plan.md: plano gerado pelo agente antes de executar o upgrade (steps, dependências, desafios)
+  - Progress.md: acompanhar o upgrade step a step
+  - 4 modalidades: Replatform, Refactor, Upgrade, Cloud Enablement (Azure AKS, App Service, Service Bus)
+  - 70–90% de redução de tempo vs. processo manual de modernização
+  - Custom agents em `.md` para modernização (Modernize Java, Modernize .NET, Modernize Azure Java, etc.)
+- **Diferenças importantes em relação ao formacao.dev**: contexto corporativo (Microsoft/GitHub vs. escola independente); Instructions = Rules + Skills; Custom Agents = Skills; loop Plan→Act→Observe = harness; terminologia diferente, conceitos análogos.
+- **Nenhuma contradição** com fontes anteriores — amplifica e contextualiza MCP, harness e agentes em um ambiente corporativo (produto comercial vs. ferramentas open source do curso).
+- **O que permanece não resolvido**:
+  - Copilot Spaces vs. Instructions: linha divisória entre uso de cada um
+  - Coding Agent + conflitos de merge em sessões paralelas
+  - Self-hosted runners + restrições de firewall + Coding Agent
+  - Como os Spaces se sincronizam quando os repositórios de fonte atualizam
+
+## [2026-07-19] ingest | Augusto Galego — A Própria Anthropic Explica Como Usar o Claude Code (Melhores Práticas)
+
+- **Material**: `2026-07-18_transcrição-IA-ClaudeCode-MelhoresPraticas.md` — transcrição de vídeo do canal de Augusto Galego (YouTube) compilando ~20 melhores práticas do Claude Code extraídas diretamente da documentação oficial da Anthropic (Best Practices, Prompt Library, Common Workflows). Fonte do vídeo: `https://www.youtube.com/watch?v=iMso7WbhUr0`.
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-07-18_source-claude-code-melhores-praticas.md`
+  - Atualizado `concepts/ia-generativa.md`: adicionada nova subseção **"Melhores Práticas Operacionais do Claude Code"** na seção de Harness, com três grupos de práticas — (1) Prompt (método de verificação no prompt, estado desejado vs. passos, incrementos testáveis, interromper cedo, regras específicas), (2) Contexto e Sessões (`/clear`, menor diretório, `/context`, sessões nomeadas com `/rename`/`claude resume`, checkpoints e `/rewind`), (3) Hierarquia de modelos e Infraestrutura (Opus=planejamento/Sonnet=implementação, `/goal`, `.claude` do projeto versionado, `review.md` dedicado, sandbox para auto mode, ferramentas detectadas automaticamente); nova fonte e related_page adicionadas ao frontmatter; nota de atualização appended.
+  - Atualizado `wiki/index.md`: nova fonte adicionada (contagem: 26); descrição de `ia-generativa.md` revisada com melhores práticas operacionais; datas atualizadas.
+  - Atualizado `wiki/log.md`: esta entrada.
+- **Conteúdo coberto**: todas as práticas derivadas da documentação oficial Anthropic — método de verificação no prompt (ground truth no próprio prompt); descrever resultado, não passos (especialmente para Opus); incrementos testáveis; interromper cedo ao detectar desvio; regras específicas > genéricas; `/clear` para contexto novo; menor diretório possível; `/context` para monitorar janela; sessões nomeadas com `/rename` e retomadas com `claude resume`; retenção de 30 dias em `.claude/projects`; checkpoints e `/rewind` para voltar ponto anterior; hierarquia Opus (planejamento) → Sonnet (implementação); `/goal` para objetivos verificáveis; `.claude` do projeto versionado no Git; `review.md` como arquivo separado de code review; sandbox (VM/container) para operação sem interrupção; ferramentas detectadas automaticamente sem nomear no prompt.
+- **Nenhuma contradição** com fontes anteriores — reforça e detalha operacionalmente os conceitos de harness, context rot, HITL/AFK (Matt Pocock e formacao.dev) e responsabilidade do desenvolvedor. A hierarquia Opus/Sonnet confirmada pela Anthropic valida explicitamente o padrão HITL/AFK de Matt Pocock.
+- **Convergência com fontes anteriores**:
+  - Hierarquia de modelos por tipo de tarefa = HITL/AFK de Matt Pocock (Aula IA-07 + palestra Pocock), agora confirmado pela Anthropic.
+  - `/context` = mecanismo de monitoramento de contexto já documentado no módulo Harness (Aulas 06–07).
+  - Sandbox para auto mode = responsabilidade do desenvolvedor no harness (identificada no módulo Harness).
+  - `.claude` versionado = complementa o conceito de Rules/Skills como configurações de equipe.
+- **O que permanece não resolvido**:
+  - Como funciona exatamente o `/rewind` — granularidade por mensagem ou por checkpoint interno?
+  - O `review.md` tem estrutura recomendada pela Anthropic ou é completamente aberto?
+  - Existe integração nativa entre sessões do Claude Code e histórico do Git?
