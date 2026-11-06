@@ -1,7 +1,7 @@
 ---
 title: "Transcrições Projeto EAD - Imersão DDD e Arquitetura Limpa"
 type: source
-status: active
+status: superseded
 created: 2026-04-20
 updated: 2026-04-20
 tags: ["ddd", "arquitetura-limpa", "modelagem", "typescript"]

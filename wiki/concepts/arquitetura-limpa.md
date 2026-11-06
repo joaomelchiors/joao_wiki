@@ -3,7 +3,7 @@ title: "Arquitetura Limpa (Clean Architecture)"
 type: concept
 status: active
 created: 2026-04-20
-updated: 2026-04-27
+updated: 2026-09-07
 tags: ["arquitetura-limpa", "camadas", "caso-de-uso", "adaptadores", "typescript"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-01-configurando.md
@@ -17,6 +17,7 @@ source_files:
   - raw/sources/2026-04-21_transcrição-projetoEAD-18-casoDeUso-01.md
   - raw/sources/2026-04-21_transcrição-projetoEAD-19-casoDeUso-02.md
   - raw/sources/2026-04-21_transcrição-projetoEAD-20-repositorio_usuario.md
+  - raw/sources/2026-09-07_chat-DDD-Express-PortsAndAdapters.md
 related_pages:
   - ../sources/2026-04-20_source-imersao-ddd-arq-limpa.md
   - ../sources/2026-04-23_source-imersao-ddd-arq-limpa-tratamento-erros.md
@@ -24,6 +25,7 @@ related_pages:
   - ../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-01.md
   - ../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-02.md
   - ../sources/2026-04-27_source-imersao-ddd-arq-limpa-repositorio-usuario.md
+  - ../sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md
   - ./ddd.md
   - ./objeto-de-valor.md
   - ./agregado.md
@@ -194,6 +196,63 @@ A classe `Result<T>` (implementada na aula 15) pertence ao módulo **shared** �
 - **Front-end com regras de negócio**: a divisão correta não é front vs. back, mas **regras vs. framework** — separar regras puras do framework (React, NestJS, Django) permite usá-las em qualquer camada.
 - **Segurança de hash de senha**: mesmo retornando apenas o hash bcrypt (não a senha em texto), há risco de força bruta direcionada. Recomendações do instrutor: (1) armazenar credenciais em tabela separada (`usuario_credenciais`); (2) omitir a coluna de senha em todas as queries padrão do repositório; (3) entidade `User` deve ter método `semSenha()` que retorna clone sem dados sensíveis.
 
+### Composition Root / Factory
+
+O Composition Root é o único local que conhece implementações concretas e monta o grafo de objetos. No projeto Express, é implementado como funções `make*()` em vez de classes Factory de domínio:
+
+```typescript
+// factories/auth/make-create-user-usecase.ts
+export function makeCreateUserUseCase(): CreateUserUseCase {
+    const userRepository = new PostgresAccountRepository();
+    const passwordHasher = new BcryptPasswordHasher();
+    return new CreateUserUseCase(userRepository, passwordHasher);
+}
+```
+
+**Princípio**: o UseCase não sabe que existem PostgreSQL, bcrypt ou Docker. Ele enxerga apenas `UserRepository` e `PasswordHasher` (interfaces). A Factory é quem diz: "hoje essa interface será implementada por PostgreSQL".
+
+**Nomenclatura**: `makeCreateUserUseCase()` (função de composição) em vez de `CreateUserFactory` (factory de domínio). Deixa claro que não é um conceito de domínio, mas uma função de montagem.
+
+### Controller Desacoplado do Framework
+
+O Controller não importa `Request`/`Response` do Express (ou NestJS). Ele recebe e devolve interfaces próprias:
+
+```typescript
+export interface HttpRequest<TBody = unknown> {
+    body: TBody;
+}
+
+export interface HttpResponse<T = unknown> {
+    statusCode: number;
+    body: T;
+}
+```
+
+**Fluxo**: `Express Request` → `Route` → `Controller.handle(HttpRequest)` → `UseCase` → `HttpResponse` → `Express Response`.
+
+**Adaptador Express**: função que conecta o Controller ao framework — extrai `req.body`, chama `controller.handle()`, escreve `res.status().json()`. Mantém Express confinado à borda mais externa.
+
+**Vantagem**: permite testar o Controller sem subir servidor, sem HTTP, sem SuperTest.
+
+### Mapper como Tradutor Puro
+
+O Mapper (`PostgresUserMapper`) possui responsabilidade única de tradução entre representações:
+
+- `toDomain(row: AccountRow): Result<User>` — converte linha do banco em entidade de domínio (via VOs).
+- `toPersistence(user: User): AccountRow` — converte entidade para formato do banco.
+
+**Princípio**: o Mapper **não interpreta, não decide, não contém lógica de negócio**. Ele traduz formatos. Quando um mapper começa a responder perguntas como "se não houver senha, então significa que...", ele está ultrapassando sua responsabilidade.
+
+**Separação estado vs. operação**: o Mapper sempre produz o estado completo da entidade. Quem decide quais campos usar (INSERT vs. UPDATE vs. UPDATE parcial) é o **Repository**. Isso evita explosão de mappers por caso de uso (não se cria `PasswordMapper`, `DeactivateMapper`, `CreateMapper` etc.).
+
+### Separação de Responsabilidades: Repository × Mapper × Entity
+
+| Componente | Responsabilidade |
+|---|---|
+| **Repository** | Conversa com o banco (SQL); decide INSERT/UPDATE; escolhe quais campos usar |
+| **Mapper** | Converte formatos (AccountRow ↔ User); não sabe qual operação está sendo executada |
+| **Entity** | Garante invariantes do domínio; não sabe de onde vieram os dados |
+
 ## Fontes de Suporte
 
 - [Imersão DDD + Arquitetura Limpa — Série de Transcrições](../sources/2026-04-20_source-imersao-ddd-arq-limpa.md)
@@ -202,6 +261,7 @@ A classe `Result<T>` (implementada na aula 15) pertence ao módulo **shared** �
 - [Aula 18 — Caso de Uso 01](../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-01.md)
 - [Aula 19 — Caso de Uso 02](../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-02.md)
 - [Aula 20 — Repositório de Usuário](../sources/2026-04-27_source-imersao-ddd-arq-limpa-repositorio-usuario.md)
+- [Conversa DDD + Express + Ports & Adapters](../sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md)
 
 ## Entidades Relacionadas
 
@@ -226,3 +286,4 @@ A classe `Result<T>` (implementada na aula 15) pertence ao módulo **shared** �
 - 2026-04-27: adicionado `CriptografiaProvider` como segunda porta no diagrama; exemplo de interface com `criptografar`/`comparar`; debate de segurança de hash; questão do `PrismaUserRepository` atualizada — a partir da Aula 18 (Caso de Uso 01).
 - 2026-04-27: adicionada seção sobre input do UC (primitivos vs. VOs); instanciação de modelos na camada de adaptadores como alternativa — a partir da Aula 19 (Caso de Uso 02).
 - 2026-04-27: adicionada seção de adaptadores concretos (controller NestJS + `UsuarioPrisma` + `PrismaService`); questões do `PrismaUserRepository`, integração Prisma e controllers marcadas como resolvidas — a partir da Aula 20 (Repositório de Usuário).
+- 2026-09-07: adicionadas seções sobre Composition Root / Factory (`makeXxxUseCase()`), Controller desacoplado do Express (`HttpRequest`/`HttpResponse`), Mapper como tradutor puro, e separação estado vs. operação de persistência — a partir da Conversa DDD + Express + Ports & Adapters.

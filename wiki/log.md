@@ -483,3 +483,58 @@ Este arquivo é um log cronológico apenas para anexação. Adicione novas entra
   - Como funciona exatamente o `/rewind` — granularidade por mensagem ou por checkpoint interno?
   - O `review.md` tem estrutura recomendada pela Anthropic ou é completamente aberto?
   - Existe integração nativa entre sessões do Claude Code e histórico do Git?
+
+## [2026-09-07] ingest | Conversa DDD + Express + Ports & Adapters (registro retroativo)
+
+> **Nota**: esta entrada é retroativa. A ingestão ocorreu em 2026-09-07 mas o log não foi atualizado na época. Detectado no lint de 2026-11-04.
+
+- **Material**: `2026-09-07_chat-DDD-Express-PortsAndAdapters.md` — conversa longa (~935 KB, ~49.000 linhas) entre João Marcos e um LLM, construindo um backend Express com TypeScript usando DDD + Ports & Adapters de forma incremental.
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md`
+  - Atualizado `concepts/ddd.md`: Entity como protocolo de ciclo de vida (`tryCreate`/`create`/`restore`/`cloneWith`); distinção `restore()` vs `create()` (Eric Evans); `id` obrigatório como invariante; invariantes universais vs. regras de criação.
+  - Atualizado `concepts/arquitetura-limpa.md`: Composition Root / Factory (`makeXxxUseCase()`); Controller desacoplado do Express (`HttpRequest`/`HttpResponse` próprios); Mapper como tradutor puro (`toDomain`/`toPersistence`); separação estado vs. operação de persistência.
+  - Atualizado `concepts/objeto-de-valor.md`: UUID v4 → UUID v7 nativo (Node 24.16+); `IdVO.generate()` vs `IdVO.tryCreate()`; critério para manter VO dentro da entidade (com comportamento) vs. extrair `.value` (sem comportamento).
+  - Criada nova entidade: `wiki/entities/joao-marcos-melchiors.md` — proprietário da wiki; perfil de aprendizagem e princípios arquiteturais observados.
+- **Conteúdo coberto**: estrutura de pastas Express; Route/Middleware/Controller/UseCase; `Entity` abstrata com protocolo de ciclo de vida; `PostgresUserMapper`; `PostgresAccountRepository`; Composition Root; Controller sem Express (`HttpRequest`/`HttpResponse`); adaptador Express na borda; tratamento de erros HTTP; `createdAt`/`updatedAt` obrigatórios.
+- **Sem contradições** com fontes anteriores — aprofunda e concretiza conceitos da imersão DDD + Arquitetura Limpa (formacao.dev).
+- **O que permanece não resolvido**:
+  - Status HTTP global para erros mistos (domínio + aplicação).
+  - `HttpErrorStatusResolver` em versão pragmática (tudo 400).
+  - Testes de integração do Repository com banco real.
+  - OAuth / múltiplos provedores de identidade.
+  - Eventos de domínio.
+  - Migração `baseUrl` TypeScript 7.
+
+## [2026-11-04] lint | Verificação completa da wiki
+
+- **Escopo**: 37 páginas ativas analisadas (27 fontes, 6 conceitos, 4 entidades, 6 manutenção) + 49 arquivos brutos em `raw/sources/`.
+- **O que foi feito**:
+  - Criado relatório de lint: `wiki/maintenance/lint-reports/2026-11-04_lint-completo.md`
+  - Atualizado `wiki/index.md`: adicionadas `2026-09-07_source-chat-ddd-express-ports-and-adapters.md` e `entities/joao-marcos-melchiors.md`; contagens corrigidas (27 fontes, 4 entidades, 6 manutenção); descrições de conceitos DDD/Arq. Limpa/VO atualizadas para refletir set/2026; entrada do novo lint adicionada.
+  - Marcado `wiki/sources/2026-04-20_transcricoes-projetoEAD.md` como `status: superseded` (ação recomendada desde o lint de 2026-04-28, finalmente executada).
+  - Atualizado `wiki/log.md`: esta entrada + entrada retroativa de set/2026.
+- **Principais descobertas**:
+  - **Nenhuma contradição** — fontes posteriores (chat DDD+Express) reforçam os conceitos sem contradizer nada estabelecido.
+  - **Nenhuma referência cruzada quebrada** — todos os links internos são válidos.
+  - **2 páginas ausentes do `index.md`**: fonte e entidade de set/2026 (corrigido nesta sessão).
+  - **`open-questions.md` vazio** — continua acumulando questões nas páginas de conceito sem consolidação.
+  - **3 fontes brutas não ingeridas**: IA-14 (vazia — sem transcrição), `2026-08-03_ModelagemDeDominio-48` (prioridade alta), `2026-11-04_Curso_Certificacao_ClaudeCode` (prioridade alta, grande).
+  - **1 arquivo obsoleto** corrigido: `transcricoes-projetoEAD.md` → `superseded`.
+- **Saúde geral**: 🟡 Atenção — sem problemas críticos; principal gap são as 2 fontes não ingeridas e o `open-questions.md` vazio.
+- **Próxima verificação recomendada**: após ingestão dos materiais pendentes, ou em 2027-02-04.
+
+## [2026-11-04] ingest | Modelagem de Domínio — Aula 48: Classe ErroValidacao (registro retroativo)
+
+> **Nota**: esta entrada é retroativa. A ingestão foi feita na mesma sessão do lint de 2026-11-04, mas não foi registrada no log na época. Detectado em 2026-11-05.
+
+- **Material**: `2026-08-03_transcrição-ModelagemDeDominio-48-ErrorDeValidacao.md` — aula introdutória da série Modelagem de Domínio (formacao.dev) sobre a classe `ErroValidacao`.
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-08-03_source-modelagem-dominio-48-erro-validacao.md`
+  - Atualizado `concepts/objeto-de-valor.md`: nova seção "ErroValidacao como Base do Pipeline de Validação" (atributos `codigo`/`valor`/`extras`, métodos `criar`/`lancar`, catálogo de constantes, ordem causal erro → validação → VOs → entidades).
+  - Atualizado `wiki/index.md`: entrada do novo resumo de fonte e contagem de fontes.
+- **Conteúdo coberto**: projeto de domínio puro isolado de infraestrutura; `ErroValidacao` estendendo `Error`; retorno `never` em `lancar`; códigos simbólicos em vez de mensagens livres.
+- **Sem contradições** com fontes anteriores — refina a abordagem de códigos de erro da Aula 15.
+- **O que permanece não resolvido**:
+  - Aula 49 (testes da `ErroValidacao`) não está em `raw/sources/`.
+  - Extensões futuras (nome da classe/atributo) não implementadas na aula.
+  - Propagação do erro do core até a camada HTTP não detalhada.

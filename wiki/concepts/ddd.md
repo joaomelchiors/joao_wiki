@@ -3,7 +3,7 @@ title: "Domain-Driven Design (DDD)"
 type: concept
 status: active
 created: 2026-04-20
-updated: 2026-04-27
+updated: 2026-09-07
 tags: ["ddd", "domínio", "modelagem", "padrões"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-4-modelagem.md
@@ -16,6 +16,7 @@ source_files:
   - raw/sources/2026-04-21_transcrição-projetoEAD-18-casoDeUso-01.md
   - raw/sources/2026-04-21_transcrição-projetoEAD-19-casoDeUso-02.md
   - raw/sources/2026-04-21_transcrição-projetoEAD-20-repositorio_usuario.md
+  - raw/sources/2026-09-07_chat-DDD-Express-PortsAndAdapters.md
 related_pages:
   - ../sources/2026-04-20_source-imersao-ddd-arq-limpa.md
   - ../sources/2026-04-23_source-imersao-ddd-arq-limpa-tratamento-erros.md
@@ -23,6 +24,7 @@ related_pages:
   - ../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-01.md
   - ../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-02.md
   - ../sources/2026-04-27_source-imersao-ddd-arq-limpa-repositorio-usuario.md
+  - ../sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md
   - ./objeto-de-valor.md
   - ./agregado.md
   - ./contexto-delimitado.md
@@ -88,6 +90,53 @@ Domain-Driven Design é um conjunto de práticas e padrões de software cujo foc
 - **Modelos ricos vs. frameworks de ORM**: frameworks como JPA/Hibernate impõem restrições (anotações, getters obrigatórios) que dificultam modelos ricos — trade-off reconhecido.
 - **Comandos vs. Consultas (CQRS)**: modelos ricos fazem sentido para comandos (escrita); para consultas complexas, SQL direto mapeado para DTOs simples pode ser mais prático.
 
+### Entity como Protocolo de Ciclo de Vida
+
+A classe abstrata `Entity` pode ser enriquecida para funcionar como um **protocolo de ciclo de vida** que toda entidade do domínio segue. Operações padronizadas:
+
+| Operação | Descrição | Quando usar |
+|---|---|---|
+| `tryCreate(props)` | Valida invariantes e cria instância via `Result` (nunca lança exceção) | Em qualquer criação segura |
+| `create(props)` | Criação de uma nova entidade (pode gerar eventos de domínio, definir `createdAt = now`, status inicial) | Nascimento da entidade |
+| `restore(props)` | Reconstituição de entidade persistida — garante invariantes universais sem aplicar regras exclusivas de criação | Reidratação do banco, cache, eventos |
+| `cloneWith(overrides)` | Gera nova instância com estado alterado via `structuredClone` + `deepMerge`, redelegando para `tryCreate()` | Imutabilidade — `changePassword()`, `deactivate()`, `semSenha()` |
+
+**Construtor protegido**: `protected constructor(protected readonly props: Props)` obriga toda criação a passar pelos métodos estáticos.
+
+**Relação `restore()` ↔ `tryCreate()`**: conceitualmente, o nascimento da entidade é um caso particular da reconstituição. A inversão proposta: `restore()` contém as invariantes universais; `tryCreate()` chama `restore()` e adiciona regras de criação quando existirem.
+
+### `restore()` vs. `create()` — Reconstituição vs. Nascimento
+
+A distinção entre criar e restaurar uma entidade é um tema discutido por Eric Evans (livro DDD):
+
+- **Criar** = nascimento da entidade. O `create()` pode gerar ID, definir timestamps, emitir eventos de domínio, exigir campos obrigatórios do cadastro.
+- **Restaurar** = reconstituição de estado persistido. O `restore()` recebe dados completos (incluindo `id`, `createdAt`, `updatedAt`) e valida apenas invariantes universais.
+
+**Problema de usar sempre `create()`**: se uma nova regra (ex.: "deve aceitar termos de uso") for adicionada ao `create()`, todos os 5 milhões de usuários antigos sem essa propriedade se tornariam inválidos ao serem carregados do banco.
+
+**Recomendação prática**: iniciar com `restore()` delegando para `tryCreate()` (mesmas invariantes). Quando surgirem regras exclusivas de criação, a separação já está preparada.
+
+### Identidade Obrigatória na Entity
+
+No DDD, uma entidade é definida por possuir identidade. A propriedade `id` deve ser **obrigatória** em `EntityProps`:
+
+```typescript
+export interface EntityProps {
+  id: IdVO;        // obrigatório — sem !, sem ?
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt?: Date;
+}
+```
+
+**Distinção importante**: o input do caso de uso (`CreateUserInput`) não contém `id`. Quem gera a identidade é o **UseCase** via `IdVO.generate()`, antes de chamar `User.tryCreate()`. Assim, o DTO de entrada não tem `id`, mas a Entity nunca existe sem identidade.
+
+### Invariantes Universais vs. Regras de Criação
+
+- **Invariantes universais**: regras que devem ser verdadeiras tanto para uma entidade nova quanto para uma carregada do banco (ex.: `updatedAt >= createdAt`, email em formato válido). Pertencem ao `restore()`.
+- **Regras de criação**: regras exclusivas do nascimento (ex.: gerar eventos, status PENDING, aceitar termos). Pertencem ao `create()`.
+- **Cada objeto protege apenas suas próprias invariantes**: EmailVO protege formato/domínio; a Entidade protege regras que dependem de múltiplos atributos (ex.: "senha não pode conter parte local do email").
+
 ## Fontes de Suporte
 
 - [Imersão DDD + Arquitetura Limpa — Série de Transcrições](../sources/2026-04-20_source-imersao-ddd-arq-limpa.md)
@@ -96,10 +145,12 @@ Domain-Driven Design é um conjunto de práticas e padrões de software cujo foc
 - [Aula 18 — Caso de Uso 01](../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-01.md)
 - [Aula 19 — Caso de Uso 02](../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-02.md)
 - [Aula 20 — Repositório de Usuário](../sources/2026-04-27_source-imersao-ddd-arq-limpa-repositorio-usuario.md)
+- [Conversa DDD + Express + Ports & Adapters](../sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md)
 
 ## Entidades Relacionadas
 
 - [formacao.dev](../entities/formacao-dev.md): plataforma onde o curso foi ministrado
+- [João Marcos Melchiors](../entities/joao-marcos-melchiors.md): proprietário da wiki, autor da conversa DDD+Express+P&A
 
 ## Questões Não Resolvidas
 
@@ -116,3 +167,4 @@ Domain-Driven Design é um conjunto de práticas e padrões de software cujo foc
 - 2026-04-27: adicionado `Provedor (Provider)` como ferramenta tática (ex.: `CriptografiaProvider` para hash de senhas) — a partir da Aula 18 (Caso de Uso 01).
 - 2026-04-27: adicionada formulação "UC como maior cliente do domínio" com os 3 pontos de acesso ao domínio (VO, Entidade, Serviço de Domínio) — a partir da Aula 19 (Caso de Uso 02).
 - 2026-04-27: adicionada referência à implementação concreta do adaptador `UsuarioPrisma` e controller NestJS — a partir da Aula 20 (Repositório de Usuário).
+- 2026-09-07: adicionadas seções sobre Entity como protocolo de ciclo de vida (`tryCreate`/`create`/`restore`/`cloneWith`), `restore()` vs `create()` (Eric Evans), `id` obrigatório como invariante, e invariantes universais vs. regras de criação — a partir da Conversa DDD + Express + Ports & Adapters.
