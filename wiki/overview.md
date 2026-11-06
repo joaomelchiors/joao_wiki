@@ -3,7 +3,7 @@ title: "Visão Geral do Tema de Pesquisa"
 type: maintenance
 status: active
 created: 2026-04-07
-updated: 2026-04-28
+updated: 2026-11-05
 tags: ["overview"]
 source_files: []
 related_pages:
@@ -28,6 +28,7 @@ Organizar, catalogar e estruturar o conhecimento adquirido, servindo como base d
 - Conhecimento adquirido em contexto acadêmico e de aprendizado estruturado
 - **DDD + Arquitetura Limpa** em TypeScript (formacao.dev — trilha Arquiteto Dev)
 - **IA Generativa e desenvolvimento orientado a IA** (formacao.dev — trilha Dev AI)
+- **Ecossistema Claude Code / Anthropic**: arquitetura de agentes, MCP, segurança e certificação CCDV-F (curso de Andrew Brown)
 
 ## Fora do Escopo
 
@@ -44,6 +45,8 @@ Organizar, catalogar e estruturar o conhecimento adquirido, servindo como base d
 - **Arquitetura de módulos profundos** (John Ousterhout) maximiza eficácia de agentes de IA: interface simples + muita funcionalidade interna = fácil de testar e entender.
 - **Base de código ruim = agentes de IA ruins**: fundamentos clássicos de engenharia de software (TDD, módulos, feedback loops) continuam cruciais na era da IA.
 - **Qualidade dos ciclos de feedback = teto da qualidade da IA**: sem ciclos de feedback (testes, tipos, linters), IA programa "às cegas".
+- **Agente × workflow**: agente = política dinâmica decidida pelo modelo; workflow = máquina de estados. A combinação (workflow que chama agente) é o padrão; código determinístico quando possível (CCDV-F, opinião do instrutor).
+- **Segurança em camadas para agentes**: prompt injection/jailbreak exigem defesas combinadas (triagem, validação determinística, prompt, política de uso) — não confiar só no modelo.
 
 ## Perspectivas a Explorar
 
@@ -59,6 +62,8 @@ Organizar, catalogar e estruturar o conhecimento adquirido, servindo como base d
 - **Smart zone vs. dumb zone**: LLMs ficam progressivamente "burros" após ~100k tokens — dimensionar tarefas e limpar contexto em vez de acumular.
 - **Fatias verticais** (tracer bullets) vs. horizontais: implementar end-to-end (schema + API + UI + testes) para feedback instantâneo.
 - **Livros clássicos de engenharia** (_O Programador Pragmático_, _A Filosofia do Design de Software_) continuam relevantes para instruir LLMs.
+- **Certificação Claude (CCDV-F)**: o que o exame cobre (agentes, MCP, Claude Code, custo, segurança) e como se alinha à prática já estudada.
+- **Autonomia segura**: auto mode, sandbox e permissões no Claude Code.
 
 ## Tipos de Material Preferidos
 

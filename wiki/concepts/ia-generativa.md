@@ -3,8 +3,8 @@ title: "IA Generativa (Modelos baseados em Transformer)"
 type: concept
 status: active
 created: 2026-04-27
-updated: 2026-07-19
-tags: ["ia-generativa", "transformer", "tokenização", "embeddings", "deep-learning", "llm", "ai-driven-development", "skills", "spec-driven-development", "harness", "mcp", "github-copilot"]
+updated: 2026-11-05
+tags: ["ia-generativa", "transformer", "tokenização", "embeddings", "deep-learning", "llm", "ai-driven-development", "skills", "spec-driven-development", "harness", "mcp", "github-copilot", "claude-code", "prompt-injection", "sub-agentes", "certificacao"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-01-IntroducaoDesenvolvimentoIA-IaGenerativa01.md
   - raw/sources/2026-04-25_transcrição-IA-02-IntroducaoDesenvolvimentoIA-IaGenerativa02.md
@@ -27,6 +27,7 @@ source_files:
   - raw/sources/2026-05-07_transcricao_VisualStudio+Copilot.md
   - raw/sources/2026-05-07_transcricao_VisualStudio+Copilot_Pratica.md
   - raw/sources/2026-07-18_transcrição-IA-ClaudeCode-MelhoresPraticas.md
+  - raw/sources/2026-11-04_Curso_Certificacao_ClaudeCode.md
 related_pages:
   - ../sources/2026-04-27_source-dev-ai-ia-generativa-01.md
   - ../sources/2026-04-27_source-dev-ai-ia-generativa-02.md
@@ -46,6 +47,9 @@ related_pages:
   - ../entities/matt-pocock.md
   - ../entities/github-copilot.md
   - ../sources/2026-07-18_source-claude-code-melhores-praticas.md
+  - ../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md
+  - ../entities/claude-code.md
+  - ../entities/andrew-brown.md
 ---
 
 # IA Generativa (Modelos baseados em Transformer)
@@ -810,6 +814,45 @@ If a question can be answered by exploring the codebase, explore the codebase in
 | **TDD** | Ciclo red-green-refactor guiado por testes | AFK |
 | **Improve Codebase Architecture** | Varredura para aprofundar módulos | AFK |
 
+### Arquitetura de Agentes e Certificação Claude (CCDV-F)
+
+*(Fonte: curso de Andrew Brown para a certificação Claude Certified Developer Foundations, 2026-11; fonte em inglês, síntese em português. Material de instrutor — parte opinião, parte fatos do exame.)*
+
+#### Agente × Workflow
+
+- **Agente**: o modelo decide o próximo passo num loop agêntico; funciona como uma **política dinâmica** (regra de decisão escolhida em tempo de execução a partir do contexto), não como uma máquina de estados fixa.
+- **Workflow**: passos predeterminados (n8n, código comum) = máquina de estados. Bom para automação e garantias; **não** serve como loop agêntico externo.
+- **Combinação**: um estado do workflow pode chamar um agente. Se o problema cabe em código determinístico, usar código.
+
+#### Sub Agentes
+
+- Ganhos: especialização, paralelismo, contexto enxuto por tarefa, **verificação independente** (agente revisor com nota + justificativa), ferramentas/permissões restritas e isolamento.
+- Custos: dinheiro, latência, coordenação, erros de comunicação; evitar *tool stuffing* (cada ferramenta consome tokens em toda chamada).
+- No Claude Code são arquivos `.md` com frontmatter ([Claude Code](../entities/claude-code.md)). Padrões vistos no curso: pesquisa com coordenador + particionamento + **loop de refinamento** (máx. 4 iterações).
+
+#### MCP: Tools × Resources × Prompts
+
+Complementa a seção MCP acima: além de *tools* (funções), há **resources** (dados lidos diretamente via esquema, menos idas e vindas — afirmado pelo instrutor como tema de exame) e *prompts* (templates, considerados pouco úteis). Em ambientes gerenciados, listas de servidores permitidos e aprovação são controladas por *managed settings*.
+
+#### Segurança: Prompt Injection e Jailbreak
+
+- **Prompt injection**: instrução inserida para o modelo obedecer no lugar da original (direta, ou indireta via e-mail/documento/arquivo). **Jailbreak**: caso específico que tenta burlar as regras de segurança do modelo.
+- Defesas em camadas: triagem por modelo leve, validação determinística de entrada, system prompt com limites e instrução de recusa, detecção/throttle/ban de reincidentes.
+
+#### Parâmetros e Comportamento da API
+
+- Amostragem: temperature, top_p, top_k (sem *seed* no Claude); não ajustar todos juntos.
+- `stop_reason` descreve por que a geração parou (`end_turn`, `max_tokens`…) e **não é erro**; *context window exceeded* é diferente de `max_tokens` e exige compactar/podar histórico.
+- Custo: batch (até 24 h, sem SLA) para trabalho não urgente; prompt caching com preços distintos de escrita (5 min × 1 h) e leitura; cálculo = tokens ÷ 1 milhão × preço por categoria. Saída estruturada (JSON schema/Pydantic) com retry. *Extended/adaptive thinking*: iteração interna antes de encerrar o turno.
+
+#### Higiene de Sessão
+
+Isolar histórico por usuário/conversa; instruções no *system prompt*; nunca permitir que o usuário gere mensagens system/assistant; remover turnos e resultados de ferramenta obsoletos; compactar; não incluir credenciais/PII; nova sessão ao mudar o escopo de autorização; expirar sessões antigas. (Sugestão do instrutor — o guia oficial não define o termo.)
+
+#### Autonomia e Isolamento no Claude Code
+
+Modos de permissão, *auto mode* (meio-termo entre aprovar tudo e `--dangerously-skip-permissions`; segurança real **não verificada**), sandbox (`/sandbox`), plugins e hooks pré/pós ferramenta. Detalhes em [Claude Code](../entities/claude-code.md) e no [resumo do curso](../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md).
+
 ## Debates
 
 - **Conhecimento teórico vs. prático**: o instrutor reconhece que a maioria dos desenvolvedores quer pular direto para o uso prático, mas defende que entender o funcionamento interno dá insights sobre como usar os modelos de forma melhor.
@@ -836,12 +879,16 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - [Dev AI — Ferramentas Agênticas: Harness (Partes 1 e 2)](../sources/2026-07-17_source-ferramentas-agenticas-harness.md)
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
 - [Palestra Microsoft — GitHub Copilot: Visão Geral e Aula Prática](../sources/2026-05-07_source-palestra-github-copilot.md)
+- [Claude Code — Melhores Práticas (Augusto Galego)](../sources/2026-07-18_source-claude-code-melhores-praticas.md)
+- [Curso de Certificação Claude Developer Foundations (CCDV-F)](../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md)
 
 ## Entidades Relacionadas
 
 - [formacao.dev](../entities/formacao-dev.md): plataforma onde o curso "Dev AI" é ministrado
 - [Matt Pocock](../entities/matt-pocock.md): especialista em TypeScript e AI-Driven Development; criador do Sand Castle e Skills para Claude Code
 - [GitHub Copilot](../entities/github-copilot.md): assistente de IA da GitHub (Microsoft); plataforma com Code Completion, Modo Agente, Coding Agent, MCP, Instructions, Copilot Spaces e extensão de modernização
+- [Claude Code](../entities/claude-code.md): ferramenta agêntica da Anthropic (harness); comandos, permissões, sub agentes, hooks, plugins e Agent SDK
+- [Andrew Brown](../entities/andrew-brown.md): instrutor do curso de certificação CCDV-F
 
 ## Questões Não Resolvidas
 
@@ -853,7 +900,7 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - Positional encoding — como o modelo sabe a posição dos tokens na sequência?
 - Layer normalization e residual connections — não cobertos nas aulas.
 - Como contornar limitações de contagem de caracteres na prática (ferramentas externas? código auxiliar?).
-- Prompt injection e prompt insufficiency — mencionados mas não detalhados.
+- ~~Prompt injection e prompt insufficiency — mencionados mas não detalhados.~~ → **Prompt injection parcialmente resolvida** no curso CCDV-F (definição, jailbreak, injeção direta/indireta, defesas em camadas). Prompt insufficiency segue em aberto.
 - Como escrever system prompts eficazes para aplicações customizadas?
 - Como equilibrar guardrails (segurança) com utilidade (flexibilidade)?
 - Como estruturar um sistema multi-agente na prática?
@@ -902,3 +949,4 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - 2026-07-18: adicionada seção sobre Harness (Aulas 06–07): definição formal (camada de software que envolve o LLM), anatomia (LLM, contexto, ferramentas, loop, compressão, memória), loop de execução detalhado com diagrama textual, compressão automática de contexto (`/context` no Claude Code), responsabilidades embutidas vs. responsabilidade do desenvolvedor (verificações em Skills e specs), analogia cavalo/arreios; questão "Harness" marcada como resolvida; nova questão aberta sobre MCP.
 - 2026-07-18: adicionada seção sobre MCP e perspectiva corporativa (Palestra Microsoft/GitHub para Caixa): arquitetura MCP (host/client/server), dois tipos de servidor (local Playwright, remoto GitHub OAuth), Modo Agente vs. Coding Agent (comparativo tabular), Copilot Instructions como análogo corporativo de Rules + Skills, Copilot Spaces como contexto curado compartilhável; questão MCP marcada como parcialmente resolvida; novas questões sobre Spaces vs. Instructions, conflitos do Coding Agent, self-hosted runners; nova entidade GitHub Copilot criada.
 - 2026-07-19: adicionada subseção "Melhores Práticas Operacionais do Claude Code" na seção de Harness (digest da documentação oficial Anthropic via vídeo de Augusto Galego): método de verificação no prompt, descrever estado desejado vs. passos, incrementos testáveis, hierarquia de modelos por tipo de tarefa (Opus=planejamento/Sonnet=implementação, confirmando HITL/AFK), checkpoints e `/rewind`, gerenciamento de sessões nomeadas persistentes, `/goal` para objetivos verificáveis, `.claude` do projeto versionado, `review.md` dedicado para code review, permissões granulares (flag `S`), sandbox para auto mode; nova fonte adicionada ao frontmatter.
+- 2026-11-05: adicionada seção "Arquitetura de Agentes e Certificação Claude (CCDV-F)" (agente × workflow, sub agentes, MCP resources, prompt injection, parâmetros de API, higiene de sessão, autonomia no Claude Code) e entidades Claude Code / Andrew Brown — a partir do curso CCDV-F (fonte em inglês). Questões novas: segurança do auto mode; verificação de comandos na documentação oficial.

@@ -538,3 +538,26 @@ Este arquivo é um log cronológico apenas para anexação. Adicione novas entra
   - Aula 49 (testes da `ErroValidacao`) não está em `raw/sources/`.
   - Extensões futuras (nome da classe/atributo) não implementadas na aula.
   - Propagação do erro do core até a camada HTTP não detalhada.
+
+## [2026-11-05] ingest | Curso de Certificação Claude Certified Developer Foundations (CCDV-F)
+
+- **Material**: `2026-11-04_Curso_Certificacao_ClaudeCode.md` — transcrição em **inglês** (~489 KB, ~8 h) do curso de Andrew Brown (ExamPro/freeCodeCamp). Conforme instrução do arquivo, o conteúdo foi lido em inglês e registrado na wiki em português do Brasil.
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md`
+  - Criadas entidades: `wiki/entities/claude-code.md` e `wiki/entities/andrew-brown.md`
+  - Atualizado `concepts/ia-generativa.md`: nova seção "Arquitetura de Agentes e Certificação Claude (CCDV-F)" (agente × workflow, sub agentes, MCP tools × resources, prompt injection/jailbreak, parâmetros e custo da API, higiene de sessão, autonomia no Claude Code); questão sobre prompt injection parcialmente resolvida.
+  - Atualizado `overview.md` (escopo, hipóteses e perspectivas) e `open-questions.md` (3 candidatos de pesquisa).
+  - Atualizado `index.md` (nova fonte, 2 entidades, contagens: 29 fontes, 6 entidades).
+- **Cobertura**: leitura **parcial e por amostragem** (exame, arquitetura de agentes, sub agentes, higiene de sessão, segurança, MCP, parâmetros de API e laboratórios selecionados). Laboratórios longos (hooks, Managed Agents, AWS, Task tool) não foram esgotados.
+- **Sem contradições** com fontes anteriores; ponto de atenção sobre o *auto mode* (segurança não verificada) versus recomendação de sandbox da fonte de melhores práticas.
+- **O que permanece não resolvido**:
+  - Segurança real e escopo do *auto mode*.
+  - Verificação de comandos/flags na documentação oficial (transcrição automática com ruído).
+  - Leitura integral dos blocos finais do curso.
+  - Estado de Managed Agents / CLI `ant`.
+
+## [2026-11-05] update | Reescrita didática da ingestão do curso CCDV-F
+
+- **O que foi feito**: a pedido do usuário, o resumo de fonte `wiki/sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md` foi reescrito de forma didática — explicações em prosa (o que é, por que existe, exemplo, erro comum), tabelas, mapa de decisões e perguntas de autoteste com respostas. Exemplos criados por mim estão marcados como *(exemplo didático)*.
+- **Páginas atualizadas**: apenas o resumo de fonte (conteúdo factual igual ao da ingestão anterior; leitura da fonte continua parcial).
+- **O que permanece não resolvido**: mesmas questões da ingestão anterior (auto mode, conferência de comandos, blocos finais do curso). A seção em `concepts/ia-generativa.md` ainda está em formato de tópicos e pode ser expandida se o usuário quiser.
