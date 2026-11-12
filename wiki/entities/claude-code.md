@@ -3,7 +3,7 @@ title: "Claude Code"
 type: entity
 status: active
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-07
 tags: ["claude-code", "anthropic", "harness", "agentes", "ferramenta", "mcp", "skills", "hooks"]
 source_files:
   - raw/sources/2026-11-04_Curso_Certificacao_ClaudeCode.md
@@ -12,6 +12,7 @@ related_pages:
   - ../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md
   - ../sources/2026-07-18_source-claude-code-melhores-praticas.md
   - ../sources/2026-07-17_source-ferramentas-agenticas-harness.md
+  - ../sources/2026-11-07_source-agentes-ia-usando-skill.md
   - ../concepts/ia-generativa.md
   - ./github-copilot.md
   - ./andrew-brown.md
@@ -29,6 +30,7 @@ Ferramenta de codificação agêntica da Anthropic, executada no terminal (e em 
 - **Controle de contexto**: `/context`, `/compact`, `/clear`, `/rename`, `/rewind`, retomada e fork de sessões.
 - **Autonomia graduada**: regras de permissão, modos de permissão, *auto mode* e sandbox; managed settings para governança organizacional ([curso CCDV-F](../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md)).
 - **Extensibilidade**: hooks (pré/pós uso de ferramenta), skills, plugins (pacote de skills + agentes + hooks + MCP + LSP), servidores MCP.
+- **Instalação de Skills pelo app desktop**: *Personalizar* → *Habilidades* lista e instala Skills da Anthropic (ex.: `skill creator`); Skills aparecem no menu `/`, às vezes só após recarregar/reabrir ([Usando Skills](../sources/2026-11-07_source-agentes-ia-usando-skill.md); nomes vindos de transcrição automática).
 - **Uso programático**: modo headless/print (`-p`) e Agent SDK (Python/TypeScript).
 - **Sub agentes embutidos**: Explore, Plan, general-purpose, bash, status line setup, claude-code-guide.
 - **Provedores**: API da Anthropic ou terceiros (Bedrock, Vertex AI, Foundry).

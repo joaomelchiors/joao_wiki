@@ -3,8 +3,8 @@ title: "IA Generativa (Modelos baseados em Transformer)"
 type: concept
 status: active
 created: 2026-04-27
-updated: 2026-11-05
-tags: ["ia-generativa", "transformer", "tokenização", "embeddings", "deep-learning", "llm", "ai-driven-development", "skills", "spec-driven-development", "harness", "mcp", "github-copilot", "claude-code", "prompt-injection", "sub-agentes", "certificacao"]
+updated: 2026-11-12
+tags: ["ia-generativa", "transformer", "tokenização", "embeddings", "deep-learning", "llm", "ai-driven-development", "skills", "spec-driven-development", "harness", "mcp", "github-copilot", "claude-code", "prompt-injection", "sub-agentes", "certificacao", "home-repo", "sdd"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-01-IntroducaoDesenvolvimentoIA-IaGenerativa01.md
   - raw/sources/2026-04-25_transcrição-IA-02-IntroducaoDesenvolvimentoIA-IaGenerativa02.md
@@ -28,7 +28,30 @@ source_files:
   - raw/sources/2026-05-07_transcricao_VisualStudio+Copilot_Pratica.md
   - raw/sources/2026-07-18_transcrição-IA-ClaudeCode-MelhoresPraticas.md
   - raw/sources/2026-11-04_Curso_Certificacao_ClaudeCode.md
+  - raw/sources/2026-11-06_transcricao_AgentesDeIA_EstilosDeSkill.md
+  - raw/sources/2026-11-07_transcricao_AgentesDeIa_UsandoSkill.md
+  - raw/sources/2026-11-07-transcricap_AgentsDeIa_CirandoSkill.md
+  - raw/sources/2026-11-07_transcricao_AgentesDeIa_SkillComCodigo.md
+  - raw/sources/2026-11-07-transcricao_AbentsDeIa_SDD.md
+  - raw/sources/2026-11-08-transcricao_AbentsDeIa_MCP.md
+  - raw/sources/2026-11-08_AgentesDeIa-CatalogoDeMCPs.md
+  - raw/sources/2026-11-08_transcricao-AgentesDeIa_SKILLxMCP.md
+  - raw/assets/agentesDeIa_SKILLvsMCP.png
+  - raw/sources/2026-07-16_delete-most-of-your-docs_en-orig_Fj8DKMbdIzU.md
+  - raw/sources/2026-07-20_what-is-the-dumb-zone_en-orig_sOd7svdu_1I.md
+  - raw/sources/2026-07-16_my-1-book-recommendation-for-strategic-programming_en-orig_t34UuBxB2YQ.md
+  - raw/sources/2026-11-06_someone-wrote-a-paper-about-my-skill_en-orig_KJr1Q-k-yH0.md
+  - raw/sources/2026-11-12_artigo-home-repo-pattern.md
+  - raw/sources/2026-11-12_the-home-repo-pattern-run-agents-across-all-your-repos_en-orig_hWe-j78vNpc.md
 related_pages:
+  - ./deep-learning.md
+  - ./home-repo.md
+  - ../sources/2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo.md
+  - ../sources/2026-11-07_source-agentes-ia-sdd.md
+  - ../sources/2026-11-08_source-agentes-ia-mcp.md
+  - ../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md
+  - ../sources/2026-07-16_source-matt-pocock-shorts.md
+  - ../sources/2026-11-12_source-matt-pocock-home-repo.md
   - ../sources/2026-04-27_source-dev-ai-ia-generativa-01.md
   - ../sources/2026-04-27_source-dev-ai-ia-generativa-02.md
   - ../sources/2026-04-27_source-dev-ai-revolucao-da-atencao.md
@@ -50,13 +73,15 @@ related_pages:
   - ../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md
   - ../entities/claude-code.md
   - ../entities/andrew-brown.md
+  - ../sources/2026-11-06_source-agentes-ia-estilos-de-skill.md
+  - ../sources/2026-11-07_source-agentes-ia-usando-skill.md
 ---
 
 # IA Generativa (Modelos baseados em Transformer)
 
 ## Definição
 
-Modelos de IA generativa baseados na arquitetura Transformer são redes neurais que geram texto (e outros conteúdos) a partir de uma entrada (prompt). O nome "Transformer" vem do paper "Attention is All You Need" (2017). Exemplos comerciais: ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google). O "GPT" significa **Generative Pre-trained Transformer**.
+Modelos de IA generativa baseados na arquitetura Transformer são redes neurais que geram texto (e outros conteúdos) a partir de uma entrada (prompt). O nome "Transformer" vem do paper "Attention is All You Need" (2017). Exemplos comerciais: ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google). O "GPT" significa **Generative Pre-trained Transformer**. Para o conceito de redes em camadas, pré-treinamento e parâmetros, ver [Deep Learning](./deep-learning.md).
 
 ## Compreensão Atual
 
@@ -363,6 +388,41 @@ Skill 2 + Task 2 → executar
 Skill N + Task N → executar
 ```
 
+**Mesma taxonomia em outro curso (Profissional AI — Agentes, 2026-11-06)**: na trilha "Automação com Agentes de IA" da formacao.dev, o instrutor apresenta os mesmos três estilos, mas classificando pelo **meio de execução** em vez do grau de autonomia:
+
+| Estilo (Agentes de IA) | Quem executa | Exemplo falado na aula | Equivalente na IA-12 |
+|---|---|---|---|
+| Só modelo | Modelo de linguagem, guiado por texto/exemplos no contexto | Resumir um texto grande | Aberta |
+| Determinística | Código com passo a passo fixo | Inverter as letras de um texto | Determinística |
+| Mista | Código + modelo | — (não exemplificado) | Híbrida |
+
+- **Pré-requisito de ambiente** (afirmação do instrutor): ter **Python** e **Node.js** instalados, pois cobrem "praticamente qualquer" automação via Skills; o modelo já sabe usar ambas. Relaciona-se aos scripts `run.js`/`index.js` das Aulas IA-12 e Ferramentas Agênticas (Node.js). Python não aparecia nas fontes anteriores.
+- Interpretação: a repetição entre cursos sugere que a taxonomia é um conceito estável do instrutor; os dois critérios (autonomia × meio de execução) são complementares, não conflitantes.
+- Fonte: [Agentes de IA — Estilos de Skill](../sources/2026-11-06_source-agentes-ia-estilos-de-skill.md) (aula curta, sem demonstração; exemplos apenas falados).
+
+#### Usando e Instalando Skills Prontas (Profissional AI — Agentes)
+
+Segunda aula do mesmo curso ([Usando Skills](../sources/2026-11-07_source-agentes-ia-usando-skill.md)): aprender a **usar** antes de **criar**.
+
+- **Chamada**: digitar `/` lista comandos e Skills; digitar parte do nome filtra; selecionar faz o agente referenciar a Skill. O harness injeta o conteúdo da Skill no contexto — por isso o pedido do usuário pode ser curto (ex.: "crie um GIF de uma bola de futebol na pasta X").
+- **Instalação** (app desktop do Claude Code): *Personalizar* → *Habilidades* → buscar e adicionar Skills publicadas pela Anthropic (ex.: `skill creator`, `Slack gif creator`); cada Skill instalada exibe seus arquivos e pode ser desinstalada.
+- **Plugins**: pacote de **conector/aplicativo (e MCP) + uma ou mais Skills**. Exemplos citados: plugin Gmail (conector + Skills de Gmail e triagem de caixa de entrada); plugin de uso do computador (servidor MCP + Skill `computer use`). Confirma na prática a definição de plugin como pacote já registrada em [Claude Code](../entities/claude-code.md).
+- **Skills com código**: a Skill de GIF traz arquivos Python — razão prática do pré-requisito Python.
+- **Skill instalada e invisível no `/`**: contorno sugerido pelo instrutor, em tom de humor — `Reload Skills`, repetir, fechar/reabrir a ferramenta, reiniciar o computador. É o segundo relato de instabilidade de recarregamento (o primeiro, em Ferramentas Agênticas).
+- **Qualidade**: o GIF gerado foi fraco e variável entre execuções; o instrutor atribui a prompt pouco descritivo. Interpretação: Skill reduz variabilidade (ver Engenharia de Contexto), não a elimina.
+- Ressalva: a transcrição é automática e chama a segunda ferramenta de "ChatGPT" sem identificá-la inequivocamente (não verificado).
+
+#### Criando uma Skill do zero (Profissional AI — Agentes)
+
+Aulas 3 e 4 do mesmo curso ([Criando Skill e Skill com Código](../sources/2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo.md)).
+
+- **Pastas**: Claude lê `.claude/skills/`; Codex lê `.agents/skills/`. Copiar a pasta da Skill de um lado para o outro funciona (um único teste ao vivo).
+- **Estrutura mínima**: pasta em minúsculas com hífens (ex.: `curto-e-grosso`) com `SKILL.md` (maiúsculas, segundo o instrutor, que nunca testou minúsculas) contendo frontmatter `name:` (igual à pasta) e `description:`, seguido do prompt. Em fontes anteriores da wiki o arquivo aparece como `skill.md`; possível variação, não verificada.
+- **`description` com gatilhos**: expressões que ativam a Skill sem chamada explícita ("seu lunga"). Chamada explícita com `/nome` pode vir no início, meio ou fim do pedido, e várias Skills podem ser chamadas juntas.
+- **Skill com código** (`inverter-texto`): `SKILL.md` + `inverter-texto.js`, gerado pela própria IA; exige Node.js. `SKILL.md` é só a porta de entrada; a pasta pode ter outros arquivos (código, `exemplos.md`).
+- **Determinístico × probabilístico**: a inversão só pelo modelo pode errar; o código dá o mesmo resultado para a mesma entrada. Vale também para contas. Orientação do curso: usar a IA no que é forte e código no que exige precisão.
+- **Recarga**: `reload skills` no Claude Code; no Codex, uma aula diz que é preciso fechar e abrir, a outra mostra a Skill carregando sem reiniciar (**fontes discordam**).
+
 #### Skills Práticas do Capítulo 3: Criar Projeto e Criar Módulo (Aula IA-13)
 
 O Capítulo 3 da trilha Dev AI tem como objetivo construir duas Skills centrais reutilizáveis:
@@ -400,6 +460,14 @@ Quando uma tarefa é complexa demais para um único prompt (context rot), o **Sp
 - Cada task opera com contexto fresco + guard-rails específicos → menor desvio, resultado mais previsível.
 - O resultado final ainda pode variar (processo estatístico), mas permanece dentro das restrições definidas.
 - Ferramentas modernas de agentes adicionam verificação automática ao final de cada task e se autocorrigem se necessário.
+
+#### SDD na visão do curso Profissional AI — Agentes
+
+Fonte: [Spec-Driven Development (aula teórica)](../sources/2026-11-07_source-agentes-ia-sdd.md).
+
+- **Spec = receita em Markdown**: lista de passos com checkbox (`- [ ]`); o agente executa um por vez e marca `[x]`. Pode registrar evidência por passo e incluir passos de verificação. Passos podem chamar Skills (`/nome-da-skill`) e ser delegados a **sub-agentes** com contexto limpo (analogia coordenador/auxiliar).
+- Reuso para rotinas recorrentes; o instrutor relata uma execução de ~150–200 passos (anedota não verificável).
+- **Tensão registrada**: o curso sugere gerar sistemas inteiros a partir de specs; Matt Pocock diz que "specs to code" não funciona (ver [Matt Pocock](../entities/matt-pocock.md)). Os sentidos de "spec" diferem (checklist executável × especificação que substitui o código); as duas posições são mantidas.
 
 #### Infraestrutura Prática de Skills por Ferramenta (Módulo Ferramentas Agênticas)
 
@@ -617,6 +685,29 @@ A Anthropic documenta ~20 melhores práticas operacionais para o Claude Code. As
 
 **Configuração no VS Code**: arquivo `.vscode/mcp.json` lista os servidores MCP. Ferramentas expostas ficam visíveis na interface da extensão.
 
+#### MCP na visão do curso Profissional AI — Agentes
+
+Fonte: [MCP e catálogo de MCPs](../sources/2026-11-08_source-agentes-ia-mcp.md) (aula didática, sem a terminologia host/client/server).
+
+- **Analogias**: "tomada padrão" e **tradutor intermediário** entre o agente e a aplicação; um conector por aplicação (YouTube, Gmail, Drive, banco, ERP) e uma lista de conectores ativos que o agente escolhe.
+- **Ações**: cada conector expõe o que dá para fazer (ler/enviar e-mail, salvar arquivo, responder comentário). Objetivo: o agente **agir fora do chat** e integrar sistemas que não se falam.
+- **Código por baixo**: todo MCP exige implementação; pode ficar numa pasta do projeto (`mcps`/`conectores`). O aluno só precisa entender para que serve.
+- **Catálogos** citados: smithery.ai, pulsemcp.com, mcp.so; listas `awesome-mcp-servers`; oficiais: registry.modelcontextprotocol.io e `modelcontextprotocol/servers`. O curso recomenda verificar a procedência antes de baixar (descrições dos catálogos como "maior" ou "oficial" não verificadas aqui).
+
+#### Skill × MCP × SDD: os três pilares (Profissional AI)
+
+Fonte: [Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md) (com imagem-resumo em `raw/assets/agentesDeIa_SKILLvsMCP.png`).
+
+| | Skill | MCP |
+|---|---|---|
+| Pergunta que responde | Como executar? | Que ferramenta acessar? |
+| Função | Orientação | Integração |
+| Analogia | Manual / receita | Tomada / conector |
+
+- **"Skill ensina o processo; MCP dá acesso às ferramentas."** Não há barreira técnica rígida (uma Skill pode integrar com sistema externo); a diferença é o propósito. Todo MCP tem código; Skill nem sempre.
+- **Skill × SDD**: a Skill é **focada** em uma tarefa; o SDD cuida do **processo de ponta a ponta**, e cada passo pode chamar uma Skill. Os três pilares: SDD = fluxo, Skill = como fazer, MCP = ferramentas externas.
+- Interpretação (não vem da fonte): Rule, Skill, MCP e SDD podem ser vistos como camadas diferentes de contexto e ação.
+
 #### Modo Agente vs. Coding Agent: Dois Níveis de Autonomia
 
 Uma distinção importante observada na perspectiva corporativa do GitHub Copilot:
@@ -661,8 +752,10 @@ O GitHub Copilot (versão corporativa) usa **Instructions** como mecanismo equiv
 
 | Zona | Tokens | Comportamento |
 |---|---|---|
-| **Smart zone** | Início da conversa, ~0-100k tokens | LLM faz melhor trabalho; relações de atenção menos tensionadas |
-| **Dumb zone** | ~100k+ tokens | LLM fica progressivamente "burro"; toma decisões estúpidas |
+| **Smart zone** | Início da conversa, ~0-100k tokens (palestra de abril/2026) | LLM faz melhor trabalho; relações de atenção menos tensionadas |
+| **Dumb zone** | ~100k+ tokens (palestra de abril/2026) | LLM fica progressivamente "burro"; toma decisões estúpidas |
+
+**Atualização (short de 2026-07-20)**: o próprio Matt Pocock passou a usar **~150 mil tokens** como regra prática e diz que há ~6 meses achava ~100 mil e que o valor continua subindo; varia por modelo e tarefa. A queda é gradual, e alucinações de fidelidade são um sinal de estar na dumb zone. Ao chegar lá: limpar, compactar, fazer *hand off* ou redesenhar o fluxo em tarefas pequenas em janelas novas. Evolução da posição, não contradição. Fonte: [shorts de Matt Pocock](../sources/2026-07-16_source-matt-pocock-shorts.md).
 
 **Analogia**: "Adicionar token é como adicionar time a uma liga de futebol — número de partidas escala quadraticamente" (relações de atenção entre cada par de tokens).
 
@@ -671,6 +764,12 @@ O GitHub Copilot (versão corporativa) usa **Instructions** como mecanismo equiv
 - Evitar acúmulo infinito de contexto (compactação contínua)
 - Preferir limpar contexto (voltar ao estado base) a compactar (histórico variável)
 - **LLMs como "Memento"**: esquecem continuamente ao limpar; comportamento determinístico a cada reset
+
+#### Docs, Home Repo e Retro (posições posteriores de Matt Pocock)
+
+- **Menos docs, mais código autoexplicativo**: a camada de docs em markdown que descreve o código se desatualiza e cria duas fontes de verdade. Vale manter só ADRs, glossário de domínio e uma camada fina de navegação. Responde em parte à questão "doc rot" (ver Questões Não Resolvidas). Fonte: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md).
+- **Home Repo**: um repo único com skills, `AGENTS.md` e ponteiros para os demais repos, onde o agente sempre roda. Ver [Home Repo](./home-repo.md).
+- **Skill `retro`**: analisa sessões passadas e sugere melhorias no repo (lint, code review); Matt defende **humano ou processo no loop** ("retro da retro") para validar se as mudanças ajudam. Fonte: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md); o artigo acadêmico citado não foi lido.
 
 #### HITL vs. AFK: Tipos de Tarefa
 
@@ -881,6 +980,14 @@ Modos de permissão, *auto mode* (meio-termo entre aprovar tudo e `--dangerously
 - [Palestra Microsoft — GitHub Copilot: Visão Geral e Aula Prática](../sources/2026-05-07_source-palestra-github-copilot.md)
 - [Claude Code — Melhores Práticas (Augusto Galego)](../sources/2026-07-18_source-claude-code-melhores-praticas.md)
 - [Curso de Certificação Claude Developer Foundations (CCDV-F)](../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md)
+- [Agentes de IA (Profissional AI) — Estilos de Skill e Pré-requisitos](../sources/2026-11-06_source-agentes-ia-estilos-de-skill.md)
+- [Agentes de IA (Profissional AI) — Usando Skills](../sources/2026-11-07_source-agentes-ia-usando-skill.md)
+- [Agentes de IA (Profissional AI) — Criando uma Skill do zero e Skill com Código](../sources/2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo.md)
+- [Agentes de IA (Profissional AI) — Spec-Driven Development](../sources/2026-11-07_source-agentes-ia-sdd.md)
+- [Agentes de IA (Profissional AI) — MCP e catálogo de MCPs](../sources/2026-11-08_source-agentes-ia-mcp.md)
+- [Agentes de IA (Profissional AI) — Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md)
+- [Matt Pocock — Quatro shorts (docs, dumb zone, Pragmatic Programmer, retro skill)](../sources/2026-07-16_source-matt-pocock-shorts.md)
+- [Matt Pocock — The Home Repo Pattern (vídeo e artigo)](../sources/2026-11-12_source-matt-pocock-home-repo.md)
 
 ## Entidades Relacionadas
 
@@ -907,7 +1014,7 @@ Modos de permissão, *auto mode* (meio-termo entre aprovar tudo e `--dangerously
 - Qual o custo (latência, tokens) de loops iterativos com LLMs?
 - **Sand Castle**: como configurar e usar a biblioteca de Matt Pocock? Documentação disponível?
 - **Skills**: onde obter as Skills mencionadas por Matt Pocock (Grill Me, PRD, TDD, improve architecture)? Repositório público?
-- **Doc rot**: PRDs apodrecem — mas e decisões arquiteturais importantes? Como preservá-las?
+- ~~**Doc rot**: PRDs apodrecem — mas e decisões arquiteturais importantes? Como preservá-las?~~ → **Parcialmente resolvida** no short "Delete (most of) your docs" (2026-07-16): manter ADRs, glossário de domínio e camada fina de navegação; evitar docs que descrevem o código. Heurística de um autor, sem dados.
 - **Limite de paralelização**: há limite prático de quantos agentes simultâneos? Custo/latência?
 - **Push vs. Pull**: como implementar sistema de Pull (Skills consultáveis) na prática? MCP? Arquivos `.md` no repo?
 - ~~**Rule vs. Skill**: qual é a diferença formal com exemplos concretos?~~ → **Resolvida na Aula IA-10**: Rule = declarativa (convenção/restrição contextual passiva); Skill = ativa (processo passo a passo com few-shot); Skill pode referenciar Rules internamente.
@@ -917,7 +1024,8 @@ Modos de permissão, *auto mode* (meio-termo entre aprovar tudo e `--dangerously
 - **Otimização de contexto por task**: como combinar Mentions + Rules + Skills minimizando tokens sem perder contexto relevante?
 - **Skill no Cursor**: quais metadados são obrigatórios vs. opcionais no frontmatter? Como o Cursor injeta a Skill no contexto — automaticamente ou via `@skill`?
 - ~~**Skills complexas**: qual estrutura de pasta para Skills com subpastas de referências?~~ → **Parcialmente resolvida na Aula IA-12**: uma pasta de Skill pode conter múltiplos arquivos (scripts como `run.js`, assets, configurações, projetos-template). Skills que chamam outras Skills não foram formalizadas.
-- **Skill determinística vs. híbrida**: quando exatamente preferir uma à outra? A linha divisória ainda é subjetiva.
+- **Skill determinística vs. híbrida**: quando exatamente preferir uma à outra? A linha divisória ainda é subjetiva. (A aula "Estilos de Skill" do curso Profissional AI repete a taxonomia sem resolver este ponto.)
+- **Python em Skills**: o curso Profissional AI recomenda Python + Node.js para Skills com código; as demais fontes só mostram Node.js. Qual linguagem preferir, e por quê? Não esclarecido.
 - **Execução de scripts em Skills**: como o agente sabe quando executar um script vs. seguir instruções textuais? Há conflito possível entre os dois modos?
 - **Versionamento de scripts em Skills**: como atualizar `run.js` sem quebrar Skills existentes que dependem dele?
 - **Paralelização com git worktrees (Skill interna)**: detalhes de configuração do script `paralelo.js` mencionado pelo instrutor não foram documentados.
@@ -926,8 +1034,12 @@ Modos de permissão, *auto mode* (meio-termo entre aprovar tudo e `--dangerously
 - **Copilot Spaces vs. Copilot Instructions**: qual a linha divisória entre o que deve estar em Instructions (sempre ativo) vs. em Spaces (contextó curado compartilhado)? Quando é melhor criar um Space vs. um instruction específico por diretório?
 - **Coding Agent e conflitos de merge**: como o Coding Agent lida com conflitos quando múltiplas sessões paralelas tocam os mesmos arquivos?
 - **Self-hosted runners + Coding Agent**: como o runner acessa o código se há restrições de firewall? (mencionado como novo recurso, mas não detalhado na palestra)
-- **Recarregamento de Skills**: Claude Code apresentou instabilidade ao recarregar Skills após edição de arquivo (instrutor precisou fechar/abrir o app ou executar `/reload skills`). Comportamento esperado em produção não documentado.
-- **Skills entre projetos**: como compartilhar Skills via git submodules — mencionado mas não demonstrado.
+- **Recarregamento de Skills**: Claude Code apresentou instabilidade ao recarregar Skills após edição de arquivo (instrutor precisou fechar/abrir o app ou executar `/reload skills`). Comportamento esperado em produção não documentado. (Segundo relato na aula "Usando Skills" do curso Profissional AI: Skill instalada não aparece no `/` mesmo após `Reload Skills`; contorno do instrutor = reabrir a ferramenta ou reiniciar o computador. Causa ainda desconhecida.)
+- **Skills entre projetos**: como compartilhar Skills via git submodules — mencionado mas não demonstrado. → **Parcialmente resolvida**: o padrão [Home Repo](./home-repo.md) propõe um repo único com skills e ponteiros; submodules seriam opcionais.
+- **Codex e recarga de Skills**: as aulas 3 e 4 do curso Profissional AI se contradizem (uma diz que é preciso reabrir a ferramenta; a outra mostra a Skill carregando sem reiniciar).
+- **Maiúsculas/minúsculas em `SKILL.md`**: o curso usa maiúsculas sem ter testado minúsculas; fontes anteriores usam `skill.md`.
+- **Critério Skill × MCP**: o curso admite sobreposição técnica; falta critério prático de decisão.
+- **Segurança de MCPs e Skills de terceiros**: catálogos e Skills com scripts exigem checagem de procedência; o curso só recomenda verificar.
 - **Conflitos em subagentes paralelos**: como evitar conflitos quando múltiplos subagentes escrevem nos mesmos arquivos em paralelo dentro de uma spec.
 
 ## Notas de Atualização
@@ -949,4 +1061,7 @@ Modos de permissão, *auto mode* (meio-termo entre aprovar tudo e `--dangerously
 - 2026-07-18: adicionada seção sobre Harness (Aulas 06–07): definição formal (camada de software que envolve o LLM), anatomia (LLM, contexto, ferramentas, loop, compressão, memória), loop de execução detalhado com diagrama textual, compressão automática de contexto (`/context` no Claude Code), responsabilidades embutidas vs. responsabilidade do desenvolvedor (verificações em Skills e specs), analogia cavalo/arreios; questão "Harness" marcada como resolvida; nova questão aberta sobre MCP.
 - 2026-07-18: adicionada seção sobre MCP e perspectiva corporativa (Palestra Microsoft/GitHub para Caixa): arquitetura MCP (host/client/server), dois tipos de servidor (local Playwright, remoto GitHub OAuth), Modo Agente vs. Coding Agent (comparativo tabular), Copilot Instructions como análogo corporativo de Rules + Skills, Copilot Spaces como contexto curado compartilhável; questão MCP marcada como parcialmente resolvida; novas questões sobre Spaces vs. Instructions, conflitos do Coding Agent, self-hosted runners; nova entidade GitHub Copilot criada.
 - 2026-07-19: adicionada subseção "Melhores Práticas Operacionais do Claude Code" na seção de Harness (digest da documentação oficial Anthropic via vídeo de Augusto Galego): método de verificação no prompt, descrever estado desejado vs. passos, incrementos testáveis, hierarquia de modelos por tipo de tarefa (Opus=planejamento/Sonnet=implementação, confirmando HITL/AFK), checkpoints e `/rewind`, gerenciamento de sessões nomeadas persistentes, `/goal` para objetivos verificáveis, `.claude` do projeto versionado, `review.md` dedicado para code review, permissões granulares (flag `S`), sandbox para auto mode; nova fonte adicionada ao frontmatter.
+- 2026-11-07: adicionada subseção "Usando e Instalando Skills Prontas" (chamada com `/`, instalação via Personalizar → Habilidades/Plugins, plugin = conector/MCP + Skills, contorno para Skill não recarregada, variabilidade de resultado) — a partir da aula "Usando Skills".
+- 2026-11-12: ingestão da fila de novembro. Adicionadas subseções "Criando uma Skill do zero", "SDD na visão do curso Profissional AI", "MCP na visão do curso Profissional AI", "Skill × MCP × SDD: os três pilares" e "Docs, Home Repo e Retro"; atualizada a Smart/Dumb Zone (~100k → ~150k, evolução da posição); questão "Doc rot" parcialmente resolvida; novas questões (Codex e recarga, `SKILL.md`, critério Skill × MCP, segurança de MCPs). Tag `deep-learning` agora tem conceito próprio em [deep-learning.md](./deep-learning.md).
+- 2026-11-06: adicionada, na subseção "Tipos de Skill", a correspondência entre a taxonomia da IA-12 e os "estilos de Skill" do curso Profissional AI — Agentes (critério por meio de execução; pré-requisito Python + Node.js) — a partir da aula "Estilos de Skill".
 - 2026-11-05: adicionada seção "Arquitetura de Agentes e Certificação Claude (CCDV-F)" (agente × workflow, sub agentes, MCP resources, prompt injection, parâmetros de API, higiene de sessão, autonomia no Claude Code) e entidades Claude Code / Andrew Brown — a partir do curso CCDV-F (fonte em inglês). Questões novas: segurança do auto mode; verificação de comandos na documentação oficial.

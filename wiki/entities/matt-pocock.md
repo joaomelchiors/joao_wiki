@@ -3,11 +3,20 @@ title: "Matt Pocock"
 type: entity
 status: active
 created: 2026-04-28
-updated: 2026-04-28
+updated: 2026-11-12
 tags: ["pessoa", "typescript", "ai-coding"]
 source_files:
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
+  - raw/sources/2026-07-16_delete-most-of-your-docs_en-orig_Fj8DKMbdIzU.md
+  - raw/sources/2026-07-20_what-is-the-dumb-zone_en-orig_sOd7svdu_1I.md
+  - raw/sources/2026-07-16_my-1-book-recommendation-for-strategic-programming_en-orig_t34UuBxB2YQ.md
+  - raw/sources/2026-11-06_someone-wrote-a-paper-about-my-skill_en-orig_KJr1Q-k-yH0.md
+  - raw/sources/2026-11-12_artigo-home-repo-pattern.md
+  - raw/sources/2026-11-12_the-home-repo-pattern-run-agents-across-all-your-repos_en-orig_hWe-j78vNpc.md
 related_pages:
+  - ../concepts/home-repo.md
+  - ../sources/2026-07-16_source-matt-pocock-shorts.md
+  - ../sources/2026-11-12_source-matt-pocock-home-repo.md
   - ../concepts/ia-generativa.md
   - ../concepts/arquitetura-limpa.md
 ---
@@ -117,9 +126,23 @@ Solução: IA gera protótipos descartáveis para escolha humana, não implement
 
 Matt admite não ter solução perfeita — aceita que delegação de implementação resulta em mais revisão; trade-off necessário.
 
+## Posições Posteriores (vídeos e artigo, jul–nov/2026)
+
+Fontes: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md) e [Home Repo](../sources/2026-11-12_source-matt-pocock-home-repo.md) (legendas automáticas em inglês).
+
+- **Docs**: deletar a maior parte dos docs que descrevem o código (antipadrão: duas fontes de verdade); manter ADRs, glossário de domínio e navegação fina.
+- **Dumb zone**: regra prática atualizada de ~100 mil para **~150 mil tokens**, e subindo; limpar, compactar, fazer *hand off* ou dividir em tarefas pequenas em janelas novas.
+- **Fundamentos**: recomenda *The Pragmatic Programmer* (tracer bullets, "don't outrun your headlights") como livro #1 para programação estratégica; reforça a tese de que fundamentos continuam importando.
+- **Skill `retro`**: analisa sessões passadas e sugere melhorias; precisa de humano no loop. Alguém escreveu um artigo acadêmico sobre ela; Matt discorda das conclusões (artigo não lido).
+- **Home Repo**: padrão de um repo único com skills, `AGENTS.md` e ponteiros para os outros repos; ver [Home Repo](../concepts/home-repo.md). Ele chama o seu de "personal wiki", estilo Karpathy, com CLI própria.
+- Mantém a posição anterior contra "specs to code"; contrasta com a aula de SDD do curso Profissional AI, que sugere gerar sistemas a partir de specs (ver [SDD](../sources/2026-11-07_source-agentes-ia-sdd.md)).
+
 ## Cronologia
 
 - **2026-04-26** (data da transcrição): Palestra "Essential Skills for AI Coding from Planning to Production" — apresenta fluxo completo de desenvolvimento com IA, demonstra Sand Castle, Skills e técnicas de arquitetura
+- **2026-07-16 / 2026-07-20**: shorts sobre docs, livro recomendado e dumb zone
+- **2026-11-06**: short sobre o artigo acadêmico da skill `retro`
+- **2026-11-12**: vídeo e artigo "The Home Repo Pattern"
 
 ## Relacionamento com Outros Conceitos
 

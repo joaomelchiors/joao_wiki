@@ -3,7 +3,7 @@ title: "Registro"
 type: maintenance
 status: active
 created: 2026-04-07
-updated: 2026-07-19
+updated: 2026-11-07
 tags: ["log"]
 source_files: []
 related_pages:
@@ -561,3 +561,53 @@ Este arquivo é um log cronológico apenas para anexação. Adicione novas entra
 - **O que foi feito**: a pedido do usuário, o resumo de fonte `wiki/sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md` foi reescrito de forma didática — explicações em prosa (o que é, por que existe, exemplo, erro comum), tabelas, mapa de decisões e perguntas de autoteste com respostas. Exemplos criados por mim estão marcados como *(exemplo didático)*.
 - **Páginas atualizadas**: apenas o resumo de fonte (conteúdo factual igual ao da ingestão anterior; leitura da fonte continua parcial).
 - **O que permanece não resolvido**: mesmas questões da ingestão anterior (auto mode, conferência de comandos, blocos finais do curso). A seção em `concepts/ia-generativa.md` ainda está em formato de tópicos e pode ser expandida se o usuário quiser.
+
+## [2026-11-06] ingest | Profissional AI — Agentes: Estilos de Skill
+
+- **Material**: `2026-11-06_transcricao_AgentesDeIA_EstilosDeSkill.md` — aula curta de outro curso da formacao.dev (sala `profissional-ai-agentes`, trilha "Automação com Agentes de IA"). Era o único arquivo bruto novo (não rastreado no git) e sem referência na wiki.
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-11-06_source-agentes-ia-estilos-de-skill.md`
+  - Atualizado `concepts/ia-generativa.md`: na subseção "Tipos de Skill", tabela de correspondência entre os estilos desta aula e a taxonomia da IA-12 (critério por meio de execução vs. por autonomia) e pré-requisito Python + Node.js; nova questão aberta (Python em Skills); frontmatter, fontes e nota de atualização.
+  - Atualizado `entities/formacao-dev.md`: terceiro curso/trilha registrado.
+  - Atualizado `overview.md` (perspectiva) e `open-questions.md` (candidato de pesquisa: próximas aulas do curso).
+  - Atualizado `index.md` (nova fonte; contagem: 30 fontes).
+- **Conteúdo coberto**: três estilos de Skill (só modelo, determinística, mista); exemplos falados (resumir texto, inverter letras); recomendação de instalar Python e Node.js; plano de usar uma Skill pronta antes de criar a própria.
+- **Sem contradições** com fontes anteriores — reforça a taxonomia da Aula IA-12. Ressalvas: nome do instrutor não consta no arquivo (atribuição a Leonardo é inferência, não verificada); conteúdo sem demonstração.
+- **Outros brutos**: `Sem título.md` e IA-14 (`2026-07-19_transcrição-IA-14-...`) não foram abertos nesta ingestão; o lint de 2026-11-04 já registrava a IA-14 como vazia. Não verificado se continuam assim.
+- **O que permanece não resolvido**:
+  - Skill pronta usada na aula seguinte e as Skills "com código" e "sem código" prometidas (sem transcrição ainda).
+  - Harness usado pelo curso; papel de Python vs. Node.js.
+  - Linha divisória determinística × híbrida (continua subjetiva).
+
+## [2026-11-07] ingest | Profissional AI — Agentes: Usando Skills
+
+- **Material**: `2026-11-07_transcricao_AgentesDeIa_UsandoSkill.md` — segunda aula do curso Profissional AI — Agentes (formacao.dev). Nas tentativas anteriores do dia o arquivo estava vazio (0 bytes); agora tem ~12 KB. Transcrição automática ruidosa ("Cloud Code" = Claude Code etc.).
+- **O que foi feito**:
+  - Criado resumo de fonte: `wiki/sources/2026-11-07_source-agentes-ia-usando-skill.md`
+  - Atualizado `concepts/ia-generativa.md`: nova subseção "Usando e Instalando Skills Prontas" (chamada com `/`, Personalizar → Habilidades/Plugins, plugin = conector/MCP + Skills, contorno de recarregamento, variabilidade do resultado); questão "Recarregamento de Skills" com segundo relato; frontmatter, fontes e nota de atualização.
+  - Atualizado `entities/claude-code.md` (instalação de Skills pelo app desktop) e `entities/formacao-dev.md` (segunda aula).
+  - Atualizado `overview.md` e `open-questions.md` (2 novos itens: identificar a segunda ferramenta; causa do não recarregamento).
+  - Atualizado `index.md` (nova fonte; contagem: 31 fontes).
+- **Conteúdo coberto**: Skill como habilidade empacotada em comando; instalação de `skill creator` e `Slack gif creator`; Skill com arquivos Python; `Reload Skills` e contornos; plugins Gmail e computer use (conector/MCP + Skills); demos `bola.gif` e `robo.png`; reforço de que a Skill entra no contexto.
+- **Sem contradições** com fontes anteriores — confirma plugin como pacote (curso CCDV-F) e repete o sintoma de recarregamento (Ferramentas Agênticas).
+- **Pendências**: `2026-07-19_transcrição-IA-14-...` continua só com URL e título (não ingerível); `Sem título.md` foi removido do working tree (não por esta ingestão).
+- **O que permanece não resolvido**:
+  - Identidade da segunda ferramenta chamada "ChatGPT" (não verificado).
+  - Causa do não recarregamento de Skills no `/`.
+  - Segurança de Skills/plugins de terceiros com scripts e permissões (não abordada pela fonte).
+
+## [2026-11-11] update | Conceito Deep Learning
+
+- **O que foi feito**: criada a página de conceito `concepts/deep-learning.md`, pedida pelo usuário porque `ia-generativa.md` só tinha `deep-learning` como tag. Busca em `raw/` por termos em português e inglês (deep learning, aprendizado profundo, rede neural, machine learning etc.) não encontrou o termo literal; o conteúdo veio de trechos das aulas IA-01 a IA-03 (camadas, pré-treinamento, pesos, parâmetros, feed-forward).
+- **Páginas criadas ou atualizadas**: criada `concepts/deep-learning.md`; atualizados `concepts/ia-generativa.md` (link e `related_pages`), `index.md` (contagem de conceitos: 7) e `open-questions.md` (novo item).
+- **Evidência**: definição formal e taxonomia marcadas como conhecimento geral, não verificado nas fontes; ligação com alucinação marcada como interpretação.
+- **O que permanece não resolvido**: como o treinamento ajusta os pesos; fonte que defina deep learning explicitamente; aula opcional sobre Q/K/V ainda sem transcrição.
+
+## [2026-11-12] ingest | Fila de novembro: curso Profissional AI — Agentes e conteúdos de Matt Pocock
+
+- **Material**: 6 brutos do curso Profissional AI — Agentes (Criando Skill, Skill com Código, SDD, MCP, Catálogo de MCPs, Skill × MCP + imagem `agentesDeIa_SKILLvsMCP.png`) e 6 de Matt Pocock (4 legendas de shorts, legenda do vídeo "The Home Repo Pattern" e o artigo de aihero.dev, salvos em `raw/` nesta sessão com a imagem `2026-11-12_home-repo-pattern.png`). Todas as legendas são automáticas (em inglês, as de Matt); possíveis erros de nomes.
+- **Criados**: resumos `2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo`, `2026-11-07_source-agentes-ia-sdd`, `2026-11-08_source-agentes-ia-mcp`, `2026-11-08_source-agentes-ia-skill-vs-mcp`, `2026-07-16_source-matt-pocock-shorts`, `2026-11-12_source-matt-pocock-home-repo`; conceito `concepts/home-repo.md`.
+- **Atualizados**: `concepts/ia-generativa.md` (novas subseções de Skill do zero, SDD, MCP, Skill × MCP, Docs/Home Repo/Retro; dumb zone ~100k → ~150k; questões), `entities/matt-pocock.md`, `entities/formacao-dev.md`, `overview.md`, `open-questions.md`, `index.md` (37 fontes, 8 conceitos).
+- **Contradições e tensões registradas (sem sobrescrever)**: (1) Codex recarrega Skills sozinho ou não — as duas aulas do curso discordam; (2) SDD do curso (gerar sistemas a partir de specs) × Matt Pocock ("specs to code" não funciona), com sentidos diferentes de "spec"; (3) dumb zone: 100k (abril) → 150k (julho), tratada como evolução da posição; (4) `SKILL.md` × `skill.md`.
+- **Não ingeridos**: `2026-07-19_transcrição-IA-14-...` (continua só com título e URL); artigo acadêmico sobre a skill `retro` (só a legenda do short).
+- **O que permanece não resolvido**: aulas práticas de MCP e projetos do curso; segurança de MCPs e Skills de terceiros; como Matt organiza a wiki do home repo; se este repo deve virar home repo.

@@ -3,7 +3,7 @@ title: "Índice"
 type: maintenance
 status: active
 created: 2026-04-07
-updated: 2026-11-05
+updated: 2026-11-12
 tags: ["index"]
 source_files: []
 related_pages:
@@ -18,8 +18,8 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 
 ## Contagens
 
-- resumo de fonte: 29
-- página de conceito: 6
+- resumo de fonte: 37
+- página de conceito: 8
 - página de entidade: 6
 - página de síntese: 0
 - página de manutenção: 6 (index, log, overview, open-questions, lint-2026-04-28, lint-2026-11-04)
@@ -59,6 +59,14 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [2026-09-07_source-chat-ddd-express-ports-and-adapters.md](./sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md): Conversa prática (~935 KB) construindo backend Express com TypeScript usando DDD + Ports & Adapters — Entity abstrata (`tryCreate`/`create`/`restore`/`cloneWith`), UUID v7, Mapper, Repository, Composition Root e Controller desacoplado do framework. Última atualização: 2026-09-07
 - [2026-08-03_source-modelagem-dominio-48-erro-validacao.md](./sources/2026-08-03_source-modelagem-dominio-48-erro-validacao.md): Aula 48 da série Modelagem de Domínio (formacao.dev) — introdução da classe `ErroValidacao` (estende `Error` JS) como ponto de partida do modelo; atributos `codigo`/`valor`/`extras`; catálogo de constantes de erros; métodos estáticos `criar`/`lancar`; justificativa da ordem causal erro → validação → VOs → entidades. Última atualização: 2026-11-04
 - [2026-11-04_source-curso-certificacao-claude-developer-foundations.md](./sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md): Curso de certificação CCDV-F (Andrew Brown, em inglês, ~8 h) — exame (53 questões, 120 min, nota 720/1000), agente × workflow, sub agentes, MCP (tools × resources), prompt injection, parâmetros de API, custo (batch/caching), higiene de sessão, auto mode, sandbox, hooks, plugins e Agent SDK. Reescrito em formato didático (explicações, exemplos, autoteste). Leitura parcial. Última atualização: 2026-11-05
+- [2026-11-06_source-agentes-ia-estilos-de-skill.md](./sources/2026-11-06_source-agentes-ia-estilos-de-skill.md): Aula curta do curso Profissional AI — Agentes (formacao.dev) — três estilos de Skill (só modelo, determinística, mista) e pré-requisito Python + Node.js; reforça a taxonomia da IA-12. Última atualização: 2026-11-06
+- [2026-11-07_source-agentes-ia-usando-skill.md](./sources/2026-11-07_source-agentes-ia-usando-skill.md): Aula "Usando Skills" do curso Profissional AI — Agentes — instalação (Personalizar → Habilidades/Plugins), chamada com `/`, plugin = conector/MCP + Skills, demos (GIF e imagem) e contorno para Skill não recarregada. Transcrição ruidosa. Última atualização: 2026-11-07
+- [2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo.md](./sources/2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo.md): Profissional AI — Agentes, aulas 3 e 4: criar Skill do zero (`SKILL.md`, gatilhos na `description`, pastas `.claude/skills` e `.agents/skills`) e Skill com código (Node.js, determinístico × probabilístico). Última atualização: 2026-11-12
+- [2026-11-07_source-agentes-ia-sdd.md](./sources/2026-11-07_source-agentes-ia-sdd.md): Aula teórica de Spec-Driven Development — spec como checklist Markdown, sub-agentes, evidência por passo; tensão com Matt Pocock sobre "specs to code". Última atualização: 2026-11-12
+- [2026-11-08_source-agentes-ia-mcp.md](./sources/2026-11-08_source-agentes-ia-mcp.md): MCP como tomada/tradutor entre IA e aplicações, ações dos conectores, código por baixo e catálogos de MCPs prontos. Última atualização: 2026-11-12
+- [2026-11-08_source-agentes-ia-skill-vs-mcp.md](./sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md): Skill × MCP (como executar × que ferramenta acessar) e os três pilares com SDD; inclui imagem-resumo. Última atualização: 2026-11-12
+- [2026-07-16_source-matt-pocock-shorts.md](./sources/2026-07-16_source-matt-pocock-shorts.md): Quatro shorts de Matt Pocock — deletar docs (manter ADRs, glossário, navegação), dumb zone (~150k tokens), Pragmatic Programmer, skill `retro` e humano no loop. Última atualização: 2026-11-12
+- [2026-11-12_source-matt-pocock-home-repo.md](./sources/2026-11-12_source-matt-pocock-home-repo.md): Vídeo e artigo "The Home Repo Pattern" — repo único com skills, `AGENTS.md` e ponteiros para os demais repos; prompt de configuração e FAQ. Última atualização: 2026-11-12
 
 ## Conceitos
 
@@ -67,15 +75,17 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [objeto-de-valor.md](./concepts/objeto-de-valor.md): Value Object — validade por construção, imutabilidade, UUID v7 (`IdVO.generate()` vs `tryCreate()`), VOs como parâmetro de repositório, critério para manter VO vs. extrair `.value`; **ErroValidacao** como base do pipeline de validação (Modelagem de Domínio, Aula 48). Última atualização: 2026-11-04
 - [agregado.md](./concepts/agregado.md): Aggregate — coleção atômica; 1 repositório por agregado; CQS prático; métodos de transformação via clone; modelo rico; contrato de repositório (`create`/`update` explícito). Última atualização: 2026-04-27
 - [contexto-delimitado.md](./concepts/contexto-delimitado.md): Bounded Context — fronteiras de módulo, tipos de subdomínio, proibição de dependências cíclicas. Última atualização: 2026-04-20
-- [ia-generativa.md](./concepts/ia-generativa.md): IA Generativa — pipeline Transformers; system prompt e guardrails; agentes; engenharia de prompt (CORFT); context rot; Rule vs. Skill; tipos de Skill (determinística, híbrida, aberta); infraestrutura prática de Skills; Spec-Driven Development prático; **Harness** (loop de execução, compressão de contexto); **Melhores Práticas Claude Code** (hierarquia Opus/Sonnet, sessões, `/rewind`, `/goal`, sandbox); **MCP** (host/client/server); **Copilot Instructions**; AI-Driven Development (smart zone/dumb zone, HITL vs. AFK, TDD). Inclui agentes × workflows, sub agentes, prompt injection e certificação CCDV-F (nov/2026). Última atualização: 2026-11-05
+- [ia-generativa.md](./concepts/ia-generativa.md): IA Generativa — pipeline Transformers; system prompt e guardrails; agentes; engenharia de prompt (CORFT); context rot; Rule vs. Skill; tipos de Skill (determinística, híbrida, aberta); infraestrutura prática de Skills; Spec-Driven Development prático; **Harness** (loop de execução, compressão de contexto); **Melhores Práticas Claude Code** (hierarquia Opus/Sonnet, sessões, `/rewind`, `/goal`, sandbox); **MCP** (host/client/server); **Copilot Instructions**; AI-Driven Development (smart zone/dumb zone, HITL vs. AFK, TDD). Inclui agentes × workflows, sub agentes, prompt injection e certificação CCDV-F (nov/2026) e estilos de Skill + uso/instalação de Skills e plugins do curso Profissional AI. Última atualização: 2026-11-11
+- [deep-learning.md](./concepts/deep-learning.md): Deep Learning — redes de várias camadas, pré-treinamento, pesos/parâmetros e baixa interpretabilidade, montado a partir das aulas IA-01 a IA-03 (o termo não aparece literalmente nas fontes; definição formal é conhecimento geral, marcada como tal). Última atualização: 2026-11-11
+- [home-repo.md](./concepts/home-repo.md): Home Repo — repo único com skills, `AGENTS.md` e ponteiros para os demais repos, onde o agente sempre roda; escala, alternativas (monorepo, submodules) e relação com esta wiki. Última atualização: 2026-11-12
 
 ## Entidades
 
-- [formacao-dev.md](./entities/formacao-dev.md): Plataforma de ensino online; instrutor Leonardo; cursos "Arquiteto Dev: DDD + Arquitetura Limpa" e "Dev AI: Desenvolvimento com IA". Última atualização: 2026-04-27
+- [formacao-dev.md](./entities/formacao-dev.md): Plataforma de ensino online; instrutor Leonardo; cursos "Arquiteto Dev: DDD + Arquitetura Limpa", "Dev AI: Desenvolvimento com IA" e "Profissional AI — Agentes" (2 aulas ingeridas). Inclui agora criação de Skill do zero, SDD e MCP na visão do curso Profissional AI, tabela Skill × MCP e atualização da dumb zone (~150k). Última atualização: 2026-11-12
 - [matt-pocock.md](./entities/matt-pocock.md): Especialista em TypeScript e AI-Driven Development; criador do Sand Castle (biblioteca para paralelização de agentes) e Skills para Claude Code (Grill Me, PRD, TDD, improve architecture). Última atualização: 2026-04-28
 - [github-copilot.md](./entities/github-copilot.md): Assistente de IA da GitHub (Microsoft); plataforma com Code Completion, Chat (Ask/Plan/Agent), Coding Agent (background em ambiente efêmero), Code Review Agent, Instructions, MCP (host/client/server), Copilot Spaces e extensão de modernização (Java/.NET). Última atualização: 2026-05-07
 - [joao-marcos-melchiors.md](./entities/joao-marcos-melchiors.md): Proprietário da wiki; desenvolvedor TypeScript com stack Express/PostgreSQL/Docker; princípios arquiteturais e perfil de aprendizagem observados na conversa DDD+Express. Última atualização: 2026-09-07
-- [claude-code.md](./entities/claude-code.md): Ferramenta agêntica da Anthropic (harness); comandos de contexto, permissões/auto mode, sandbox, sub agentes, hooks, plugins, MCP e Agent SDK. Última atualização: 2026-11-05
+- [claude-code.md](./entities/claude-code.md): Ferramenta agêntica da Anthropic (harness); comandos de contexto, permissões/auto mode, sandbox, sub agentes, hooks, plugins, MCP e Agent SDK; instalação de Skills pelo app desktop. Última atualização: 2026-11-07
 - [andrew-brown.md](./entities/andrew-brown.md): Instrutor da ExamPro/freeCodeCamp; autor do curso de certificação Claude Developer Foundations (CCDV-F). Última atualização: 2026-11-05
 
 ## Sínteses
@@ -84,9 +94,9 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 
 ## Manutenção
 
-- [index.md](./index.md): Índice baseado em conteúdo de toda a wiki. Ponto de entrada para consultas. Última atualização: 2026-11-05
-- [log.md](./log.md): Log cronológico de ingestões, consultas, verificações e atualizações. Última atualização: 2026-11-05
-- [overview.md](./overview.md): Quadro geral do tema de pesquisa (DDD + Arq. Limpa; IA Generativa; AI-Driven Development; Claude Code/CCDV-F). Última atualização: 2026-11-05
-- [open-questions.md](./open-questions.md): Lista de questões não resolvidas. Última atualização: 2026-11-05
+- [index.md](./index.md): Índice baseado em conteúdo de toda a wiki. Ponto de entrada para consultas. Última atualização: 2026-11-07
+- [log.md](./log.md): Log cronológico de ingestões, consultas, verificações e atualizações. Última atualização: 2026-11-07
+- [overview.md](./overview.md): Quadro geral do tema de pesquisa (DDD + Arq. Limpa; IA Generativa; AI-Driven Development; Claude Code/CCDV-F). Última atualização: 2026-11-07
+- [open-questions.md](./open-questions.md): Lista de questões não resolvidas. Última atualização: 2026-11-07
 - [maintenance/lint-reports/2026-04-28_lint-completo.md](./maintenance/lint-reports/2026-04-28_lint-completo.md): Verificação completa da wiki — 28 páginas analisadas; 1 arquivo obsoleto detectado; 4 conceitos não promovidos identificados; open-questions.md vazio (50+ questões espalhadas). Última atualização: 2026-04-28
 - [maintenance/lint-reports/2026-11-04_lint-completo.md](./maintenance/lint-reports/2026-11-04_lint-completo.md): Verificação completa da wiki — 37 páginas analisadas; index.md e log.md desatualizados desde set/2026; 2 páginas ausentes do index (fonte + entidade); 2 fontes brutas não ingeridas; open-questions.md vazio. Última atualização: 2026-11-04

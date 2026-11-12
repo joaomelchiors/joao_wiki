@@ -3,7 +3,7 @@ title: "formacao.dev"
 type: entity
 status: active
 created: 2026-04-20
-updated: 2026-04-27
+updated: 2026-11-12
 tags: ["formacao-dev", "plataforma-ead", "curso", "ddd", "arquitetura", "ia-generativa"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-01-configurando.md
@@ -33,11 +33,14 @@ Plataforma de ensino online brasileira focada em desenvolvimento de software. UR
 |---|---|---|
 | **Imersão DDD + Arquitetura Limpa** | Arquiteto Dev | TypeScript, NestJS, Next.js, Turborepo, Prisma, PostgreSQL |
 | **Dev AI — Introdução ao Desenvolvimento com IA** | IA Dev | IA Generativa, Transformers, Skills, Stack Driven Development |
+| **Profissional AI — Agentes** (sala `profissional-ai-agentes`) | Automação com Agentes de IA | Skills (estilos só-modelo/determinística/híbrida), Python e Node.js como pré-requisitos; público aparentemente inclui não programadores (inferência, uma única aula ingerida) |
 
 ## Cronograma
 
 - 2026-04-20: transcrições das aulas 01–13 (Imersão DDD) ingeridas nesta wiki.
 - 2026-04-27: transcrição da aula IA-01 (Dev AI) ingerida nesta wiki.
+- 2026-11-06: primeira aula do curso Profissional AI — Agentes ("Estilos de Skill") ingerida.
+- 2026-11-07: segunda aula ("Usando Skills": instalação, `/`, plugins; demos com Claude Code e outra ferramenta) ingerida.
 
 ## Conceitos Relacionados
 
@@ -52,6 +55,12 @@ Plataforma de ensino online brasileira focada em desenvolvimento de software. UR
 
 - [Imersão DDD + Arquitetura Limpa — Série de Transcrições](../sources/2026-04-20_source-imersao-ddd-arq-limpa.md)
 - [Dev AI — Aula 01: IA Generativa](../sources/2026-04-27_source-dev-ai-ia-generativa-01.md)
+- [Agentes de IA (Profissional AI) — Estilos de Skill](../sources/2026-11-06_source-agentes-ia-estilos-de-skill.md)
+- [Agentes de IA (Profissional AI) — Usando Skills](../sources/2026-11-07_source-agentes-ia-usando-skill.md)
+- [Agentes de IA (Profissional AI) — Criando Skill e Skill com Código](../sources/2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo.md)
+- [Agentes de IA (Profissional AI) — Spec-Driven Development](../sources/2026-11-07_source-agentes-ia-sdd.md)
+- [Agentes de IA (Profissional AI) — MCP e catálogo de MCPs](../sources/2026-11-08_source-agentes-ia-mcp.md)
+- [Agentes de IA (Profissional AI) — Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md)
 
 ## Pontos de Rastreamento
 

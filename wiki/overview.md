@@ -3,7 +3,7 @@ title: "Visão Geral do Tema de Pesquisa"
 type: maintenance
 status: active
 created: 2026-04-07
-updated: 2026-11-05
+updated: 2026-11-12
 tags: ["overview"]
 source_files: []
 related_pages:
@@ -59,11 +59,15 @@ Organizar, catalogar e estruturar o conhecimento adquirido, servindo como base d
 - CQRS como padrão complementar para simplificar arquitetura (separar comandos de consultas).
 - **Grill Me, PRD, Tracer Bullets e TDD** como práticas essenciais para AI-Driven Development.
 - **HITL vs. AFK**: separação clara entre tarefas que exigem humanos (planejamento, QA, review) e tarefas automatizáveis (implementação, testes).
-- **Smart zone vs. dumb zone**: LLMs ficam progressivamente "burros" após ~100k tokens — dimensionar tarefas e limpar contexto em vez de acumular.
+- **Smart zone vs. dumb zone**: LLMs ficam progressivamente "burros" conforme o contexto cresce (~100k tokens na palestra de abril/2026; ~150k na regra prática de julho/2026, segundo o mesmo autor) — dimensionar tarefas e limpar contexto em vez de acumular.
 - **Fatias verticais** (tracer bullets) vs. horizontais: implementar end-to-end (schema + API + UI + testes) para feedback instantâneo.
 - **Livros clássicos de engenharia** (_O Programador Pragmático_, _A Filosofia do Design de Software_) continuam relevantes para instruir LLMs.
 - **Certificação Claude (CCDV-F)**: o que o exame cobre (agentes, MCP, Claude Code, custo, segurança) e como se alinha à prática já estudada.
 - **Autonomia segura**: auto mode, sandbox e permissões no Claude Code.
+- **Skills para automação (Profissional AI — Agentes)**: três estilos (só modelo, determinística, híbrida) e ambiente com Python + Node.js; checar se o curso cobre público não programador e quais harnesses usa. A 2ª aula mostra instalação via Personalizar/Plugins (plugin = conector/MCP + Skills) e usa Claude Code mais uma segunda ferramenta não identificada com certeza.
+- **Skills, SDD e MCP (Profissional AI — Agentes)**: aulas 3 a 7 ingeridas — criar Skill do zero (`SKILL.md`, gatilhos na `description`, Skill com código), SDD como checklist Markdown executado por sub-agentes e a distinção "Skill ensina o processo; MCP dá acesso às ferramentas". Pendente: aula IA-14 vazia e as aulas práticas de MCP e projetos.
+- **Home Repo (Matt Pocock)**: repo único com skills, `AGENTS.md` e ponteiros para os demais repos; avaliar uso deste repositório como home repo e a relação com o esquema "LLM wiki" — ver [Home Repo](./concepts/home-repo.md).
+- **Menos docs, mais código autoexplicativo**: ADRs, glossário e navegação fina como únicos docs que valem manter.
 
 ## Tipos de Material Preferidos
 
