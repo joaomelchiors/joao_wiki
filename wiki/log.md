@@ -678,3 +678,10 @@ Este arquivo é um log cronológico apenas para anexação. Adicione novas entra
 - **Páginas atualizadas**: `index.md` (relatório novo, 7 páginas de manutenção), `open-questions.md` (seções Crítica e Rastreamento deixaram de estar vazias), `concepts/arquitetura-limpa.md`, `entities/formacao-dev.md`, `log.md`.
 - **Resultado**: 37 de 37 fontes classificadas; 19 conceitos `active` e 3 `draft`; 2 sínteses; 0 links quebrados no corpo das páginas; nenhuma órfã inesperada. A verificação da etapa 6 cobriu só links no corpo; no frontmatter, a fonte obsoleta `transcricoes-projetoEAD` tem 6 caminhos antigos quebrados em `related_pages`, mantidos como histórico.
 - **O que permanece não resolvido**: verificar as três afirmações vindas do chat (Evans, `randomUUIDv7`, `restore`/`tryCreate`); mover a seção ErroValidacao em `objeto-de-valor.md`; revisar os quatro conceitos de fonte única `explicacao`; decidir a exceção para interpretações de uma linha; criar `concepts/cqrs.md`; citar as imagens de `raw/assets/` ainda sem referência.
+
+## [2026-11-12] query | Apostila completa da palestra Microsoft (GitHub Copilot)
+
+- **O que foi feito**: a pedido do usuário, que precisa explicar o conteúdo a um colega, as duas transcrições da palestra foram relidas na íntegra e reorganizadas em uma apostila de estudo (15 capítulos, tabelas comparativas, demos, glossário, 15 perguntas de revisão e roteiro de explicação). Blocos de interpretação do mantenedor estão marcados.
+- **Páginas criadas**: `syntheses/2026-11-12_apostila-palestra-microsoft-github-copilot.md` (`draft`, por depender de uma única fonte de fornecedor).
+- **Páginas atualizadas**: `sources/2026-05-07_source-palestra-github-copilot.md` (link para a apostila), `index.md`, `log.md`.
+- **O que permanece não resolvido**: as perguntas abertas do resumo de fonte (merge paralelo, critério do modo Auto, proxy, self-hosted runners, Spaces); demo de COBOL incompleta na gravação; comandos e limites do produto não verificados em documentação oficial.

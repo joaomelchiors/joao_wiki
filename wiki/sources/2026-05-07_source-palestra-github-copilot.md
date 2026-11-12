@@ -12,6 +12,7 @@ related_pages:
   - ../entities/github-copilot.md
   - ../concepts/ia-generativa.md
   - ../concepts/mcp.md
+  - ../syntheses/2026-11-12_apostila-palestra-microsoft-github-copilot.md
 tipo_conteudo: fornecedor
 captura: automatica
 ---
@@ -241,3 +242,4 @@ O loop `ler → planejar → agir → observar → repetir` do modo agente é o 
 
 - [github-copilot.md](../entities/github-copilot.md)
 - [ia-generativa.md](../concepts/ia-generativa.md)
+- [Apostila de estudo da palestra](../syntheses/2026-11-12_apostila-palestra-microsoft-github-copilot.md): versão longa, em capítulos, para estudar e explicar a um colega.

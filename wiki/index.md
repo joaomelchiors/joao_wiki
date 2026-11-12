@@ -107,6 +107,8 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [2026-11-12_home-repo-nesta-wiki.md](./syntheses/2026-11-12_home-repo-nesta-wiki.md): Esta wiki como home repo. É candidata natural, mas a decisão é adiar até haver projetos reais; prevê mover o esquema do `CLAUDE.md` para `docs/agents/wiki.md`. Interpretação e decisão de projeto. Última atualização: 2026-11-12
 - [2026-11-12_camadas-rule-skill-mcp-sdd.md](./syntheses/2026-11-12_camadas-rule-skill-mcp-sdd.md): **(draft)** Rule, Skill, MCP e SDD como camadas complementares (o quê, como, com que ferramenta, em que ordem). Quadro unificado do mantenedor, não presente nas fontes. Última atualização: 2026-11-12
 
+- [2026-11-12_apostila-palestra-microsoft-github-copilot.md](./syntheses/2026-11-12_apostila-palestra-microsoft-github-copilot.md): **(draft)** Apostila de estudo da palestra Microsoft/GitHub sobre Copilot: 15 capítulos (Completion, Chat, Instructions, modo agente, Coding Agent, Code Review, MCP, CLI, Spaces, Custom Agents, Modernization), demos, glossário, perguntas de revisão e roteiro para explicar a um colega. Fonte de fornecedor. Última atualização: 2026-11-12
+
 ## Manutenção
 
 - [index.md](./index.md): Índice baseado em conteúdo de toda a wiki. Ponto de entrada para consultas. Última atualização: 2026-11-12
