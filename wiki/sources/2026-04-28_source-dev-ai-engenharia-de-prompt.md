@@ -10,6 +10,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/engenharia-de-contexto.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -95,6 +96,8 @@ Se o contexto é bom, prompts simples (até narrados) funcionam. Prompts elabora
 - Demonstração ao vivo de transcrição por voz → texto direto no cursor.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Engenharia de Contexto](../concepts/engenharia-de-contexto.md).
 
 - **[ia-generativa.md](../concepts/ia-generativa.md)**: adiciona seção sobre engenharia de prompt (estrutura CORFT, meta-prompt, hierarquia prática); resolve parcialmente questão sobre Skills/Rules/Spec Driven Development.
 

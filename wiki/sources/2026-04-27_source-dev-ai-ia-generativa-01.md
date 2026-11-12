@@ -10,6 +10,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/deep-learning.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -47,6 +48,8 @@ Primeira aula da trilha "Dev AI" da formacao.dev. Explica de ponta a ponta como 
 - Aula dividida em partes — esta é a parte 1; Attention será na parte 2.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções de fundamentos citadas abaixo (Transformer, atenção, limitações) continuam em `ia-generativa.md`; ver também [Deep Learning (Aprendizado Profundo)](../concepts/deep-learning.md).
 
 - **Nova página de conceito**: [ia-generativa.md](../concepts/ia-generativa.md) — cobre fundamentos de modelos baseados em Transformer.
 - **[formacao-dev.md](../entities/formacao-dev.md)**: nova trilha "Dev AI" do mesmo instrutor e plataforma.

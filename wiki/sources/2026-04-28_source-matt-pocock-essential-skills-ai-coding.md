@@ -11,6 +11,10 @@ related_pages:
   - ../concepts/ia-generativa.md
   - ../concepts/arquitetura-limpa.md
   - ../concepts/ddd.md
+  - ../concepts/ai-driven-development.md
+  - ../concepts/engenharia-de-contexto.md
+  - ../concepts/spec-driven-development.md
+  - ../concepts/tdd.md
 tipo_conteudo: opiniao
 captura: automatica
 ---
@@ -218,6 +222,8 @@ Ideia → Grill Me (HITL) → PRD (HITL) → Issues/Kanban (HITL) → Implementa
 - **Habilidade "improve codebase architecture"**: demonstrada ao vivo; encontrou candidatos a módulos profundos (serviço de pontuação de questionários, lógica de reordenação)
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [AI-Driven Development (práticas de Matt Pocock)](../concepts/ai-driven-development.md), [Engenharia de Contexto](../concepts/engenharia-de-contexto.md), [Spec-Driven Development (SDD)](../concepts/spec-driven-development.md), [TDD (Test-Driven Development) com IA](../concepts/tdd.md).
 
 ### Conceitos afetados
 

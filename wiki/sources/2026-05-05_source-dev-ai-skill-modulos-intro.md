@@ -10,6 +10,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/tipos-de-skill.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -68,6 +69,8 @@ As duas Skills anunciadas para o capítulo são intencionalmente projetadas para
 | Skills determinísticas + híbridas são superiores para criar projetos | Implícito pela escolha do instrutor para o capítulo | Baixa (não demonstrado ainda) |
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Tipos de Skill](../concepts/tipos-de-skill.md).
 
 - **Nenhum conceito novo** para adicionar a `ia-generativa.md`.
 - Confirma e reforça a taxonomia de Skills (Aulas IA-11 e IA-12) com a perspectiva de aplicação prática iminente.

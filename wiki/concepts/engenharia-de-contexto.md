@@ -64,7 +64,9 @@ Quantas mais tokens são geradas numa única execução, mais o modelo tende a s
 **Consequência prática**: tarefas longas devem ser quebradas em tasks menores (Spec Driven Development) ou ter contexto injetado antes de cada ação (engenharia de contexto).
 
 ### Smart Zone vs. Dumb Zone
-**Restrição arquitetural dos LLMs**: ficam progressivamente "burros" à medida que tokens se acumulam.
+*Heurística de Matt Pocock (palestra Essential Skills e shorts, fontes de tipo `opiniao`). Os números de tokens são regra prática dele, não medição. A ideia geral de degradação com contexto longo converge com o "context rot" das aulas acima.*
+
+**Restrição arquitetural dos LLMs** (segundo Matt): ficam progressivamente "burros" à medida que tokens se acumulam.
 
 | Zona | Tokens | Comportamento |
 |---|---|---|

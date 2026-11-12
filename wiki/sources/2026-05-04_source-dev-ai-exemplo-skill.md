@@ -12,6 +12,7 @@ related_pages:
   - ../entities/formacao-dev.md
   - ../sources/2026-04-29_source-dev-ai-rule-skill.md
   - ../sources/2026-04-29_source-dev-ai-engenharia-de-contexto.md
+  - ../concepts/rules-e-skills.md
 tipo_conteudo: demonstrado
 captura: automatica
 ---
@@ -48,6 +49,8 @@ Aula prática do módulo "Agentes, Skills & Engenharia de Contexto" da formacao.
 - Instrutor usou Claude Code num chat separado para gerar o conteúdo inicial da Skill.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Rules e Skills](../concepts/rules-e-skills.md).
 
 - **`concepts/ia-generativa.md`**: aprofunda a seção "Rule vs. Skill" com formato concreto de Skill no Cursor (arquivo Markdown com metadados + processo); resolve parcialmente a questão "Skill na prática"; resolve parcialmente "Referência Rule→Skill por ferramenta" (Cursor).
 - Nenhuma contradição com fontes anteriores — reforça e concretiza a Aula IA-10.

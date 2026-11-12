@@ -15,6 +15,8 @@ related_pages:
   - ../concepts/ia-generativa.md
   - ./2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
   - ./2026-11-12_source-matt-pocock-home-repo.md
+  - ../concepts/ai-driven-development.md
+  - ../concepts/engenharia-de-contexto.md
 tipo_conteudo: opiniao
 captura: automatica
 ---
@@ -65,7 +67,9 @@ Legendas de quatro vídeos curtos (1 a 2 min) do canal de [Matt Pocock](../entit
 
 ## Impacto na Wiki Existente
 
-- [IA Generativa](../concepts/ia-generativa.md), "Smart Zone vs. Dumb Zone": a tabela da fonte anterior dava **~100 mil tokens** como início da dumb zone; este short atualiza para **~150 mil** (o próprio autor diz que o limite mudou em ~6 meses). Registrado como **evolução da posição**, não contradição.
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [AI-Driven Development (práticas de Matt Pocock)](../concepts/ai-driven-development.md), [Engenharia de Contexto](../concepts/engenharia-de-contexto.md).
+
+- [Engenharia de Contexto](../concepts/engenharia-de-contexto.md), "Smart Zone vs. Dumb Zone": a tabela da fonte anterior dava **~100 mil tokens** como início da dumb zone; este short atualiza para **~150 mil** (o próprio autor diz que o limite mudou em ~6 meses). Registrado como **evolução da posição**, não contradição.
 - "Doc rot" (questão aberta): este short responde em parte, com ADRs, glossário e navegação fina como docs que valem a pena manter.
 - [Matt Pocock](../entities/matt-pocock.md): novas posições e cronologia.
 
@@ -73,4 +77,4 @@ Legendas de quatro vídeos curtos (1 a 2 min) do canal de [Matt Pocock](../entit
 
 - Como medir onde começa a dumb zone para um modelo e tarefa específicos? Só há heurística.
 - Quais são exatamente as conclusões do artigo sobre a retro skill e por que Matt discorda? (artigo não ingerido)
-- Existe um limite parecido para sessões longas com compactação automática (ver [Harness](../concepts/ia-generativa.md))?
+- Existe um limite parecido para sessões longas com compactação automática (ver [Harness](../concepts/harness.md))?

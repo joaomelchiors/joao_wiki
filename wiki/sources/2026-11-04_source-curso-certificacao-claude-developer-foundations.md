@@ -14,6 +14,11 @@ related_pages:
   - ./2026-07-18_source-claude-code-melhores-praticas.md
   - ./2026-07-17_source-ferramentas-agenticas-harness.md
   - ./2026-05-07_source-palestra-github-copilot.md
+  - ../concepts/agentes-de-ia.md
+  - ../concepts/claude-api-parametros-e-custo.md
+  - ../concepts/harness.md
+  - ../concepts/mcp.md
+  - ../concepts/seguranca-de-agentes.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -169,7 +174,7 @@ O guia cita o termo sem defini-lo; o instrutor propõe uma lista (é interpreta�
 
 ## Parte 7 — MCP: tools, resources e prompts
 
-**MCP** é o protocolo para plugar fontes de dados e ações ao agente (ver detalhes e a analogia "USB-C da IA" em [ia-generativa](../concepts/ia-generativa.md)). O curso insiste em três tipos de oferta de um servidor MCP:
+**MCP** é o protocolo para plugar fontes de dados e ações ao agente (ver detalhes e a analogia "USB-C da IA" em [MCP](../concepts/mcp.md)). O curso insiste em três tipos de oferta de um servidor MCP:
 
 | Tipo | Para que serve | Exemplo *(didático)* |
 |---|---|---|
@@ -257,6 +262,8 @@ Dados externos perigosos?      → Defesa em camadas contra injection
 - **Leitura parcial**: introdução/exame, arquitetura, sub agentes, higiene de sessão, segurança, MCP, parâmetros/custo e laboratórios selecionados foram lidos; laboratórios longos de hooks, Managed Agents, AWS e Task tool foram só amostrados. Exemplos marcados *(exemplo didático)* são meus, para facilitar o entendimento.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Agentes de IA](../concepts/agentes-de-ia.md), [API do Claude: Parâmetros, stop_reason e Custo](../concepts/claude-api-parametros-e-custo.md), [Harness (infraestrutura do agente)](../concepts/harness.md), [MCP (Model Context Protocol)](../concepts/mcp.md), [Segurança de Agentes: Prompt Injection, Jailbreak e Higiene de Sessão](../concepts/seguranca-de-agentes.md).
 
 - [IA Generativa](../concepts/ia-generativa.md): seção "Arquitetura de Agentes e Certificação Claude (CCDV-F)" — resume o essencial desta página.
 - [Claude Code](../entities/claude-code.md) e [Andrew Brown](../entities/andrew-brown.md): entidades criadas a partir desta fonte.

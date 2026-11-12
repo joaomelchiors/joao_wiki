@@ -10,6 +10,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/matt-pocock.md
+  - ../concepts/melhores-praticas-claude-code.md
 tipo_conteudo: referencia
 captura: automatica
 ---
@@ -61,6 +62,8 @@ Links documentação referenciados: Melhores Práticas (`code.claude.com/docs/en
 - As práticas de gerenciamento de sessões (`/rename`, `/rewind`, `/goal`) referem-se a comandos específicos do Claude Code — verificar na documentação atual se disponíveis na versão em uso.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Melhores Práticas Operacionais do Claude Code](../concepts/melhores-praticas-claude-code.md).
 
 - **`concepts/ia-generativa.md`**: adicionar subseção **"Melhores Práticas Operacionais do Claude Code"** na seção de Harness. As práticas complementam o loop de execução e as responsabilidades do desenvolvedor já documentados — sem contradições.
 - Nenhuma entidade nova identificada. O material faz referência a um canal do YouTube (Augusto Galego) — não recorrente o suficiente para criar página de entidade.

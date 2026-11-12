@@ -10,6 +10,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/agentes-de-ia.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -76,6 +77,8 @@ Agente envia contexto → LLM decide ação → Agente executa → Observa resul
 - Números concretos: 3000-4000 linhas de código geradas como anti-pattern.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Agentes de IA](../concepts/agentes-de-ia.md).
 
 - **[ia-generativa.md](../concepts/ia-generativa.md)**: adiciona conceito de Agente como camada acima do modelo Transformer.
 

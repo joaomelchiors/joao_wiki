@@ -636,3 +636,45 @@ Este arquivo é um log cronológico apenas para anexação. Adicione novas entra
 - **Correção de caminho**: `source_files` apontava para `2026-04-27_transcrição-IA-08-ContextoRulesSkill-engenhariaDeContexto.md`, mas o arquivo real é `...IA-09...`. Corrigido em `sources/2026-04-29_source-dev-ai-engenharia-de-contexto.md`, `concepts/engenharia-de-contexto.md` e `concepts/spec-driven-development.md`.
 - **Páginas atualizadas**: os 37 resumos de fonte, os 2 conceitos acima e `wiki/log.md`.
 - **O que permanece não resolvido**: etapas 3 a 7 (auditar os 22 conceitos com base na classificação, marcar o que depende só do chat, mover interpretações do mantenedor para sínteses, pendências antigas do lint, relatório final).
+
+## [2026-11-12] update | Higienização, etapa 3: auditoria dos conceitos pela classificação das fontes
+
+- **Método**: para cada um dos 22 conceitos, foram listados os resumos de fonte linkados e o `tipo_conteudo` de cada um (script). Depois foram lidas as páginas com fontes `opiniao`, `fornecedor` ou sem fonte direta.
+- **Status alterado para `draft`**: `concepts/tdd.md` (uma fonte `opiniao`); `concepts/ai-driven-development.md` (todo o conteúdo de um único autor, com fontes principais `opiniao`; o artigo `referencia` só aparece como remissão); `concepts/deep-learning.md` (a definição é conhecimento geral, sem fonte direta). As três páginas ganharam nota de evidência, e o `index.md` passou a indicar o `draft`.
+- **Atribuições acrescentadas**: `concepts/engenharia-de-contexto.md` (smart/dumb zone apresentada como heurística de Matt Pocock); `concepts/mcp.md` (palestra marcada como `fornecedor`; benefícios atribuídos à palestra, sem dados); `concepts/tdd.md` (argumentos atribuídos a Matt).
+- **Interpretação corrigida**: em `concepts/melhores-praticas-claude-code.md`, "padrão HITL/AFK agora confirmado pela Anthropic" passou a ser convergência marcada como interpretação.
+- **Mantidos `active`**: os outros 19 conceitos têm ao menos uma fonte `demonstrado`, `explicacao` ou `referencia`. `home-repo.md` se apoia só em `referencia` (o artigo do autor) e fica `active`, com definição já atribuída a Matt; a seção de interpretação vai para síntese na etapa 5. `spec-driven-development.md` já registrava a posição de Matt como tensão atribuída.
+- **O que permanece não resolvido**: afirmações de fonte única `explicacao` em páginas com uma só fonte (`seguranca-de-agentes`, `claude-api-parametros-e-custo`, `system-prompt-e-guardrails`, `contexto-delimitado`) não foram revisadas linha a linha; ficam para o relatório de lint. Etapas 4 a 7 pendentes.
+
+## [2026-11-12] update | Higienização, etapa 4: afirmações que dependem só da conversa com LLM
+
+- **O que foi feito**: em `concepts/arquitetura-limpa.md`, `concepts/ddd.md` e `concepts/objeto-de-valor.md`, os blocos que vieram só de [`2026-09-07_source-chat-ddd-express-ports-and-adapters`](./sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md) (`conversa-llm`) receberam uma nota de origem: são decisões do projeto DDD + Express, não conceito confirmado. O conteúdo foi mantido; a mudança é só de proveniência.
+- **Convergência verificada**: a imersão confirma apenas o princípio geral (controller na camada de adaptadores, sem regra de negócio; `clone()` e `semSenha()` na entidade). `make*()`, `HttpRequest`/`HttpResponse`, o Mapper `toDomain`/`toPersistence`, `restore()`/`cloneWith()` e UUID v7 aparecem só na conversa.
+- **Marcados como não verificados**: a atribuição a Eric Evans da distinção criar × reconstituir; `crypto.randomUUIDv7()` no Node 24.16+.
+- **Inconsistência registrada**: a conversa propõe tanto `tryCreate()` chamando `restore()` quanto `restore()` delegando para `tryCreate()`. As duas foram mantidas e a questão entrou em `open-questions.md`.
+- **Tabela de VOs**: o `ID` passou a distinguir UUID v4 (imersão) de UUID v7 (projeto), em vez de "v4 → v7".
+- **Páginas atualizadas**: os 3 conceitos acima, `open-questions.md` (3 itens novos) e `log.md`.
+- **O que permanece não resolvido**: as três verificações em aberto acima; etapas 5 a 7.
+
+## [2026-11-12] update | Higienização, etapa 5: interpretações do mantenedor movidas para sínteses
+
+- **Criadas**: `syntheses/2026-11-12_home-repo-nesta-wiki.md` (`active`: decisão de adiar a transformação em home repo até haver projetos reais; esquema do `CLAUDE.md` a ser movido para `docs/agents/wiki.md`; fatos sobre o Claude Code marcados como conhecimento geral não verificado) e `syntheses/2026-11-12_camadas-rule-skill-mcp-sdd.md` (`draft`: quadro unificado Rule/Skill/MCP/SDD, que nenhuma fonte apresenta).
+- **Conceitos ajustados**: `concepts/home-repo.md` (a seção "Relação com esta wiki" virou remissão à síntese) e `concepts/mcp.md` (a interpretação passou a linkar a síntese). Os resumos `sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md` e `sources/2026-11-12_source-matt-pocock-home-repo.md` passaram a apontar para as sínteses; o primeiro também deixou de apontar para `ia-generativa.md` e aponta para `rules-e-skills.md`.
+- **Mantidas no lugar, marcadas como interpretação**: observações de uma linha em `deep-learning.md`, `skills-na-pratica.md`, `tipos-de-skill.md` e `melhores-praticas-claude-code.md`. São leituras da evidência curtas demais para uma síntese própria; exceção a registrar no relatório de lint.
+- **Também atualizado**: `index.md` (seção Sínteses, contagem 2, datas das páginas de manutenção).
+- **O que permanece não resolvido**: etapas 6 (pendências antigas do lint) e 7 (relatório final e commit).
+
+## [2026-11-12] update | Higienização, etapa 6: pendências dos lints anteriores
+
+- **Situação das ações do lint de 2026-11-04**: index e log de setembro (feitos antes), `transcricoes-projetoEAD` como `superseded` (já estava), ingestão de ModelagemDeDominio-48 e do curso CCDV-F (feitas), IA-14 em `open-questions.md` (feito), TDD promovido (feito na divisão de `ia-generativa.md`). **Feito agora**: consolidação das questões de DDD e Arquitetura Limpa em `open-questions.md` (7 itens novos). **Ainda pendente**: página própria para CQRS (prioridade baixa).
+- **Links para `ia-generativa.md` nos resumos de fonte**: 26 resumos ganharam uma nota na seção "Impacto" (ou "Páginas Relacionadas") apontando para as páginas derivadas que hoje contêm o conteúdo, definidas pelos backlinks de cada fonte. As páginas derivadas também entraram em `related_pages`. O texto histórico do impacto não foi reescrito. Nos quatro resumos de fundamentos (IA-01, IA-02, Limitações, Revolução da Atenção), a nota diz que o conteúdo continua no hub. Seis links específicos foram corrigidos direto (shorts → engenharia-de-contexto e harness; CCDV-F e aula MCP → mcp; Criando Skill → skills-na-pratica; SDD → spec-driven-development). `objetivo-das-trilhas` continua apontando para o hub, porque nenhuma página derivada a cita.
+- **Verificação**: 0 links internos quebrados na wiki inteira.
+- **Encontrado e não corrigido** (vai para o relatório): 19 imagens em `raw/assets/` não são citadas por nenhuma página da wiki; em `concepts/objeto-de-valor.md`, a seção "Classe ErroValidacao" está dentro de "Questões Não Resolvidas"; o lint de 2026-11-04 dizia que a distinção `create()`/`restore()` de Eric Evans era "consistente", mas ela vem só da conversa com LLM e não foi verificada (ver etapa 4).
+- **O que permanece não resolvido**: etapa 7 (relatório de lint e commit).
+
+## [2026-11-12] lint | Higienização, etapa 7: relatório final
+
+- **O que foi feito**: criado `maintenance/lint-reports/2026-11-12_lint-higienizacao.md`, que resume as etapas 1 a 6 e aplica as checagens novas do §9. Duas páginas órfãs foram corrigidas: `sources/2026-04-20_source-imersao-ddd-arq-limpa-qa-01.md` (agora linkada de `concepts/arquitetura-limpa.md` e `entities/formacao-dev.md`) e `sources/2026-04-28_source-dev-ai-objetivo-das-trilhas.md` (linkada de `entities/formacao-dev.md`).
+- **Páginas atualizadas**: `index.md` (relatório novo, 7 páginas de manutenção), `open-questions.md` (seções Crítica e Rastreamento deixaram de estar vazias), `concepts/arquitetura-limpa.md`, `entities/formacao-dev.md`, `log.md`.
+- **Resultado**: 37 de 37 fontes classificadas; 19 conceitos `active` e 3 `draft`; 2 sínteses; 0 links quebrados no corpo das páginas; nenhuma órfã inesperada. A verificação da etapa 6 cobriu só links no corpo; no frontmatter, a fonte obsoleta `transcricoes-projetoEAD` tem 6 caminhos antigos quebrados em `related_pages`, mantidos como histórico.
+- **O que permanece não resolvido**: verificar as três afirmações vindas do chat (Evans, `randomUUIDv7`, `restore`/`tryCreate`); mover a seção ErroValidacao em `objeto-de-valor.md`; revisar os quatro conceitos de fonte única `explicacao`; decidir a exceção para interpretações de uma linha; criar `concepts/cqrs.md`; citar as imagens de `raw/assets/` ainda sem referência.

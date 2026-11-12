@@ -12,6 +12,7 @@ related_pages:
   - ../entities/formacao-dev.md
   - ./2026-05-04_source-dev-ai-tipos-de-skill.md
   - ./2026-07-17_source-ferramentas-agenticas.md
+  - ../concepts/tipos-de-skill.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -47,6 +48,8 @@ Aula curta (~18 parágrafos de transcrição) de um **curso diferente** da forma
 - O nome do instrutor não consta no arquivo; a atribuição a Leonardo é inferência pela plataforma (formacao.dev) e pelo estilo de fala. Marcar como **não verificado**.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Tipos de Skill](../concepts/tipos-de-skill.md).
 
 - `concepts/ia-generativa.md`: acrescentar nota na subseção "Tipos de Skill" mostrando que a mesma taxonomia reaparece em outro curso, o critério alternativo (meio de execução) e o pré-requisito Python/Node.js.
 - `entities/formacao-dev.md`: registrar o **terceiro curso/trilha** ("Profissional AI — Agentes", trilha "Automação com Agentes de IA").

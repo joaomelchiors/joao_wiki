@@ -3,7 +3,7 @@ title: "Domain-Driven Design (DDD)"
 type: concept
 status: active
 created: 2026-04-20
-updated: 2026-09-07
+updated: 2026-11-12
 tags: ["ddd", "domínio", "modelagem", "padrões"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-4-modelagem.md
@@ -90,6 +90,8 @@ Domain-Driven Design é um conjunto de práticas e padrões de software cujo foc
 - **Modelos ricos vs. frameworks de ORM**: frameworks como JPA/Hibernate impõem restrições (anotações, getters obrigatórios) que dificultam modelos ricos — trade-off reconhecido.
 - **Comandos vs. Consultas (CQRS)**: modelos ricos fazem sentido para comandos (escrita); para consultas complexas, SQL direto mapeado para DTOs simples pode ser mais prático.
 
+> **Origem das quatro seções seguintes** (Entity como protocolo, `restore()` × `create()`, identidade obrigatória, invariantes universais): [conversa com LLM](../sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md) (`conversa-llm`). São **decisões do projeto DDD + Express** de João Marcos Melchiors, não confirmadas por aula ou documentação. A imersão implementa `clone()` e `semSenha()`, mas não `restore()` nem `cloneWith()`. A atribuição da distinção criar × reconstituir a Eric Evans foi feita na conversa e **não foi verificada** no livro.
+
 ### Entity como Protocolo de Ciclo de Vida
 
 A classe abstrata `Entity` pode ser enriquecida para funcionar como um **protocolo de ciclo de vida** que toda entidade do domínio segue. Operações padronizadas:
@@ -107,7 +109,7 @@ A classe abstrata `Entity` pode ser enriquecida para funcionar como um **protoco
 
 ### `restore()` vs. `create()` — Reconstituição vs. Nascimento
 
-A distinção entre criar e restaurar uma entidade é um tema discutido por Eric Evans (livro DDD):
+A distinção entre criar e restaurar uma entidade é, segundo a conversa, um tema discutido por Eric Evans no livro DDD (não verificado):
 
 - **Criar** = nascimento da entidade. O `create()` pode gerar ID, definir timestamps, emitir eventos de domínio, exigir campos obrigatórios do cadastro.
 - **Restaurar** = reconstituição de estado persistido. O `restore()` recebe dados completos (incluindo `id`, `createdAt`, `updatedAt`) e valida apenas invariantes universais.
@@ -115,6 +117,8 @@ A distinção entre criar e restaurar uma entidade é um tema discutido por Eric
 **Problema de usar sempre `create()`**: se uma nova regra (ex.: "deve aceitar termos de uso") for adicionada ao `create()`, todos os 5 milhões de usuários antigos sem essa propriedade se tornariam inválidos ao serem carregados do banco.
 
 **Recomendação prática**: iniciar com `restore()` delegando para `tryCreate()` (mesmas invariantes). Quando surgirem regras exclusivas de criação, a separação já está preparada.
+
+**Inconsistência na própria conversa (não resolvida)**: a seção "Entity como Protocolo" propõe que `tryCreate()` chame `restore()`. Esta recomendação propõe o inverso, que `restore()` delegue para `tryCreate()`. As duas formas foram mantidas. Falta saber qual delas o projeto adotou: talvez a segunda seja a etapa inicial e a primeira o destino depois que surgirem regras de criação.
 
 ### Identidade Obrigatória na Entity
 
@@ -167,4 +171,5 @@ export interface EntityProps {
 - 2026-04-27: adicionado `Provedor (Provider)` como ferramenta tática (ex.: `CriptografiaProvider` para hash de senhas) — a partir da Aula 18 (Caso de Uso 01).
 - 2026-04-27: adicionada formulação "UC como maior cliente do domínio" com os 3 pontos de acesso ao domínio (VO, Entidade, Serviço de Domínio) — a partir da Aula 19 (Caso de Uso 02).
 - 2026-04-27: adicionada referência à implementação concreta do adaptador `UsuarioPrisma` e controller NestJS — a partir da Aula 20 (Repositório de Usuário).
+- 2026-11-12: seções vindas da conversa com LLM marcadas como decisões de projeto; a atribuição a Eric Evans foi marcada como não verificada; registrada a inconsistência `restore()` ↔ `tryCreate()` (higienização, etapa 4).
 - 2026-09-07: adicionadas seções sobre Entity como protocolo de ciclo de vida (`tryCreate`/`create`/`restore`/`cloneWith`), `restore()` vs `create()` (Eric Evans), `id` obrigatório como invariante, e invariantes universais vs. regras de criação — a partir da Conversa DDD + Express + Ports & Adapters.

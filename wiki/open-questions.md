@@ -17,11 +17,12 @@ Esta página mantém questões que precisam de investigação adicional e julgam
 
 ## Crítica
 
-- Nenhuma ainda
+- Verificar as três afirmações que só a conversa com LLM sustenta: distinção criar × reconstituir atribuída a Eric Evans, `crypto.randomUUIDv7()` no Node 24.16+ e direção `restore()` ↔ `tryCreate()` (itens detalhados abaixo). Ver [lint de 2026-11-12](./maintenance/lint-reports/2026-11-12_lint-higienizacao.md).
 
 ## Rastreamento
 
-- Nenhuma ainda
+- Conceitos em `draft` aguardando segunda fonte: [TDD](./concepts/tdd.md), [AI-Driven Development](./concepts/ai-driven-development.md), [Deep Learning](./concepts/deep-learning.md); síntese [camadas Rule/Skill/MCP/SDD](./syntheses/2026-11-12_camadas-rule-skill-mcp-sdd.md).
+- Esta wiki como home repo: decisão adiada até haver projetos reais — ver [síntese](./syntheses/2026-11-12_home-repo-nesta-wiki.md).
 
 ## Candidatos de Pesquisa Futura
 
@@ -38,6 +39,19 @@ Esta página mantém questões que precisam de investigação adicional e julgam
 - Home Repo: como Matt Pocock organiza a wiki dentro do repo (vídeo prometido) e se este repositório deve virar home repo — ver [conceito](./concepts/home-repo.md).
 - Artigo acadêmico sobre a skill `retro` de Matt Pocock: ler e comparar com a posição dele (humano no loop) — ver [shorts](./sources/2026-07-16_source-matt-pocock-shorts.md).
 - Limite de passos por spec (SDD) antes do context rot: a anedota de 150–200 passos não é evidência.
+- Projeto DDD + Express (decisões vindas só da conversa com LLM): qual direção o projeto adotou entre `restore()` e `tryCreate()` (a conversa sugere as duas) — ver [DDD](./concepts/ddd.md).
+- Verificar no livro de Eric Evans a distinção criar × reconstituir atribuída a ele na conversa — ver [DDD](./concepts/ddd.md).
+- Verificar na documentação do Node se `crypto.randomUUIDv7()` existe e a partir de qual versão — ver [Objeto de Valor](./concepts/objeto-de-valor.md).
+
+### DDD e Arquitetura Limpa (consolidadas em 2026-11-12, pedido do lint de 2026-11-04)
+
+- CQS prático: a interface `usuario.queries.ts` foi mencionada na imersão, mas não implementada — ver [Arquitetura Limpa](./concepts/arquitetura-limpa.md). Relacionado: CQRS ainda não tem página própria (está espalhado em [DDD](./concepts/ddd.md) e [Agregado](./concepts/agregado.md)).
+- Mapeamento entidade ↔ banco: a imersão não mostra a conversão de VOs com Prisma; o projeto Express decidiu por um Mapper `toDomain`/`toPersistence` (só na conversa com LLM) — ver [Arquitetura Limpa](./concepts/arquitetura-limpa.md) e [Objeto de Valor](./concepts/objeto-de-valor.md).
+- Presenters/DTOs de resposta HTTP e `CriptografiaProvider` concreto com bcrypt ainda não demonstrados na imersão.
+- `Validator` com Fluent API genérico e reutilizável entre VOs — ver [DDD](./concepts/ddd.md) e [Objeto de Valor](./concepts/objeto-de-valor.md).
+- Relacionamento entre agregados (ex.: User → Group) sem acoplamento — ver [Agregado](./concepts/agregado.md).
+- Mapa de contextos e integração `auth` × `financeiro` (API, eventos ou shared kernel) — ver [Contexto Delimitado](./concepts/contexto-delimitado.md).
+- Limites de modelos ricos com ORMs (Prisma, TypeORM) e Linguagem Ubíqua com equipe e cliente em idiomas diferentes — ver [DDD](./concepts/ddd.md).
 
 ## Notas
 

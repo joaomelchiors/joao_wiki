@@ -10,6 +10,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/deep-learning.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -78,6 +79,8 @@ Continuação direta da Aula IA-01. Completa a visão geral do pipeline de model
 - Analogia com conversa humana: "o que eu falo agora tem mais relevância do que o que falei no começo" — paralelo direto com o modelo.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções de fundamentos citadas abaixo (Transformer, atenção, limitações) continuam em `ia-generativa.md`; ver também [Deep Learning (Aprendizado Profundo)](../concepts/deep-learning.md).
 
 - **[ia-generativa.md](../concepts/ia-generativa.md)**: completa o pipeline com attention, feed-forward, camada de saída, geração autorregressiva e KV-cache. Adiciona insight prático sobre importância do final do prompt. Resolve parcialmente a questão sobre Attention.
 

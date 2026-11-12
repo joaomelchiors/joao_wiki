@@ -3,7 +3,7 @@ title: "Objeto de Valor (Value Object)"
 type: concept
 status: active
 created: 2026-04-20
-updated: 2026-11-04
+updated: 2026-11-12
 tags: ["objeto-de-valor", "value-object", "ddd", "typescript", "validação", "imutabilidade"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-10-objetoDeValor.md
@@ -50,11 +50,11 @@ Um Objeto de Valor encapsula um valor e suas regras de validade, sem identidade 
 | `PersonNameVO` | Min 3 chars, max 80; sem especiais; sobrenome obrigatório | `User` (auth) |
 | `StrongPasswordVO` | Maiúscula + minúscula + especial + min 8 chars | Caso de uso de registro |
 | `HashPasswordVO` | Valida formato bcrypt | `User` (auth) — armazena senha criptografada |
-| `ID` | ~~UUID v4~~ → UUID v7; gera automaticamente se não fornecido; `isValid()` usa `uuid.validate` | Todas as entidades (shared) |
+| `ID` | UUID v4 na imersão; UUID v7 no projeto Express (decisão de projeto, ver abaixo); gera automaticamente se não fornecido; `isValid()` usa `uuid.validate` | Todas as entidades (shared) |
 
 **Nota**: `StrongPasswordVO` não é armazenado no modelo; é usado apenas no caso de uso para validar antes de criptografar. O modelo armazena `HashPasswordVO`.
 
-**Nota**: `ID` possui método estático `createHash()` que gera um novo UUID. A dependência de `uuid` pode ser substituída por `crypto.randomUUIDv7()` nativo do Node 24.16+ (vide seção UUID v7 abaixo). A lib é considerada "lib não ofensiva" — aceitável no core (vide debate em [arquitetura-limpa.md](./arquitetura-limpa.md)).
+**Nota**: `ID` possui método estático `createHash()` que gera um novo UUID. Segundo a conversa com LLM, a dependência de `uuid` pode ser substituída por `crypto.randomUUIDv7()` nativo do Node 24.16+ (não verificado na documentação do Node; ver seção UUID v7 abaixo). A lib é considerada "lib não ofensiva" — aceitável no core (vide debate em [arquitetura-limpa.md](./arquitetura-limpa.md)).
 
 **Nota (Aula 19)**: a separação `StrongPasswordVO` (UC) vs. `HashPasswordVO` (entidade) é intencional. A entidade `User` "não sabe" como a hash foi gerada — pode vir de senha forte ou fraca. A validação da força fica no UC de registro; a entidade só garante que recebe um hash válido. Isso preserva a separação de responsabilidades.
 
@@ -120,7 +120,9 @@ resultado.throwIfFailed(); // lança array com TODOS os erros se houver
 
 Isso permite que o usuário veja todos os erros de validação de uma vez, e não apenas o primeiro.
 
-### Evolução do VO ID: UUID v4 → UUID v7
+> **Origem das três seções seguintes** (UUID v7, `generate()` × `tryCreate()`, critério para extrair `.value`): [conversa com LLM](../sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md) (`conversa-llm`). São **decisões do projeto DDD + Express** de João Marcos Melchiors. A imersão usa UUID v4 com a lib `uuid` ([Aula 18](../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-01.md)). A API `crypto.randomUUIDv7()` e a versão mínima do Node **não foram verificadas** em documentação oficial. Os benefícios do UUID v7 listados são conhecimento técnico corrente, mas nesta wiki vêm só da conversa.
+
+### Evolução do VO ID: UUID v4 → UUID v7 (projeto Express)
 
 O `IdVO` evoluiu de UUID v4 para UUID v7 com geração nativa via `crypto.randomUUIDv7()` (Node 24.16+):
 
@@ -216,5 +218,6 @@ A classe estende `Error` JS com três atributos `readonly`:
 - 2026-04-23: atualizada seção do padrão Result com implementação final (API completa); questão sobre `Result.combine` marcada como resolvida — a partir da Aula 15 (Tratamento de Erros).
 - 2026-04-27: adicionado VO `ID` (UUID v4, geração automática, `createHash()`) à tabela de exemplos — a partir da Aula 18 (Caso de Uso 01).
 - 2026-04-27: clarificada separação StrongPasswordVO (UC) vs. HashPasswordVO (entidade); adicionada seção VOs como parâmetro de repositório — a partir da Aula 19 (Caso de Uso 02).
+- 2026-11-12: seções vindas da conversa com LLM marcadas como decisões de projeto; UUID v4 (imersão) e v7 (projeto) passaram a ser distinguidos na tabela; `crypto.randomUUIDv7()` marcado como não verificado (higienização, etapa 4).
 - 2026-09-07: atualizado VO ID de UUID v4 para UUID v7 (Node nativo); adicionadas seções `IdVO.generate()` vs `IdVO.tryCreate()` e critério para manter VO dentro da entidade vs. extrair `.value` — a partir da Conversa DDD + Express + Ports & Adapters.
 - 2026-11-04: adicionada seção "ErroValidacao como Base do Pipeline de Validação" com atributos, métodos de fábrica e catálogo de constantes — a partir da Aula 48 (Modelagem de Domínio, formacao.dev).

@@ -3,7 +3,7 @@ title: "Arquitetura Limpa (Clean Architecture)"
 type: concept
 status: active
 created: 2026-04-20
-updated: 2026-09-07
+updated: 2026-11-12
 tags: ["arquitetura-limpa", "camadas", "caso-de-uso", "adaptadores", "typescript"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-01-configurando.md
@@ -192,9 +192,11 @@ A classe `Result<T>` (implementada na aula 15) pertence ao módulo **shared** �
 - **Custo de separação das camadas**: o instrutor reconhece que ter camada de adaptadores separada é "burocrático", mas é um trade-off consciente em favor de organização.
 - **Chamar caso de uso diretamente do front-end vs. via adaptador**: possível chamar diretamente (ex.: em um hook React), mas normalmente passa por uma camada de adaptadores para facilitar tradução de dados.
 - **Banco de dados separado por contexto**: não obrigatório — é decisão de infraestrutura, não de domínio.
-- **Acoplamento de libs simples no domínio**: usar uma lib simples (ex.: `uuid`) diretamente no domínio pode ser aceitável — o nível de acoplamento e o risco que a lib representa devem guiar a decisão; não é dogma absoluto. O VO `ID` usa `uuid` no core (confirmado na Aula 18).
+- **Acoplamento de libs simples no domínio**: usar uma lib simples (ex.: `uuid`) diretamente no domínio pode ser aceitável — o nível de acoplamento e o risco que a lib representa devem guiar a decisão; não é dogma absoluto (resposta do instrutor na [sessão de perguntas e respostas 01](../sources/2026-04-20_source-imersao-ddd-arq-limpa-qa-01.md)). O VO `ID` usa `uuid` no core (confirmado na Aula 18).
 - **Front-end com regras de negócio**: a divisão correta não é front vs. back, mas **regras vs. framework** — separar regras puras do framework (React, NestJS, Django) permite usá-las em qualquer camada.
 - **Segurança de hash de senha**: mesmo retornando apenas o hash bcrypt (não a senha em texto), há risco de força bruta direcionada. Recomendações do instrutor: (1) armazenar credenciais em tabela separada (`usuario_credenciais`); (2) omitir a coluna de senha em todas as queries padrão do repositório; (3) entidade `User` deve ter método `semSenha()` que retorna clone sem dados sensíveis.
+
+> **Origem das quatro seções seguintes** (Composition Root, Controller desacoplado, Mapper, Repository × Mapper × Entity): [conversa com LLM](../sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md) (`conversa-llm`). São **decisões do projeto DDD + Express** de João Marcos Melchiors, não padrões confirmados por aula ou documentação. A imersão confirma só o princípio geral (o controller fica na camada de adaptadores e não tem regra de negócio; ver [Aula 20](../sources/2026-04-27_source-imersao-ddd-arq-limpa-repositorio-usuario.md)). A forma concreta (`make*()`, `HttpRequest`/`HttpResponse`, `toDomain`/`toPersistence`) aparece apenas na conversa. A imersão usa NestJS e Prisma; o projeto usa Express e PostgreSQL.
 
 ### Composition Root / Factory
 
@@ -286,4 +288,5 @@ O Mapper (`PostgresUserMapper`) possui responsabilidade única de tradução ent
 - 2026-04-27: adicionado `CriptografiaProvider` como segunda porta no diagrama; exemplo de interface com `criptografar`/`comparar`; debate de segurança de hash; questão do `PrismaUserRepository` atualizada — a partir da Aula 18 (Caso de Uso 01).
 - 2026-04-27: adicionada seção sobre input do UC (primitivos vs. VOs); instanciação de modelos na camada de adaptadores como alternativa — a partir da Aula 19 (Caso de Uso 02).
 - 2026-04-27: adicionada seção de adaptadores concretos (controller NestJS + `UsuarioPrisma` + `PrismaService`); questões do `PrismaUserRepository`, integração Prisma e controllers marcadas como resolvidas — a partir da Aula 20 (Repositório de Usuário).
+- 2026-11-12: seções vindas da conversa com LLM marcadas como decisões de projeto (higienização, etapa 4).
 - 2026-09-07: adicionadas seções sobre Composition Root / Factory (`makeXxxUseCase()`), Controller desacoplado do Express (`HttpRequest`/`HttpResponse`), Mapper como tradutor puro, e separação estado vs. operação de persistência — a partir da Conversa DDD + Express + Ports & Adapters.

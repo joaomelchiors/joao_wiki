@@ -1,9 +1,9 @@
 ---
 title: "Deep Learning (Aprendizado Profundo)"
 type: concept
-status: active
+status: draft
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-12
 tags: ["deep-learning", "redes-neurais", "pré-treinamento", "parâmetros", "pesos", "transformer", "ia-generativa"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-01-IntroducaoDesenvolvimentoIA-IaGenerativa01.md
@@ -65,4 +65,5 @@ O que as fontes dizem, e que corresponde à ideia de deep learning:
 
 ## Notas de Atualização
 
+- 2026-11-12: status passou a `draft` (higienização, etapa 3). A definição do termo é conhecimento geral, sem fonte direta na wiki; as aulas (`explicacao`) sustentam apenas a descrição da arquitetura.
 - 2026-11-11: página criada a partir de busca em `raw/` (sem ocorrência literal do termo) e leitura de trechos das aulas IA-01 a IA-03. A tag `deep-learning` de [ia-generativa.md](./ia-generativa.md) não tinha conceito associado até agora.

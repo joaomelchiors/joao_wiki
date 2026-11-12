@@ -21,13 +21,13 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - resumo de fonte: 37
 - página de conceito: 22
 - página de entidade: 6
-- página de síntese: 0
-- página de manutenção: 6 (index, log, overview, open-questions, lint-2026-04-28, lint-2026-11-04)
+- página de síntese: 2
+- página de manutenção: 7 (index, log, overview, open-questions, lint-2026-04-28, lint-2026-11-04, lint-2026-11-12)
 
 ## Páginas de Entrada
 
 - [overview.md](./overview.md): Página pai organizando os temas (DDD + Arquitetura Limpa; IA Generativa; AI-Driven Development), propósito, hipóteses e perspectivas desta wiki. Última atualização: 2026-04-28
-- [open-questions.md](./open-questions.md): Questões não resolvidas e candidatos de pesquisa. Última atualização: 2026-04-07
+- [open-questions.md](./open-questions.md): Questões não resolvidas e candidatos de pesquisa. Última atualização: 2026-11-12
 
 ## Fontes
 
@@ -86,11 +86,11 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [harness.md](./concepts/harness.md): Harness — loop de execução, compressão de contexto, responsabilidades do desenvolvedor, autonomia e isolamento. Última atualização: 2026-11-12
 - [melhores-praticas-claude-code.md](./concepts/melhores-praticas-claude-code.md): Melhores práticas operacionais do Claude Code (verificação, sessões, `/rewind`, `/goal`, sandbox). Última atualização: 2026-11-12
 - [mcp.md](./concepts/mcp.md): MCP — host/client/server, conector/tradutor, tools × resources × prompts e Skill × MCP. Última atualização: 2026-11-12
-- [ai-driven-development.md](./concepts/ai-driven-development.md): Práticas de Matt Pocock — HITL/AFK, Grill Me → PRD → issues → AFK, módulos profundos, push × pull, docs e retro. Última atualização: 2026-11-12
-- [tdd.md](./concepts/tdd.md): TDD como teto de qualidade do feedback para agentes de IA. Última atualização: 2026-11-12
+- [ai-driven-development.md](./concepts/ai-driven-development.md): **(draft: só fontes de opinião de um autor)** Práticas de Matt Pocock — HITL/AFK, Grill Me → PRD → issues → AFK, módulos profundos, push × pull, docs e retro. Última atualização: 2026-11-12
+- [tdd.md](./concepts/tdd.md): **(draft: uma fonte de opinião)** TDD como teto de qualidade do feedback para agentes de IA, segundo Matt Pocock. Última atualização: 2026-11-12
 - [seguranca-de-agentes.md](./concepts/seguranca-de-agentes.md): Prompt injection, jailbreak, defesas em camadas e higiene de sessão (CCDV-F). Última atualização: 2026-11-12
 - [claude-api-parametros-e-custo.md](./concepts/claude-api-parametros-e-custo.md): Parâmetros de amostragem, `stop_reason`, batch e prompt caching na API do Claude. Última atualização: 2026-11-12
-- [deep-learning.md](./concepts/deep-learning.md): Deep Learning — redes de várias camadas, pré-treinamento, pesos/parâmetros e baixa interpretabilidade, montado a partir das aulas IA-01 a IA-03 (o termo não aparece literalmente nas fontes; definição formal é conhecimento geral, marcada como tal). Última atualização: 2026-11-11
+- [deep-learning.md](./concepts/deep-learning.md): **(draft: definição sem fonte direta)** Deep Learning — redes de várias camadas, pré-treinamento, pesos/parâmetros e baixa interpretabilidade, montado a partir das aulas IA-01 a IA-03 (o termo não aparece literalmente nas fontes; definição formal é conhecimento geral, marcada como tal). Última atualização: 2026-11-12
 - [home-repo.md](./concepts/home-repo.md): Home Repo — repo único com skills, `AGENTS.md` e ponteiros para os demais repos, onde o agente sempre roda; escala, alternativas (monorepo, submodules) e relação com esta wiki. Última atualização: 2026-11-12
 
 ## Entidades
@@ -104,13 +104,15 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 
 ## Sínteses
 
-- Nenhuma ainda
+- [2026-11-12_home-repo-nesta-wiki.md](./syntheses/2026-11-12_home-repo-nesta-wiki.md): Esta wiki como home repo. É candidata natural, mas a decisão é adiar até haver projetos reais; prevê mover o esquema do `CLAUDE.md` para `docs/agents/wiki.md`. Interpretação e decisão de projeto. Última atualização: 2026-11-12
+- [2026-11-12_camadas-rule-skill-mcp-sdd.md](./syntheses/2026-11-12_camadas-rule-skill-mcp-sdd.md): **(draft)** Rule, Skill, MCP e SDD como camadas complementares (o quê, como, com que ferramenta, em que ordem). Quadro unificado do mantenedor, não presente nas fontes. Última atualização: 2026-11-12
 
 ## Manutenção
 
-- [index.md](./index.md): Índice baseado em conteúdo de toda a wiki. Ponto de entrada para consultas. Última atualização: 2026-11-07
-- [log.md](./log.md): Log cronológico de ingestões, consultas, verificações e atualizações. Última atualização: 2026-11-07
+- [index.md](./index.md): Índice baseado em conteúdo de toda a wiki. Ponto de entrada para consultas. Última atualização: 2026-11-12
+- [log.md](./log.md): Log cronológico de ingestões, consultas, verificações e atualizações. Última atualização: 2026-11-12
 - [overview.md](./overview.md): Quadro geral do tema de pesquisa (DDD + Arq. Limpa; IA Generativa; AI-Driven Development; Claude Code/CCDV-F). Última atualização: 2026-11-07
-- [open-questions.md](./open-questions.md): Lista de questões não resolvidas. Última atualização: 2026-11-07
+- [open-questions.md](./open-questions.md): Lista de questões não resolvidas. Última atualização: 2026-11-12
 - [maintenance/lint-reports/2026-04-28_lint-completo.md](./maintenance/lint-reports/2026-04-28_lint-completo.md): Verificação completa da wiki — 28 páginas analisadas; 1 arquivo obsoleto detectado; 4 conceitos não promovidos identificados; open-questions.md vazio (50+ questões espalhadas). Última atualização: 2026-04-28
 - [maintenance/lint-reports/2026-11-04_lint-completo.md](./maintenance/lint-reports/2026-11-04_lint-completo.md): Verificação completa da wiki — 37 páginas analisadas; index.md e log.md desatualizados desde set/2026; 2 páginas ausentes do index (fonte + entidade); 2 fontes brutas não ingeridas; open-questions.md vazio. Última atualização: 2026-11-04
+- [maintenance/lint-reports/2026-11-12_lint-higienizacao.md](./maintenance/lint-reports/2026-11-12_lint-higienizacao.md): Higienização: classificação das 37 fontes por tipo de conteúdo, 3 conceitos em draft, decisões do chat marcadas, interpretações movidas para sínteses, 0 links quebrados; pendências: verificar afirmações do chat, CQRS, seção ErroValidacao fora do lugar. Última atualização: 2026-11-12

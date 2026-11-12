@@ -1,7 +1,7 @@
 ---
 title: "AI-Driven Development (práticas de Matt Pocock)"
 type: concept
-status: active
+status: draft
 created: 2026-11-12
 updated: 2026-11-12
 tags: ["ai-driven-development", "matt-pocock", "hitl", "afk", "tracer-bullets", "ia-generativa"]
@@ -30,9 +30,11 @@ related_pages:
 
 > Página derivada de [IA Generativa](./ia-generativa.md), dividida em 2026-11-12. O conteúdo foi movido das seções originais sem reescrita substancial; o histórico de atualizações anteriores está no hub.
 
+> **Evidência**: todo o conteúdo vem de um único autor, Matt Pocock. As fontes principais (palestra e shorts) são de tipo `opiniao`; o artigo do Home Repo (`referencia`) só aparece como remissão. Tudo abaixo é método e heurística dele, com demonstrações pontuais na palestra, e não prática validada por outras fontes. Por isso o status é `draft`. Convergências com outras fontes estão indicadas onde existem (por exemplo, Opus para revisão em [Melhores Práticas do Claude Code](./melhores-praticas-claude-code.md)).
+
 ## Definição
 
-**Tese central**: "Base de código ruim = agentes de IA ruins." Fundamentos clássicos de engenharia de software continuam essenciais na era da IA.
+**Tese central** (Matt Pocock): "Base de código ruim = agentes de IA ruins." Fundamentos clássicos de engenharia de software continuam essenciais na era da IA.
 
 ## Compreensão Atual
 
@@ -181,4 +183,5 @@ If a question can be answered by exploring the codebase, explore the codebase in
 
 ## Notas de Atualização
 
+- 2026-11-12: status passou a `draft`, com nota de evidência (higienização, etapa 3).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

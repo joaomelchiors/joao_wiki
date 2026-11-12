@@ -15,6 +15,7 @@ related_pages:
   - ./2026-11-07_source-agentes-ia-usando-skill.md
   - ./2026-11-06_source-agentes-ia-estilos-de-skill.md
   - ./2026-07-17_source-ferramentas-agenticas.md
+  - ../concepts/skills-na-pratica.md
 tipo_conteudo: demonstrado
 captura: automatica
 ---
@@ -55,6 +56,8 @@ Ele cria a Skill no Claude Code e copia a pasta para a pasta equivalente do Code
 
 ## Impacto na Wiki Existente
 
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Skills na Prática (pastas, instalação e criação)](../concepts/skills-na-pratica.md).
+
 - [IA Generativa](../concepts/ia-generativa.md): nova subseção "Criando uma Skill do zero (Profissional AI — Agentes)" com o procedimento, gatilhos na `description` e Skill com código.
 - Nuance sobre nomenclatura: a wiki registra `skill.md` em minúsculas em fontes anteriores; esta fonte usa `SKILL.md` em maiúsculas. Possível variação entre ferramentas ou versões (não verificado).
 - Reforça a taxonomia de [Estilos de Skill](./2026-11-06_source-agentes-ia-estilos-de-skill.md): `curto-e-grosso` = só modelo; `inverter-texto` = determinística.
@@ -64,6 +67,6 @@ Ele cria a Skill no Claude Code e copia a pasta para a pasta equivalente do Code
 
 - O Codex recarrega Skills sozinho ou exige reinício? As duas aulas se contradizem.
 - Maiúsculas ou minúsculas em `SKILL.md`: algum efeito prático? O instrutor não testou.
-- Como o agente decide executar o script em vez de só seguir o texto (pergunta já aberta em [IA Generativa](../concepts/ia-generativa.md)).
+- Como o agente decide executar o script em vez de só seguir o texto (pergunta já aberta em [Skills na Prática](../concepts/skills-na-pratica.md)).
 - Segurança de executar scripts gerados por IA no computador do aluno: não discutida pela fonte.
 - Existe método para manter uma só cópia da Skill para as duas ferramentas? O instrutor diz que existe, mas adia a explicação ("detalhe técnico do sistema operacional").

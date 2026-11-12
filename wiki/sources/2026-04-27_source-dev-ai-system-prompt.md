@@ -10,6 +10,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/system-prompt-e-guardrails.md
 tipo_conteudo: demonstrado
 captura: automatica
 ---
@@ -91,6 +92,8 @@ O Claude revelou que seu system prompt contém:
 - LM Studio usado para demonstrar modelo sem censura.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [System Prompt e Guardrails](../concepts/system-prompt-e-guardrails.md).
 
 - **[ia-generativa.md](../concepts/ia-generativa.md)**: adiciona seção sobre System Prompt, guardrails e estrutura de mensagens da API.
 

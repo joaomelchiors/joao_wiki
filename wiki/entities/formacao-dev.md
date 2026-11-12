@@ -54,7 +54,9 @@ Plataforma de ensino online brasileira focada em desenvolvimento de software. UR
 ## Fontes Relacionadas
 
 - [Imersão DDD + Arquitetura Limpa — Série de Transcrições](../sources/2026-04-20_source-imersao-ddd-arq-limpa.md)
+- [Imersão DDD + Arquitetura Limpa — Sessão de perguntas e respostas 01](../sources/2026-04-20_source-imersao-ddd-arq-limpa-qa-01.md)
 - [Dev AI — Aula 01: IA Generativa](../sources/2026-04-27_source-dev-ai-ia-generativa-01.md)
+- [Dev AI — Objetivo das trilhas (orientação do curso; modularização como base para contexto menor)](../sources/2026-04-28_source-dev-ai-objetivo-das-trilhas.md)
 - [Agentes de IA (Profissional AI) — Estilos de Skill](../sources/2026-11-06_source-agentes-ia-estilos-de-skill.md)
 - [Agentes de IA (Profissional AI) — Usando Skills](../sources/2026-11-07_source-agentes-ia-usando-skill.md)
 - [Agentes de IA (Profissional AI) — Criando Skill e Skill com Código](../sources/2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo.md)

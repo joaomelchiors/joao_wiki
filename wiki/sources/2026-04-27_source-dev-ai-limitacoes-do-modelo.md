@@ -10,6 +10,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/deep-learning.md
 tipo_conteudo: demonstrado
 captura: automatica
 ---
@@ -75,6 +76,8 @@ Aula experimental que demonstra limitações práticas dos modelos Transformer c
 - 6800+ tokens consumidos pelo modelo 17B em tentativa falha de contagem.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções de fundamentos citadas abaixo (Transformer, atenção, limitações) continuam em `ia-generativa.md`; ver também [Deep Learning (Aprendizado Profundo)](../concepts/deep-learning.md).
 
 - **[ia-generativa.md](../concepts/ia-generativa.md)**: adiciona seção sobre limitações arquiteturais dos modelos Transformer e menciona LM Studio como ferramenta.
 

@@ -13,6 +13,7 @@ related_pages:
   - ../sources/2026-11-12_source-matt-pocock-home-repo.md
   - ../entities/matt-pocock.md
   - ./ia-generativa.md
+  - ../syntheses/2026-11-12_home-repo-nesta-wiki.md
 ---
 
 # Home Repo (repositório-casa para agentes)
@@ -30,10 +31,9 @@ Padrão descrito por [Matt Pocock](../entities/matt-pocock.md): um **repositóri
 - **Alternativas**: monorepo (melhor quando possível; o home repo cobre o caso em que não dá, por exemplo repos públicos e privados misturados), submodules (aceitáveis com 5 a 10 repos) e `~/.claude/skills` (paliativo; não é versionado pela equipe).
 - **Configuração**: o artigo traz um prompt de 4 passos (inventariar repos; inventariar material compartilhado; acordar plano; aplicar em branches novas) que só altera algo após aprovação.
 
-### Relação com esta wiki (interpretação, não vem das fontes)
+### Relação com esta wiki
 
-- Este repositório já segue o modelo de "LLM wiki" (`raw/`, `wiki/`, `CLAUDE.md` com regras) que Matt cita como parte do seu home repo. Pode ser usado como home repo acrescentando uma seção "Other Repos" ao `CLAUDE.md` e skills compartilhadas.
-- Valor esperado cresce com o número de repos que compartilham skills; com zero ou um projeto o ganho é pequeno. Começar enxuto e acrescentar ponteiros por projeto é recomendação do mantenedor desta wiki, não do autor do padrão.
+Interpretação: a aplicação do padrão a este repositório (quando adotar, novo papel do `CLAUDE.md`, começar enxuto) está na síntese [Esta wiki como home repo](../syntheses/2026-11-12_home-repo-nesta-wiki.md). Não vem das fontes.
 
 ## Debates
 
@@ -59,3 +59,4 @@ Padrão descrito por [Matt Pocock](../entities/matt-pocock.md): um **repositóri
 ## Notas de Atualização
 
 - 2026-11-12: página criada a partir do vídeo e do artigo de Matt Pocock.
+- 2026-11-12: a seção de interpretação "Relação com esta wiki" foi movida para a síntese [2026-11-12_home-repo-nesta-wiki](../syntheses/2026-11-12_home-repo-nesta-wiki.md) (higienização, etapa 5).

@@ -45,7 +45,7 @@ A Anthropic documenta ~20 melhores práticas operacionais para o Claude Code. As
 - **Checkpoints e `/rewind`**: o Claude Code mantém histórico interno; o comando `/rewind` permite voltar a um ponto anterior na conversa — útil quando a segunda metade de uma sessão longa degringolou sem precisar reverter no Git.
 
 **Hierarquia de modelos e objetivos**:
-- **Modelos por tipo de tarefa**: Opus para planejamento/arquitetura/revisão (alta alavancagem); Sonnet para implementação rotineira. Workflow documentado: Opus planeja e divide em tarefas → Sonnet implementa cada tarefa em paralelo. Alinha com o padrão HITL/AFK de Matt Pocock, agora confirmado pela Anthropic.
+- **Modelos por tipo de tarefa**: Opus para planejamento/arquitetura/revisão (alta alavancagem); Sonnet para implementação rotineira. Workflow documentado: Opus planeja e divide em tarefas → Sonnet implementa cada tarefa em paralelo. Interpretação: é parecido com o padrão HITL/AFK de [Matt Pocock](./ai-driven-development.md), mas a fonte (resumo de terceiro da documentação da Anthropic) não faz essa ligação. As duas descrições convergem; uma não confirma a outra.
 - **`/goal` para objetivos verificáveis**: para tarefas grandes com estado final claro (ex.: "CI com zero erros e testes passando"), usar `/goal` para manter o agente trabalhando de forma autônoma até atingir o objetivo.
 
 **Infraestrutura e segurança**:

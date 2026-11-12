@@ -1,7 +1,7 @@
 ---
 title: "TDD (Test-Driven Development) com IA"
 type: concept
-status: active
+status: draft
 created: 2026-11-12
 updated: 2026-11-12
 tags: ["tdd", "testes", "feedback-loop", "ai-driven-development"]
@@ -19,6 +19,8 @@ related_pages:
 
 > Página derivada de [IA Generativa](./ia-generativa.md), dividida em 2026-11-12. O conteúdo foi movido das seções originais sem reescrita substancial; o histórico de atualizações anteriores está no hub.
 
+> **Evidência**: a página se apoia numa única fonte de tipo `opiniao` (palestra de Matt Pocock). Os argumentos abaixo são posição dele, não fato verificado; por isso o status é `draft`.
+
 ## Definição
 
 Ciclo red-green-refactor guiado por testes. Na palestra de Matt Pocock, TDD é essencial para IA porque os ciclos de feedback são o teto da qualidade do que o agente produz e porque dificulta a "trapaça" de testar o que já foi implementado.
@@ -26,7 +28,7 @@ Ciclo red-green-refactor guiado por testes. Na palestra de Matt Pocock, TDD é e
 ## Compreensão Atual
 
 ### TDD (Test-Driven Development) como Essencial
-**Por que TDD é crucial para IA**:
+**Por que TDD é crucial para IA (segundo Matt Pocock)**:
 - Adiciona bons testes automaticamente
 - Dificulta "trapaça" (IA tende a fazer implementação → testes que validam o feito)
 - TDD inverte: instrumenta código antes de escrever → IA precisa fazer implementação real
@@ -38,7 +40,7 @@ Ciclo red-green-refactor guiado por testes. Na palestra de Matt Pocock, TDD é e
 2. Fazer implementação passar (green)
 3. Refatorar
 
-**Frontend**: muito difícil testar automaticamente com IA (multimodal; precisa olhos humanos). Solução: IA gera protótipos descartáveis para escolha humana.
+**Frontend** (também segundo Matt): muito difícil testar automaticamente com IA (multimodal; precisa olhos humanos). Solução: IA gera protótipos descartáveis para escolha humana.
 
 ## Fontes de Suporte
 
@@ -56,4 +58,5 @@ Ciclo red-green-refactor guiado por testes. Na palestra de Matt Pocock, TDD é e
 
 ## Notas de Atualização
 
+- 2026-11-12: status passou a `draft` e os argumentos foram atribuídos a Matt Pocock (higienização, etapa 3).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

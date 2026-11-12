@@ -24,6 +24,7 @@ related_pages:
   - ../sources/2026-11-08_source-agentes-ia-mcp.md
   - ../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md
   - ../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md
+  - ../syntheses/2026-11-12_camadas-rule-skill-mcp-sdd.md
 ---
 
 # MCP (Model Context Protocol)
@@ -37,7 +38,7 @@ Padrão aberto (2024, Anthropic) para integrar ferramentas e dados externos a ag
 ## Compreensão Atual
 
 ### MCP (Model Context Protocol) e Perspectiva Corporativa
-*(Fonte: Palestra Microsoft/GitHub para a Caixa Econômica Federal, 2026-05)*
+*(Fonte: Palestra Microsoft/GitHub para a Caixa Econômica Federal, 2026-05. Material de fornecedor (`fornecedor`): descreve o protocolo do ponto de vista do produto Copilot. A arquitetura e a autoria da Anthropic convergem com o curso CCDV-F e com as aulas do Profissional AI; os benefícios são afirmação do fornecedor.)*
 
 ### MCP — Protocolo de Integração de Ferramentas
 **MCP = "USB-C da IA"** — padrão aberto (2024, Anthropic) para integrar ferramentas externas a agentes de IA.
@@ -58,7 +59,7 @@ Padrão aberto (2024, Anthropic) para integrar ferramentas e dados externos a ag
 - **Local** (ex: Playwright): executa localmente, sem autenticação, abre browser via motor Chromium/Edge/Firefox
 - **Remoto** (ex: GitHub): requer OAuth; as permissões do MCP = permissões do usuário autenticado
 
-**Benefícios**: reduz alucinações (contexto mais preciso via dados externos em tempo real), permite compartilhar informações entre times (Jira, Zendesk, Azure), reduz tempo de integração (padrão universal).
+**Benefícios (segundo a palestra; sem dados apresentados)**: reduz alucinações (contexto mais preciso via dados externos em tempo real), permite compartilhar informações entre times (Jira, Zendesk, Azure), reduz tempo de integração (padrão universal).
 
 **Configuração no VS Code**: arquivo `.vscode/mcp.json` lista os servidores MCP. Ferramentas expostas ficam visíveis na interface da extensão.
 
@@ -84,7 +85,7 @@ Fonte: [Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md) (
 
 - **"Skill ensina o processo; MCP dá acesso às ferramentas."** Não há barreira técnica rígida (uma Skill pode integrar com sistema externo); a diferença é o propósito. Todo MCP tem código; Skill nem sempre.
 - **Skill × SDD**: a Skill é **focada** em uma tarefa; o SDD cuida do **processo de ponta a ponta**, e cada passo pode chamar uma Skill. Os três pilares: SDD = fluxo, Skill = como fazer, MCP = ferramentas externas.
-- Interpretação (não vem da fonte): Rule, Skill, MCP e SDD podem ser vistos como camadas diferentes de contexto e ação.
+- Interpretação (não vem da fonte): Rule, Skill, MCP e SDD podem ser vistos como camadas diferentes de contexto e ação. Ver a síntese [Rule, Skill, MCP e SDD como camadas](../syntheses/2026-11-12_camadas-rule-skill-mcp-sdd.md).
 
 ## Fontes de Suporte
 

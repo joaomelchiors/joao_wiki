@@ -14,6 +14,7 @@ related_pages:
   - ./2026-11-08_source-agentes-ia-mcp.md
   - ./2026-11-07_source-agentes-ia-sdd.md
   - ./2026-11-06_source-agentes-ia-estilos-de-skill.md
+  - ../concepts/mcp.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -55,8 +56,10 @@ Frase de síntese da imagem: **"Skill ensina o processo. MCP dá acesso às ferr
 
 ## Impacto na Wiki Existente
 
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [MCP (Model Context Protocol)](../concepts/mcp.md).
+
 - [IA Generativa](../concepts/ia-generativa.md): nova subseção "Skill × MCP × SDD: os três pilares (Profissional AI)" com a tabela comparativa.
-- Complementa [Rule vs. Skill](../concepts/ia-generativa.md) (Rule declarativa, Skill ativa) acrescentando o eixo MCP (integração). Interpretação: Rule/Skill/MCP/SDD formam camadas diferentes de contexto e ação; as fontes não apresentam esse quadro unificado.
+- Complementa [Rule vs. Skill](../concepts/rules-e-skills.md) (Rule declarativa, Skill ativa) acrescentando o eixo MCP (integração). Interpretação: Rule/Skill/MCP/SDD formam camadas diferentes de contexto e ação; as fontes não apresentam esse quadro unificado. Ver a síntese [Rule, Skill, MCP e SDD como camadas](../syntheses/2026-11-12_camadas-rule-skill-mcp-sdd.md).
 - Sem contradições com fontes anteriores.
 
 ## Questões Não Resolvidas

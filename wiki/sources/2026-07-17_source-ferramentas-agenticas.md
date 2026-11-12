@@ -15,6 +15,8 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/skills-na-pratica.md
+  - ../concepts/spec-driven-development.md
 tipo_conteudo: demonstrado
 captura: automatica
 ---
@@ -98,6 +100,8 @@ As primeiras cinco aulas estabelecem os fundamentos práticos de uso de Skills e
 - Aula 06: transcrição vazia — sem evidência de conteúdo
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Skills na Prática (pastas, instalação e criação)](../concepts/skills-na-pratica.md), [Spec-Driven Development (SDD)](../concepts/spec-driven-development.md).
 
 - **`concepts/ia-generativa.md`**: expandir seção de Skill com detalhes práticos de pastas (`.claude/skills/` vs `.agents/skills/`), frontmatter mínimo, gatilho implícito vs explícito, Spec-Driven Development com estrutura de pasta e checkboxes
 - Nenhuma contradição com fontes anteriores — aprofunda e concretiza o que havia sido introduzido nas Aulas IA-11 a IA-13

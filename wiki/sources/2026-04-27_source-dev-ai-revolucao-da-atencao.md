@@ -10,6 +10,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/deep-learning.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -92,6 +93,8 @@ Exemplo de mapa de atenção para token `chat`:
 - Números concretos: 768 dimensões, 12 heads, 64 por head, matrizes 768×64.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções de fundamentos citadas abaixo (Transformer, atenção, limitações) continuam em `ia-generativa.md`; ver também [Deep Learning (Aprendizado Profundo)](../concepts/deep-learning.md).
 
 - **[ia-generativa.md](../concepts/ia-generativa.md)**: resolve a questão pendente sobre detalhes matemáticos do Attention; complementa seção de Multi-Head Attention com fórmula Q×Kᵀ, projeção por head e concatenação.
 

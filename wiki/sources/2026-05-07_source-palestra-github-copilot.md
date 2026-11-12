@@ -11,6 +11,7 @@ source_files:
 related_pages:
   - ../entities/github-copilot.md
   - ../concepts/ia-generativa.md
+  - ../concepts/mcp.md
 tipo_conteudo: fornecedor
 captura: automatica
 ---
@@ -235,6 +236,8 @@ O loop `ler → planejar → agir → observar → repetir` do modo agente é o 
 - Versão de modelo mencionada: Claude Sonic 4.5/4.6
 
 ## Páginas Relacionadas
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [MCP (Model Context Protocol)](../concepts/mcp.md).
 
 - [github-copilot.md](../entities/github-copilot.md)
 - [ia-generativa.md](../concepts/ia-generativa.md)

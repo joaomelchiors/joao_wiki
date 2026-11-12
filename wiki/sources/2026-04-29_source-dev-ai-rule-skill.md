@@ -12,6 +12,7 @@ related_pages:
   - ../entities/formacao-dev.md
   - 2026-04-29_source-dev-ai-engenharia-de-contexto.md
   - 2026-04-28_source-dev-ai-engenharia-de-prompt.md
+  - ../concepts/rules-e-skills.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -54,6 +55,8 @@ Aula curta dedicada a **conceituar formalmente Rule e Skill**, os dois pilares d
 - Aula seguinte prometida: criação prática de uma Rule e uma Skill com exemplo concreto.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Rules e Skills](../concepts/rules-e-skills.md).
 
 - **`concepts/ia-generativa.md`**: atualizar seção "Rule vs. Skill" com as definições canônicas (declarativa vs. ativa), a técnica few-shot, e a relação Rule → Skill (referência interna). A nota de "não verificado" na seção atual pode ser removida.
 - Sem contradições com fontes anteriores — esta aula resolve explicitamente a questão "qual a diferença formal entre Rule e Skill?" que estava em aberto desde a Aula IA-09.

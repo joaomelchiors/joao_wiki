@@ -12,6 +12,8 @@ related_pages:
   - ../entities/formacao-dev.md
   - 2026-04-28_source-dev-ai-engenharia-de-prompt.md
   - 2026-04-28_source-dev-ai-conceito-de-agentes.md
+  - ../concepts/engenharia-de-contexto.md
+  - ../concepts/spec-driven-development.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -51,6 +53,8 @@ Aula prática sobre o conceito de **engenharia de contexto**: a arte de manipula
 - Menção a Spec Driven Development como curso futuro na plataforma.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Engenharia de Contexto](../concepts/engenharia-de-contexto.md), [Spec-Driven Development (SDD)](../concepts/spec-driven-development.md).
 
 - **`concepts/ia-generativa.md`**: expandir seção "Engenharia de Prompt e Contexto" com context rot, distinção Rule vs. Skill, e Spec Driven Development como aplicação de engenharia de contexto em escala.
 - **`overview.md`**: não requer atualização — a hipótese de engenharia de contexto como pilar já está implícita.

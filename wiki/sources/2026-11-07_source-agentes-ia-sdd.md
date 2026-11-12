@@ -14,6 +14,7 @@ related_pages:
   - ./2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo.md
   - ./2026-07-17_source-ferramentas-agenticas.md
   - ./2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
+  - ../concepts/spec-driven-development.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -48,12 +49,14 @@ Aula teórica do curso "Profissional AI — Agentes" (formacao.dev) que apresent
 
 ## Impacto na Wiki Existente
 
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Spec-Driven Development (SDD)](../concepts/spec-driven-development.md).
+
 - [IA Generativa](../concepts/ia-generativa.md): acrescenta uma visão didática de SDD às seções "Spec Driven Development como Engenharia de Contexto em Escala" e "Spec-Driven Development na Prática": spec = checklist Markdown, sub-agente como delegação, evidência por passo, e os "três pilares".
 - **Tensão com outra fonte (não resolvida)**: [Matt Pocock](../entities/matt-pocock.md) afirma em [Essential Skills](./2026-04-28_source-matt-pocock-essential-skills-ai-coding.md) que "specs to code" não funciona e que o desenvolvedor precisa controlar o código. A aula do curso sugere gerar aplicações completas a partir de specs. As duas fontes não usam "spec" no mesmo sentido: aqui a spec é uma **lista de tarefas executável**, e Matt critica especificações que substituem o código. Mantêm-se as duas posições.
 - Consistente com a descrição prática de SDD do módulo [Ferramentas Agênticas](./2026-07-17_source-ferramentas-agenticas.md) (checkboxes, paralelização com sub-agentes).
 
 ## Questões Não Resolvidas
 
-- Qual o limite de passos por spec antes do context rot? (já em aberto em [IA Generativa](../concepts/ia-generativa.md); a anedota de 150–200 passos não prova a ausência de degradação)
+- Qual o limite de passos por spec antes do context rot? (já em aberto em [Spec-Driven Development](../concepts/spec-driven-development.md); a anedota de 150–200 passos não prova a ausência de degradação)
 - Como o coordenador mantém o estado entre sub-agentes com memória limpa: pelo próprio arquivo de spec?
 - Quando um passo deve usar Skill e quando basta texto na spec? (a aula "Skill × MCP" dá a resposta conceitual: ver [resumo](./2026-11-08_source-agentes-ia-skill-vs-mcp.md))

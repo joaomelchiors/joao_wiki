@@ -14,6 +14,7 @@ related_pages:
   - ../entities/matt-pocock.md
   - ../concepts/ia-generativa.md
   - ./2026-07-16_source-matt-pocock-shorts.md
+  - ../concepts/ai-driven-development.md
 tipo_conteudo: referencia
 captura: automatica
 ---
@@ -59,10 +60,12 @@ O padrão foi consolidado na página de conceito [Home Repo](../concepts/home-re
 
 ## Impacto na Wiki Existente
 
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [AI-Driven Development (práticas de Matt Pocock)](../concepts/ai-driven-development.md), [Home Repo (repositório-casa para agentes)](../concepts/home-repo.md).
+
 - Nova página [Home Repo](../concepts/home-repo.md).
 - [IA Generativa](../concepts/ia-generativa.md): remissão ao conceito, perto de Skills e Harness.
 - [Matt Pocock](../entities/matt-pocock.md): nova contribuição e cronologia.
-- Relação com esta wiki: o repo atual usa o esquema "LLM wiki" (`raw/` + `wiki/` + `CLAUDE.md`) e já funciona como embrião de home repo. Ver análise na conversa de 2026-11-12 (interpretação, não vem das fontes).
+- Relação com esta wiki: o repo atual usa o esquema "LLM wiki" (`raw/` + `wiki/` + `CLAUDE.md`) e já funciona como embrião de home repo. Ver a síntese [Esta wiki como home repo](../syntheses/2026-11-12_home-repo-nesta-wiki.md) (interpretação, não vem das fontes).
 - Sem contradições com fontes anteriores.
 
 ## Questões Não Resolvidas

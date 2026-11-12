@@ -12,6 +12,7 @@ related_pages:
   - ../entities/formacao-dev.md
   - 2026-05-04_source-dev-ai-exemplo-skill.md
   - 2026-04-29_source-dev-ai-rule-skill.md
+  - ../concepts/tipos-de-skill.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -48,6 +49,8 @@ Aula de fechamento do capítulo "Agentes, Skills & Eng. de Contexto" da trilha D
 - Exemplo real do instrutor: script `paralelo.js` que cria git worktrees para execução paralela de agentes — classificado como caso de Skill determinística/híbrida.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Tipos de Skill](../concepts/tipos-de-skill.md).
 
 - `concepts/ia-generativa.md`: ampliar a seção de Skill com a taxonomia de três tipos; adicionar que Skills podem conter arquivos auxiliares (scripts, assets, templates).
 - Questão aberta "Skills complexas: qual estrutura de pasta para Skills com subpastas?" — **parcialmente resolvida**: a aula confirma que pasta de Skill pode conter múltiplos arquivos (scripts, assets, projetos-template); subpastas de referências continuam sem detalhamento formal.

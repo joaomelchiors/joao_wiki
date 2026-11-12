@@ -11,6 +11,7 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+  - ../concepts/harness.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -137,6 +138,8 @@ Além do harness embutido nas ferramentas, o **desenvolvedor** pode e deve adici
 - Diagramas mencionados na Parte 2: `harnessEnvolveContexoLLMeFerramentas.png` e `harnessComoSequenciaDePassos.png` (disponíveis como zip no início do curso)
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Harness (infraestrutura do agente)](../concepts/harness.md).
 
 - **`concepts/ia-generativa.md`**: adicionar nova seção sobre Harness (definição, loop de execução, compressão de contexto, responsabilidade embutida vs. do desenvolvedor); marcar questão "Harness" como resolvida; nova questão sobre MCP (prometido para próximo projeto)
 - Nenhuma contradição com fontes anteriores — aprofunda e formaliza o conceito de agentes (Aula IA-07) e o loop iterativo já documentado, agora com nome formal e detalhes de implementação

@@ -13,6 +13,7 @@ related_pages:
   - ../entities/claude-code.md
   - ./2026-11-06_source-agentes-ia-estilos-de-skill.md
   - ./2026-07-17_source-ferramentas-agenticas.md
+  - ../concepts/skills-na-pratica.md
 tipo_conteudo: demonstrado
 captura: automatica
 ---
@@ -52,6 +53,8 @@ Segunda aula do curso "Profissional AI — Agentes" (formacao.dev), continuaçã
 - Nomes de comandos e Skills (`Reload Skills`, `skill creator`, `Slack gif creator`, `imagegen`, `computer use`) podem estar levemente distorcidos pela transcrição automática; conferir na interface oficial antes de citar.
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [Skills na Prática (pastas, instalação e criação)](../concepts/skills-na-pratica.md).
 
 - `concepts/ia-generativa.md`: nova subseção sobre **uso e instalação de Skills** (Personalizar → Habilidades/Plugins; plugin = conector/MCP + Skills; filtro por `/`; recarregamento). Atualizar a questão "Recarregamento de Skills" (agora há segundo relato de instabilidade e passos de contorno).
 - `entities/claude-code.md`: registrar instalação de Skills via app desktop e relação plugin ↔ Skill ↔ MCP.

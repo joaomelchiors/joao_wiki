@@ -14,6 +14,7 @@ related_pages:
   - ./2026-11-08_source-agentes-ia-skill-vs-mcp.md
   - ./2026-05-07_source-palestra-github-copilot.md
   - ./2026-11-04_source-curso-certificacao-claude-developer-foundations.md
+  - ../concepts/mcp.md
 tipo_conteudo: explicacao
 captura: automatica
 ---
@@ -42,11 +43,13 @@ Aula introdutória sobre **MCP (Model Context Protocol)** do curso "Profissional
 
 | Afirmação | Evidência | Força |
 |---|---|---|
-| MCP foi criado pela Anthropic e virou padrão de mercado | Afirmação do instrutor; coerente com [MCP no curso CCDV-F e na palestra Microsoft](../concepts/ia-generativa.md) (padrão aberto de 2024, Anthropic) | Moderada (convergência entre fontes) |
+| MCP foi criado pela Anthropic e virou padrão de mercado | Afirmação do instrutor; coerente com [MCP no curso CCDV-F e na palestra Microsoft](../concepts/mcp.md) (padrão aberto de 2024, Anthropic) | Moderada (convergência entre fontes) |
 | MCP permite à IA agir fora do chat e integrar sistemas que não conversam | Descrição conceitual, sem demonstração | Fraca |
 | Os catálogos listados são os mais completos/oficiais ("o maior catálogo", "catálogo oficial") | Descrições da própria página de apoio; **não verificado** nesta wiki | Fraca |
 
 ## Impacto na Wiki Existente
+
+> **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [MCP (Model Context Protocol)](../concepts/mcp.md).
 
 - [IA Generativa](../concepts/ia-generativa.md): nova subseção com a visão do curso (conector, tradutor, ações, código por baixo) ao lado da arquitetura host/client/server e de Tools × Resources × Prompts já registradas. Convergência: padrão aberto da Anthropic; plugin = conector/MCP + Skills (ver [Usando Skills](./2026-11-07_source-agentes-ia-usando-skill.md)).
 - Diferença de nível: esta aula é **didática e sem a terminologia** host/client/server nem Tools/Resources/Prompts; não contradiz as fontes anteriores.
