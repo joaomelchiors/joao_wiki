@@ -44,7 +44,7 @@ Ferramenta de codificação agêntica da Anthropic, executada no terminal (e em 
 ## Relacionamentos
 
 - Comparável ao [GitHub Copilot](./github-copilot.md) (modo agente, coding agent, MCP, instructions).
-- Conceitos: Harness, Rules/Skills, MCP e Spec-Driven Development em [IA Generativa](../concepts/ia-generativa.md).
+- Conceitos: [Harness](../concepts/harness.md), [Rules e Skills](../concepts/rules-e-skills.md), [MCP](../concepts/mcp.md), [Spec-Driven Development](../concepts/spec-driven-development.md) e [Melhores Práticas](../concepts/melhores-praticas-claude-code.md); fundamentos em [IA Generativa](../concepts/ia-generativa.md).
 - Material de ensino: [Andrew Brown](./andrew-brown.md); [formacao.dev](./formacao-dev.md) usa Claude Code como uma das ferramentas do módulo de ferramentas agênticas.
 
 ## Pontos para Monitorar

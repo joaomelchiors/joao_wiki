@@ -84,7 +84,7 @@ As seguintes preferências e convicções emergiram da conversa:
 - [Arquitetura Limpa](../concepts/arquitetura-limpa.md): Ports & Adapters, Controller, Inversão de Dependência
 - [Objeto de Valor](../concepts/objeto-de-valor.md): IdVO, EmailVO, HashPasswordVO
 - [Agregado](../concepts/agregado.md): Repositório por agregado, modelo rico
-- [IA Generativa](../concepts/ia-generativa.md): Aprendizagem com LLMs, Skills, AI-Driven Development
+- [IA Generativa](../concepts/ia-generativa.md): Aprendizagem com LLMs (hub); temas derivados: [Rules e Skills](../concepts/rules-e-skills.md), [AI-Driven Development](../concepts/ai-driven-development.md)
 
 ## Fontes Relacionadas
 

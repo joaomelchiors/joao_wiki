@@ -53,7 +53,7 @@ Padrão descrito por [Matt Pocock](../entities/matt-pocock.md): um **repositóri
 
 - Como Matt organiza a wiki e as ferramentas do home repo (vídeo futuro).
 - Segurança e permissões quando o home repo reúne ferramentas com acesso a e-mail, chat e GitHub.
-- Quanto contexto o `AGENTS.md` com muitos ponteiros consome antes do trabalho começar (relação com [Smart/Dumb Zone](./ia-generativa.md)).
+- Quanto contexto o `AGENTS.md` com muitos ponteiros consome antes do trabalho começar (relação com [Smart/Dumb Zone](./engenharia-de-contexto.md)).
 - Convivência de skills do home repo com skills do próprio repo filho.
 
 ## Notas de Atualização

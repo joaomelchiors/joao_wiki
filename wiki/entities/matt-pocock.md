@@ -18,6 +18,9 @@ related_pages:
   - ../sources/2026-07-16_source-matt-pocock-shorts.md
   - ../sources/2026-11-12_source-matt-pocock-home-repo.md
   - ../concepts/ia-generativa.md
+  - ../concepts/ai-driven-development.md
+  - ../concepts/tdd.md
+  - ../concepts/engenharia-de-contexto.md
   - ../concepts/arquitetura-limpa.md
 ---
 

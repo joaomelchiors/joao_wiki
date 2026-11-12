@@ -3,7 +3,7 @@ title: "GitHub Copilot"
 type: entity
 status: active
 created: 2026-05-07
-updated: 2026-05-07
+updated: 2026-11-12
 tags: ["github-copilot", "microsoft", "github", "ferramenta", "agentes", "mcp"]
 related_pages:
   - ../sources/2026-05-07_source-palestra-github-copilot.md
@@ -106,3 +106,44 @@ Treinamento da Microsoft/GitHub para times de desenvolvimento da Caixa Econômic
 
 - [Palestra Microsoft — GitHub Copilot: Visão Geral e Aula Prática](../sources/2026-05-07_source-palestra-github-copilot.md)
 - Documentação oficial: GitHub Copilot Docs (links passados aos participantes durante a palestra)
+
+## Detalhes migrados de IA Generativa (2026-11-12)
+
+> Seções movidas de [IA Generativa](../concepts/ia-generativa.md) ao dividir a página; conteúdo original da palestra Microsoft/GitHub.
+
+### Modo Agente vs. Coding Agent: Dois Níveis de Autonomia
+Uma distinção importante observada na perspectiva corporativa do GitHub Copilot:
+
+| | **Modo Agente** (extensão) | **Coding Agent** (GitHub.com) |
+|---|---|---|
+| **Execução** | No IDE local do desenvolvedor | Ambiente efêmero no GitHub.com (GitHub Actions) |
+| **Ambiente** | Ambiente real do dev | Isolado, criado e destruido por sessão |
+| **Interação** | Interativa (IDE, tempo real) | Background / assíncrona (Mission Control) |
+| **Paralelismo** | Uma tarefa por vez | N sessões em paralelo simultaneamente |
+| **Output** | Edições locais | Pull Requests com resumo + screenshots |
+| **Segurança** | Ambiente do dev | Code Scanning (CodeQL) integrado |
+
+**Coding Agent** como "funcionário a mais": cada dev vira gerente de uma equipe de agentes especializados — agentes de teste, documentação, debugging, implementação, design rodando em paralelo.
+
+**Mission Control**: painel no GitHub.com para monitorar, interagir e acompanhar múltiplas sessões do Coding Agent em paralelo.
+
+### Copilot Instructions como Análogo Corporativo de Rules + Skills
+O GitHub Copilot (versão corporativa) usa **Instructions** como mecanismo equivalente às Rules e Skills do formacao.dev:
+
+| Conceito formacao.dev | Equiv. Copilot/GitHub | Local | Escopo |
+|---|---|---|---|
+| Rule (`.claude/rules/`) | `copilot-instructions.md` | `.github/` | Repositório inteiro, sempre aplicado |
+| Rule por contexto | `*.instructions.md` | `.github/instructions/` | Definido pelo campo `applyTo` (glob pattern) |
+| Skill (`.agents/skills/`) | `*.md` em agents folder | `.github/agents/` | Agentes customizados usando Coding Agent como motor |
+
+**Complementaridade**: instruction global + instruction específica por arquivo/diretório são **acumulativas** (não se excluem).
+
+**Prática**: dizer o que **NÃO** fazer é tão ou mais importante do que dizer o que fazer nas Instructions.
+
+**Copilot Spaces**: contexto especializado e curado compartilhável entre times (instruções + repositórios + arquivos + issues). Trazido para o IDE via MCP. Equivale funcionalmente a uma Skill de contexto de equipe.
+
+### Questões Não Resolvidas (migradas)
+
+- **Copilot Spaces vs. Copilot Instructions**: qual a linha divisória entre o que deve estar em Instructions (sempre ativo) vs. em Spaces (contextó curado compartilhado)? Quando é melhor criar um Space vs. um instruction específico por diretório?
+- **Coding Agent e conflitos de merge**: como o Coding Agent lida com conflitos quando múltiplas sessões paralelas tocam os mesmos arquivos?
+- **Self-hosted runners + Coding Agent**: como o runner acessa o código se há restrições de firewall? (mencionado como novo recurso, mas não detalhado na palestra)

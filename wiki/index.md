@@ -19,7 +19,7 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 ## Contagens
 
 - resumo de fonte: 37
-- página de conceito: 8
+- página de conceito: 22
 - página de entidade: 6
 - página de síntese: 0
 - página de manutenção: 6 (index, log, overview, open-questions, lint-2026-04-28, lint-2026-11-04)
@@ -75,7 +75,21 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [objeto-de-valor.md](./concepts/objeto-de-valor.md): Value Object — validade por construção, imutabilidade, UUID v7 (`IdVO.generate()` vs `tryCreate()`), VOs como parâmetro de repositório, critério para manter VO vs. extrair `.value`; **ErroValidacao** como base do pipeline de validação (Modelagem de Domínio, Aula 48). Última atualização: 2026-11-04
 - [agregado.md](./concepts/agregado.md): Aggregate — coleção atômica; 1 repositório por agregado; CQS prático; métodos de transformação via clone; modelo rico; contrato de repositório (`create`/`update` explícito). Última atualização: 2026-04-27
 - [contexto-delimitado.md](./concepts/contexto-delimitado.md): Bounded Context — fronteiras de módulo, tipos de subdomínio, proibição de dependências cíclicas. Última atualização: 2026-04-20
-- [ia-generativa.md](./concepts/ia-generativa.md): IA Generativa — pipeline Transformers; system prompt e guardrails; agentes; engenharia de prompt (CORFT); context rot; Rule vs. Skill; tipos de Skill (determinística, híbrida, aberta); infraestrutura prática de Skills; Spec-Driven Development prático; **Harness** (loop de execução, compressão de contexto); **Melhores Práticas Claude Code** (hierarquia Opus/Sonnet, sessões, `/rewind`, `/goal`, sandbox); **MCP** (host/client/server); **Copilot Instructions**; AI-Driven Development (smart zone/dumb zone, HITL vs. AFK, TDD). Inclui agentes × workflows, sub agentes, prompt injection e certificação CCDV-F (nov/2026) e estilos de Skill + uso/instalação de Skills e plugins do curso Profissional AI. Última atualização: 2026-11-11
+- [ia-generativa.md](./concepts/ia-generativa.md): IA Generativa (hub) — fundamentos da arquitetura Transformer (tokenização, embeddings, atenção, feed-forward, saída, temperatura, KV-cache), limitações e debates; lista os conceitos derivados. Dividida em 2026-11-12. Última atualização: 2026-11-12
+- [system-prompt-e-guardrails.md](./concepts/system-prompt-e-guardrails.md): System prompt do operador, estrutura de mensagens e guardrails (IA-05). Última atualização: 2026-11-12
+- [agentes-de-ia.md](./concepts/agentes-de-ia.md): Definição de agente, loop iterativo, agente × workflow e sub agentes. Última atualização: 2026-11-12
+- [engenharia-de-contexto.md](./concepts/engenharia-de-contexto.md): Engenharia de prompt (CORFT), meta-prompt, context rot e smart/dumb zone (~100k → ~150k tokens). Última atualização: 2026-11-12
+- [rules-e-skills.md](./concepts/rules-e-skills.md): Rule (declarativa) × Skill (ativa), formato prático no Cursor e ciclo de criação por engenharia reversa. Última atualização: 2026-11-12
+- [tipos-de-skill.md](./concepts/tipos-de-skill.md): Skills determinística, híbrida e aberta; estilos do curso Profissional AI; Skills do Capítulo 3. Última atualização: 2026-11-12
+- [skills-na-pratica.md](./concepts/skills-na-pratica.md): Pastas por ferramenta, `SKILL.md`, chamada explícita/implícita, instalação, plugins e Skill com código. Última atualização: 2026-11-12
+- [spec-driven-development.md](./concepts/spec-driven-development.md): SDD — tasks em checklist, injeção de contexto, sub-agentes, pasta `specs/` e tensão com "specs to code". Última atualização: 2026-11-12
+- [harness.md](./concepts/harness.md): Harness — loop de execução, compressão de contexto, responsabilidades do desenvolvedor, autonomia e isolamento. Última atualização: 2026-11-12
+- [melhores-praticas-claude-code.md](./concepts/melhores-praticas-claude-code.md): Melhores práticas operacionais do Claude Code (verificação, sessões, `/rewind`, `/goal`, sandbox). Última atualização: 2026-11-12
+- [mcp.md](./concepts/mcp.md): MCP — host/client/server, conector/tradutor, tools × resources × prompts e Skill × MCP. Última atualização: 2026-11-12
+- [ai-driven-development.md](./concepts/ai-driven-development.md): Práticas de Matt Pocock — HITL/AFK, Grill Me → PRD → issues → AFK, módulos profundos, push × pull, docs e retro. Última atualização: 2026-11-12
+- [tdd.md](./concepts/tdd.md): TDD como teto de qualidade do feedback para agentes de IA. Última atualização: 2026-11-12
+- [seguranca-de-agentes.md](./concepts/seguranca-de-agentes.md): Prompt injection, jailbreak, defesas em camadas e higiene de sessão (CCDV-F). Última atualização: 2026-11-12
+- [claude-api-parametros-e-custo.md](./concepts/claude-api-parametros-e-custo.md): Parâmetros de amostragem, `stop_reason`, batch e prompt caching na API do Claude. Última atualização: 2026-11-12
 - [deep-learning.md](./concepts/deep-learning.md): Deep Learning — redes de várias camadas, pré-treinamento, pesos/parâmetros e baixa interpretabilidade, montado a partir das aulas IA-01 a IA-03 (o termo não aparece literalmente nas fontes; definição formal é conhecimento geral, marcada como tal). Última atualização: 2026-11-11
 - [home-repo.md](./concepts/home-repo.md): Home Repo — repo único com skills, `AGENTS.md` e ponteiros para os demais repos, onde o agente sempre roda; escala, alternativas (monorepo, submodules) e relação com esta wiki. Última atualização: 2026-11-12
 

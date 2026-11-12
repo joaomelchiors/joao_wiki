@@ -49,7 +49,7 @@ Plataforma de ensino online brasileira focada em desenvolvimento de software. UR
 - [Objeto de Valor](../concepts/objeto-de-valor.md)
 - [Agregado](../concepts/agregado.md)
 - [Contexto Delimitado](../concepts/contexto-delimitado.md)
-- [IA Generativa](../concepts/ia-generativa.md)
+- [IA Generativa](../concepts/ia-generativa.md) (hub; temas derivados: [Rules e Skills](../concepts/rules-e-skills.md), [Tipos de Skill](../concepts/tipos-de-skill.md), [Skills na Prática](../concepts/skills-na-pratica.md), [SDD](../concepts/spec-driven-development.md), [MCP](../concepts/mcp.md), [Harness](../concepts/harness.md), [Engenharia de Contexto](../concepts/engenharia-de-contexto.md))
 
 ## Fontes Relacionadas
 
