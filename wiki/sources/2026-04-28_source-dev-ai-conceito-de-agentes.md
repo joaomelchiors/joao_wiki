@@ -3,16 +3,20 @@ title: "Dev AI — Aula 07: Conceito de Agentes de IA"
 type: source
 status: active
 created: 2026-04-28
-updated: 2026-04-28
+updated: 2026-11-12
 tags: ["agentes", "llm", "orquestrador", "ferramentas", "ai-driven-development"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-07-ContextoRulesSkill-conceitoDeAgentes.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula 07: Conceito de Agentes de IA
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula conceitual curta; nenhuma execução.
 
 ## Resumo
 

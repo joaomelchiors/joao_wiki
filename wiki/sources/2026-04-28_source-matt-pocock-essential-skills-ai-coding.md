@@ -3,7 +3,7 @@ title: "Essential Skills for AI Coding from Planning to Production"
 type: source
 status: active
 created: 2026-04-28
-updated: 2026-04-28
+updated: 2026-11-12
 tags: ["ai-driven-development", "arquitetura", "tdd", "modularizacao"]
 source_files:
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
@@ -11,6 +11,8 @@ related_pages:
   - ../concepts/ia-generativa.md
   - ../concepts/arquitetura-limpa.md
   - ../concepts/ddd.md
+tipo_conteudo: opiniao
+captura: automatica
 ---
 
 # Essential Skills for AI Coding from Planning to Production
@@ -18,6 +20,8 @@ related_pages:
 **Autor**: Matt Pocock ([@mattpocockuk](https://x.com/mattpocockuk))  
 **Fonte**: [YouTube - Essential Skills for AI Coding](https://www.youtube.com/watch?v=-QFHIoCo-Ko)  
 **Contexto**: Palestra técnica sobre desenvolvimento com IA, com foco em práticas de engenharia de software e arquitetura para maximizar a eficácia de agentes de IA.
+
+**Classificação** (`tipo_conteudo: opiniao`, `captura: automatica`): palestra de um praticante sobre o próprio método; tem demonstrações pontuais (Sand Castle, Skills), mas o conteúdo dominante é experiência e posição pessoal. Legenda em inglês.
 
 ## Resumo
 

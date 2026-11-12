@@ -3,16 +3,20 @@ title: "Dev AI — Aula 05: System Prompt e Guardrails"
 type: source
 status: active
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-11-12
 tags: ["ia-generativa", "system-prompt", "guardrails", "segurança", "api", "prompt-engineering"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-05-IntroducaoDesenvolvimentoIA-systemPrompt.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Dev AI — Aula 05: System Prompt e Guardrails
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): demonstra ao vivo a diferença entre modelos comerciais e locais diante do system prompt; parte é explicação.
 
 ## Resumo
 

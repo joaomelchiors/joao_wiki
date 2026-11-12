@@ -14,9 +14,13 @@ related_pages:
   - ./2026-11-07_source-agentes-ia-criando-skill-e-skill-com-codigo.md
   - ./2026-07-17_source-ferramentas-agenticas.md
   - ./2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Agentes de IA (Profissional AI) — Spec-Driven Development (aula teórica)
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula teórica; a prática fica para a aula seguinte. Contém uma anedota não verificável.
 
 ## Resumo
 

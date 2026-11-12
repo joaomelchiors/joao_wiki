@@ -3,7 +3,7 @@ title: "Transcrições Projeto EAD - Imersão DDD e Arquitetura Limpa"
 type: source
 status: superseded
 created: 2026-04-20
-updated: 2026-04-20
+updated: 2026-11-12
 tags: ["ddd", "arquitetura-limpa", "modelagem", "typescript"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-01-configurando.md
@@ -27,6 +27,8 @@ related_pages:
   - ./concepts/entidade.md
   - ./concepts/agregado.md
   - ./concepts/caso-de-uso.md
+tipo_conteudo: obsoleta
+captura: automatica
 ---
 
 # Transcrições Projeto EAD - Imersão DDD e Arquitetura Limpa
@@ -34,6 +36,8 @@ related_pages:
 **Fonte:** Curso "Imersão DDD e Arquitetura Limpa" - Formação.dev  
 **Instrutor:** Leonardo Leitão  
 **Formato:** 14 transcrições de aulas em vídeo
+
+**Classificação** (`tipo_conteudo: obsoleta`, `captura: automatica`): substituída por [2026-04-20_source-imersao-ddd-arq-limpa.md](./2026-04-20_source-imersao-ddd-arq-limpa.md); mantida como histórico.
 
 ## Resumo do Material
 

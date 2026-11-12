@@ -3,7 +3,7 @@ title: "Curso de Certificação Claude Certified Developer Foundations (CCDV-F)"
 type: source
 status: active
 created: 2026-11-04
-updated: 2026-11-05
+updated: 2026-11-12
 tags: ["claude-code", "certificacao", "agentes", "mcp", "seguranca", "anthropic", "andrew-brown", "prompt-injection", "hooks", "sub-agentes", "agent-sdk", "didatico"]
 source_files:
   - raw/sources/2026-11-04_Curso_Certificacao_ClaudeCode.md
@@ -14,11 +14,15 @@ related_pages:
   - ./2026-07-18_source-claude-code-melhores-praticas.md
   - ./2026-07-17_source-ferramentas-agenticas-harness.md
   - ./2026-05-07_source-palestra-github-copilot.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Curso de Certificação Claude Certified Developer Foundations (CCDV-F)
 
 > **Como ler esta página**: o curso original é em inglês (~8 h, transcrição automática). Aqui ele foi reescrito em português **como material de estudo**: cada ideia vem com *o que é*, *por que existe*, *um exemplo* e *o erro comum*. Ao final há perguntas para você se testar. Quando algo é **analogia ou exemplo meu** (não do instrutor), está marcado como *(exemplo didático)*. A leitura da fonte foi parcial — ver "Notas de Evidência".
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): curso de certificação, majoritariamente explicativo, com demonstrações pontuais e trechos de opinião do instrutor (já marcados como tal). Legenda em inglês.
 
 ## Resumo
 

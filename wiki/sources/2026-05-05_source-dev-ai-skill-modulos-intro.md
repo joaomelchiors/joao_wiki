@@ -3,13 +3,15 @@ title: "Dev AI — Aula IA-13: Skill e Módulos — Introdução ao Capítulo"
 type: source
 status: active
 created: 2026-05-05
-updated: 2026-05-05
+updated: 2026-11-12
 tags: ["dev-ai", "skills", "modularização", "formacao-dev"]
 source_files:
   - raw/sources/2026-05-04_transcrição-IA-13-SkillModulos-IntroducaoEModulos.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula IA-13: Skill e Módulos — Introdução ao Capítulo
@@ -18,6 +20,8 @@ related_pages:
 **Curso**: Dev AI (formacao.dev) — Capítulo 3: "Skill e Módulos"  
 **Instrutor**: Leonardo (Léo)  
 **URL**: https://escola.formacao.dev/ia-dev/sala/agentes-skills-eng-ctx?aula=223f70b0-ba30-4763-9531-191237da0418
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula de orientação do capítulo; quase nenhum conteúdo técnico.
 
 ## Resumo
 

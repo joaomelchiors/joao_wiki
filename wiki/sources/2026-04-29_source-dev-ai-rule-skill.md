@@ -3,7 +3,7 @@ title: "Dev AI — Aula IA-10: Rule vs. Skill — Definições Canônicas"
 type: source
 status: active
 created: 2026-04-29
-updated: 2026-04-29
+updated: 2026-11-12
 tags: ["ia-generativa", "rules", "skills", "engenharia-de-contexto", "few-shot", "ai-driven-development"]
 source_files:
   - raw/sources/2026-04-27_transcrição-IA-10-ContextoRulesSkill-ruleSkill.md
@@ -12,12 +12,16 @@ related_pages:
   - ../entities/formacao-dev.md
   - 2026-04-29_source-dev-ai-engenharia-de-contexto.md
   - 2026-04-28_source-dev-ai-engenharia-de-prompt.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula IA-10: Rule vs. Skill — Definições Canônicas
 
 **Fonte**: `raw/sources/2026-04-27_transcrição-IA-10-ContextoRulesSkill-ruleSkill.md`  
 **Plataforma**: [formacao.dev](https://escola.formacao.dev) — trilha Dev AI, módulo "Agentes, Skills & Engenharia de Contexto"
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula de definições (Rule × Skill); nenhuma execução.
 
 ## Resumo
 

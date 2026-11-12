@@ -15,9 +15,13 @@ related_pages:
   - ../concepts/ia-generativa.md
   - ./2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
   - ./2026-11-12_source-matt-pocock-home-repo.md
+tipo_conteudo: opiniao
+captura: automatica
 ---
 
 # Matt Pocock — Quatro shorts: docs, dumb zone, Pragmatic Programmer e retro skill
+
+**Classificação** (`tipo_conteudo: opiniao`, `captura: automatica`): quatro vídeos curtos (1 a 2 min) com posições e heurísticas pessoais; nenhuma demonstração. Legendas em inglês.
 
 ## Resumo
 

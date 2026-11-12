@@ -14,9 +14,13 @@ related_pages:
   - ./2026-11-08_source-agentes-ia-mcp.md
   - ./2026-11-07_source-agentes-ia-sdd.md
   - ./2026-11-06_source-agentes-ia-estilos-de-skill.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Agentes de IA (Profissional AI) — Skill × MCP (e SDD): os três pilares
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula conceitual com imagem-resumo; nenhuma execução.
 
 ## Resumo
 

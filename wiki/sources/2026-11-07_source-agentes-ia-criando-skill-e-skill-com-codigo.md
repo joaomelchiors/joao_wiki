@@ -15,9 +15,13 @@ related_pages:
   - ./2026-11-07_source-agentes-ia-usando-skill.md
   - ./2026-11-06_source-agentes-ia-estilos-de-skill.md
   - ./2026-07-17_source-ferramentas-agenticas.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Agentes de IA (Profissional AI) — Criando uma Skill do zero e Skill com Código
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): cria e executa duas Skills ao vivo no Claude Code e no Codex.
 
 ## Resumo
 

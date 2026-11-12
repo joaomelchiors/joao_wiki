@@ -3,7 +3,7 @@ title: "Imersão DDD + Arquitetura Limpa — Aula 16: Arquitetura Hexagonal"
 type: source
 status: active
 created: 2026-04-23
-updated: 2026-04-23
+updated: 2026-11-12
 tags: ["arquitetura-hexagonal", "ports-and-adapters", "repositório", "caso-de-uso", "cqs", "typescript"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-16-arquitetura-hexagonal.md
@@ -13,9 +13,13 @@ related_pages:
   - ../concepts/agregado.md
   - ../entities/formacao-dev.md
   - ./2026-04-20_source-imersao-ddd-arq-limpa.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Imersão DDD + Arquitetura Limpa — Aula 16: Arquitetura Hexagonal
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): aula com implementação ao vivo de portas e adaptadores no projeto.
 
 ## Resumo
 

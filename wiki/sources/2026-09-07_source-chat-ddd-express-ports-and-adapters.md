@@ -3,7 +3,7 @@ title: "Conversa DDD + Express + Ports & Adapters"
 type: source
 status: active
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-11-12
 tags: ["ddd", "express", "ports-and-adapters", "typescript", "clean-architecture", "docker", "postgresql", "aprendizagem"]
 source_files:
   - raw/sources/2026-09-07_chat-DDD-Express-PortsAndAdapters.md
@@ -14,9 +14,13 @@ related_pages:
   - ../concepts/agregado.md
   - ../entities/joao-marcos-melchiors.md
   - ../entities/formacao-dev.md
+tipo_conteudo: conversa-llm
+captura: manual
 ---
 
 # Conversa DDD + Express + Ports & Adapters
+
+**Classificação** (`tipo_conteudo: conversa-llm`, `captura: manual`): conversa entre João Marcos Melchiors e um LLM; registra decisões tomadas naquele projeto e o aprendizado do autor, mas não confirma conceitos sozinha. Texto digitado, sem transcrição.
 
 ## Resumo
 

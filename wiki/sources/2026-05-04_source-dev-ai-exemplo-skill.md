@@ -3,7 +3,7 @@ title: "Dev AI — Aula 11: Exemplo Prático de Skill (Cursor)"
 type: source
 status: active
 created: 2026-05-04
-updated: 2026-05-04
+updated: 2026-11-12
 tags: ["skill", "rule", "cursor", "engenharia-de-contexto", "ai-driven-development", "few-shot"]
 source_files:
   - raw/sources/2026-05-04_transcrição-IA-11-ContextoRulesSkill-exemploSkill.md
@@ -12,9 +12,13 @@ related_pages:
   - ../entities/formacao-dev.md
   - ../sources/2026-04-29_source-dev-ai-rule-skill.md
   - ../sources/2026-04-29_source-dev-ai-engenharia-de-contexto.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Dev AI — Aula 11: Exemplo Prático de Skill (Cursor)
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): cria e executa uma Skill ao vivo no Cursor.
 
 ## Resumo
 

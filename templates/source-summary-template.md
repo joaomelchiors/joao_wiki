@@ -8,6 +8,8 @@ tags: []
 source_files:
   - raw/sources/<source-file>
 related_pages: []
+tipo_conteudo: demonstrado | explicacao | opiniao | fornecedor | referencia | conversa-llm | obsoleta
+captura: automatica | manual
 ---
 
 # {{Título do Material}}
@@ -15,6 +17,8 @@ related_pages: []
 ## Resumo
 
 Resuma o que este material abrange em 3 a 5 linhas.
+
+**Classificação**: explique em uma linha por que este `tipo_conteudo` (e, se for o caso, a mistura de tipos). Se a captura for automática, anote ruídos conhecidos (nomes próprios trocados etc.).
 
 ## Pontos-Chave
 

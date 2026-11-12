@@ -3,7 +3,7 @@ title: "Imersão DDD + Arquitetura Limpa — Sessão Q&A 01"
 type: source
 status: active
 created: 2026-04-20
-updated: 2026-04-20
+updated: 2026-11-12
 tags: ["ddd", "arquitetura-limpa", "inversão-de-dependência", "serviço-de-domínio", "caso-de-uso", "objeto-de-valor", "typescript", "qa"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-14-perguntas&respostas-01.md
@@ -13,9 +13,13 @@ related_pages:
   - ../concepts/arquitetura-limpa.md
   - ../concepts/objeto-de-valor.md
   - ../entities/formacao-dev.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Imersão DDD + Arquitetura Limpa — Sessão Q&A 01
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): sessão de perguntas e respostas: o instrutor responde e argumenta, sem implementar código na sessão.
 
 ## Resumo
 

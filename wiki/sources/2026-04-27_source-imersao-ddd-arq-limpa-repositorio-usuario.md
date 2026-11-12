@@ -3,7 +3,7 @@ title: "Imersão DDD + Arq. Limpa — Aula 20: Repositório de Usuário (Adaptad
 type: source
 status: active
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-11-12
 tags: ["ddd", "adaptador", "prisma", "nestjs", "controller", "repositório", "typescript"]
 source_files:
   - raw/sources/2026-04-21_transcrição-projetoEAD-20-repositorio_usuario.md
@@ -12,9 +12,13 @@ related_pages:
   - ../concepts/arquitetura-limpa.md
   - ../concepts/agregado.md
   - ../entities/formacao-dev.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Imersão DDD + Arq. Limpa — Aula 20: Repositório de Usuário (Adaptador Prisma + Controller NestJS)
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): implementação ao vivo do adaptador de repositório com Prisma.
 
 ## Resumo
 

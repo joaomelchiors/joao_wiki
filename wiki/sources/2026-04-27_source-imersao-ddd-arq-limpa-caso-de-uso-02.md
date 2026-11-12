@@ -3,7 +3,7 @@ title: "Imersão DDD + Arq. Limpa — Aula 19: Caso de Uso 02 (Registrar Usuári
 type: source
 status: active
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-11-12
 tags: ["ddd", "caso-de-uso", "modelo-rico", "erros", "repositório", "typescript"]
 source_files:
   - raw/sources/2026-04-21_transcrição-projetoEAD-19-casoDeUso-02.md
@@ -13,9 +13,13 @@ related_pages:
   - ../concepts/objeto-de-valor.md
   - ../concepts/agregado.md
   - ../entities/formacao-dev.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Imersão DDD + Arq. Limpa — Aula 19: Caso de Uso 02 (Registrar Usuário — continuação)
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): refinamento ao vivo do caso de uso.
 
 ## Resumo
 

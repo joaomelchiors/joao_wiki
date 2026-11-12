@@ -14,9 +14,13 @@ related_pages:
   - ./2026-11-08_source-agentes-ia-skill-vs-mcp.md
   - ./2026-05-07_source-palestra-github-copilot.md
   - ./2026-11-04_source-curso-certificacao-claude-developer-foundations.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Agentes de IA (Profissional AI) — MCP e catálogo de MCPs prontos
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula conceitual sem implementação; o catálogo de MCPs anexo é texto escrito (seria `referencia`, captura manual).
 
 ## Resumo
 

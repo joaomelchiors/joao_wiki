@@ -3,16 +3,20 @@ title: "Dev AI — Aula 01: IA Generativa — Tokenização e Embeddings"
 type: source
 status: active
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-11-12
 tags: ["ia-generativa", "transformer", "tokenização", "embeddings", "deep-learning"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-01-IntroducaoDesenvolvimentoIA-IaGenerativa01.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula 01: IA Generativa — Tokenização e Embeddings
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula conceitual com desenho e analogias; nenhuma execução.
 
 ## Resumo
 

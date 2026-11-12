@@ -3,7 +3,7 @@ title: "Imersão DDD + Arq. Limpa — Aula 18: Caso de Uso 01 (Registrar Usuári
 type: source
 status: active
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-11-12
 tags: ["ddd", "caso-de-uso", "ports-adapters", "criptografia", "uuid", "typescript"]
 source_files:
   - raw/sources/2026-04-21_transcrição-projetoEAD-18-casoDeUso-01.md
@@ -13,9 +13,13 @@ related_pages:
   - ../concepts/objeto-de-valor.md
   - ../concepts/agregado.md
   - ../entities/formacao-dev.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Imersão DDD + Arq. Limpa — Aula 18: Caso de Uso 01 (Registrar Usuário)
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): implementação ao vivo do caso de uso `RegistrarUsuario`.
 
 ## Resumo
 

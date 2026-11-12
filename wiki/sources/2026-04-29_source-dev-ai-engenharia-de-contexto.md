@@ -3,21 +3,25 @@ title: "Dev AI — Aula IA-09: Engenharia de Contexto (Rules, Skills, Spec Drive
 type: source
 status: active
 created: 2026-04-29
-updated: 2026-04-29
+updated: 2026-11-12
 tags: ["ia-generativa", "engenharia-de-contexto", "rules", "skills", "spec-driven-development", "context-rot", "ai-driven-development"]
 source_files:
-  - raw/sources/2026-04-27_transcrição-IA-08-ContextoRulesSkill-engenhariaDeContexto.md
+  - raw/sources/2026-04-27_transcrição-IA-09-ContextoRulesSkill-engenhariaDeContexto.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
   - 2026-04-28_source-dev-ai-engenharia-de-prompt.md
   - 2026-04-28_source-dev-ai-conceito-de-agentes.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula IA-09: Engenharia de Contexto (Rules, Skills, Spec Driven Development)
 
-**Fonte**: `raw/sources/2026-04-27_transcrição-IA-08-ContextoRulesSkill-engenhariaDeContexto.md`  
+**Fonte**: `raw/sources/2026-04-27_transcrição-IA-09-ContextoRulesSkill-engenhariaDeContexto.md`  
 **Plataforma**: [formacao.dev](https://escola.formacao.dev) — trilha Dev AI, módulo "Agentes, Skills & Engenharia de Contexto"
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula conceitual sobre engenharia de contexto, context rot e SDD; nenhuma execução.
 
 ## Resumo
 

@@ -620,3 +620,19 @@ Este arquivo é um log cronológico apenas para anexação. Adicione novas entra
 - **Também atualizados**: `index.md` (22 conceitos), `entities/claude-code.md`, `entities/matt-pocock.md`, `entities/formacao-dev.md`, `entities/joao-marcos-melchiors.md`, `concepts/home-repo.md` (links).
 - **Verificação**: todas as 42 questões abertas e todas as seções foram redistribuídas (conferido por script); todo o texto antigo aparece nas páginas novas (única diferença: níveis de título); links internos checados, sem quebras novas.
 - **O que permanece não resolvido**: links externos em resumos de fonte antigos ainda apontam para `ia-generativa.md` como "conceito principal" (válido para fundamentos; os temas específicos agora estão nas páginas derivadas); podem ser reapontados num próximo lint. Contradições registradas (Codex e recarga, SDD × "specs to code", dumb zone 100k/150k) foram preservadas nas páginas de destino.
+
+## [2026-11-12] update | Higienização, etapa 1: classificação de fontes no esquema
+
+- **O que foi feito**: aprovado pelo usuário, o `CLAUDE.md` ganhou a seção 5.1 "Classificação de Fontes" com os campos `tipo_conteudo` (`demonstrado`, `explicacao`, `opiniao`, `fornecedor`, `referencia`, `conversa-llm`, `obsoleta`) e `captura` (`automatica`, `manual`) para resumos de fonte, e quatro regras de uso (força avaliada por afirmação; `conversa-llm` como decisão de projeto; interpretações do mantenedor em `syntheses/`; conceitos só com fontes fracas ficam `draft`). Também foram ajustados o procedimento de ingestão (passo 3), o de consulta (passo 3), o de verificação (quatro novas checagens) e o tom de escrita (atribuição de opiniões). O template `templates/source-summary-template.md` recebeu os dois campos e uma linha de justificativa da classificação.
+- **Decisão registrada**: a captura automática (legenda ou transcrição) não rebaixa a fonte; o critério é o tipo de conteúdo. Motivo: as aulas da formacao.dev e as legendas do YouTube têm a mesma fidelidade de captura.
+- **Páginas atualizadas**: `CLAUDE.md`, `templates/source-summary-template.md`, `wiki/log.md`.
+- **O que permanece não resolvido**: etapas 2 a 7 do plano (classificar as 37 fontes, auditar conceitos, marcar dependência do chat, mover interpretações para sínteses, pendências antigas do lint, relatório final).
+
+## [2026-11-12] update | Higienização, etapa 2: classificação das 37 fontes
+
+- **O que foi feito**: todos os resumos em `wiki/sources/` receberam `tipo_conteudo` e `captura` no frontmatter e uma linha "**Classificação**" logo abaixo do título, com a justificativa. `updated` passou para 2026-11-12.
+- **Distribuição**: `explicacao` 17, `demonstrado` 13, `opiniao` 2 (Matt Pocock: Essential Skills e shorts), `referencia` 2 (digest de melhores práticas do Claude Code; Home Repo, artigo dominante), `fornecedor` 1 (palestra GitHub Copilot), `conversa-llm` 1 (chat DDD/Express ports and adapters, captura `manual`), `obsoleta` 1 (`transcricoes-projetoEAD`). Captura: 36 `automatica`, 1 `manual`.
+- **Fontes mistas** (justificadas no corpo): Essential Skills (opinião com demonstrações pontuais), curso CCDV-F (explicação com trechos de opinião), MCP (aula explicativa e catálogo anexo de tipo referência), Home Repo (artigo de referência e vídeo de opinião), system prompt (demonstração e explicação).
+- **Correção de caminho**: `source_files` apontava para `2026-04-27_transcrição-IA-08-ContextoRulesSkill-engenhariaDeContexto.md`, mas o arquivo real é `...IA-09...`. Corrigido em `sources/2026-04-29_source-dev-ai-engenharia-de-contexto.md`, `concepts/engenharia-de-contexto.md` e `concepts/spec-driven-development.md`.
+- **Páginas atualizadas**: os 37 resumos de fonte, os 2 conceitos acima e `wiki/log.md`.
+- **O que permanece não resolvido**: etapas 3 a 7 (auditar os 22 conceitos com base na classificação, marcar o que depende só do chat, mover interpretações do mantenedor para sínteses, pendências antigas do lint, relatório final).

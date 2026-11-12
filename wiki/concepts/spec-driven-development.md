@@ -6,7 +6,7 @@ created: 2026-11-12
 updated: 2026-11-12
 tags: ["spec-driven-development", "sdd", "sub-agentes", "engenharia-de-contexto", "ia-generativa"]
 source_files:
-  - raw/sources/2026-04-27_transcrição-IA-08-ContextoRulesSkill-engenhariaDeContexto.md
+  - raw/sources/2026-04-27_transcrição-IA-09-ContextoRulesSkill-engenhariaDeContexto.md
   - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-01-PastasDasSkills.md
   - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-02-SkillBasica copy.md
   - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-03-.SkillComCodigo.md

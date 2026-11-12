@@ -3,7 +3,7 @@ title: "Imersão DDD + Arquitetura Limpa — Aula 15: Tratamento de Erros"
 type: source
 status: active
 created: 2026-04-23
-updated: 2026-04-23
+updated: 2026-11-12
 tags: ["result", "tratamento-de-erros", "validação", "typescript", "ddd"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-15-tratamento-de-erros.md
@@ -13,9 +13,13 @@ related_pages:
   - ../concepts/arquitetura-limpa.md
   - ../entities/formacao-dev.md
   - ./2026-04-20_source-imersao-ddd-arq-limpa.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Imersão DDD + Arquitetura Limpa — Aula 15: Tratamento de Erros
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): aula com implementação ao vivo da classe `Result`.
 
 ## Resumo
 

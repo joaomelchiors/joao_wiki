@@ -3,7 +3,7 @@ title: "Modelagem de Domínio — Aula 48: Classe ErroValidacao"
 type: source
 status: active
 created: 2026-08-03
-updated: 2026-11-04
+updated: 2026-11-12
 tags: ["ddd", "modelagem", "erro-de-validacao", "typescript", "formacao-dev"]
 source_files:
   - raw/sources/2026-08-03_transcrição-ModelagemDeDominio-48-ErrorDeValidacao.md
@@ -13,9 +13,13 @@ related_pages:
   - ../concepts/objeto-de-valor.md
   - ../concepts/ddd.md
   - ../entities/formacao-dev.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Modelagem de Domínio — Aula 48: Classe ErroValidacao
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): implementação ao vivo da classe `ErroValidacao`.
 
 ## Resumo
 

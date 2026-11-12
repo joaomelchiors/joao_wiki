@@ -3,7 +3,7 @@ title: "Imersão DDD + Arquitetura Limpa — Série de Transcrições (14 aulas)
 type: source
 status: active
 created: 2026-04-20
-updated: 2026-04-20
+updated: 2026-11-12
 tags: ["ddd", "arquitetura-limpa", "typescript", "nest", "monorepo", "objeto-de-valor", "agregado", "contexto-delimitado", "caso-de-uso"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-01-configurando.md
@@ -27,9 +27,13 @@ related_pages:
   - ../concepts/agregado.md
   - ../concepts/contexto-delimitado.md
   - ../entities/formacao-dev.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Imersão DDD + Arquitetura Limpa — Série de Transcrições (14 aulas)
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): série de aulas da imersão com implementação ao vivo na maior parte das aulas (uma das 14 é só conceitual).
 
 ## Resumo
 

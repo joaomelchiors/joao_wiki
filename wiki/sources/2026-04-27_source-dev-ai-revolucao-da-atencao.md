@@ -3,16 +3,20 @@ title: "Dev AI — Aula 03: A Revolução da Atenção (Multi-Head Attention em 
 type: source
 status: active
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-11-12
 tags: ["ia-generativa", "transformer", "attention", "query-key-value", "softmax", "deep-learning"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-03-IntroducaoDesenvolvimentoIA-RevolucaoDaAtencao.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula 03: A Revolução da Atenção (Multi-Head Attention em detalhe)
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula conceitual sobre atenção, com cálculo ilustrativo; nenhuma execução.
 
 ## Resumo
 

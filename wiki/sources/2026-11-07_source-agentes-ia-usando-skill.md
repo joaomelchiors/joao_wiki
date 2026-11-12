@@ -3,7 +3,7 @@ title: "Agentes de IA (Profissional AI) — Usando Skills: instalação, chamada
 type: source
 status: active
 created: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-12
 tags: ["ia-generativa", "skill", "agentes", "formacao-dev", "claude-code", "plugins", "mcp", "skill-creator"]
 source_files:
   - raw/sources/2026-11-07_transcricao_AgentesDeIa_UsandoSkill.md
@@ -13,9 +13,13 @@ related_pages:
   - ../entities/claude-code.md
   - ./2026-11-06_source-agentes-ia-estilos-de-skill.md
   - ./2026-07-17_source-ferramentas-agenticas.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Agentes de IA (Profissional AI) — Usando Skills: instalação, chamada com / e plugins
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): instala e executa Skills prontas ao vivo.
 
 ## Resumo
 

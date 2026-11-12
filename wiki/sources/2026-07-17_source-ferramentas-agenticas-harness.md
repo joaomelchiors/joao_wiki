@@ -3,7 +3,7 @@ title: "Dev AI — Ferramentas Agênticas: Harness (Partes 1 e 2)"
 type: source
 status: active
 created: 2026-07-17
-updated: 2026-07-17
+updated: 2026-11-12
 tags: ["harness", "agentes", "ferramentas-agenticas", "claude-code", "codex", "loop-de-execucao", "contexto"]
 source_files:
   - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-06-HarnessParte1.md
@@ -11,6 +11,8 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Ferramentas Agênticas: Harness (Partes 1 e 2)
@@ -20,6 +22,8 @@ Aulas 06 e 07 do módulo "Ferramentas Agênticas" do curso Dev AI da formacao.de
 **Fontes**:
 - https://escola.formacao.dev/ia-dev/sala/ferramentas-agenticas?aula=5ad11107-a05a-4e0a-a71e-5954242eec43 (Parte 1)
 - https://escola.formacao.dev/ia-dev/sala/ferramentas-agenticas?aula=c32183dc-d9b7-42aa-8e37-0e964e1b34df (Parte 2)
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aulas conceituais sobre harness, com exemplos pontuais na ferramenta.
 
 ## Resumo
 

@@ -7,7 +7,7 @@ updated: 2026-11-12
 tags: ["engenharia-de-contexto", "prompt", "context-rot", "dumb-zone", "ia-generativa"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-08-ContextoRulesSkill-engenhariaDePrompt.md
-  - raw/sources/2026-04-27_transcrição-IA-08-ContextoRulesSkill-engenhariaDeContexto.md
+  - raw/sources/2026-04-27_transcrição-IA-09-ContextoRulesSkill-engenhariaDeContexto.md
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
   - raw/sources/2026-07-16_delete-most-of-your-docs_en-orig_Fj8DKMbdIzU.md
   - raw/sources/2026-07-20_what-is-the-dumb-zone_en-orig_sOd7svdu_1I.md

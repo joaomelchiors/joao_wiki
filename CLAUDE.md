@@ -69,7 +69,38 @@ Notas:
 - `source_files` deve listar caminhos de arquivo reais em `raw/`, relativos à raiz do repositório (por exemplo, `raw/sources/example.pdf`)
 - `related_pages` deve listar caminhos relativos para páginas relacionadas em `wiki/`
 - `status` é normalmente `active`; use `superseded` apenas quando uma conclusão anterior foi substituída
+- Use `status: draft` para conceitos sustentados apenas por fontes de tipo `opiniao`, `fornecedor` ou `conversa-llm`, ou por inferência sem fonte direta
 - Páginas-base do scaffold como `overview.md`, `index.md`, `log.md` e `open-questions.md` também usam `type: maintenance`
+
+Resumos de fonte (`type: source`) incluem também dois campos de classificação (ver 5.1):
+
+```yaml
+tipo_conteudo: demonstrado | explicacao | opiniao | fornecedor | referencia | conversa-llm | obsoleta
+captura: automatica | manual
+```
+
+### 5.1 Classificação de Fontes
+
+A classificação avalia **o tipo de conteúdo**, não o meio de captura. Transcrição ou legenda automática não rebaixa uma fonte por si só; o campo `captura` é apenas informativo (alerta para ruído em nomes próprios).
+
+| `tipo_conteudo` | O que é | Como usar |
+|---|---|---|
+| `demonstrado` | Execução ou código mostrado ao vivo | Evidência mais forte para "como se faz" |
+| `explicacao` | Aula ou texto conceitual sem execução | Adequado para definições e vocabulário; depende da autoridade de quem explica |
+| `opiniao` | Posição pessoal ou heurística de especialista (palestra, short, print) | Entra atribuída ("segundo X…"), não como fato |
+| `fornecedor` | Material de empresa sobre o próprio produto | Descreve o produto; tratar com atenção a viés comercial |
+| `referencia` | Texto escrito: documentação oficial, artigo autoral ou digest de terceiros | Mais estável que fala; anote se é de segunda mão |
+| `conversa-llm` | Conversa com um modelo de IA | Registro de decisões de um projeto; não confirma um conceito sozinho |
+| `obsoleta` | Substituída por outra fonte | Apenas histórico; marque também `status: superseded` |
+
+Quando uma fonte mistura tipos, use o dominante e explique a mistura no corpo do resumo.
+
+Regras de uso:
+
+1. A força de uma afirmação é avaliada pela **afirmação**, não pela fonte inteira. O que aparece apenas em uma fonte `opiniao` ou `explicacao` entra atribuído a quem disse
+2. Afirmações que dependem apenas de `conversa-llm` devem ser marcadas como decisão daquele projeto
+3. Interpretações e recomendações do mantenedor (o LLM) vão para `wiki/syntheses/`, não para páginas de conceito; se precisarem aparecer num conceito, marque "interpretação" e linke a síntese
+4. Conceitos que dependem apenas de fontes `opiniao`, `fornecedor` ou `conversa-llm` ficam `draft`
 
 ## 6. Conteúdo Esperado por Tipo de Página
 
@@ -118,7 +149,7 @@ Ao processar novo material, sempre siga esta sequência:
 
 1. Leia `wiki/index.md` e `wiki/log.md` para entender o trabalho recente
 2. Leia o material alvo de `raw/sources/`
-3. Crie uma página de resumo em `wiki/sources/` usando `templates/source-summary-template.md` como guia
+3. Crie uma página de resumo em `wiki/sources/` usando `templates/source-summary-template.md` como guia, preenchendo `tipo_conteudo` e `captura` (ver 5.1)
 4. Verifique se `concepts/`, `entities/` existentes ou `overview.md` precisam de atualizações
 5. Se surgirem contradições significativas ou novos problemas, reflita em `open-questions.md`
 6. Adicione a nova página a `wiki/index.md` com um resumo e data de atualização
@@ -137,7 +168,7 @@ Ao responder perguntas, consulte a wiki antes do histórico de conversa.
 
 1. Leia `wiki/index.md` primeiro para identificar páginas candidatas
 2. Leia páginas candidatas; volte ao resumo de fonte se necessário
-3. Organize informações em ordem de força de evidência e responda
+3. Organize informações em ordem de força de evidência (considerando o `tipo_conteudo` das fontes) e responda
 4. Cite as páginas específicas da wiki em que você se apoia e coloque links para elas na resposta quando possível
 5. Na resposta, diferencie entre fato e interpretação
 6. Se a resposta for uma comparação, análise ou resumo reutilizável, salve em `wiki/syntheses/`
@@ -161,6 +192,10 @@ Durante revisões periódicas, sempre verifique o seguinte:
 - Conceitos importantes estão espalhados em resumos de fonte em vez de promovidos para páginas de conceito?
 - Há problemas significativos ainda não promovidos para páginas de entidade, conceito ou síntese?
 - Questões estão se acumulando sem serem abordadas em `open-questions.md`?
+- Todo resumo de fonte tem `tipo_conteudo` e `captura` preenchidos?
+- Há conceitos `active` sustentados apenas por fontes `opiniao`, `fornecedor` ou `conversa-llm`?
+- Há afirmações de fonte única apresentadas como fato, sem atribuição?
+- Há interpretações do mantenedor dentro de conceitos que deveriam estar em `wiki/syntheses/`?
 
 Salve resultados de verificação em `wiki/maintenance/lint-reports/` e reflita em `open-questions.md` e `index.md` conforme necessário.
 
@@ -210,6 +245,7 @@ Cada entrada de log deve incluir no mínimo:
 - Separe fato, interpretação e hipótese
 - Apoie afirmações com evidências
 - Marque conteúdo incerto explicitamente com frases como "não verificado", "hipótese" ou "fontes discordam"
+- Atribua opiniões e heurísticas a quem as disse ("segundo X…")
 - Escreva em um estilo amigável para referência para reuso, não em um tom conversacional
 
 ## 14. Prioridade em Caso de Dúvida

@@ -3,16 +3,20 @@ title: "Dev AI — Aula 02: IA Generativa — Attention, Feed-Forward e Geraçã
 type: source
 status: active
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-11-12
 tags: ["ia-generativa", "transformer", "attention", "feed-forward", "softmax", "temperatura", "kv-cache"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-02-IntroducaoDesenvolvimentoIA-IaGenerativa02.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula 02: IA Generativa — Attention, Feed-Forward e Geração Autorregressiva
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula conceitual sobre a arquitetura; nenhuma execução.
 
 ## Resumo
 

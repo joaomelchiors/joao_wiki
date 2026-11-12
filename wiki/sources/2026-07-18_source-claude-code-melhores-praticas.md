@@ -3,16 +3,20 @@ title: "Augusto Galego — A Própria Anthropic Explica Como Usar o Claude Code 
 type: source
 status: active
 created: 2026-07-19
-updated: 2026-07-19
+updated: 2026-11-12
 tags: ["claude-code", "melhores-praticas", "anthropic", "ai-driven-development", "harness", "sessoes", "contexto"]
 source_files:
   - raw/sources/2026-07-18_transcrição-IA-ClaudeCode-MelhoresPraticas.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/matt-pocock.md
+tipo_conteudo: referencia
+captura: automatica
 ---
 
 # Augusto Galego — A Própria Anthropic Explica Como Usar o Claude Code (Melhores Práticas)
+
+**Classificação** (`tipo_conteudo: referencia`, `captura: automatica`): digest falado (vídeo de terceiro) da documentação oficial da Anthropic; referência de segunda mão.
 
 ## Resumo
 

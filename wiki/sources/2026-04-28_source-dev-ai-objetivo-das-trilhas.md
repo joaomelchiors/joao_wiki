@@ -3,7 +3,7 @@ title: "Dev AI — Aula 06: Objetivo das Trilhas — Arquitetura para AI-Driven 
 type: source
 status: active
 created: 2026-04-28
-updated: 2026-04-28
+updated: 2026-11-12
 tags: ["ai-driven-development", "modularização", "arquitetura-limpa", "cqrs", "skills", "full-stack"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-06-ContextoRulesSkill-objetivoDasTrilhas.md
@@ -12,9 +12,13 @@ related_pages:
   - ../concepts/arquitetura-limpa.md
   - ../concepts/contexto-delimitado.md
   - ../entities/formacao-dev.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula 06: Objetivo das Trilhas — Arquitetura para AI-Driven Development
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula de orientação sobre os objetivos do curso; pouco conteúdo técnico.
 
 ## Resumo
 

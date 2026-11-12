@@ -3,7 +3,7 @@ title: "Dev AI — Ferramentas Agênticas: Pastas das Skills, Skills Básica/Com
 type: source
 status: active
 created: 2026-07-17
-updated: 2026-07-17
+updated: 2026-11-12
 tags: ["skills", "spec-driven-development", "ferramentas-agenticas", "claude-code", "codex", "agentes"]
 source_files:
   - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-01-PastasDasSkills.md
@@ -15,6 +15,8 @@ source_files:
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Dev AI — Ferramentas Agênticas (Aulas 01–06)
@@ -22,6 +24,8 @@ related_pages:
 Módulo introdutório "Ferramentas Agênticas" do curso "Dev AI" da formacao.dev (instrutor Leonardo/Léo). Cobre a infraestrutura básica de Skills em ferramentas agênticas (Claude Code e Codex), a criação de Skills simples e determinísticas, e uma introdução prática ao Spec-Driven Development com especificações simples. A aula 06 (Harness Parte 1) não contém conteúdo transcrito.
 
 **Fonte**: https://escola.formacao.dev/ia-dev/sala/ferramentas-agenticas
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): criação e execução ao vivo de Skills e de uma spec no Claude Code e no Codex.
 
 ## Resumo
 

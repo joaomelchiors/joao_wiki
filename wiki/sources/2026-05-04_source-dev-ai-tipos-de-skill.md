@@ -3,7 +3,7 @@ title: "Dev AI — Aula 12: Tipos de Skill (Determinística, Híbrida e Aberta)"
 type: source
 status: active
 created: 2026-05-04
-updated: 2026-05-04
+updated: 2026-11-12
 tags: ["ia-generativa", "skill", "ai-driven-development", "agentes", "spec-driven-development"]
 source_files:
   - raw/sources/2026-05-04_transcrição-IA-12-ContextoRulesSkill-tiposDeSkill.md
@@ -12,9 +12,13 @@ related_pages:
   - ../entities/formacao-dev.md
   - 2026-05-04_source-dev-ai-exemplo-skill.md
   - 2026-04-29_source-dev-ai-rule-skill.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula 12: Tipos de Skill (Determinística, Híbrida e Aberta)
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula de taxonomia com exemplos falados; nenhuma execução.
 
 ## Resumo
 

@@ -14,9 +14,13 @@ related_pages:
   - ../entities/matt-pocock.md
   - ../concepts/ia-generativa.md
   - ./2026-07-16_source-matt-pocock-shorts.md
+tipo_conteudo: referencia
+captura: automatica
 ---
 
 # Matt Pocock — The Home Repo Pattern (vídeo e artigo)
+
+**Classificação** (`tipo_conteudo: referencia`, `captura: automatica`): o artigo escrito do autor é a parte dominante (texto capturado manualmente); o vídeo que o acompanha é opinião e relato pessoal (legenda automática). A captura registrada é a do vídeo.
 
 ## Resumo
 

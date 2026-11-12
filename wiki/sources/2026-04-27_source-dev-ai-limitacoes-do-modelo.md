@@ -3,16 +3,20 @@ title: "Dev AI — Aula 04: Limitações dos Modelos (Arquitetura baseada em Tok
 type: source
 status: active
 created: 2026-04-27
-updated: 2026-04-27
+updated: 2026-11-12
 tags: ["ia-generativa", "transformer", "limitações", "tokens", "lm-studio", "chain-of-thought"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-04-IntroducaoDesenvolvimentoIA-limitacoesDoModelo.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: demonstrado
+captura: automatica
 ---
 
 # Dev AI — Aula 04: Limitações dos Modelos (Arquitetura baseada em Tokens)
+
+**Classificação** (`tipo_conteudo: demonstrado`, `captura: automatica`): testes ao vivo em Claude e em modelos locais no LM Studio (contagem de letras).
 
 ## Resumo
 

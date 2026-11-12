@@ -3,7 +3,7 @@ title: "Agentes de IA (Profissional AI) — Estilos de Skill e Pré-requisitos (
 type: source
 status: active
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-12
 tags: ["ia-generativa", "skill", "agentes", "formacao-dev", "python", "nodejs", "skill-deterministica", "skill-hibrida"]
 source_files:
   - raw/sources/2026-11-06_transcricao_AgentesDeIA_EstilosDeSkill.md
@@ -12,9 +12,13 @@ related_pages:
   - ../entities/formacao-dev.md
   - ./2026-05-04_source-dev-ai-tipos-de-skill.md
   - ./2026-07-17_source-ferramentas-agenticas.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Agentes de IA (Profissional AI) — Estilos de Skill e Pré-requisitos (Python e Node.js)
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula curta conceitual; exemplos apenas falados.
 
 ## Resumo
 

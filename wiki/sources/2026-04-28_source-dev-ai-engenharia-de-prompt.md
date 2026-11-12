@@ -3,16 +3,20 @@ title: "Dev AI — Aula 08: Engenharia de Prompt e Engenharia de Contexto"
 type: source
 status: active
 created: 2026-04-28
-updated: 2026-04-28
+updated: 2026-11-12
 tags: ["prompt-engineering", "engenharia-de-contexto", "meta-prompt", "skills", "rules", "spec-driven-development"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-08-ContextoRulesSkill-engenhariaDePrompt.md
 related_pages:
   - ../concepts/ia-generativa.md
   - ../entities/formacao-dev.md
+tipo_conteudo: explicacao
+captura: automatica
 ---
 
 # Dev AI — Aula 08: Engenharia de Prompt e Engenharia de Contexto
+
+**Classificação** (`tipo_conteudo: explicacao`, `captura: automatica`): aula conceitual (estrutura CORFT, meta-prompt) com exemplos falados.
 
 ## Resumo
 

@@ -3,7 +3,7 @@ title: "Palestra Microsoft — GitHub Copilot: Visão Geral e Aula Prática"
 type: source
 status: active
 created: 2026-05-07
-updated: 2026-05-07
+updated: 2026-11-12
 tags: ["github-copilot", "agentes", "mcp", "instructions", "coding-agent", "code-review", "modernizacao", "copilot-spaces", "custom-agents"]
 source_files:
   - raw/sources/2026-05-07_transcricao_VisualStudio+Copilot.md
@@ -11,6 +11,8 @@ source_files:
 related_pages:
   - ../entities/github-copilot.md
   - ../concepts/ia-generativa.md
+tipo_conteudo: fornecedor
+captura: automatica
 ---
 
 # Palestra Microsoft — GitHub Copilot: Visão Geral e Aula Prática
@@ -18,6 +20,8 @@ related_pages:
 Duas sessões de treinamento Microsoft/GitHub para desenvolvedores da **Caixa Econômica Federal**. Apresentadores: Jean (CSM) e Caio Queiroz (CSA - Arquiteto de Sucesso do Cliente). Contexto: parte de uma série de 3 encontros; as primeiras 2 sessões foram de nivelamento; a terceira (Sessão Teórica + Prática) aborda Copilot para modernização de código legado.
 
 **Fontes**: Palestras Microsoft (transcrições internas, gravadas)
+
+**Classificação** (`tipo_conteudo: fornecedor`, `captura: automatica`): palestra da Microsoft/GitHub sobre o próprio produto, com demonstrações; descreve o produto, sem comparação com concorrentes.
 
 ## Resumo
 
