@@ -18,9 +18,9 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 
 ## Contagens
 
-- resumo de fonte: 37
-- página de conceito: 22
-- página de entidade: 6
+- resumo de fonte: 39
+- página de conceito: 23
+- página de entidade: 7
 - página de síntese: 2
 - página de manutenção: 7 (index, log, overview, open-questions, lint-2026-04-28, lint-2026-11-04, lint-2026-11-12)
 
@@ -67,6 +67,8 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [2026-11-08_source-agentes-ia-skill-vs-mcp.md](./sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md): Skill × MCP (como executar × que ferramenta acessar) e os três pilares com SDD; inclui imagem-resumo. Última atualização: 2026-11-12
 - [2026-07-16_source-matt-pocock-shorts.md](./sources/2026-07-16_source-matt-pocock-shorts.md): Quatro shorts de Matt Pocock — deletar docs (manter ADRs, glossário, navegação), dumb zone (~150k tokens), Pragmatic Programmer, skill `retro` e humano no loop. Última atualização: 2026-11-12
 - [2026-11-12_source-matt-pocock-home-repo.md](./sources/2026-11-12_source-matt-pocock-home-repo.md): Vídeo e artigo "The Home Repo Pattern" — repo único com skills, `AGENTS.md` e ponteiros para os demais repos; prompt de configuração e FAQ. Última atualização: 2026-11-12
+- [2026-09-17_source-matt-pocock-pragmatic-engineer.md](./sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md): Entrevista de Matt Pocock ao The Pragmatic Engineer (1h36, legenda revisada) — trajetória, Grill Me, Wayfinder, leading words, linguagem ubíqua com agentes, TDD matizado, estratégia × tática, agentes na nuvem. Última atualização: 2026-11-12
+- [2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md](./sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md): Live de Matt Pocock com Uncle Bob (56 min, legenda revisada) — agentes cercados por CRAP, teste de mutação e regras de dependência; cadeia de cinco agentes; "não impor disciplinas humanas" (TDD); ceticismo com SDD e planejamento prévio; fundamentos e como iniciantes aprendem estratégia. Última atualização: 2026-11-12
 
 ## Conceitos
 
@@ -86,20 +88,22 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [harness.md](./concepts/harness.md): Harness — loop de execução, compressão de contexto, responsabilidades do desenvolvedor, autonomia e isolamento. Última atualização: 2026-11-12
 - [melhores-praticas-claude-code.md](./concepts/melhores-praticas-claude-code.md): Melhores práticas operacionais do Claude Code (verificação, sessões, `/rewind`, `/goal`, sandbox). Última atualização: 2026-11-12
 - [mcp.md](./concepts/mcp.md): MCP — host/client/server, conector/tradutor, tools × resources × prompts e Skill × MCP. Última atualização: 2026-11-12
-- [ai-driven-development.md](./concepts/ai-driven-development.md): **(draft: só fontes de opinião de um autor)** Práticas de Matt Pocock — HITL/AFK, Grill Me → PRD → issues → AFK, módulos profundos, push × pull, docs e retro. Última atualização: 2026-11-12
+- [ai-driven-development.md](./concepts/ai-driven-development.md): **(draft: só fontes de opinião de um autor)** Práticas de Matt Pocock (palestra, shorts e entrevista; Wayfinder, leading words) — HITL/AFK, Grill Me → PRD → issues → AFK, módulos profundos, push × pull, docs e retro. Última atualização: 2026-11-12
 - [tdd.md](./concepts/tdd.md): **(draft: uma fonte de opinião)** TDD como teto de qualidade do feedback para agentes de IA, segundo Matt Pocock. Última atualização: 2026-11-12
 - [seguranca-de-agentes.md](./concepts/seguranca-de-agentes.md): Prompt injection, jailbreak, defesas em camadas e higiene de sessão (CCDV-F). Última atualização: 2026-11-12
 - [claude-api-parametros-e-custo.md](./concepts/claude-api-parametros-e-custo.md): Parâmetros de amostragem, `stop_reason`, batch e prompt caching na API do Claude. Última atualização: 2026-11-12
 - [deep-learning.md](./concepts/deep-learning.md): **(draft: definição sem fonte direta)** Deep Learning — redes de várias camadas, pré-treinamento, pesos/parâmetros e baixa interpretabilidade, montado a partir das aulas IA-01 a IA-03 (o termo não aparece literalmente nas fontes; definição formal é conhecimento geral, marcada como tal). Última atualização: 2026-11-12
+- [verificacao-deterministica.md](./concepts/verificacao-deterministica.md): **(draft: uma fonte de opinião)** Verificação determinística para agentes — CRAP, mutation testing, regras de dependência, cadeia de agentes e "valores × disciplinas", segundo Uncle Bob. Última atualização: 2026-11-12
 - [home-repo.md](./concepts/home-repo.md): Home Repo — repo único com skills, `AGENTS.md` e ponteiros para os demais repos, onde o agente sempre roda; escala, alternativas (monorepo, submodules) e relação com esta wiki. Última atualização: 2026-11-12
 
 ## Entidades
 
 - [formacao-dev.md](./entities/formacao-dev.md): Plataforma de ensino online; instrutor Leonardo; cursos "Arquiteto Dev: DDD + Arquitetura Limpa", "Dev AI: Desenvolvimento com IA" e "Profissional AI — Agentes" (2 aulas ingeridas). Inclui agora criação de Skill do zero, SDD e MCP na visão do curso Profissional AI, tabela Skill × MCP e atualização da dumb zone (~150k). Última atualização: 2026-11-12
-- [matt-pocock.md](./entities/matt-pocock.md): Especialista em TypeScript e AI-Driven Development; criador do Sand Castle (biblioteca para paralelização de agentes) e Skills para Claude Code (Grill Me, PRD, TDD, improve architecture). Última atualização: 2026-04-28
+- [matt-pocock.md](./entities/matt-pocock.md): Especialista em TypeScript e AI-Driven Development; criador do Sand Castle (biblioteca para paralelização de agentes) e Skills para Claude Code (Grill Me, PRD, TDD, improve architecture); entrevistador da live com Uncle Bob. Última atualização: 2026-11-12
 - [github-copilot.md](./entities/github-copilot.md): Assistente de IA da GitHub (Microsoft); plataforma com Code Completion, Chat (Ask/Plan/Agent), Coding Agent (background em ambiente efêmero), Code Review Agent, Instructions, MCP (host/client/server), Copilot Spaces e extensão de modernização (Java/.NET). Última atualização: 2026-05-07
 - [joao-marcos-melchiors.md](./entities/joao-marcos-melchiors.md): Proprietário da wiki; desenvolvedor TypeScript com stack Express/PostgreSQL/Docker; princípios arquiteturais e perfil de aprendizagem observados na conversa DDD+Express. Última atualização: 2026-09-07
 - [claude-code.md](./entities/claude-code.md): Ferramenta agêntica da Anthropic (harness); comandos de contexto, permissões/auto mode, sandbox, sub agentes, hooks, plugins, MCP e Agent SDK; instalação de Skills pelo app desktop. Última atualização: 2026-11-07
+- [uncle-bob.md](./entities/uncle-bob.md): Robert C. Martin, autor de *Clean Code*; método com agentes (verificação determinística, cadeia de agentes) e posições sobre TDD, SDD e fundamentos, segundo a live com Matt Pocock. Última atualização: 2026-11-12
 - [andrew-brown.md](./entities/andrew-brown.md): Instrutor da ExamPro/freeCodeCamp; autor do curso de certificação Claude Developer Foundations (CCDV-F). Última atualização: 2026-11-05
 
 ## Sínteses

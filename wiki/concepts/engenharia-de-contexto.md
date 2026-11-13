@@ -20,10 +20,13 @@ related_pages:
   - ./harness.md
   - ./ai-driven-development.md
   - ./home-repo.md
+  - ./verificacao-deterministica.md
+  - ../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md
   - ../sources/2026-04-28_source-dev-ai-engenharia-de-prompt.md
   - ../sources/2026-04-29_source-dev-ai-engenharia-de-contexto.md
   - ../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
   - ../sources/2026-07-16_source-matt-pocock-shorts.md
+  - ../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md
 ---
 
 # Engenharia de Contexto
@@ -75,6 +78,10 @@ Quantas mais tokens são geradas numa única execução, mais o modelo tende a s
 
 **Atualização (short de 2026-07-20)**: o próprio Matt Pocock passou a usar **~150 mil tokens** como regra prática e diz que há ~6 meses achava ~100 mil e que o valor continua subindo; varia por modelo e tarefa. A queda é gradual, e alucinações de fidelidade são um sinal de estar na dumb zone. Ao chegar lá: limpar, compactar, fazer *hand off* ou redesenhar o fluxo em tarefas pequenas em janelas novas. Evolução da posição, não contradição. Fonte: [shorts de Matt Pocock](../sources/2026-07-16_source-matt-pocock-shorts.md).
 
+**Reforço (entrevista de set/2026)**: Matt repete os ~150 mil tokens como valor atual para modelos de fronteira, independentemente do tamanho da janela (ele credita a ideia de smart/dumb zone a Dex Horthy), e usa isso para fatiar trabalho grande em várias sessões (spec/destino + tickets; mapa no Wayfinder). Mesma fonte de opinião de um autor. Ver [entrevista](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md).
+
+**Live com Uncle Bob (ago/2026)**: Matt reapresenta smart/dumb zone (de novo creditando Dex Horthy) e Bob traz o mecanismo **lost in the middle**: início e fim do contexto pesam mais que o meio, então regras longas colocadas no prompt "somem" e viram diretrizes. Conclusão dele: prompt inicial mínimo e verificação determinística depois (ver [Verificação determinística](./verificacao-deterministica.md)). Ambos também falam de **trajetória do contexto**: o que entra direciona tudo o que vem depois, e só limpar o contexto zera isso (exemplo do café contaminado por uma novela). Opinião e relato, não medição; a ideia converge com context rot, acima. Fonte: [live](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md).
+
 **Analogia**: "Adicionar token é como adicionar time a uma liga de futebol — número de partidas escala quadraticamente" (relações de atenção entre cada par de tokens).
 
 **Consequências práticas**:
@@ -104,4 +111,5 @@ Quantas mais tokens são geradas numa única execução, mais o modelo tende a s
 
 ## Notas de Atualização
 
+- 2026-11-12: adicionados lost in the middle e trajetória do contexto, da live com Uncle Bob (ingestão).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

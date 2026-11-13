@@ -13,10 +13,15 @@ source_files:
   - raw/sources/2026-11-06_someone-wrote-a-paper-about-my-skill_en-orig_KJr1Q-k-yH0.md
   - raw/sources/2026-11-12_artigo-home-repo-pattern.md
   - raw/sources/2026-11-12_the-home-repo-pattern-run-agents-across-all-your-repos_en-orig_hWe-j78vNpc.md
+  - raw/sources/2026-09-17_ai-skills-with-matt-pocock_en-revisada_4DhcSPkEbwI.md
 related_pages:
+  - ./uncle-bob.md
+  - ../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md
+  - ../concepts/verificacao-deterministica.md
   - ../concepts/home-repo.md
   - ../sources/2026-07-16_source-matt-pocock-shorts.md
   - ../sources/2026-11-12_source-matt-pocock-home-repo.md
+  - ../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md
   - ../concepts/ia-generativa.md
   - ../concepts/ai-driven-development.md
   - ../concepts/tdd.md
@@ -140,11 +145,27 @@ Fontes: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md) e [Home Rep
 - **Home Repo**: padrão de um repo único com skills, `AGENTS.md` e ponteiros para os outros repos; ver [Home Repo](../concepts/home-repo.md). Ele chama o seu de "personal wiki", estilo Karpathy, com CLI própria.
 - Mantém a posição anterior contra "specs to code"; contrasta com a aula de SDD do curso Profissional AI, que sugere gerar sistemas a partir de specs (ver [SDD](../sources/2026-11-07_source-agentes-ia-sdd.md)).
 
+## Trajetória e Skills (entrevista ao The Pragmatic Engineer, set/2026)
+
+Fonte: [entrevista](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md); relato do próprio Matt, não verificado.
+
+- **Carreira**: seis anos como professor de canto/voz (Reino Unido); autodidata em JavaScript a partir de ~2017; passou por agências (TypeScript e React), integrou o time central do XState (Stately) e trabalhou ~3 meses na Vercel; criou o **Total TypeScript** com Joel Hooks (Egghead), que segundo ele superou sete dígitos de receita.
+- **Pivô para IA**: começou a olhar para IA em 2023 com cursos de IA em aplicações, mas abandonou essa linha; a virada veio por volta de dezembro/2025, quando agentes passaram a ser "bons o bastante para delegar". Passou a ensinar a camada estratégica.
+- **Skills**: Grill Me, Wayfinder, spec → tickets, TDD, "grill with docs" (linguagem de domínio), improve codebase architecture; distribuídas como repositório de skills. Ver [AI-Driven Development](../concepts/ai-driven-development.md).
+- **Palestra "Software Fundamentals Still Matter"** (AI Engineer London, abril/2026): ele diz que passou de 1 milhão de visualizações.
+- **Livros recomendados**: *The Pragmatic Programmer*, *A Philosophy of Software Design*, capítulos iniciais de *Domain-Driven Design*.
+
+## Live com Uncle Bob (ago/2026)
+
+Fonte: [resumo](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md). Matt atua como entrevistador de [Uncle Bob](./uncle-bob.md); ele diz que queria falar com Bob havia tempo e que gostou do debate dele com John Ousterhout. Posições de Matt na conversa (relato dele): suspeita de enxames de muitos agentes, com exceção de implementador + revisor; sobre SDD, o critério é se as specs são **persistidas e revisitadas**; tático × estratégico (Ousterhout) como enquadramento; concorda que o custo de mudança caiu muito. Ver também [Verificação determinística](../concepts/verificacao-deterministica.md).
+
 ## Cronologia
 
 - **2026-04-26** (data da transcrição): Palestra "Essential Skills for AI Coding from Planning to Production" — apresenta fluxo completo de desenvolvimento com IA, demonstra Sand Castle, Skills e técnicas de arquitetura
 - **2026-07-16 / 2026-07-20**: shorts sobre docs, livro recomendado e dumb zone
 - **2026-11-06**: short sobre o artigo acadêmico da skill `retro`
+- **2026-09-17**: entrevista ao podcast The Pragmatic Engineer (AI Skills)
+- **2026-08-19**: live de Matt entrevistando [Uncle Bob](./uncle-bob.md) sobre fundamentos de software na era da IA — [resumo](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md)
 - **2026-11-12**: vídeo e artigo "The Home Repo Pattern"
 
 ## Relacionamento com Outros Conceitos
@@ -158,6 +179,7 @@ Fontes: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md) e [Home Rep
 
 1. Evolução do Sand Castle — novas features, documentação, adoção pela comunidade
 2. Novas Skills publicadas por Matt — repositório de Skills para Claude Code
-3. Posições sobre multi-agentes — limites práticos de paralelização, custo/latência
-4. Tratamento de doc rot — técnicas para preservar decisões arquiteturais sem apodrecimento
-5. Métricas de eficácia — como medir qualidade de código gerado por IA vs. escrito por humanos
+3. Wayfinder e "grill with docs": publicação e evolução
+4. Posições sobre multi-agentes — limites práticos de paralelização, custo/latência
+5. Tratamento de doc rot — técnicas para preservar decisões arquiteturais sem apodrecimento
+6. Métricas de eficácia — como medir qualidade de código gerado por IA vs. escrito por humanos

@@ -685,3 +685,19 @@ Este arquivo é um log cronológico apenas para anexação. Adicione novas entra
 - **Páginas criadas**: `syntheses/2026-11-12_apostila-palestra-microsoft-github-copilot.md` (`draft`, por depender de uma única fonte de fornecedor).
 - **Páginas atualizadas**: `sources/2026-05-07_source-palestra-github-copilot.md` (link para a apostila), `index.md`, `log.md`.
 - **O que permanece não resolvido**: as perguntas abertas do resumo de fonte (merge paralelo, critério do modo Auto, proxy, self-hosted runners, Spaces); demo de COBOL incompleta na gravação; comandos e limites do produto não verificados em documentação oficial.
+
+## [2026-11-12] ingest | Matt Pocock no The Pragmatic Engineer — AI Skills (entrevista)
+
+- **O que foi feito**: legenda baixada do YouTube (en-orig, automática), revisada manualmente em duas passagens (nomes próprios e termos técnicos) e mantida só como `raw/sources/2026-09-17_ai-skills-with-matt-pocock_en-revisada_4DhcSPkEbwI.md`; o original com erros foi excluído pelo usuário. Resumo de fonte criado como `opiniao`/`automatica` (revisada).
+- **Páginas criadas**: `sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md`.
+- **Páginas atualizadas**: `concepts/ai-driven-development.md` (seção da entrevista: Wayfinder, spec/tickets, leading words, linguagem ubíqua, nuvem; continua `draft`), `concepts/tdd.md` (posição matizada), `concepts/engenharia-de-contexto.md` (reforço dos ~150 mil tokens), `entities/matt-pocock.md` (trajetória, skills, cronologia), `open-questions.md`, `index.md` (38 resumos de fonte).
+- **Contradição registrada**: ênfase em TDD da palestra de abril/2026 ("essencial") × "relação mista" na entrevista; anotada em `concepts/tdd.md` sem sobrescrever.
+- **O que permanece não resolvido**: localização das skills Wayfinder e "grill with docs"; números de estrelas/visualizações não verificados; trechos duvidosos da legenda ("Sandals", "Lauren", "Peter break", "Opus 5").
+
+## [2026-11-12] ingest | Uncle Bob e Matt Pocock — fundamentos de software na era da IA (live)
+
+- **O que foi feito**: legenda baixada do YouTube (en-orig, automática; não havia legenda manual), revisada manualmente em duas passagens (nomes próprios e termos técnicos: SQL, FORTRAN, COBOL, CRAP, Gherkin, Horthy, Ousterhout, Yourdon, Clojure etc.) e mantida só como `raw/sources/2026-08-19_live-uncle-bob-on-software-fundamentals-in-the-age-of-ai_en-revisada_zcLPGC-tvgk.md`; o original com erros foi excluído pelo usuário (o cabeçalho do arquivo revisado ainda o cita, e `raw/` não foi editado). Resumo de fonte criado como `opiniao`/`automatica` (revisada).
+- **Páginas criadas**: `sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md`, `entities/uncle-bob.md`, `concepts/verificacao-deterministica.md` (`draft`, uma fonte de opinião).
+- **Páginas atualizadas**: `concepts/tdd.md` (posição de Bob: não impor disciplinas humanas), `concepts/spec-driven-development.md` (ceticismo de Bob e de Matt quanto a "spec-driven"), `concepts/engenharia-de-contexto.md` (lost in the middle, trajetória do contexto), `concepts/ai-driven-development.md` (convergências e diferenças com Matt), `concepts/harness.md` e `concepts/agentes-de-ia.md` (links), `entities/matt-pocock.md` (live na cronologia), `open-questions.md`, `index.md` (39 fontes, 23 conceitos, 7 entidades).
+- **Tensões registradas, sem sobrescrever**: Bob (SDD provavelmente não funciona; specs efêmeras) × curso Profissional AI (spec como checklist persistente) e Matt (rejeita "specs to code"); ênfase em TDD (Matt: essencial em abril/2026, "mista" em set/2026; Bob: não impor a agentes).
+- **O que permanece não resolvido**: onde estão (ou se serão publicadas) as ferramentas de Bob; evidência independente para CRAP/mutation testing com agentes e para os limiares 4/6/8; livro do debate Bob × Ousterhout; trechos duvidosos da legenda ("The bathrobe's off. I have me.", "my bonus is reviewing the code"); legenda termina cortada.

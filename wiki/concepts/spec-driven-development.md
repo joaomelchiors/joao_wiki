@@ -16,6 +16,7 @@ source_files:
   - raw/sources/2026-11-07-transcricao_AbentsDeIa_SDD.md
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
 related_pages:
+  - ../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md
   - ./ia-generativa.md
   - ./engenharia-de-contexto.md
   - ./rules-e-skills.md
@@ -60,6 +61,15 @@ Fonte: [Spec-Driven Development (aula teórica)](../sources/2026-11-07_source-ag
 - **Spec = receita em Markdown**: lista de passos com checkbox (`- [ ]`); o agente executa um por vez e marca `[x]`. Pode registrar evidência por passo e incluir passos de verificação. Passos podem chamar Skills (`/nome-da-skill`) e ser delegados a **sub-agentes** com contexto limpo (analogia coordenador/auxiliar).
 - Reuso para rotinas recorrentes; o instrutor relata uma execução de ~150–200 passos (anedota não verificável).
 - **Tensão registrada**: o curso sugere gerar sistemas inteiros a partir de specs; Matt Pocock diz que "specs to code" não funciona (ver [Matt Pocock](../entities/matt-pocock.md)). Os sentidos de "spec" diferem (checklist executável × especificação que substitui o código); as duas posições são mantidas.
+
+### Ceticismo de Uncle Bob (live, ago/2026)
+Fonte: [live com Uncle Bob](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md) (opinião e relato dele, tipo `opiniao`).
+
+- Acha que SDD "provavelmente não vai funcionar"; seus experimentos não funcionaram bem. Especificar tudo antes repete o waterfall: o plano falha porque o humano não previu tudo e o agente executa "meio perdido".
+- Prefere o ciclo **ágil**: uma ou duas histórias, olhar a arquitetura, reorganizar, repetir. Argumento: o custo de mudar caiu a quase zero (analogia da casa com mudanças a US$ 1).
+- Para ele, **especificações são efêmeras**: não as mantém no repositório; trata o resultado (e as ferramentas que verificam) como a especificação.
+- Matt Pocock concorda e ressalva que "spec-driven" tem muitas interpretações (passar informação a um agente já seria SDD?) e propõe como critério **persistir e revisitar** as specs.
+- **Tensão registrada** com a aula do curso Profissional AI (spec = checklist persistente e reexecutável): sentidos de "spec" diferem; as posições são mantidas lado a lado, sem conclusão.
 
 ### Spec-Driven Development na Prática (Especificação Simples — Aula 05)
 **Estrutura de pasta recomendada**:
@@ -107,6 +117,7 @@ Coloque uma evidência abaixo de cada passo com data e hora.
 - [Dev AI — Ferramentas Agênticas (Aulas 01–07)](../sources/2026-07-17_source-ferramentas-agenticas.md)
 - [Agentes de IA (Profissional AI) — Spec-Driven Development](../sources/2026-11-07_source-agentes-ia-sdd.md)
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
+- [Uncle Bob e Matt Pocock — live sobre fundamentos na era da IA](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md) (visão cética)
 
 ## Conceitos Relacionados
 
@@ -123,4 +134,5 @@ Coloque uma evidência abaixo de cada passo com data e hora.
 
 ## Notas de Atualização
 
+- 2026-11-12: adicionada a posição cética de Uncle Bob (ingestão da live).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

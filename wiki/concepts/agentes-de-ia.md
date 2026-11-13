@@ -59,10 +59,11 @@ Agente é um sistema de IA no qual um LLM atua como núcleo de decisão, percebe
 - [spec-driven-development](./spec-driven-development.md)
 - [seguranca-de-agentes](./seguranca-de-agentes.md)
 - [mcp](./mcp.md)
+- [verificacao-deterministica](./verificacao-deterministica.md): exemplo de cadeia de cinco agentes (specifier → coder → cleaner → hardener → QA), relato de Uncle Bob.
 
 ## Questões Não Resolvidas
 
-- Como estruturar um sistema multi-agente na prática?
+- Como estruturar um sistema multi-agente na prática? Um exemplo relatado (uma fonte de opinião, sem dados) está em [Verificação determinística](./verificacao-deterministica.md); Matt Pocock é cético com enxames de agentes especializados.
 - Qual o custo (latência, tokens) de loops iterativos com LLMs?
 
 ## Notas de Atualização

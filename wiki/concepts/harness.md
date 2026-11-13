@@ -112,6 +112,7 @@ Modos de permissão, *auto mode* (meio-termo entre aprovar tudo e `--dangerously
 - [spec-driven-development](./spec-driven-development.md)
 - [engenharia-de-contexto](./engenharia-de-contexto.md)
 - [seguranca-de-agentes](./seguranca-de-agentes.md)
+- [verificacao-deterministica](./verificacao-deterministica.md): portões de qualidade (CRAP, mutation testing, regras de dependência) que um harness pode executar em laço, segundo Uncle Bob (opinião, uma fonte).
 
 ## Questões Não Resolvidas
 

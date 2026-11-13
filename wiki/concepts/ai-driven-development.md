@@ -14,6 +14,7 @@ source_files:
   - raw/sources/2026-11-12_the-home-repo-pattern-run-agents-across-all-your-repos_en-orig_hWe-j78vNpc.md
   - raw/sources/2026-11-12_artigo-home-repo-pattern.md
   - raw/assets/2026-11-12_home-repo-pattern.png
+  - raw/sources/2026-09-17_ai-skills-with-matt-pocock_en-revisada_4DhcSPkEbwI.md
 related_pages:
   - ./ia-generativa.md
   - ./tdd.md
@@ -21,16 +22,20 @@ related_pages:
   - ./home-repo.md
   - ./rules-e-skills.md
   - ./spec-driven-development.md
+  - ./verificacao-deterministica.md
+  - ../entities/uncle-bob.md
+  - ../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md
   - ../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
   - ../sources/2026-07-16_source-matt-pocock-shorts.md
   - ../sources/2026-11-12_source-matt-pocock-home-repo.md
+  - ../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md
 ---
 
 # AI-Driven Development (práticas de Matt Pocock)
 
 > Página derivada de [IA Generativa](./ia-generativa.md), dividida em 2026-11-12. O conteúdo foi movido das seções originais sem reescrita substancial; o histórico de atualizações anteriores está no hub.
 
-> **Evidência**: todo o conteúdo vem de um único autor, Matt Pocock. As fontes principais (palestra e shorts) são de tipo `opiniao`; o artigo do Home Repo (`referencia`) só aparece como remissão. Tudo abaixo é método e heurística dele, com demonstrações pontuais na palestra, e não prática validada por outras fontes. Por isso o status é `draft`. Convergências com outras fontes estão indicadas onde existem (por exemplo, Opus para revisão em [Melhores Práticas do Claude Code](./melhores-praticas-claude-code.md)).
+> **Evidência**: todo o conteúdo vem de um único autor, Matt Pocock. As fontes principais (palestra, shorts e entrevista) são de tipo `opiniao`; o artigo do Home Repo (`referencia`) só aparece como remissão. Tudo abaixo é método e heurística dele, com demonstrações pontuais na palestra, e não prática validada por outras fontes. Por isso o status é `draft`. Convergências com outras fontes estão indicadas onde existem (por exemplo, Opus para revisão em [Melhores Práticas do Claude Code](./melhores-praticas-claude-code.md)).
 
 ## Definição
 
@@ -42,6 +47,28 @@ related_pages:
 - **Menos docs, mais código autoexplicativo**: a camada de docs em markdown que descreve o código se desatualiza e cria duas fontes de verdade. Vale manter só ADRs, glossário de domínio e uma camada fina de navegação. Responde em parte à questão "doc rot" (ver Questões Não Resolvidas). Fonte: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md).
 - **Home Repo**: um repo único com skills, `AGENTS.md` e ponteiros para os demais repos, onde o agente sempre roda. Ver [Home Repo](./home-repo.md).
 - **Skill `retro`**: analisa sessões passadas e sugere melhorias no repo (lint, code review); Matt defende **humano ou processo no loop** ("retro da retro") para validar se as mudanças ajudam. Fonte: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md); o artigo acadêmico citado não foi lido.
+
+### Posições da entrevista ao The Pragmatic Engineer (set/2026)
+Fonte: [entrevista](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md) (legenda automática revisada manualmente). Tudo atribuído a Matt Pocock.
+
+- **Fatiar o trabalho pela smart zone (~150 mil tokens)**: o que não cabe numa janela vira vários tickets, um por sessão. Dois documentos: o **destino** (spec/PRD, define o fim) e os **tickets**. Origem: os *Ralph loops* (agente faz a menor mudança rumo ao objetivo e limpa o contexto).
+- **Quando usar cada skill**: pequeno e alinhável depois → nenhuma entrevista; cabe numa sessão → Grill Me; atravessa várias sessões → **Wayfinder**. Regra dele: deslocar o alinhamento para depois ("shift right") sempre que o custo de errar for baixo.
+- **Wayfinder**: um **mapa** central com tickets de tipos diferentes (grilling, protótipo, pesquisa, tarefa arbitrária); "névoa de guerra" que se abre a cada sessão; estrutura de grafo dirigido. Matt diz usar também em tarefas não técnicas (planejar curso, obra).
+- **Grill Me como canal de valores**: o agente "não lê a sua mente"; a entrevista estabelece escopo, o que é importante e o que está fora. Também força o humano a decidir e a pesquisar o que não sabe.
+- **Leading words**: termos de livros clássicos (*tracer bullet*, fatia vertical, módulos profundos, *don't outrun your headlights*) repetidos no prompt, que o modelo devolve e usa no próprio raciocínio. Interpretação do autor da entrevista: esses termos já estão nos priors do modelo. **Hipótese** de Matt, sem teste controlado.
+- **Linguagem ubíqua com o agente**: skill "grill with docs" constrói um glossário de domínio durante o planejamento; ganho declarado é descrever mudanças com poucas palavras e navegar o código por `grep`. Ver [DDD](./ddd.md).
+- **Entropia de software**: agentes a produzem mais rápido; a base de código é o ambiente do agente e precisa ser otimizada para quem "acorda sem memória a cada sessão".
+- **Spec**: continua rejeitando editar só a spec e regenerar código (resultado pior que codar à mão, na experiência dele); tensão com a aula de SDD do curso Profissional AI ([SDD](./spec-driven-development.md)).
+- **Waterfall**: protótipos baratos da IA antes da spec; aceita o rótulo como "cautionary tale".
+- **Agentes na nuvem e processo organizacional**: prefere agentes em máquina remota acessível por chat; sugere observabilidade por agente, conjunto comum de skills e testes A/B de processos. Relatos, não dados.
+
+### Conversa com Uncle Bob (live, ago/2026)
+Fonte: [live](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md); fala do entrevistado Bob, com Matt como interlocutor. Nesta página, o que Matt diz fica atribuído a Matt.
+
+- **Convergências**: fundamentos clássicos continuam valendo; a IA comeu o tático e o estratégico fica com o humano; custo de mudança baixo favorece iterar (ágil) em vez de planejar tudo; módulos profundos (Ousterhout) ajudam o agente; livros antigos (*The Pragmatic Programmer*) como leitura.
+- **Matt sobre multiagentes**: diz ter suspeita de quem tem "100 agentes com e-mail próprio" e faz exceção para implementador + revisor (red-green-refactor: o implementador só faz passar, o revisor recebe o diff e pode ter mais instruções). Bob usa cadeia de cinco papéis ([Verificação determinística](./verificacao-deterministica.md)).
+- **Divergências/diferenças de ênfase**: Bob busca verificação determinística em vez de regras em texto e quer chegar a não olhar o código; Matt afirma que "o código é o campo de batalha" (ver [entidade](../entities/matt-pocock.md)) e rejeita "specs to code". Posições não são idênticas; ficam lado a lado.
+- **Como aprender estratégia**: Matt pergunta como iniciantes aprendem programação estratégica quando a IA fez o tático; Bob responde com código à mão por ~1 ano, depois ser tratado como agente, e livros antigos. Matt acrescenta que o ciclo de feedback da estratégia agora é mais curto com agentes (opinião).
 
 ### HITL vs. AFK: Tipos de Tarefa
 Separação clara entre tarefas que exigem humanos e tarefas automatizáveis:
@@ -164,9 +191,12 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
 - [Matt Pocock — Quatro shorts (docs, dumb zone, Pragmatic Programmer, retro skill)](../sources/2026-07-16_source-matt-pocock-shorts.md)
 - [Matt Pocock — The Home Repo Pattern (vídeo e artigo)](../sources/2026-11-12_source-matt-pocock-home-repo.md)
+- [Matt Pocock — Entrevista ao The Pragmatic Engineer (Wayfinder, leading words, fundamentos)](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md)
+- [Uncle Bob e Matt Pocock — live sobre fundamentos na era da IA](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md) (Matt como entrevistador; fala principal é de Bob)
 
 ## Conceitos Relacionados
 
+- [verificacao-deterministica](./verificacao-deterministica.md)
 - [tdd](./tdd.md)
 - [engenharia-de-contexto](./engenharia-de-contexto.md)
 - [home-repo](./home-repo.md)
@@ -179,9 +209,12 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - **Skills**: onde obter as Skills mencionadas por Matt Pocock (Grill Me, PRD, TDD, improve architecture)? Repositório público?
 - ~~**Doc rot**: PRDs apodrecem — mas e decisões arquiteturais importantes? Como preservá-las?~~ → **Parcialmente resolvida** no short "Delete (most of) your docs" (2026-07-16): manter ADRs, glossário de domínio e camada fina de navegação; evitar docs que descrevem o código. Heurística de um autor, sem dados.
 - **Limite de paralelização**: há limite prático de quantos agentes simultâneos? Custo/latência?
+- **Wayfinder e "grill with docs"**: onde estão publicadas? A entrevista não cita o endereço.
 - **Push vs. Pull**: como implementar sistema de Pull (Skills consultáveis) na prática? MCP? Arquivos `.md` no repo?
 
 ## Notas de Atualização
 
+- 2026-11-12: adicionada a seção da live com Uncle Bob (ingestão).
+- 2026-11-12: adicionada a seção da entrevista ao The Pragmatic Engineer (ingestão).
 - 2026-11-12: status passou a `draft`, com nota de evidência (higienização, etapa 3).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.
