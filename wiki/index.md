@@ -18,7 +18,7 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 
 ## Contagens
 
-- resumo de fonte: 45
+- resumo de fonte: 46 (45 ativos + 1 `superseded`)
 - página de conceito: 23
 - página de entidade: 7
 - página de síntese: 4
@@ -76,6 +76,8 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [2026-08-05_source-claude-code-full-course-freecodecamp.md](./sources/2026-08-05_source-claude-code-full-course-freecodecamp.md): Curso introdutório do freeCodeCamp (Eric Tech, ~1h20, legenda automática) — Claude Code no VS Code: modos de permissão, `/goal` (loop com avaliador), skills/plugins (skills.sh, escopos, `/reload-plugins`), `.agents` × `.claude`, contexto (`/context`, `/compact`, heurística 50%), Git/GitHub para leigos, MCP × CLI (tokens × segurança) e deploy na Vercel. Tem apostila ilustrada em sínteses. Última atualização: 2026-11-15
 - [2026-11-12_source-organizador-emails-sequencial-paralelo.md](./sources/2026-11-12_source-organizador-emails-sequencial-paralelo.md): Projeto Organizador de E-mails (formacao.dev) — estratégias de execução sequencial (menos tokens, mais tempo) × paralela (o inverso) × híbrida; isolamento por arquivos para paralelismo; planejamento com modelo avançado e execução com modelo barato. Legenda revisada. Última atualização: 2026-11-15
 - [2026-11-12_source-organizador-emails-planejamento.md](./sources/2026-11-12_source-organizador-emails-planejamento.md): Projeto Organizador de E-mails (formacao.dev) — solução em 6 fases (coleta via MCP em grupos de 50 threads, classificação por Skills com ação planejada, revisão, confirmação HITL, execução, relatório); camadas Fluxo → Skill → MCP; Full Agent paralelizável. Legenda revisada. Última atualização: 2026-11-15
+- [2026-04-17_source-matt-pocock-live-projeto-do-zero.md](./sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md): Live de Matt Pocock (1h47, abr/2026) — parte de "não tenho ideia de projeto" e chega a dois documentos de pesquisa, um nome (Slopwatch) e um glossário de linguagem ubíqua, sem código de aplicação: a fase anterior ao PRD, pesquisa com subagentes sobre 5 agentes de código, poda de contexto por `resume` e modelagem de domínio (session/turn/model request/listener/server). Única fonte `demonstrado` do método dele; legenda automática **corrigida** (a versão de referência é a `_en-corrigida_`). Última atualização: 2026-11-15
+- [2026-04-20_transcricoes-projetoEAD.md](./sources/2026-04-20_transcricoes-projetoEAD.md): **(superseded)** Resumo agregado das 14 transcrições da imersão DDD + Arquitetura Limpa; substituído pelas páginas por aula listadas acima. Mantido como histórico. Última atualização: 2026-11-12
 
 ## Conceitos
 
@@ -106,7 +108,7 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 ## Entidades
 
 - [formacao-dev.md](./entities/formacao-dev.md): Plataforma de ensino online; instrutor Leonardo; cursos "Arquiteto Dev: DDD + Arquitetura Limpa", "Dev AI: Desenvolvimento com IA", "Profissional AI — Agentes" e projeto "Organizador de E-mails" (2 aulas de planejamento ingeridas). Inclui criação de Skill do zero, SDD e MCP na visão do curso Profissional AI, tabela Skill × MCP e dumb zone (~150k). Última atualização: 2026-11-15
-- [matt-pocock.md](./entities/matt-pocock.md): Especialista em TypeScript e AI-Driven Development; criador do Sand Castle (biblioteca para paralelização de agentes) e Skills para Claude Code (Grill Me, PRD, TDD, improve architecture); entrevistador da live com Uncle Bob; repositório de Skills: github.com/mattpocock/skills (27 skills). Última atualização: 2026-11-14
+- [matt-pocock.md](./entities/matt-pocock.md): Especialista em TypeScript e AI-Driven Development; criador do **Sandcastle** (grafia corrigida; biblioteca para paralelização de agentes) e Skills para Claude Code (Grill Me, Domain Model, Zoom Out, PRD, TDD, improve architecture); entrevistador da live com Uncle Bob; repositório de Skills: github.com/mattpocock/skills (27 skills); live de abr/2026 construindo um projeto do zero. Última atualização: 2026-11-15
 - [github-copilot.md](./entities/github-copilot.md): Assistente de IA da GitHub (Microsoft); plataforma com Code Completion, Chat (Ask/Plan/Agent), Coding Agent (background em ambiente efêmero), Code Review Agent, Instructions, MCP (host/client/server), Copilot Spaces e extensão de modernização (Java/.NET). Última atualização: 2026-05-07
 - [joao-marcos-melchiors.md](./entities/joao-marcos-melchiors.md): Proprietário da wiki; desenvolvedor TypeScript com stack Express/PostgreSQL/Docker; princípios arquiteturais e perfil de aprendizagem observados na conversa DDD+Express. Última atualização: 2026-09-07
 - [claude-code.md](./entities/claude-code.md): Ferramenta agêntica da Anthropic (harness); comandos de contexto, permissões/auto mode (4 modos detalhados), `/goal` com avaliador, sandbox, sub agentes, hooks, plugins/skills.sh, `.agents` × `.claude`, MCP e Agent SDK. Última atualização: 2026-11-14
@@ -122,10 +124,10 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 
 ## Manutenção
 
-- [index.md](./index.md): Índice baseado em conteúdo de toda a wiki. Ponto de entrada para consultas. Última atualização: 2026-11-12
-- [log.md](./log.md): Log cronológico de ingestões, consultas, verificações e atualizações. Última atualização: 2026-11-12
+- [index.md](./index.md): Índice baseado em conteúdo de toda a wiki. Ponto de entrada para consultas. Última atualização: 2026-11-15
+- [log.md](./log.md): Log cronológico de ingestões, consultas, verificações e atualizações. Última atualização: 2026-11-15
 - [overview.md](./overview.md): Quadro geral do tema de pesquisa (DDD + Arq. Limpa; IA Generativa; AI-Driven Development; Claude Code/CCDV-F). Última atualização: 2026-11-07
-- [open-questions.md](./open-questions.md): Lista de questões não resolvidas. Última atualização: 2026-11-12
+- [open-questions.md](./open-questions.md): Lista de questões não resolvidas. Última atualização: 2026-11-15
 - [maintenance/lint-reports/2026-04-28_lint-completo.md](./maintenance/lint-reports/2026-04-28_lint-completo.md): Verificação completa da wiki — 28 páginas analisadas; 1 arquivo obsoleto detectado; 4 conceitos não promovidos identificados; open-questions.md vazio (50+ questões espalhadas). Última atualização: 2026-04-28
 - [maintenance/lint-reports/2026-11-04_lint-completo.md](./maintenance/lint-reports/2026-11-04_lint-completo.md): Verificação completa da wiki — 37 páginas analisadas; index.md e log.md desatualizados desde set/2026; 2 páginas ausentes do index (fonte + entidade); 2 fontes brutas não ingeridas; open-questions.md vazio. Última atualização: 2026-11-04
 - [maintenance/lint-reports/2026-11-12_lint-higienizacao.md](./maintenance/lint-reports/2026-11-12_lint-higienizacao.md): Higienização: classificação das 37 fontes por tipo de conteúdo, 3 conceitos em draft, decisões do chat marcadas, interpretações movidas para sínteses, 0 links quebrados; pendências: verificar afirmações do chat, CQRS, seção ErroValidacao fora do lugar. Última atualização: 2026-11-12

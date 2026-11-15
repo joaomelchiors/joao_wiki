@@ -3,7 +3,7 @@ title: "Engenharia de Contexto"
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-14
+updated: 2026-11-15
 tags: ["engenharia-de-contexto", "prompt", "context-rot", "dumb-zone", "ia-generativa"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-08-ContextoRulesSkill-engenhariaDePrompt.md
@@ -13,8 +13,10 @@ source_files:
   - raw/sources/2026-07-20_what-is-the-dumb-zone_en-orig_sOd7svdu_1I.md
   - raw/sources/2026-07-16_my-1-book-recommendation-for-strategic-programming_en-orig_t34UuBxB2YQ.md
   - raw/sources/2026-11-06_someone-wrote-a-paper-about-my-skill_en-orig_KJr1Q-k-yH0.md
+  - raw/sources/2026-04-17_live-watch-me-build-a-brand-new-project-from-scratch_en-corrigida_K-mA3MZ_EzU.md
 related_pages:
   - ../sources/2026-11-14_source-matt-pocock-skills-skill-md.md
+  - ../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md
   - ./ia-generativa.md
   - ./rules-e-skills.md
   - ./spec-driven-development.md
@@ -77,6 +79,8 @@ Quantas mais tokens são geradas numa única execução, mais o modelo tende a s
 | **Smart zone** | Início da conversa, ~0-100k tokens (palestra de abril/2026) | LLM faz melhor trabalho; relações de atenção menos tensionadas |
 | **Dumb zone** | ~100k+ tokens (palestra de abril/2026) | LLM fica progressivamente "burro"; toma decisões estúpidas |
 
+**Datação do valor antigo (live de 2026-04-17)**: na live em que constrói um projeto do zero, Matt diz em resposta ao chat que "100 mil tokens ainda é a smart zone" e, no fecho, encerra a sessão porque "estamos quase entrando na dumb zone". Confirma que os ~100 mil eram o número dele em abr/2026 e mostra a heurística sendo usada como critério operacional de parada, não só enunciada. Fonte: [live](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md).
+
 **Atualização (short de 2026-07-20)**: o próprio Matt Pocock passou a usar **~150 mil tokens** como regra prática e diz que há ~6 meses achava ~100 mil e que o valor continua subindo; varia por modelo e tarefa. A queda é gradual, e alucinações de fidelidade são um sinal de estar na dumb zone. Ao chegar lá: limpar, compactar, fazer *hand off* ou redesenhar o fluxo em tarefas pequenas em janelas novas. Evolução da posição, não contradição. Fonte: [shorts de Matt Pocock](../sources/2026-07-16_source-matt-pocock-shorts.md).
 
 **Reforço (entrevista de set/2026)**: Matt repete os ~150 mil tokens como valor atual para modelos de fronteira, independentemente do tamanho da janela (ele credita a ideia de smart/dumb zone a Dex Horthy), e usa isso para fatiar trabalho grande em várias sessões (spec/destino + tickets; mapa no Wayfinder). Mesma fonte de opinião de um autor. Ver [entrevista](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md).
@@ -93,12 +97,21 @@ Quantas mais tokens são geradas numa única execução, mais o modelo tende a s
 - Preferir limpar contexto (voltar ao estado base) a compactar (histórico variável)
 - **LLMs como "Memento"**: esquecem continuamente ao limpar; comportamento determinístico a cada reset
 
+### Poda de contexto por `resume` (demonstrada, abr/2026)
+
+Na [live de abr/2026](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md), Matt usa duas vezes um movimento que **não** está entre os cinco das fronteiras de fase (continuar, limpar, hand off, subagente, compactar): depois de uma divagação longa — a escolha do nome do projeto —, ele sai da sessão, usa `resume` para voltar a um ponto anterior da **mesma** conversa e segue dali, "cortando aquele pedaço de contexto"; descreve o efeito como "é quase como se tivéssemos voltado no tempo". No outro uso, pressiona `Esc` duas vezes para desfazer e voltar a um turno anterior.
+
+Diferença em relação aos outros movimentos: não há perda por resumo (não compacta) nem reinício (não limpa) — o que se descarta é **um ramo específico** da conversa, preservando o resto como fonte primária. É coerente com a preferência dele por limpar em vez de compactar, e com a objeção registrada de que começar pelo `/compact` produz uma sessão "confiante e errada". Técnica de um autor, demonstrada uma vez, sem medição.
+
+Ele também usa o `resume` para outra finalidade: fazer uma sessão antiga responder a uma pergunta feita por **outra** sessão do Claude Code, porque a primeira conversa tinha ocorrido fora do repositório onde ele passou a trabalhar — contorno para a limitação de que referenciar outra sessão exige estar no mesmo diretório.
+
 ## Fontes de Suporte
 
 - [Dev AI — Aula 08: Engenharia de Prompt e Contexto](../sources/2026-04-28_source-dev-ai-engenharia-de-prompt.md)
 - [Dev AI — Aula 09: Engenharia de Contexto (Rules, Skills, Spec Driven Development)](../sources/2026-04-29_source-dev-ai-engenharia-de-contexto.md)
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
 - [Matt Pocock — Quatro shorts (docs, dumb zone, Pragmatic Programmer, retro skill)](../sources/2026-07-16_source-matt-pocock-shorts.md)
+- [Matt Pocock — LIVE: construindo um projeto do zero](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md): datação dos ~100 mil tokens (abr/2026) e a poda de contexto por `resume`, demonstradas.
 
 ## Conceitos Relacionados
 
@@ -114,6 +127,7 @@ Quantas mais tokens são geradas numa única execução, mais o modelo tende a s
 
 ## Notas de Atualização
 
+- 2026-11-15: datados os ~100 mil tokens com a live de abr/2026 e adicionada a seção "Poda de contexto por `resume`" (ingestão).
 - 2026-11-14: adicionado o terceiro reforço dos ~150k, vindo da skill `ask-matt` (revisão da ingestão).
 - 2026-11-12: adicionados lost in the middle e trajetória do contexto, da live com Uncle Bob (ingestão).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

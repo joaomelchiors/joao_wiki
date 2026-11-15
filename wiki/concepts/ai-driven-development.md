@@ -3,8 +3,8 @@ title: "AI-Driven Development (práticas de Matt Pocock)"
 type: concept
 status: draft
 created: 2026-11-12
-updated: 2026-11-14
-tags: ["ai-driven-development", "matt-pocock", "hitl", "afk", "tracer-bullets", "ia-generativa"]
+updated: 2026-11-15
+tags: ["ai-driven-development", "matt-pocock", "hitl", "afk", "tracer-bullets", "ia-generativa", "greenfield"]
 source_files:
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
   - raw/sources/2026-07-16_delete-most-of-your-docs_en-orig_Fj8DKMbdIzU.md
@@ -15,6 +15,7 @@ source_files:
   - raw/sources/2026-11-12_artigo-home-repo-pattern.md
   - raw/assets/2026-11-12_home-repo-pattern.png
   - raw/sources/2026-09-17_ai-skills-with-matt-pocock_en-revisada_4DhcSPkEbwI.md
+  - raw/sources/2026-04-17_live-watch-me-build-a-brand-new-project-from-scratch_en-corrigida_K-mA3MZ_EzU.md
 related_pages:
   - ./ia-generativa.md
   - ./tdd.md
@@ -29,13 +30,14 @@ related_pages:
   - ../sources/2026-07-16_source-matt-pocock-shorts.md
   - ../sources/2026-11-12_source-matt-pocock-home-repo.md
   - ../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md
+  - ../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md
 ---
 
 # AI-Driven Development (práticas de Matt Pocock)
 
 > Página derivada de [IA Generativa](./ia-generativa.md), dividida em 2026-11-12. O conteúdo foi movido das seções originais sem reescrita substancial; o histórico de atualizações anteriores está no hub.
 
-> **Evidência**: todo o conteúdo vem de um único autor, Matt Pocock. As fontes principais (palestra, shorts e entrevista) são de tipo `opiniao`; o artigo do Home Repo (`referencia`) só aparece como remissão. Tudo abaixo é método e heurística dele, com demonstrações pontuais na palestra, e não prática validada por outras fontes. Por isso o status é `draft`. Convergências com outras fontes estão indicadas onde existem (por exemplo, Opus para revisão em [Melhores Práticas do Claude Code](./melhores-praticas-claude-code.md)).
+> **Evidência**: todo o conteúdo vem de um único autor, Matt Pocock. As fontes principais (palestra, shorts e entrevista) são de tipo `opiniao`; o artigo do Home Repo (`referencia`) só aparece como remissão. Desde 2026-11-15 há uma fonte `demonstrado` — a [live de abr/2026](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md), com 1h47 de execução ao vivo —, o que eleva a evidência da **fase de pesquisa** descrita abaixo, mas não tira a página do `draft`: continua sendo método e heurística de um único autor, não prática validada por outras fontes. Convergências com outras fontes estão indicadas onde existem (por exemplo, Opus para revisão em [Melhores Práticas do Claude Code](./melhores-praticas-claude-code.md)).
 
 ## Definição
 
@@ -81,6 +83,29 @@ Separação clara entre tarefas que exigem humanos e tarefas automatizáveis:
 **Metáfora**: "Turno do dia" (humano planeja; enfileira trabalho) vs. "Turno da noite" (IA implementa AFK enquanto humano dorme).
 
 **Princípio**: planejamento é **obrigatoriamente** HITL; implementação pode ser transformada em AFK.
+
+### Antes do PRD: a fase de pesquisa (live de abr/2026, demonstrada)
+
+Fonte: [live "Watch me build a brand-new project from scratch"](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md) — 1h47 de execução ao vivo que termina **sem código de aplicação**, com dois documentos de pesquisa, um nome e um glossário.
+
+O fluxo da seção seguinte começa em "Ideia". Esta live mostra o que acontece **antes** de a ideia virar PRD, quando o projeto é greenfield:
+
+```
+Ideia vaga → validar (vale construir?) → pesquisa do terreno (subagentes em paralelo)
+          → documento de pesquisa (persiste o que foi descoberto fora da janela)
+          → nome → modelagem de domínio (grilling) → context.md (linguagem ubíqua)
+          → [daqui em diante: PRD → tickets → implementação]
+```
+
+- **"Até você chegar ao código, você está só trabalhando com pesquisa — é uma tarefa de pesquisa."** A fase não produz especificação; produz entendimento e vocabulário.
+- **Validar antes de especificar**: ele adia de propósito duas decisões grandes — autenticação completa (OIDC fica para a v2; na v1, token emitido pelo admin) e o tratamento de *resume*/compactação — dizendo que precisa ver uma versão básica funcionando antes de decidir. "Poderíamos especificar tudo isso, mas precisamos validar se a ideia é boa."
+- **Pesquisa delegada a subagentes**, em paralelo e com pergunta fechada (como cada um dos cinco agentes de código expõe dados; se emite OpenTelemetry). Conclusão operacional: os schemas divergem e evoluem, não existe resposta "só use OTel", então **um adaptador por agente é inevitável**.
+- **Documento de pesquisa ≠ PRD**: o PRD é documento de *destino*; o documento de pesquisa é memória do que foi descoberto. Ele não o relê — "o que importa são as conclusões" —, mesma postura já registrada sobre o PRD.
+- **Nomear faz parte do trabalho**: ele admite o *bikeshedding* do trecho de naming e ainda assim defende o resultado — "o nome faz parecer mais real"; "a linguagem é como você traz um programa à vida".
+- **Terminologia que "calcifica"**: quando um termo novo passa a ser reusado pelos dois lados (no caso, *sidecar*), ele trata isso como sinal de progresso e captura o termo deliberadamente.
+- **Fecho com glossário em `context.md`**, testado contra cenários concretos — ver [DDD](./ddd.md).
+- **Contra dividir por camada**: fazer sessões de grilling separadas para front-end e back-end é "uma decisão artificial — o domínio, o espaço do problema, é a coisa inteira"; organizar times por camada "sempre foi uma decisão ruim" porque prende a atenção à camada em vez do problema.
+- **Memória de agente de longo prazo**: nesta data ele a considera **má ideia** e prefere "algo observável, concreto, que você possa editar na hora e que caiba na janela de contexto" — ADRs mais uma versão mínima de DDD. Compare com a skill beta `chief-of-staff` (nov/2026), que prescreve memória de longo prazo em wiki Markdown ([resumo do repositório](../sources/2026-11-14_source-matt-pocock-repo-skills.md)). Fontes de épocas diferentes; a wiki registra as duas sem conciliar.
 
 ### Fluxo Completo de Desenvolvimento
 ```
@@ -199,6 +224,7 @@ Fonte: [`SKILL.md` das 27 skills](../sources/2026-11-14_source-matt-pocock-skill
 ## Fontes de Suporte
 
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
+- [Matt Pocock — LIVE: construindo um projeto do zero](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md): única fonte `demonstrado` do conceito — a fase de pesquisa, o naming e a modelagem de domínio executados ao vivo (abr/2026).
 - [Matt Pocock — Quatro shorts (docs, dumb zone, Pragmatic Programmer, retro skill)](../sources/2026-07-16_source-matt-pocock-shorts.md)
 - [Matt Pocock — The Home Repo Pattern (vídeo e artigo)](../sources/2026-11-12_source-matt-pocock-home-repo.md)
 - [Matt Pocock — Entrevista ao The Pragmatic Engineer (Wayfinder, leading words, fundamentos)](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md)
@@ -229,6 +255,7 @@ Fonte: [`SKILL.md` das 27 skills](../sources/2026-11-14_source-matt-pocock-skill
 
 ## Notas de Atualização
 
+- 2026-11-15: adicionada a seção "Antes do PRD: a fase de pesquisa", da live de abr/2026 (ingestão) — primeira fonte `demonstrado` da página; registrada a tensão entre "memória de longo prazo é má ideia" (abr/2026) e a skill `chief-of-staff` (nov/2026).
 - 2026-11-14: renomeações confirmadas pelo CHANGELOG; adicionadas as skills beta e a resposta parcial de Push vs. Pull (ingestão dos auxiliares).
 - 2026-11-14: adicionada a seção "Skills hoje no repositório" com base nos `SKILL.md` (ingestão).
 - 2026-11-14: adicionada a fonte do repositório de skills (ingestão), com respostas a duas questões abertas.

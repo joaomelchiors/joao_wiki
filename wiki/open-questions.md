@@ -3,7 +3,7 @@ title: "Questões Abertas"
 type: maintenance
 status: active
 created: 2026-04-07
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["questions"]
 source_files: []
 related_pages:
@@ -38,6 +38,10 @@ Esta página mantém questões que precisam de investigação adicional e julgam
 - Codex recarrega Skills sozinho? As aulas "Criando Skill" e "Skill com Código" se contradizem.
 - Segurança de MCPs de catálogos e de Skills de terceiros com scripts: o curso só recomenda verificar a procedência.
 - Home Repo: como Matt Pocock organiza a wiki dentro do repo (vídeo prometido) e se este repositório deve virar home repo — ver [conceito](./concepts/home-repo.md).
+- Matt Pocock (live de abr/2026, projeto do zero): o repositório **Slopwatch** (`repos/ai/slopwatch`) ficou público e teve continuidade? Saiu o vídeo prometido com a implementação? Conferir também a afirmação de que o modo `xhigh` se tornou o padrão do Claude Code (abr/2026, uma fonte só) — ver [resumo](./sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md).
+- **Pi** (agente de código de Mario Zechner): aparece na live como um dos cinco agentes principais e o único que produz ramificações reais de turn. Candidato a página de entidade, mas **falta fonte em `raw/`** — a identificação na ingestão de 2026-11-15 veio de busca na web. Buscar material primário (site/repo/doc) antes de criar a página.
+- Três correções de legenda marcadas como prováveis, não certas, na live de abr/2026: `GitHub copilot setup` → GitHub Desktop, `Get all login` → `gh auth login`, `miday` → mid-May; e a sigla "CLCO course" → "Claude Code course". Conferir no vídeo se forem sustentar afirmação na wiki.
+- Tensão em aberto sobre **memória de agente de longo prazo**: Matt a chama de "má ideia" em abr/2026 (prefere ADRs + DDD mínimo), mas a skill beta `chief-of-staff` dele (nov/2026) prescreve memória em wiki Markdown com ingest/query/lint. Interessa diretamente a [esta wiki como home repo](./syntheses/2026-11-12_home-repo-nesta-wiki.md) — ver [live](./sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md) e [repositório de skills](./sources/2026-11-14_source-matt-pocock-repo-skills.md).
 - Matt Pocock (entrevista ao The Pragmatic Engineer): localizar as skills Wayfinder e "grill with docs" e conferir os números citados (~230 mil estrelas, ~1,2 milhão de views); trechos duvidosos da legenda ("Sandals", "Lauren", "Peter break", "Opus 5") — ver [resumo](./sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md).
 - Uncle Bob (live com Matt Pocock): as ferramentas dele (CRAP, mutation tester, harness, visualizador de arquitetura) não estão publicadas; verificar se há versão aberta para TypeScript, e se CRAP/teste de mutação melhoram agentes além do relato dele; limiares CRAP 4/6/8 sem dados — ver [resumo](./sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md) e [Verificação determinística](./concepts/verificacao-deterministica.md).
 - Posições conflitantes sobre SDD e TDD (Bob, Matt, curso Profissional AI): sem experimento comparável na wiki — ver [SDD](./concepts/spec-driven-development.md) e [TDD](./concepts/tdd.md).

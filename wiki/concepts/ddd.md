@@ -3,8 +3,8 @@ title: "Domain-Driven Design (DDD)"
 type: concept
 status: active
 created: 2026-04-20
-updated: 2026-11-12
-tags: ["ddd", "domínio", "modelagem", "padrões"]
+updated: 2026-11-15
+tags: ["ddd", "domínio", "modelagem", "padrões", "linguagem-ubiqua"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-4-modelagem.md
   - raw/sources/2026-04-20_transcrição-projetoEAD-5-agregado.md
@@ -17,6 +17,7 @@ source_files:
   - raw/sources/2026-04-21_transcrição-projetoEAD-19-casoDeUso-02.md
   - raw/sources/2026-04-21_transcrição-projetoEAD-20-repositorio_usuario.md
   - raw/sources/2026-09-07_chat-DDD-Express-PortsAndAdapters.md
+  - raw/sources/2026-04-17_live-watch-me-build-a-brand-new-project-from-scratch_en-corrigida_K-mA3MZ_EzU.md
 related_pages:
   - ../sources/2026-04-20_source-imersao-ddd-arq-limpa.md
   - ../sources/2026-04-23_source-imersao-ddd-arq-limpa-tratamento-erros.md
@@ -25,6 +26,7 @@ related_pages:
   - ../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-02.md
   - ../sources/2026-04-27_source-imersao-ddd-arq-limpa-repositorio-usuario.md
   - ../sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md
+  - ../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md
   - ./objeto-de-valor.md
   - ./agregado.md
   - ./contexto-delimitado.md
@@ -46,6 +48,22 @@ Domain-Driven Design é um conjunto de práticas e padrões de software cujo foc
 | **Contexto Delimitado** | Módulo com fronteiras claras que representa um subdomínio do negócio. |
 | **Linguagem Ubíqua** | Terminologia universal compartilhada entre código, documentação e especialistas do negócio dentro de um contexto. |
 | **Mapa de Contexto** | Diagrama (pode ser informal) que mostra quais contextos existem e como se relacionam — sem dependências cíclicas. |
+
+#### Linguagem Ubíqua construída com um agente (demonstração, abr/2026)
+
+Fonte: [live de Matt Pocock](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md) (`demonstrado`). É a primeira fonte da wiki que mostra a Linguagem Ubíqua sendo **construída ao vivo em conversa com um agente de código**, e não apenas definida. Ele afirma na sessão: "isso é linguagem ubíqua, 100%" e "DDD é um casamento fantástico com AI coding".
+
+Como aparece na prática:
+
+- **O glossário é o artefato.** O fecho da sessão é um `context.md` com os termos do domínio, um a um, cada um ligado ao que vira no modelo de dados. No caso dele: *session* (uma execução contínua de um agente, de início a fim, atrelada a um desenvolvedor, um diretório e uma versão de agente), *turn* (uma mensagem do usuário mais a resposta completa do assistente), *model request* (uma chamada HTTP ao provedor dentro de um turn), *listener* (processo que roda ao lado do agente e captura os eventos) e *server* (processo auto-hospedado que recebe, armazena e serve o painel).
+- **Motivo declarado**: "se *session* é vago, todo o modelo de dados fica vago" — e o termo mapeia direto para uma tabela. A precisão do vocabulário é tratada como precisão do modelo.
+- **Alinhamento humano–agente como objetivo**: "a IA e eu precisamos estar sincronizados na forma de falar sobre isso". A linguagem ubíqua ganha aqui um segundo público além da equipe e do especialista de negócio — o agente.
+- **Testar o vocabulário com cenários.** Ele pede cenários concretos para "road test" da linguagem (um usuário ramifica e abandona um caminho; outro rebobina dois turns; um terceiro assiste à sessão de um quarto ao vivo). É o critério dele, atribuído ao DDD: pegar desacordos de linguagem, descrever casos concretos e ver qual vocabulário os descreve com menos esforço — o que, segundo ele, costuma indicar o que também será mais fácil de codificar.
+- **Resultado do teste**: os cenários forçaram a distinção entre *turn* e *model request* e a aceitar que uma *session* contém um **DAG** de turns (ramificações), em vez de uma lista linear.
+- **Termos que "calcificam"**: quando um termo passa a ser reusado pelos dois lados sem negociação (no caso, *sidecar*), ele trata isso como sinal de que a linguagem está firmando, e captura o termo. Observação dele sobre o próprio processo.
+- **Ressalva**: o agente recusou *sidecar* como nome do conceito público (risco de colisão com termo consagrado de infraestrutura) e a sessão fechou em *listener*. Mostra o vocabulário sendo negociado, não ditado.
+
+Interpretação do mantenedor (não da fonte): este é o uso mais concreto de DDD com agentes registrado na wiki até agora, e o mais próximo do que a aula de modelagem da imersão descreve como ponto de partida. A convergência não é afirmada pela fonte.
 
 ### Ferramentas Táticas (Padrões do Modelo de Domínio)
 
@@ -150,6 +168,7 @@ export interface EntityProps {
 - [Aula 19 — Caso de Uso 02](../sources/2026-04-27_source-imersao-ddd-arq-limpa-caso-de-uso-02.md)
 - [Aula 20 — Repositório de Usuário](../sources/2026-04-27_source-imersao-ddd-arq-limpa-repositorio-usuario.md)
 - [Conversa DDD + Express + Ports & Adapters](../sources/2026-09-07_source-chat-ddd-express-ports-and-adapters.md)
+- [Matt Pocock — LIVE: construindo um projeto do zero](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md): Linguagem Ubíqua construída ao vivo com um agente (glossário em `context.md`, cenários para testar o vocabulário).
 
 ## Entidades Relacionadas
 
@@ -164,6 +183,7 @@ export interface EntityProps {
 
 ## Notas de Atualização
 
+- 2026-11-15: adicionada a seção "Linguagem Ubíqua construída com um agente", da live de Matt Pocock de abr/2026 (ingestão) — primeira fonte `demonstrado` do tema na página.
 - 2026-04-20: criada a partir da ingestão da série de transcrições da imersão DDD + Arquitetura Limpa.
 - 2026-04-20: atualizada com distinção precisa UseCase × Serviço de Domínio × Serviço de Aplicação, e esclarecimento de quem chama o Serviço de Domínio — a partir da sessão Q&A 01.
 - 2026-04-23: adicionado padrão `Result` como ferramenta tática auxiliar (shared) — a partir da Aula 15 (Tratamento de Erros).
