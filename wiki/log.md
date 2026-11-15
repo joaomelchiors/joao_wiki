@@ -701,3 +701,76 @@ Este arquivo é um log cronológico apenas para anexação. Adicione novas entra
 - **Páginas atualizadas**: `concepts/tdd.md` (posição de Bob: não impor disciplinas humanas), `concepts/spec-driven-development.md` (ceticismo de Bob e de Matt quanto a "spec-driven"), `concepts/engenharia-de-contexto.md` (lost in the middle, trajetória do contexto), `concepts/ai-driven-development.md` (convergências e diferenças com Matt), `concepts/harness.md` e `concepts/agentes-de-ia.md` (links), `entities/matt-pocock.md` (live na cronologia), `open-questions.md`, `index.md` (39 fontes, 23 conceitos, 7 entidades).
 - **Tensões registradas, sem sobrescrever**: Bob (SDD provavelmente não funciona; specs efêmeras) × curso Profissional AI (spec como checklist persistente) e Matt (rejeita "specs to code"); ênfase em TDD (Matt: essencial em abril/2026, "mista" em set/2026; Bob: não impor a agentes).
 - **O que permanece não resolvido**: onde estão (ou se serão publicadas) as ferramentas de Bob; evidência independente para CRAP/mutation testing com agentes e para os limiares 4/6/8; livro do debate Bob × Ousterhout; trechos duvidosos da legenda ("The bathrobe's off. I have me.", "my bonus is reviewing the code"); legenda termina cortada.
+
+## [2026-11-14] ingest | Matt Pocock — My /teach skill is still insane (short)
+
+- **O que foi feito**: legenda baixada do YouTube (en-orig, automática) e salva em `raw/sources/2026-07-16_my-teach-skill-is-still-insane_en-orig_glaIO6OYh74.md`. Resumo de fonte criado como `opiniao`/`automatica` (short de 1 min, relato pessoal da skill `/teach`).
+- **Páginas criadas**: `sources/2026-07-16_source-matt-pocock-teach-skill.md`.
+- **Páginas atualizadas**: `concepts/ai-driven-development.md` (fonte de suporte; continua `draft`), `index.md` (40 resumos de fonte), `log.md`.
+- **O que permanece não resolvido**: onde a skill `/teach` está publicada e qual é o seu prompt; o que é o "teach workspace"; o título sugere um vídeo anterior sobre a skill, não ingerido. Também notado: `raw/sources/2026-11-06_someone-wrote-a-paper-about-my-skill_...` é citado no resumo dos quatro shorts, mas não foi verificado aqui.
+
+## [2026-11-14] update | Repositório de Skills de Matt Pocock
+
+- **O que foi feito**: o usuário informou o repositório `https://github.com/mattpocock/skills`; registrado na entidade Matt Pocock (contato e pontos para monitorar). O conteúdo do repositório não foi inspecionado.
+- **Páginas atualizadas**: `entities/matt-pocock.md`, `index.md`, `log.md`.
+- **O que permanece não resolvido**: confirmar quais skills citadas nas fontes (Grill Me, PRD, TDD, `/teach`, Wayfinder, "grill with docs") estão nesse repositório; responderia às questões abertas sobre onde obter as Skills.
+
+## [2026-11-14] ingest | Repositório mattpocock/skills (GitHub)
+
+- **O que foi feito**: página do repositório lida com WebFetch; o resumo devolvido (não o README literal) foi salvo em `raw/sources/2026-11-14_github-mattpocock-skills_readme-resumo.md`. Resumo de fonte criado como `referencia`/`manual`: 27 skills por grupo, instalação por agente, métricas do dia.
+- **Páginas criadas**: `sources/2026-11-14_source-matt-pocock-repo-skills.md`.
+- **Páginas atualizadas**: `entities/matt-pocock.md` (repositório e pontos para monitorar), `concepts/ai-driven-development.md` (fonte; duas questões abertas respondidas), `sources/2026-07-16_source-matt-pocock-teach-skill.md` (onde está a skill), `index.md` (41 fontes), `log.md`.
+- **O que permanece não resolvido**: conteúdo dos `SKILL.md`; histórico de renomeações (PRD → `to-spec`, hipótese do mantenedor); `SCOPE.md`, `GLOSSARY.md` e `.out-of-scope/`; skills do repo que a wiki ainda não cobre (`triage`, `handoff`, `wait-what`, `wizard`, `research` etc.).
+
+## [2026-11-14] ingest | mattpocock/skills — conteúdo dos SKILL.md
+
+- **O que foi feito**: baixados do GitHub (raw.githubusercontent.com) e salvos sem edição em `raw/sources/2026-11-14_github-mattpocock-skills_skill-md.md` os `SKILL.md` das 27 skills das pastas `engineering` e `productivity`; lidos integralmente. Resumo de fonte criado como `referencia`/`manual`, com o fluxo principal, cada skill, Wayfinder e `teach` em detalhe.
+- **Páginas criadas**: `sources/2026-11-14_source-matt-pocock-skills-skill-md.md`.
+- **Páginas atualizadas**: `concepts/ai-driven-development.md` (seção das skills em nov/2026; continua `draft`), `concepts/tdd.md` (o que o `SKILL.md` prescreve), `concepts/spec-driven-development.md` (versão de Matt em skills e tensão), `sources/2026-11-14_source-matt-pocock-repo-skills.md`, `sources/2026-07-16_source-matt-pocock-teach-skill.md` (questões respondidas), `entities/matt-pocock.md`, `index.md` (42 fontes), `log.md`.
+- **Tensões registradas, sem sobrescrever**: `tdd` tira a refatoração do loop × "red-green-refactor" da palestra de abril/2026; `to-spec`/`implement-spec` × rejeição de "specs to code" por Matt e Bob (conciliação é interpretação, não confirmada).
+- **O que permanece não resolvido**: arquivos auxiliares das skills (`PHASE-BOUNDARIES.md`, `AGENT-BRIEF.md`, `SKILL-MECHANICS.md` etc.); pastas `in-progress/` e `misc/`; `CHANGELOG.md` (renomeações); evidência independente de que o fluxo melhora o resultado.
+
+## [2026-11-14] lint | Revisão das três ingestões mattpocock (short /teach, repo, SKILL.md)
+
+- **O que foi feito**: revisão das páginas criadas e editadas nas três ingestões de hoje, contra as fontes brutas e a API do GitHub.
+- **Verificado e correto**: a classificação user-invoked × model-invoked bate com o frontmatter dos `SKILL.md` (`disable-model-invocation`); os 12 smells de Fowler, a smart zone ~150k (`ask-matt`) e os ~100K por ticket (`wayfinder`) conferem com o texto bruto; as métricas improváveis do resumo automático eram verdadeiras (API: 324.488 estrelas, 27.233 forks, MIT); 0 links quebrados na wiki; contagem de 42 fontes consistente com a convenção anterior (41 ativas + 1 superseded).
+- **Corrigido**: duas frases desatualizadas que diziam que os `SKILL.md` não tinham sido lidos (tabela de afirmações do resumo do repo e entrada do index); concordância ("dos vídeos"); precisão em `ai-driven-development.md` (o `grill-me` não "virou" a primitiva — continua existindo como casca sobre `grilling`); métricas anotadas como conferidas na API.
+- **Backlinks adicionados** (§12): `concepts/engenharia-de-contexto.md` (terceiro reforço dos ~150k, vindo de `ask-matt`) e `concepts/skills-na-pratica.md` (distribuição multiferramenta como exemplo real), ambos apontando para as fontes novas.
+- **O que permanece não resolvido**: os mesmos itens das ingestões (arquivos auxiliares, `in-progress/`, `misc/`, `CHANGELOG.md`); a observação de que o resumo em `raw/` do README é paráfrase de ferramenta, não cópia literal, permanece como limitação registrada na própria página.
+
+## [2026-11-14] ingest | mattpocock/skills — auxiliares, in-progress, misc e CHANGELOG
+
+- **O que foi feito**: baixados e lidos integralmente (a) os arquivos auxiliares das skills promovidas e os docs de raiz (SCOPE.md, GLOSSARY.md, CLAUDE.md do repo, READMEs dos buckets) em `raw/sources/2026-11-14_github-mattpocock-skills_auxiliares.md`; (b) as pastas `in-progress/` (7 skills beta + surveys do software-factory) e `misc/` (4 skills congeladas) em `raw/sources/2026-11-14_github-mattpocock-skills_in-progress-misc.md`; (c) o `CHANGELOG.md` completo em raw, lido por busca dirigida. Nenhuma página nova: o material foi anexado às duas fontes existentes (regra §14.4).
+- **Questões fechadas**: renomeações confirmadas no CHANGELOG (`to-prd` → `to-spec`, PR #464/#734; `to-plan`+`to-issues` → `to-tickets`; `decision-mapping` → `wayfinder`; `diagnose` → `diagnosing-bugs`; `writing-great-skills` → `writing-for-agents`); conteúdo dos auxiliares; SCOPE/GLOSSARY; pastas in-progress e misc.
+- **Achado notável**: a skill beta `chief-of-staff` prescreve memória de agente em wiki de Markdown com `index.md` e operações ingest/query/lint, fontes intocáveis e "escrever história, não o presente" — convergência independente com o esquema wiki-kit desta wiki; registrado na síntese home-repo-nesta-wiki.
+- **Páginas atualizadas**: `sources/2026-11-14_source-matt-pocock-skills-skill-md.md` (seção de auxiliares), `sources/2026-11-14_source-matt-pocock-repo-skills.md` (governança, in-progress/misc, CHANGELOG), `concepts/ai-driven-development.md` (renomeações confirmadas; skills beta; Push vs. Pull parcialmente respondida), `concepts/engenharia-de-contexto.md` (árvore completa das fronteiras de fase), `concepts/tdd.md` (regras de mock), `syntheses/2026-11-12_home-repo-nesta-wiki.md` (convergência chief-of-staff), `entities/matt-pocock.md`, `index.md`, `log.md`.
+- **O que permanece não resolvido**: pasta `docs/` do repo (34 páginas humanas em aihero.dev, uma por skill promovida); arquivos individuais de `.out-of-scope/` (8 conceitos rejeitados); surveys do software-factory citam produtos/preços de 2026-10 sem verificação independente; evidência independente de eficácia do fluxo continua ausente.
+
+## [2026-11-14] ingest | Curso freeCodeCamp — Claude Code Full Course (Eric Tech)
+
+- **O que foi feito**: baixada a legenda automática do vídeo "Claude Code Full Course – Autonomous Goals, MCP, and VS Code Setup" (freeCodeCamp.org, 2026-08-05, 1h21) via MCP de legendas, salva em `raw/sources/2026-08-05_claude-code-full-course-autonomous-goals-mcp-and-vs-code_en-orig_7l6bXLAKyEI.md`; lida integralmente. Resumo de fonte criado como `demonstrado`/`automatica` (demos ao vivo dominantes; legenda ruidosa: "Cloud Code"/"Claw Code"/"Clocko").
+- **Páginas criadas**: `sources/2026-08-05_source-claude-code-full-course-freecodecamp.md`.
+- **Páginas atualizadas**: `entities/claude-code.md` (4 modos de permissão detalhados, `/goal` com avaliador, escopos de instalação de skills, skills.sh, `.agents` × `.claude`, cronograma), `concepts/mcp.md` (nova seção MCP × ferramentas CLI — tokens × segurança, atribuída ao instrutor), `index.md` (43 fontes), `log.md`.
+- **O que permanece não resolvido**: se `/goal` é nativo ou skill instalada; o que é "Ultra Plan"; conferir na documentação oficial os nomes exatos (status line, flag de bypass, "resume from summary"); credenciais do instrutor (ex-Amazon/Microsoft) não verificadas.
+
+## [2026-11-14] lint | Ingestão freeCodeCamp + checagens gerais da wiki
+
+- **O que foi feito**: resumo da fonte freeCodeCamp conferido por amostragem contra a legenda bruta (tolerância 2%, janela 1M, auto mode, skills.sh, flag de bypass); script checou toda a wiki: 0 links quebrados, 0 `source_files` inexistentes, 43 fontes todas com `tipo_conteudo`/`captura`, contagens por diretório × index.
+- **Corrigido**: contagem de sínteses no index (2 → 3) e linha em branco espúria; grafia `/reload-plugins` → `/reload plugins` (a legenda não tem hífen; nome não verificado) na fonte e na entidade; origem do `/goal` precisada (o instrutor o chama de "skill") na fonte e na entidade.
+- **Páginas criadas**: `maintenance/lint-reports/2026-11-14_lint-ingestao-freecodecamp.md`.
+- **Páginas atualizadas**: `index.md` (contagens, entrada do relatório), `open-questions.md` (verificação dos comandos do curso freeCodeCamp na doc oficial), `sources/2026-08-05_source-claude-code-full-course-freecodecamp.md`, `entities/claude-code.md`, `log.md`.
+- **O que permanece não resolvido**: conferir na documentação oficial `/goal`, "Ultra Plan", `/reload plugins` e status line; credenciais do instrutor não verificadas.
+
+## [2026-11-15] query | apostila do curso freeCodeCamp (Claude Code)
+
+- **O que foi feito**: a pedido do mantenedor humano, o curso freeCodeCamp (fonte já ingerida em 2026-11-14) foi reorganizado numa apostila didática completa: 11 capítulos na ordem do curso, 9 diagramas, tabelas, glossário e 8 perguntas de revisão. Publicada primeiro como página web (artifact privado no claude.ai) para leitura prévia; após aprovação, salva na wiki.
+- **Páginas criadas**: `syntheses/2026-11-15_apostila-curso-claude-code-freecodecamp.md`; 9 diagramas SVG em `wiki/assets/` (novo diretório para ilustrações produzidas pelo mantenedor: superfícies de uso, modos de permissão, loop do `/goal`, pipeline fix-ticket, `.claude` × `.agents`, context rot, commits Git, hub MCP, agente→skill→MCP).
+- **Páginas atualizadas**: `sources/2026-08-05_source-claude-code-full-course-freecodecamp.md` (link para a apostila), `index.md`, `log.md`.
+- **O que permanece não resolvido**: as mesmas questões da fonte (`/goal` e status line são customizações do instrutor; "Ultra Plan"; grafias na doc oficial).
+
+## [2026-11-15] ingest | Projeto Organizador de E-mails — aulas de planejamento (formacao.dev)
+
+- **O que foi feito**: ingeridas as duas transcrições pendentes do projeto Organizador de E-mails (curso Profissional AI, instrutor Leo; legendas automáticas revisadas em 2026-11-13): "Estratégias de execução: sequencial e paralelo" (12 min) e "Planejamento da solução" (25 min, fluxo em 6 fases). Ambas classificadas como `explicacao`/`automatica` (aulas de planejamento em diagrama, sem execução).
+- **Páginas criadas**: `sources/2026-11-12_source-organizador-emails-sequencial-paralelo.md`, `sources/2026-11-12_source-organizador-emails-planejamento.md`.
+- **Páginas atualizadas**: `concepts/agentes-de-ia.md` (estratégias sequencial × paralela × híbrida, tokens × tempo, arquivos por agente, modelos por responsabilidade; fluxo em 6 fases com HITL), `concepts/spec-driven-development.md` (questão dos conflitos em subagentes paralelos parcialmente respondida; arquivo de fluxo = padrão de spec), `entities/formacao-dev.md` (novo curso/projeto na tabela, cronograma, fontes), `index.md` (45 fontes, 4 sínteses), `log.md`.
+- **O que permanece não resolvido**: formato de arquivo (TXT/JSON/CSV) e implementação da confirmação HITL ficam para as aulas de implementação do curso; consumo de tokens das estratégias não quantificado; aulas de implementação do projeto ainda não ingeridas.

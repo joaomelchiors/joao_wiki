@@ -3,7 +3,7 @@ title: "Engenharia de Contexto"
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-14
 tags: ["engenharia-de-contexto", "prompt", "context-rot", "dumb-zone", "ia-generativa"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-08-ContextoRulesSkill-engenhariaDePrompt.md
@@ -14,6 +14,7 @@ source_files:
   - raw/sources/2026-07-16_my-1-book-recommendation-for-strategic-programming_en-orig_t34UuBxB2YQ.md
   - raw/sources/2026-11-06_someone-wrote-a-paper-about-my-skill_en-orig_KJr1Q-k-yH0.md
 related_pages:
+  - ../sources/2026-11-14_source-matt-pocock-skills-skill-md.md
   - ./ia-generativa.md
   - ./rules-e-skills.md
   - ./spec-driven-development.md
@@ -80,6 +81,8 @@ Quantas mais tokens são geradas numa única execução, mais o modelo tende a s
 
 **Reforço (entrevista de set/2026)**: Matt repete os ~150 mil tokens como valor atual para modelos de fronteira, independentemente do tamanho da janela (ele credita a ideia de smart/dumb zone a Dex Horthy), e usa isso para fatiar trabalho grande em várias sessões (spec/destino + tickets; mapa no Wayfinder). Mesma fonte de opinião de um autor. Ver [entrevista](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md).
 
+**Terceiro reforço (skills de Matt, lidas em nov/2026)**: a skill roteadora `ask-matt` fixa a smart zone em "~150k tokens em modelos de ponta" e a transforma em regra operacional: manter entrevista, spec e tickets em uma única janela, sem compactar nem limpar até os tickets saírem; cada implementação começa em janela limpa, a partir do ticket. Nas fronteiras entre fases, cinco opções **em ordem**: continuar (se a próxima fase precisa desta como fonte primária, ou se ainda há smart zone), limpar (contexto descartável), hand off (só para harness/diretório/colega novos), subagente (tarefa AFK) e compactar — o padrão, mas o último a considerar: todo movimento exceto continuar troca fonte primária (completa, ruidosa) por secundária (com perdas), e começar pelo `/compact` produz uma sessão "confiante e errada sobre uma decisão que o resumo achatou". Fonte: [SKILL.md e PHASE-BOUNDARIES.md do repositório de Matt](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md).
+
 **Live com Uncle Bob (ago/2026)**: Matt reapresenta smart/dumb zone (de novo creditando Dex Horthy) e Bob traz o mecanismo **lost in the middle**: início e fim do contexto pesam mais que o meio, então regras longas colocadas no prompt "somem" e viram diretrizes. Conclusão dele: prompt inicial mínimo e verificação determinística depois (ver [Verificação determinística](./verificacao-deterministica.md)). Ambos também falam de **trajetória do contexto**: o que entra direciona tudo o que vem depois, e só limpar o contexto zera isso (exemplo do café contaminado por uma novela). Opinião e relato, não medição; a ideia converge com context rot, acima. Fonte: [live](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md).
 
 **Analogia**: "Adicionar token é como adicionar time a uma liga de futebol — número de partidas escala quadraticamente" (relações de atenção entre cada par de tokens).
@@ -111,5 +114,6 @@ Quantas mais tokens são geradas numa única execução, mais o modelo tende a s
 
 ## Notas de Atualização
 
+- 2026-11-14: adicionado o terceiro reforço dos ~150k, vindo da skill `ask-matt` (revisão da ingestão).
 - 2026-11-12: adicionados lost in the middle e trajetória do contexto, da live com Uncle Bob (ingestão).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

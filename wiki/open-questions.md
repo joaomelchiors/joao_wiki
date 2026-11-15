@@ -27,6 +27,7 @@ Esta página mantém questões que precisam de investigação adicional e julgam
 ## Candidatos de Pesquisa Futura
 
 - Verificar na documentação oficial da Anthropic os comandos/flags citados no curso CCDV-F (transcrição automática, não verificada) — ver [resumo](./sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md).
+- Idem para o curso freeCodeCamp: `/goal` (o instrutor o chama de "skill" — nativo ou instalado?), "Ultra Plan", `/reload plugins`, status line customizada × nativa — ver [resumo](./sources/2026-08-05_source-claude-code-full-course-freecodecamp.md) e [lint](./maintenance/lint-reports/2026-11-14_lint-ingestao-freecodecamp.md).
 - Segurança real e escopo do *auto mode* do Claude Code ([entidade](./entities/claude-code.md)).
 - Estado de Managed Agents / CLI `ant` (descrito como imaturo no curso).
 - Curso Profissional AI — Agentes: aulas de criação de Skill, Skill com código, SDD, MCP e Skill × MCP já ingeridas em 2026-11-12 (itens abaixo); confirmar papel de Python vs. Node.js (a aula com código usou Node.js) — ver [Estilos de Skill](./sources/2026-11-06_source-agentes-ia-estilos-de-skill.md) e [Usando Skills](./sources/2026-11-07_source-agentes-ia-usando-skill.md).

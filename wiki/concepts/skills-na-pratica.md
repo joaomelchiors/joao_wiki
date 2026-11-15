@@ -3,7 +3,7 @@ title: "Skills na Prática (pastas, instalação e criação)"
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-14
 tags: ["skills", "claude-code", "codex", "skill-md", "plugins", "ia-generativa"]
 source_files:
   - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-01-PastasDasSkills.md
@@ -16,6 +16,7 @@ source_files:
   - raw/sources/2026-11-07-transcricap_AgentsDeIa_CirandoSkill.md
   - raw/sources/2026-11-07_transcricao_AgentesDeIa_SkillComCodigo.md
 related_pages:
+  - ../sources/2026-11-14_source-matt-pocock-repo-skills.md
   - ./ia-generativa.md
   - ./rules-e-skills.md
   - ./tipos-de-skill.md
@@ -86,6 +87,7 @@ Segunda aula do mesmo curso ([Usando Skills](../sources/2026-11-07_source-agente
 - **Chamada**: digitar `/` lista comandos e Skills; digitar parte do nome filtra; selecionar faz o agente referenciar a Skill. O harness injeta o conteúdo da Skill no contexto — por isso o pedido do usuário pode ser curto (ex.: "crie um GIF de uma bola de futebol na pasta X").
 - **Instalação** (app desktop do Claude Code): *Personalizar* → *Habilidades* → buscar e adicionar Skills publicadas pela Anthropic (ex.: `skill creator`, `Slack gif creator`); cada Skill instalada exibe seus arquivos e pode ser desinstalada.
 - **Plugins**: pacote de **conector/aplicativo (e MCP) + uma ou mais Skills**. Exemplos citados: plugin Gmail (conector + Skills de Gmail e triagem de caixa de entrada); plugin de uso do computador (servidor MCP + Skill `computer use`). Confirma na prática a definição de plugin como pacote já registrada em [Claude Code](../entities/claude-code.md).
+- **Distribuição multiferramenta (exemplo real)**: o repositório [mattpocock/skills](../sources/2026-11-14_source-matt-pocock-repo-skills.md) publica 27 Skills como plugin instalável no Claude Code, Codex e GitHub Copilot, e por cópia manual (`npx skills@latest add`) em Cursor, Gemini CLI e outras — na prática, a independência de ferramenta registrada em [rules-e-skills](./rules-e-skills.md).
 - **Skills com código**: a Skill de GIF traz arquivos Python — razão prática do pré-requisito Python.
 - **Skill instalada e invisível no `/`**: contorno sugerido pelo instrutor, em tom de humor — `Reload Skills`, repetir, fechar/reabrir a ferramenta, reiniciar o computador. É o segundo relato de instabilidade de recarregamento (o primeiro, em Ferramentas Agênticas).
 - **Qualidade**: o GIF gerado foi fraco e variável entre execuções; o instrutor atribui a prompt pouco descritivo. Interpretação: Skill reduz variabilidade (ver Engenharia de Contexto), não a elimina.
@@ -123,4 +125,5 @@ Aulas 3 e 4 do mesmo curso ([Criando Skill e Skill com Código](../sources/2026-
 
 ## Notas de Atualização
 
+- 2026-11-14: adicionado o exemplo de distribuição multiferramenta do repositório mattpocock/skills (revisão da ingestão).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

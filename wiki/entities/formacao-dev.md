@@ -3,7 +3,7 @@ title: "formacao.dev"
 type: entity
 status: active
 created: 2026-04-20
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["formacao-dev", "plataforma-ead", "curso", "ddd", "arquitetura", "ia-generativa"]
 source_files:
   - raw/sources/2026-04-20_transcrição-projetoEAD-01-configurando.md
@@ -34,6 +34,7 @@ Plataforma de ensino online brasileira focada em desenvolvimento de software. UR
 | **Imersão DDD + Arquitetura Limpa** | Arquiteto Dev | TypeScript, NestJS, Next.js, Turborepo, Prisma, PostgreSQL |
 | **Dev AI — Introdução ao Desenvolvimento com IA** | IA Dev | IA Generativa, Transformers, Skills, Stack Driven Development |
 | **Profissional AI — Agentes** (sala `profissional-ai-agentes`) | Automação com Agentes de IA | Skills (estilos só-modelo/determinística/híbrida), Python e Node.js como pré-requisitos; público aparentemente inclui não programadores (inferência, uma única aula ingerida) |
+| **Profissional AI — Projeto Organizador de E-mails** (sala `profissional-ai-projeto-organizador-emails`) | Automação com Agentes de IA | Projeto prático: fluxo de organização do Gmail em 6 fases (coleta via MCP, classificação por Skills, revisão, confirmação HITL, execução, relatório); estratégias sequencial × paralela; 2 aulas de planejamento ingeridas |
 
 ## Cronograma
 
@@ -41,6 +42,7 @@ Plataforma de ensino online brasileira focada em desenvolvimento de software. UR
 - 2026-04-27: transcrição da aula IA-01 (Dev AI) ingerida nesta wiki.
 - 2026-11-06: primeira aula do curso Profissional AI — Agentes ("Estilos de Skill") ingerida.
 - 2026-11-07: segunda aula ("Usando Skills": instalação, `/`, plugins; demos com Claude Code e outra ferramenta) ingerida.
+- 2026-11-15: duas aulas de planejamento do projeto Organizador de E-mails (estratégias sequencial/paralela e solução em 6 fases) ingeridas.
 
 ## Conceitos Relacionados
 
@@ -63,6 +65,8 @@ Plataforma de ensino online brasileira focada em desenvolvimento de software. UR
 - [Agentes de IA (Profissional AI) — Spec-Driven Development](../sources/2026-11-07_source-agentes-ia-sdd.md)
 - [Agentes de IA (Profissional AI) — MCP e catálogo de MCPs](../sources/2026-11-08_source-agentes-ia-mcp.md)
 - [Agentes de IA (Profissional AI) — Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md)
+- [Organizador de E-mails — Estratégias de execução: sequencial e paralelo](../sources/2026-11-12_source-organizador-emails-sequencial-paralelo.md)
+- [Organizador de E-mails — Planejamento da solução (fluxo em 6 fases)](../sources/2026-11-12_source-organizador-emails-planejamento.md)
 
 ## Pontos de Rastreamento
 

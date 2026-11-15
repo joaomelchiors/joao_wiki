@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 250" role="img" aria-label="Diagrama do loop autônomo do /goal: prompt, geração, avaliação, feedback e resultado">
+<style>
+text{font-family:'Segoe UI',system-ui,sans-serif}
+.svg-ink{fill:#1d2520}.svg-muted{fill:#5b6660}.svg-acc{fill:#0e7a5f}
+.svg-box{fill:#fff;stroke:#dde2dc}.svg-boxacc{fill:#e3f0ea;stroke:#0e7a5f}
+.svg-line{stroke:#5b6660;fill:none}.svg-lineacc{stroke:#0e7a5f;fill:none}
+.svg-t{font-size:12px}.svg-tb{font-size:12.5px;font-weight:600}
+.svg-m{font-family:Consolas,ui-monospace,monospace;font-size:10.5px}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5b6660"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0e7a5f"/></marker>
+</defs>
+<rect x="20" y="95" width="130" height="60" rx="9" class="svg-box"/>
+<text x="85" y="120" text-anchor="middle" class="svg-tb svg-ink">Prompt +</text>
+<text x="85" y="140" text-anchor="middle" class="svg-tb svg-ink">requisitos</text>
+<rect x="210" y="95" width="130" height="60" rx="9" class="svg-box"/>
+<text x="275" y="120" text-anchor="middle" class="svg-tb svg-ink">Claude Code</text>
+<text x="275" y="140" text-anchor="middle" class="svg-t svg-muted">gera a saída</text>
+<rect x="400" y="95" width="140" height="60" rx="9" class="svg-boxacc"/>
+<text x="470" y="120" text-anchor="middle" class="svg-tb svg-acc">Avaliador</text>
+<text x="470" y="140" text-anchor="middle" class="svg-t svg-ink">confere requisitos</text>
+<rect x="590" y="95" width="115" height="60" rx="9" class="svg-box"/>
+<text x="647" y="120" text-anchor="middle" class="svg-tb svg-ink">Resultado</text>
+<text x="647" y="140" text-anchor="middle" class="svg-t svg-muted">para você</text>
+<line x1="150" y1="125" x2="204" y2="125" class="svg-line" marker-end="url(#arr)"/>
+<line x1="340" y1="125" x2="394" y2="125" class="svg-line" marker-end="url(#arr)"/>
+<line x1="540" y1="125" x2="584" y2="125" class="svg-lineacc" marker-end="url(#arrA)"/>
+<text x="562" y="112" text-anchor="middle" class="svg-m svg-acc">passou ✓</text>
+<path d="M 470 155 L 470 205 L 275 205 L 275 161" class="svg-lineacc" stroke-dasharray="5 4" marker-end="url(#arrA)"/>
+<text x="372" y="196" text-anchor="middle" class="svg-m svg-acc">reprovou → feedback, tenta de novo</text>
+<text x="372" y="40" text-anchor="middle" class="svg-t svg-muted">loop continua até os requisitos serem atendidos</text>
+<path d="M 275 55 C 340 20 410 20 470 55" class="svg-line" stroke-dasharray="2 4"/>
+</svg>

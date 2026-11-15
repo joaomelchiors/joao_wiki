@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" role="img" aria-label="Linha de commits com diff verde e vermelho">
+<style>
+text{font-family:'Segoe UI',system-ui,sans-serif}
+.svg-ink{fill:#1d2520}.svg-muted{fill:#5b6660}.svg-acc{fill:#0e7a5f}
+.svg-box{fill:#fff;stroke:#dde2dc}.svg-boxacc{fill:#e3f0ea;stroke:#0e7a5f}
+.svg-line{stroke:#5b6660;fill:none}
+.svg-t{font-size:12px}.svg-tb{font-size:12.5px;font-weight:600}
+.svg-m{font-family:Consolas,ui-monospace,monospace;font-size:10.5px}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5b6660"/></marker>
+</defs>
+<line x1="40" y1="70" x2="680" y2="70" class="svg-line" stroke-width="2"/>
+<circle cx="110" cy="70" r="11" class="svg-boxacc" stroke-width="2"/>
+<circle cx="300" cy="70" r="11" class="svg-boxacc" stroke-width="2"/>
+<circle cx="490" cy="70" r="11" class="svg-boxacc" stroke-width="2"/>
+<circle cx="640" cy="70" r="11" fill="#0e7a5f" stroke="#0e7a5f"/>
+<text x="110" y="42" text-anchor="middle" class="svg-m svg-muted">initial commit</text>
+<text x="110" y="100" text-anchor="middle" class="svg-t svg-muted">133 arquivos</text>
+<text x="300" y="42" text-anchor="middle" class="svg-m svg-muted">"deleted eval"</text>
+<text x="490" y="42" text-anchor="middle" class="svg-m svg-muted">…cada versão nomeada</text>
+<text x="640" y="42" text-anchor="middle" class="svg-m svg-acc">HEAD (master)</text>
+<rect x="250" y="118" width="210" height="62" rx="8" class="svg-box"/>
+<text x="266" y="140" class="svg-m" fill="#0e7a5f">+ verde: linhas adicionadas</text>
+<text x="266" y="162" class="svg-m" fill="#9a6b0a">− vermelho: linhas removidas</text>
+<path d="M 300 81 L 300 112" class="svg-line" marker-end="url(#arr2)"/>
+<text x="560" y="150" class="svg-t svg-muted">para reverter: copie o ID do</text>
+<text x="560" y="168" class="svg-t svg-muted">commit e peça ao Claude</text>
+</svg>

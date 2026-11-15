@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 270" role="img" aria-label="Gráfico conceitual: acurácia dos modelos cai conforme o contexto cresce">
+<style>
+text{font-family:'Segoe UI',system-ui,sans-serif}
+.svg-ink{fill:#1d2520}.svg-muted{fill:#5b6660}.svg-acc{fill:#0e7a5f}
+.svg-line{stroke:#5b6660;fill:none}.svg-lineacc{stroke:#0e7a5f;fill:none}
+.svg-t{font-size:12px}.svg-tb{font-size:12.5px;font-weight:600}
+.svg-m{font-family:Consolas,ui-monospace,monospace;font-size:10.5px}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="70" y1="20" x2="70" y2="215" class="svg-line"/>
+<line x1="70" y1="215" x2="680" y2="215" class="svg-line"/>
+<text x="30" y="120" class="svg-t svg-muted" transform="rotate(-90 30 120)" text-anchor="middle">acurácia</text>
+<text x="375" y="248" text-anchor="middle" class="svg-t svg-muted">tamanho do input / contexto acumulado →</text>
+<path d="M 80 48 C 240 52 380 78 660 180" class="svg-lineacc" stroke-width="3"/>
+<path d="M 80 60 C 240 68 380 100 660 200" class="svg-line" stroke-width="2" opacity=".65"/>
+<path d="M 80 42 C 240 50 380 90 660 192" class="svg-line" stroke-width="2" stroke-dasharray="6 4" opacity=".65"/>
+<text x="180" y="36" class="svg-m svg-muted">vale p/ Claude, OpenAI, Gemini, Qwen…</text>
+<line x1="375" y1="20" x2="375" y2="215" stroke="#9a6b0a" fill="none" stroke-dasharray="3 4"/>
+<text x="375" y="14" text-anchor="middle" class="svg-m" fill="#9a6b0a">~50% da janela: hora de agir</text>
+<text x="520" y="90" class="svg-t svg-muted">a partir daqui: /compact</text>
+<text x="520" y="108" class="svg-t svg-muted">ou nova sessão (/clear)</text>
+</svg>

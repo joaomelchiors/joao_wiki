@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 332" role="img" aria-label="Pipeline da skill fix ticket em quatro estágios e nove passos">
+<style>
+text{font-family:'Segoe UI',system-ui,sans-serif}
+.svg-ink{fill:#1d2520}.svg-muted{fill:#5b6660}.svg-acc{fill:#0e7a5f}
+.svg-box{fill:#fff;stroke:#dde2dc}.svg-boxacc{fill:#e3f0ea;stroke:#0e7a5f}
+.svg-line{stroke:#5b6660;fill:none}
+.svg-t{font-size:12px}.svg-tb{font-size:12.5px;font-weight:600}
+.svg-m{font-family:Consolas,ui-monospace,monospace;font-size:10.5px}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5b6660"/></marker>
+</defs>
+<text x="100" y="28" text-anchor="middle" class="svg-tb svg-acc">1 · Entender</text>
+<text x="310" y="28" text-anchor="middle" class="svg-tb svg-acc">2 · Corrigir</text>
+<text x="520" y="28" text-anchor="middle" class="svg-tb svg-acc">3 · Enviar</text>
+<text x="655" y="28" text-anchor="middle" class="svg-tb svg-acc">4 · Repassar</text>
+<line x1="20" y1="40" x2="700" y2="40" class="svg-line" stroke-dasharray="3 4"/>
+<rect x="25" y="58" width="150" height="56" rx="8" class="svg-box"/>
+<text x="100" y="80" text-anchor="middle" class="svg-t svg-ink">1. Ler o ticket</text>
+<text x="100" y="98" text-anchor="middle" class="svg-m svg-muted">Jira / Linear / GitHub</text>
+<rect x="25" y="132" width="150" height="56" rx="8" class="svg-box"/>
+<text x="100" y="154" text-anchor="middle" class="svg-t svg-ink">2. Replicar o bug</text>
+<text x="100" y="172" text-anchor="middle" class="svg-m svg-muted">Playwright no browser</text>
+<rect x="25" y="206" width="150" height="56" rx="8" class="svg-box"/>
+<text x="100" y="228" text-anchor="middle" class="svg-t svg-ink">3. Pesquisar a causa</text>
+<text x="100" y="246" text-anchor="middle" class="svg-m svg-muted">múltiplos agentes</text>
+<rect x="235" y="58" width="150" height="56" rx="8" class="svg-box"/>
+<text x="310" y="86" text-anchor="middle" class="svg-t svg-ink">4. Implementar o fix</text>
+<rect x="235" y="132" width="150" height="56" rx="8" class="svg-box"/>
+<text x="310" y="154" text-anchor="middle" class="svg-t svg-ink">5. Revisar</text>
+<text x="310" y="172" text-anchor="middle" class="svg-m svg-muted">múltiplos agentes</text>
+<rect x="235" y="206" width="150" height="56" rx="8" class="svg-box"/>
+<text x="310" y="228" text-anchor="middle" class="svg-t svg-ink">6. Verificar o fix</text>
+<text x="310" y="246" text-anchor="middle" class="svg-m svg-muted">Playwright de novo</text>
+<rect x="445" y="58" width="150" height="56" rx="8" class="svg-box"/>
+<text x="520" y="80" text-anchor="middle" class="svg-t svg-ink">7. Commit + push</text>
+<text x="520" y="98" text-anchor="middle" class="svg-m svg-muted">GitHub</text>
+<rect x="445" y="132" width="150" height="56" rx="8" class="svg-box"/>
+<text x="520" y="154" text-anchor="middle" class="svg-t svg-ink">8. Deploy</text>
+<text x="520" y="172" text-anchor="middle" class="svg-m svg-muted">Vercel / Firebase / etc.</text>
+<rect x="445" y="206" width="150" height="56" rx="8" class="svg-boxacc"/>
+<text x="520" y="228" text-anchor="middle" class="svg-t svg-ink">9. Ticket → coluna QA</text>
+<text x="520" y="246" text-anchor="middle" class="svg-m svg-muted">humano revisa</text>
+<line x1="100" y1="114" x2="100" y2="126" class="svg-line" marker-end="url(#arr2)"/>
+<line x1="100" y1="188" x2="100" y2="200" class="svg-line" marker-end="url(#arr2)"/>
+<path d="M 175 234 L 205 234 L 205 86 L 229 86" class="svg-line" marker-end="url(#arr2)"/>
+<line x1="310" y1="114" x2="310" y2="126" class="svg-line" marker-end="url(#arr2)"/>
+<line x1="310" y1="188" x2="310" y2="200" class="svg-line" marker-end="url(#arr2)"/>
+<path d="M 385 234 L 415 234 L 415 86 L 439 86" class="svg-line" marker-end="url(#arr2)"/>
+<line x1="520" y1="114" x2="520" y2="126" class="svg-line" marker-end="url(#arr2)"/>
+<line x1="520" y1="188" x2="520" y2="200" class="svg-line" marker-end="url(#arr2)"/>
+<rect x="25" y="290" width="675" height="34" rx="8" class="svg-box" stroke-dasharray="4 3"/>
+<text x="362" y="312" text-anchor="middle" class="svg-t svg-muted">tudo empacotado numa única skill mestra ("fix ticket") que orquestra sub-skills reutilizáveis</text>
+</svg>

@@ -3,7 +3,7 @@ title: "Matt Pocock"
 type: entity
 status: active
 created: 2026-04-28
-updated: 2026-11-12
+updated: 2026-11-14
 tags: ["pessoa", "typescript", "ai-coding"]
 source_files:
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
@@ -38,7 +38,8 @@ Especialista em TypeScript, educador técnico e palestrante sobre desenvolviment
 ## Informações de Contato
 
 - **Twitter/X**: [@mattpocockuk](https://x.com/mattpocockuk)
-- **GitHub**: mattpocock
+- **GitHub**: [mattpocock](https://github.com/mattpocock)
+- **Repositório de Skills**: [mattpocock/skills](https://github.com/mattpocock/skills) — 27 skills (engineering e productivity), instaláveis como plugin; ver [resumo da fonte](../sources/2026-11-14_source-matt-pocock-repo-skills.md). Inclui Grill Me, `grill-with-docs`, `to-spec`, `to-tickets`, TDD, `/teach`, Wayfinder e `retro`. Os `SKILL.md` das 27 skills foram lidos: [resumo](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md)
 - **Repositório principal**: `mattpocock/course-video-manager`
 
 ## Expertise e Áreas de Atuação
@@ -178,7 +179,7 @@ Fonte: [resumo](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-d
 ## Pontos para Monitorar
 
 1. Evolução do Sand Castle — novas features, documentação, adoção pela comunidade
-2. Novas Skills publicadas por Matt — repositório de Skills para Claude Code
+2. Novas Skills publicadas por Matt — repositório [mattpocock/skills](https://github.com/mattpocock/skills) (27 promovidas + 7 beta + 4 congeladas em 2026-11-14, v1.3.2; `CHANGELOG.md`, auxiliares e pastas `in-progress/`/`misc/` lidos). Restam a pasta `docs/` (34 páginas em aihero.dev) e os arquivos de `.out-of-scope/`; observar quais skills beta (chief-of-staff, software-factory) são promovidas
 3. Wayfinder e "grill with docs": publicação e evolução
 4. Posições sobre multi-agentes — limites práticos de paralelização, custo/latência
 5. Tratamento de doc rot — técnicas para preservar decisões arquiteturais sem apodrecimento

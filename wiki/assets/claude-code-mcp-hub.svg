@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="MCP como porta USB entre o agente e as ferramentas externas">
+<style>
+text{font-family:'Segoe UI',system-ui,sans-serif}
+.svg-ink{fill:#1d2520}.svg-muted{fill:#5b6660}.svg-acc{fill:#0e7a5f}
+.svg-box{fill:#fff;stroke:#dde2dc}.svg-boxacc{fill:#e3f0ea;stroke:#0e7a5f}
+.svg-line{stroke:#5b6660;fill:none}.svg-lineacc{stroke:#0e7a5f;fill:none}
+.svg-t{font-size:12px}.svg-tb{font-size:12.5px;font-weight:600}
+.svg-m{font-family:Consolas,ui-monospace,monospace;font-size:10.5px}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5b6660"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0e7a5f"/></marker>
+</defs>
+<rect x="30" y="85" width="170" height="90" rx="10" class="svg-box"/>
+<text x="115" y="120" text-anchor="middle" class="svg-tb svg-ink">MCP client</text>
+<text x="115" y="142" text-anchor="middle" class="svg-t svg-muted">seu app de IA</text>
+<text x="115" y="160" text-anchor="middle" class="svg-m svg-muted">Claude Code / desktop</text>
+<rect x="280" y="85" width="160" height="90" rx="10" class="svg-boxacc"/>
+<text x="360" y="118" text-anchor="middle" class="svg-tb svg-acc">MCP server</text>
+<text x="360" y="140" text-anchor="middle" class="svg-t svg-ink">programa leve que</text>
+<text x="360" y="158" text-anchor="middle" class="svg-t svg-ink">expõe ferramentas</text>
+<line x1="200" y1="130" x2="274" y2="130" class="svg-lineacc" stroke-width="2.5" marker-end="url(#arrA)"/>
+<text x="237" y="115" text-anchor="middle" class="svg-m svg-acc">"USB da IA"</text>
+<rect x="530" y="18" width="160" height="40" rx="8" class="svg-box"/>
+<text x="610" y="43" text-anchor="middle" class="svg-t svg-ink">arquivos locais</text>
+<rect x="530" y="68" width="160" height="40" rx="8" class="svg-box"/>
+<text x="610" y="93" text-anchor="middle" class="svg-t svg-ink">banco de dados</text>
+<rect x="530" y="118" width="160" height="40" rx="8" class="svg-box"/>
+<text x="610" y="143" text-anchor="middle" class="svg-t svg-ink">busca na web</text>
+<rect x="530" y="168" width="160" height="40" rx="8" class="svg-box"/>
+<text x="610" y="193" text-anchor="middle" class="svg-t svg-ink">Stripe · Slack · Jira</text>
+<rect x="530" y="218" width="160" height="40" rx="8" class="svg-box"/>
+<text x="610" y="243" text-anchor="middle" class="svg-t svg-ink">Vercel · Google · GHL</text>
+<line x1="440" y1="112" x2="524" y2="40" class="svg-line" marker-end="url(#arr2)"/>
+<line x1="440" y1="122" x2="524" y2="88" class="svg-line" marker-end="url(#arr2)"/>
+<line x1="440" y1="134" x2="524" y2="137" class="svg-line" marker-end="url(#arr2)"/>
+<line x1="440" y1="146" x2="524" y2="186" class="svg-line" marker-end="url(#arr2)"/>
+<line x1="440" y1="158" x2="524" y2="235" class="svg-line" marker-end="url(#arr2)"/>
+<text x="115" y="230" class="svg-t svg-muted">antes do MCP: scripts custom</text>
+<text x="115" y="248" class="svg-t svg-muted">para cada integração</text>
+</svg>

@@ -3,7 +3,7 @@ title: "Spec-Driven Development (SDD)"
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["spec-driven-development", "sdd", "sub-agentes", "engenharia-de-contexto", "ia-generativa"]
 source_files:
   - raw/sources/2026-04-27_transcrição-IA-09-ContextoRulesSkill-engenhariaDeContexto.md
@@ -111,12 +111,20 @@ Coloque uma evidência abaixo de cada passo com data e hora.
 
 **Evidências**: o instrutor confirma ter executado 10 especificações encadeadas, cada uma com 10–15 passos, sem falhas de rastreamento.
 
+### A versão de Matt Pocock em skills (nov/2026)
+
+Fonte: [`SKILL.md` do repositório de Matt](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md); instruções do autor.
+
+- `to-spec` **não entrevista**: sintetiza a conversa (depois de `grill-with-docs`) em uma spec com problema, solução, user stories, decisões de implementação e de teste, e fora de escopo, sem caminhos de arquivo nem código, e publica no issue tracker. `to-tickets` a quebra em fatias verticais com arestas de bloqueio, e `implement-spec` executa o **grafo de tarefas** com subagentes em paralelo (um worktree por ticket, branch de integração).
+- **Tensão com as fontes anteriores**: Matt e Bob rejeitam "specs to code" (a spec escrita antes e transformada em código). Pelo texto lido, a spec de Matt nasce da conversa e é consumida por tickets, não substitui o raciocínio. Se isso concilia as posições é interpretação, não confirmada pelo autor. Diferença em relação ao curso Profissional AI: aqui a spec e os tickets vivem no **issue tracker** (ou em `.scratch/`), não em `specs/changes/` com checklist.
+
 ## Fontes de Suporte
 
 - [Dev AI — Aula 09: Engenharia de Contexto (Rules, Skills, Spec Driven Development)](../sources/2026-04-29_source-dev-ai-engenharia-de-contexto.md)
 - [Dev AI — Ferramentas Agênticas (Aulas 01–07)](../sources/2026-07-17_source-ferramentas-agenticas.md)
 - [Agentes de IA (Profissional AI) — Spec-Driven Development](../sources/2026-11-07_source-agentes-ia-sdd.md)
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
+- [mattpocock/skills — conteúdo dos SKILL.md](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md) (`to-spec`, `to-tickets`, `implement-spec`)
 - [Uncle Bob e Matt Pocock — live sobre fundamentos na era da IA](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md) (visão cética)
 
 ## Conceitos Relacionados
@@ -130,9 +138,11 @@ Coloque uma evidência abaixo de cada passo com data e hora.
 ## Questões Não Resolvidas
 
 - ~~**Spec Driven Development na prática**: qual ferramenta, estrutura de arquivo e convenções são usadas?~~ → **Parcialmente resolvida no módulo Ferramentas Agênticas (Aula 05)**: pasta `specs/changes/<nome>/spec.md`, checkboxes de tarefa, orientações embutidas na spec, execução sequencial ou em paralelo com subagentes; specs concluídas movidas para `specs/archive/`. Limites de tasks antes do context rot: ainda não formalizados.
-- **Conflitos em subagentes paralelos**: como evitar conflitos quando múltiplos subagentes escrevem nos mesmos arquivos em paralelo dentro de uma spec.
+- ~~**Conflitos em subagentes paralelos**: como evitar conflitos quando múltiplos subagentes escrevem nos mesmos arquivos em paralelo dentro de uma spec.~~ → **Parcialmente respondida** na aula de estratégias do projeto Organizador de E-mails ([fonte](../sources/2026-11-12_source-organizador-emails-sequencial-paralelo.md)): prever o paralelismo desde o projeto, dando a cada agente dados e **arquivos próprios** (ex.: um CSV por grupo de 50 threads); consolidação dos resultados definida no planejamento. Mecanismos de lock/merge quando o isolamento não é possível: ainda em aberto.
 
 ## Notas de Atualização
 
+- 2026-11-15: questão dos conflitos em subagentes paralelos parcialmente respondida (arquivos separados por agente — Organizador de E-mails); registrado que o "arquivo de fluxo" desse projeto (`organizacao-gmail.md` com tarefas em checkbox chamando Skills e MCPs) é o mesmo padrão da spec aplicado a automação pessoal ([fonte](../sources/2026-11-12_source-organizador-emails-planejamento.md)).
+- 2026-11-14: adicionada a versão de Matt em skills (`to-spec`, `to-tickets`, `implement-spec`) (ingestão).
 - 2026-11-12: adicionada a posição cética de Uncle Bob (ingestão da live).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

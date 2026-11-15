@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="Três formas de usar o Claude Code: desktop app, terminal puro e IDE">
+<style>
+text{font-family:'Segoe UI',system-ui,sans-serif}
+.svg-ink{fill:#1d2520}.svg-muted{fill:#5b6660}.svg-acc{fill:#0e7a5f}
+.svg-box{fill:#fff;stroke:#dde2dc}.svg-boxacc{fill:#e3f0ea;stroke:#0e7a5f}
+.svg-line{stroke:#5b6660;fill:none}
+.svg-t{font-size:12px}.svg-tb{font-size:12.5px;font-weight:600}
+.svg-m{font-family:Consolas,ui-monospace,monospace;font-size:10.5px}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="8" y="30" width="218" height="150" rx="10" class="svg-box"/>
+<rect x="8" y="30" width="218" height="34" rx="10" class="svg-boxacc" opacity=".55"/>
+<text x="117" y="52" text-anchor="middle" class="svg-tb svg-ink">Desktop app</text>
+<text x="117" y="92" text-anchor="middle" class="svg-t svg-muted">Mais simples de ligar</text>
+<text x="117" y="112" text-anchor="middle" class="svg-t svg-muted">Menos flexível</text>
+<text x="117" y="132" text-anchor="middle" class="svg-t svg-muted">Pouca customização</text>
+<text x="117" y="160" text-anchor="middle" class="svg-m svg-muted">para não-técnicos</text>
+<rect x="251" y="30" width="218" height="150" rx="10" class="svg-box"/>
+<rect x="251" y="30" width="218" height="34" rx="10" class="svg-boxacc" opacity=".55"/>
+<text x="360" y="52" text-anchor="middle" class="svg-tb svg-ink">Terminal puro</text>
+<text x="360" y="92" text-anchor="middle" class="svg-t svg-muted">Todos os recursos</text>
+<text x="360" y="112" text-anchor="middle" class="svg-t svg-muted">Controle total</text>
+<text x="360" y="132" text-anchor="middle" class="svg-t svg-muted">Interface árida</text>
+<text x="360" y="160" text-anchor="middle" class="svg-m svg-muted">para quem domina CLI</text>
+<rect x="494" y="18" width="218" height="174" rx="10" fill="#fff" stroke="#0e7a5f" stroke-width="2"/>
+<rect x="494" y="18" width="218" height="34" rx="10" class="svg-boxacc"/>
+<text x="603" y="40" text-anchor="middle" class="svg-tb svg-acc">IDE (VS Code) ★</text>
+<text x="603" y="80" text-anchor="middle" class="svg-t svg-ink">Terminal integrado +</text>
+<text x="603" y="100" text-anchor="middle" class="svg-t svg-ink">visual dos arquivos</text>
+<text x="603" y="124" text-anchor="middle" class="svg-t svg-muted">Vê cada mudança na tela</text>
+<text x="603" y="144" text-anchor="middle" class="svg-t svg-muted">Mantém a flexibilidade</text>
+<text x="603" y="172" text-anchor="middle" class="svg-m svg-acc">recomendação do curso</text>
+<text x="360" y="222" text-anchor="middle" class="svg-t svg-muted">← menos controle · · · mais controle →</text>
+</svg>

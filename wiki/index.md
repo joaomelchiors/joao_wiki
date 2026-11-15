@@ -3,7 +3,7 @@ title: "Índice"
 type: maintenance
 status: active
 created: 2026-04-07
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["index"]
 source_files: []
 related_pages:
@@ -18,11 +18,11 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 
 ## Contagens
 
-- resumo de fonte: 39
+- resumo de fonte: 45
 - página de conceito: 23
 - página de entidade: 7
-- página de síntese: 2
-- página de manutenção: 7 (index, log, overview, open-questions, lint-2026-04-28, lint-2026-11-04, lint-2026-11-12)
+- página de síntese: 4
+- página de manutenção: 8 (index, log, overview, open-questions, lint-2026-04-28, lint-2026-11-04, lint-2026-11-12, lint-2026-11-14)
 
 ## Páginas de Entrada
 
@@ -69,6 +69,13 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [2026-11-12_source-matt-pocock-home-repo.md](./sources/2026-11-12_source-matt-pocock-home-repo.md): Vídeo e artigo "The Home Repo Pattern" — repo único com skills, `AGENTS.md` e ponteiros para os demais repos; prompt de configuração e FAQ. Última atualização: 2026-11-12
 - [2026-09-17_source-matt-pocock-pragmatic-engineer.md](./sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md): Entrevista de Matt Pocock ao The Pragmatic Engineer (1h36, legenda revisada) — trajetória, Grill Me, Wayfinder, leading words, linguagem ubíqua com agentes, TDD matizado, estratégia × tática, agentes na nuvem. Última atualização: 2026-11-12
 - [2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md](./sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md): Live de Matt Pocock com Uncle Bob (56 min, legenda revisada) — agentes cercados por CRAP, teste de mutação e regras de dependência; cadeia de cinco agentes; "não impor disciplinas humanas" (TDD); ceticismo com SDD e planejamento prévio; fundamentos e como iniciantes aprendem estratégia. Última atualização: 2026-11-12
+- [2026-07-16_source-matt-pocock-teach-skill.md](./sources/2026-07-16_source-matt-pocock-teach-skill.md): Short de Matt Pocock (1 min) — skill `/teach` para aprender assuntos; exemplo de medir terreno por triangulação; uso de skills para aprendizagem. Opinião, legenda automática. Última atualização: 2026-11-14
+- [2026-11-14_source-matt-pocock-repo-skills.md](./sources/2026-11-14_source-matt-pocock-repo-skills.md): Repositório mattpocock/skills no GitHub — 27 skills promovidas, governança (SCOPE, buckets, CLAUDE.md do repo), pastas in-progress (chief-of-staff, software-factory...) e misc, renomeações confirmadas no CHANGELOG (to-prd → to-spec), instalação como plugin. Referência do autor; os `SKILL.md` têm página própria. Última atualização: 2026-11-14
+- [2026-11-14_source-matt-pocock-skills-skill-md.md](./sources/2026-11-14_source-matt-pocock-skills-skill-md.md): Conteúdo dos `SKILL.md` das 27 skills de Matt e dos seus arquivos auxiliares (PHASE-BOUNDARIES, AGENT-BRIEF, DEEPENING, formatos do teach e do domain-modeling...) — fluxo principal, Wayfinder, `teach`, `tdd`, `retro`, `writing-for-agents`. Instruções do autor, em inglês. Última atualização: 2026-11-14
+
+- [2026-08-05_source-claude-code-full-course-freecodecamp.md](./sources/2026-08-05_source-claude-code-full-course-freecodecamp.md): Curso introdutório do freeCodeCamp (Eric Tech, ~1h20, legenda automática) — Claude Code no VS Code: modos de permissão, `/goal` (loop com avaliador), skills/plugins (skills.sh, escopos, `/reload-plugins`), `.agents` × `.claude`, contexto (`/context`, `/compact`, heurística 50%), Git/GitHub para leigos, MCP × CLI (tokens × segurança) e deploy na Vercel. Tem apostila ilustrada em sínteses. Última atualização: 2026-11-15
+- [2026-11-12_source-organizador-emails-sequencial-paralelo.md](./sources/2026-11-12_source-organizador-emails-sequencial-paralelo.md): Projeto Organizador de E-mails (formacao.dev) — estratégias de execução sequencial (menos tokens, mais tempo) × paralela (o inverso) × híbrida; isolamento por arquivos para paralelismo; planejamento com modelo avançado e execução com modelo barato. Legenda revisada. Última atualização: 2026-11-15
+- [2026-11-12_source-organizador-emails-planejamento.md](./sources/2026-11-12_source-organizador-emails-planejamento.md): Projeto Organizador de E-mails (formacao.dev) — solução em 6 fases (coleta via MCP em grupos de 50 threads, classificação por Skills com ação planejada, revisão, confirmação HITL, execução, relatório); camadas Fluxo → Skill → MCP; Full Agent paralelizável. Legenda revisada. Última atualização: 2026-11-15
 
 ## Conceitos
 
@@ -79,16 +86,16 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [contexto-delimitado.md](./concepts/contexto-delimitado.md): Bounded Context — fronteiras de módulo, tipos de subdomínio, proibição de dependências cíclicas. Última atualização: 2026-04-20
 - [ia-generativa.md](./concepts/ia-generativa.md): IA Generativa (hub) — fundamentos da arquitetura Transformer (tokenização, embeddings, atenção, feed-forward, saída, temperatura, KV-cache), limitações e debates; lista os conceitos derivados. Dividida em 2026-11-12. Última atualização: 2026-11-12
 - [system-prompt-e-guardrails.md](./concepts/system-prompt-e-guardrails.md): System prompt do operador, estrutura de mensagens e guardrails (IA-05). Última atualização: 2026-11-12
-- [agentes-de-ia.md](./concepts/agentes-de-ia.md): Definição de agente, loop iterativo, agente × workflow e sub agentes. Última atualização: 2026-11-12
+- [agentes-de-ia.md](./concepts/agentes-de-ia.md): Definição de agente, loop iterativo, agente × workflow, sub agentes; estratégias sequencial × paralela × híbrida (tokens × tempo, arquivos por agente) e fluxo em 6 fases com HITL do Organizador de E-mails. Última atualização: 2026-11-15
 - [engenharia-de-contexto.md](./concepts/engenharia-de-contexto.md): Engenharia de prompt (CORFT), meta-prompt, context rot e smart/dumb zone (~100k → ~150k tokens). Última atualização: 2026-11-12
 - [rules-e-skills.md](./concepts/rules-e-skills.md): Rule (declarativa) × Skill (ativa), formato prático no Cursor e ciclo de criação por engenharia reversa. Última atualização: 2026-11-12
 - [tipos-de-skill.md](./concepts/tipos-de-skill.md): Skills determinística, híbrida e aberta; estilos do curso Profissional AI; Skills do Capítulo 3. Última atualização: 2026-11-12
 - [skills-na-pratica.md](./concepts/skills-na-pratica.md): Pastas por ferramenta, `SKILL.md`, chamada explícita/implícita, instalação, plugins e Skill com código. Última atualização: 2026-11-12
-- [spec-driven-development.md](./concepts/spec-driven-development.md): SDD — tasks em checklist, injeção de contexto, sub-agentes, pasta `specs/` e tensão com "specs to code". Última atualização: 2026-11-12
+- [spec-driven-development.md](./concepts/spec-driven-development.md): SDD — tasks em checklist, injeção de contexto, sub-agentes, pasta `specs/` e tensão com "specs to code"; conflitos de paralelismo parcialmente respondidos (arquivos por agente). Última atualização: 2026-11-15
 - [harness.md](./concepts/harness.md): Harness — loop de execução, compressão de contexto, responsabilidades do desenvolvedor, autonomia e isolamento. Última atualização: 2026-11-12
 - [melhores-praticas-claude-code.md](./concepts/melhores-praticas-claude-code.md): Melhores práticas operacionais do Claude Code (verificação, sessões, `/rewind`, `/goal`, sandbox). Última atualização: 2026-11-12
-- [mcp.md](./concepts/mcp.md): MCP — host/client/server, conector/tradutor, tools × resources × prompts e Skill × MCP. Última atualização: 2026-11-12
-- [ai-driven-development.md](./concepts/ai-driven-development.md): **(draft: só fontes de opinião de um autor)** Práticas de Matt Pocock (palestra, shorts e entrevista; Wayfinder, leading words) — HITL/AFK, Grill Me → PRD → issues → AFK, módulos profundos, push × pull, docs e retro. Última atualização: 2026-11-12
+- [mcp.md](./concepts/mcp.md): MCP — host/client/server, conector/tradutor, tools × resources × prompts, Skill × MCP e MCP × CLI. Última atualização: 2026-11-14
+- [ai-driven-development.md](./concepts/ai-driven-development.md): **(draft: só fontes de opinião de um autor)** Inclui as skills de Matt em nov/2026. Práticas de Matt Pocock (palestra, shorts e entrevista; Wayfinder, leading words) — HITL/AFK, Grill Me → PRD → issues → AFK, módulos profundos, push × pull, docs e retro. Última atualização: 2026-11-12
 - [tdd.md](./concepts/tdd.md): **(draft: uma fonte de opinião)** TDD como teto de qualidade do feedback para agentes de IA, segundo Matt Pocock. Última atualização: 2026-11-12
 - [seguranca-de-agentes.md](./concepts/seguranca-de-agentes.md): Prompt injection, jailbreak, defesas em camadas e higiene de sessão (CCDV-F). Última atualização: 2026-11-12
 - [claude-api-parametros-e-custo.md](./concepts/claude-api-parametros-e-custo.md): Parâmetros de amostragem, `stop_reason`, batch e prompt caching na API do Claude. Última atualização: 2026-11-12
@@ -98,11 +105,11 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 
 ## Entidades
 
-- [formacao-dev.md](./entities/formacao-dev.md): Plataforma de ensino online; instrutor Leonardo; cursos "Arquiteto Dev: DDD + Arquitetura Limpa", "Dev AI: Desenvolvimento com IA" e "Profissional AI — Agentes" (2 aulas ingeridas). Inclui agora criação de Skill do zero, SDD e MCP na visão do curso Profissional AI, tabela Skill × MCP e atualização da dumb zone (~150k). Última atualização: 2026-11-12
-- [matt-pocock.md](./entities/matt-pocock.md): Especialista em TypeScript e AI-Driven Development; criador do Sand Castle (biblioteca para paralelização de agentes) e Skills para Claude Code (Grill Me, PRD, TDD, improve architecture); entrevistador da live com Uncle Bob. Última atualização: 2026-11-12
+- [formacao-dev.md](./entities/formacao-dev.md): Plataforma de ensino online; instrutor Leonardo; cursos "Arquiteto Dev: DDD + Arquitetura Limpa", "Dev AI: Desenvolvimento com IA", "Profissional AI — Agentes" e projeto "Organizador de E-mails" (2 aulas de planejamento ingeridas). Inclui criação de Skill do zero, SDD e MCP na visão do curso Profissional AI, tabela Skill × MCP e dumb zone (~150k). Última atualização: 2026-11-15
+- [matt-pocock.md](./entities/matt-pocock.md): Especialista em TypeScript e AI-Driven Development; criador do Sand Castle (biblioteca para paralelização de agentes) e Skills para Claude Code (Grill Me, PRD, TDD, improve architecture); entrevistador da live com Uncle Bob; repositório de Skills: github.com/mattpocock/skills (27 skills). Última atualização: 2026-11-14
 - [github-copilot.md](./entities/github-copilot.md): Assistente de IA da GitHub (Microsoft); plataforma com Code Completion, Chat (Ask/Plan/Agent), Coding Agent (background em ambiente efêmero), Code Review Agent, Instructions, MCP (host/client/server), Copilot Spaces e extensão de modernização (Java/.NET). Última atualização: 2026-05-07
 - [joao-marcos-melchiors.md](./entities/joao-marcos-melchiors.md): Proprietário da wiki; desenvolvedor TypeScript com stack Express/PostgreSQL/Docker; princípios arquiteturais e perfil de aprendizagem observados na conversa DDD+Express. Última atualização: 2026-09-07
-- [claude-code.md](./entities/claude-code.md): Ferramenta agêntica da Anthropic (harness); comandos de contexto, permissões/auto mode, sandbox, sub agentes, hooks, plugins, MCP e Agent SDK; instalação de Skills pelo app desktop. Última atualização: 2026-11-07
+- [claude-code.md](./entities/claude-code.md): Ferramenta agêntica da Anthropic (harness); comandos de contexto, permissões/auto mode (4 modos detalhados), `/goal` com avaliador, sandbox, sub agentes, hooks, plugins/skills.sh, `.agents` × `.claude`, MCP e Agent SDK. Última atualização: 2026-11-14
 - [uncle-bob.md](./entities/uncle-bob.md): Robert C. Martin, autor de *Clean Code*; método com agentes (verificação determinística, cadeia de agentes) e posições sobre TDD, SDD e fundamentos, segundo a live com Matt Pocock. Última atualização: 2026-11-12
 - [andrew-brown.md](./entities/andrew-brown.md): Instrutor da ExamPro/freeCodeCamp; autor do curso de certificação Claude Developer Foundations (CCDV-F). Última atualização: 2026-11-05
 
@@ -110,8 +117,8 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 
 - [2026-11-12_home-repo-nesta-wiki.md](./syntheses/2026-11-12_home-repo-nesta-wiki.md): Esta wiki como home repo. É candidata natural, mas a decisão é adiar até haver projetos reais; prevê mover o esquema do `CLAUDE.md` para `docs/agents/wiki.md`. Interpretação e decisão de projeto. Última atualização: 2026-11-12
 - [2026-11-12_camadas-rule-skill-mcp-sdd.md](./syntheses/2026-11-12_camadas-rule-skill-mcp-sdd.md): **(draft)** Rule, Skill, MCP e SDD como camadas complementares (o quê, como, com que ferramenta, em que ordem). Quadro unificado do mantenedor, não presente nas fontes. Última atualização: 2026-11-12
-
 - [2026-11-12_apostila-palestra-microsoft-github-copilot.md](./syntheses/2026-11-12_apostila-palestra-microsoft-github-copilot.md): **(draft)** Apostila de estudo da palestra Microsoft/GitHub sobre Copilot: 15 capítulos (Completion, Chat, Instructions, modo agente, Coding Agent, Code Review, MCP, CLI, Spaces, Custom Agents, Modernization), demos, glossário, perguntas de revisão e roteiro para explicar a um colega. Fonte de fornecedor. Última atualização: 2026-11-12
+- [2026-11-15_apostila-curso-claude-code-freecodecamp.md](./syntheses/2026-11-15_apostila-curso-claude-code-freecodecamp.md): Apostila do curso Claude Code do freeCodeCamp: 11 capítulos (instalação, VS Code, permissões, `/goal`, skills, anatomia do projeto, contexto, slash commands, Git, MCP × CLI, FAQ), 9 diagramas em `wiki/assets/`, glossário e perguntas de revisão; distingue recursos nativos de customizações do instrutor. Última atualização: 2026-11-15
 
 ## Manutenção
 
@@ -122,3 +129,4 @@ Este arquivo é o índice baseado em conteúdo da wiki. O LLM deve ler isto prim
 - [maintenance/lint-reports/2026-04-28_lint-completo.md](./maintenance/lint-reports/2026-04-28_lint-completo.md): Verificação completa da wiki — 28 páginas analisadas; 1 arquivo obsoleto detectado; 4 conceitos não promovidos identificados; open-questions.md vazio (50+ questões espalhadas). Última atualização: 2026-04-28
 - [maintenance/lint-reports/2026-11-04_lint-completo.md](./maintenance/lint-reports/2026-11-04_lint-completo.md): Verificação completa da wiki — 37 páginas analisadas; index.md e log.md desatualizados desde set/2026; 2 páginas ausentes do index (fonte + entidade); 2 fontes brutas não ingeridas; open-questions.md vazio. Última atualização: 2026-11-04
 - [maintenance/lint-reports/2026-11-12_lint-higienizacao.md](./maintenance/lint-reports/2026-11-12_lint-higienizacao.md): Higienização: classificação das 37 fontes por tipo de conteúdo, 3 conceitos em draft, decisões do chat marcadas, interpretações movidas para sínteses, 0 links quebrados; pendências: verificar afirmações do chat, CQRS, seção ErroValidacao fora do lugar. Última atualização: 2026-11-12
+- [maintenance/lint-reports/2026-11-14_lint-ingestao-freecodecamp.md](./maintenance/lint-reports/2026-11-14_lint-ingestao-freecodecamp.md): Lint da ingestão freeCodeCamp + checagens gerais — 0 links quebrados, fontes com classificação completa; corrigidos a contagem de sínteses (2→3), a grafia `/reload plugins` e a origem do `/goal` ("skill" segundo o instrutor). Última atualização: 2026-11-14

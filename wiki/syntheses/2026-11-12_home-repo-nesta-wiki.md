@@ -3,7 +3,7 @@ title: "Esta wiki como home repo: quando e como"
 type: synthesis
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-14
 tags: ["home-repo", "claude-code", "claude-md", "llm-wiki", "decisao"]
 source_files:
   - raw/sources/2026-11-12_artigo-home-repo-pattern.md
@@ -40,6 +40,10 @@ Este repositório (a wiki) deve virar o [home repo](../concepts/home-repo.md) do
 
 - O ganho do padrão vem de evitar duplicação entre repos. Sem repos para deduplicar, sobra só o custo de manter a estrutura.
 - Mover o esquema da wiki para fora do `CLAUDE.md` evita que cada sessão em qualquer projeto carregue regras de ingestão que só valem para a wiki.
+
+## Atualização (2026-11-14)
+
+A skill beta `chief-of-staff` do repositório [mattpocock/skills](../sources/2026-11-14_source-matt-pocock-repo-skills.md) prescreve exatamente o mecanismo de memória que este wiki-kit usa: uma wiki de Markdown interligada com `index.md`, as operações **ingest, query e lint**, fontes nunca editadas (só citadas) e a regra "escrever história, não o presente" (afirmações datadas, superadas em vez de reescritas). A skill manda procurar primeiro uma wiki compartilhada que o usuário já mantenha — ou seja, uma wiki como esta seria o alvo natural. Convergência independente que reforça a candidatura desta wiki; a decisão de adiar permanece.
 
 ## Incertezas
 

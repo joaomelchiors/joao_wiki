@@ -3,8 +3,8 @@ title: "MCP (Model Context Protocol)"
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-12
-tags: ["mcp", "integracao", "conectores", "ia-generativa"]
+updated: 2026-11-14
+tags: ["mcp", "integracao", "conectores", "ia-generativa", "cli"]
 source_files:
   - raw/sources/2026-05-07_transcricao_VisualStudio+Copilot.md
   - raw/sources/2026-05-07_transcricao_VisualStudio+Copilot_Pratica.md
@@ -13,7 +13,9 @@ source_files:
   - raw/sources/2026-11-08_transcricao-AgentesDeIa_SKILLxMCP.md
   - raw/assets/agentesDeIa_SKILLvsMCP.png
   - raw/sources/2026-11-04_Curso_Certificacao_ClaudeCode.md
+  - raw/sources/2026-08-05_claude-code-full-course-autonomous-goals-mcp-and-vs-code_en-orig_7l6bXLAKyEI.md
 related_pages:
+  - ../sources/2026-08-05_source-claude-code-full-course-freecodecamp.md
   - ./ia-generativa.md
   - ./rules-e-skills.md
   - ./skills-na-pratica.md
@@ -74,6 +76,20 @@ Fonte: [MCP e catálogo de MCPs](../sources/2026-11-08_source-agentes-ia-mcp.md)
 ### MCP: Tools × Resources × Prompts
 Complementa a seção MCP acima: além de *tools* (funções), há **resources** (dados lidos diretamente via esquema, menos idas e vindas — afirmado pelo instrutor como tema de exame) e *prompts* (templates, considerados pouco úteis). Em ambientes gerenciados, listas de servidores permitidos e aprovação são controladas por *managed settings*.
 
+### MCP × ferramentas CLI
+Fonte: [curso freeCodeCamp sobre Claude Code](../sources/2026-08-05_source-claude-code-full-course-freecodecamp.md) (`demonstrado`; a comparação em si é slide/heurística do instrutor Eric).
+
+Ambos permitem ao agente controlar aplicações de terceiros (Jira, Slack, Stripe, Vercel), mas por caminhos diferentes:
+
+| | CLI | MCP |
+|---|---|---|
+| Como funciona | O agente gera e roda comandos de terminal | Protocolo padronizado expõe tools ao agente |
+| Custo de tokens | Baixo | Mais alto (schemas das tools ficam no contexto) |
+| Controle/segurança | Depende do ambiente local | Escolha de quais tools expor, autenticação, trilha de auditoria |
+| Indicação (segundo Eric) | Velocidade e economia de tokens | Times, controle de acesso, segurança |
+
+Demo da fonte: deploy e exclusão de projeto na Vercel via CLI, com o agente confirmando qual projeto apagar antes de executar.
+
 ### Skill × MCP × SDD: os três pilares (Profissional AI)
 Fonte: [Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md) (com imagem-resumo em `raw/assets/agentesDeIa_SKILLvsMCP.png`).
 
@@ -111,3 +127,4 @@ Fonte: [Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md) (
 ## Notas de Atualização
 
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.
+- 2026-11-14: adicionada a seção MCP × ferramentas CLI (curso freeCodeCamp sobre Claude Code).

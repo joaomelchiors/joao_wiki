@@ -3,7 +3,7 @@ title: "AI-Driven Development (práticas de Matt Pocock)"
 type: concept
 status: draft
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-14
 tags: ["ai-driven-development", "matt-pocock", "hitl", "afk", "tracer-bullets", "ia-generativa"]
 source_files:
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
@@ -186,6 +186,16 @@ If a question can be answered by exploring the codebase, explore the codebase in
 | **TDD** | Ciclo red-green-refactor guiado por testes | AFK |
 | **Improve Codebase Architecture** | Varredura para aprofundar módulos | AFK |
 
+### Skills hoje no repositório (nov/2026)
+
+Fonte: [`SKILL.md` das 27 skills](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md) (instruções do próprio autor; descrevem o desenho, não resultados).
+
+- **Fluxo principal** descrito por `ask-matt`: `grill-with-docs` → (`prototype` se preciso) → `to-spec` → `to-tickets` → `implement` (por ticket, com `/clear`) ou `implement-spec` (subagentes em paralelo) → `code-review` → `retro`. Wayfinder entra para esforços grandes e nebulosos e entrega ao `to-spec`.
+- **Mudanças de nomes e de forma em relação à palestra de abril/2026** (acima): "Write PRD" virou `to-spec` e "PRD to Issues" foi fundida em `to-tickets` (**renomeações confirmadas no `CHANGELOG.md`**: `to-prd` → `to-spec` na PR #464; `to-plan` + `to-issues` → `to-tickets`; ver [resumo do repositório](../sources/2026-11-14_source-matt-pocock-repo-skills.md)); o Grill Me continua como `grill-me`, hoje uma casca de uma linha sobre a primitiva `grilling`, que pergunta em **rodadas** por fronteira da árvore de decisões, com resposta recomendada, em vez de uma única sessão de 40 a 100 perguntas (aquele número vem da palestra; o `SKILL.md` não fixa quantidade).
+- **TDD**: o `SKILL.md` de `tdd` coloca a refatoração **fora** do loop e exige seams de teste acordados com o usuário; a palestra de abril descrevia "red-green-refactor". Fontes de épocas diferentes; ver [tdd](./tdd.md).
+- **Beta (`in-progress/`)**: `chief-of-staff` (agente de longa duração com memória em wiki: ingest/query/lint), `software-factory` (fábrica de agentes com freios: "aceleradores sem freios fazem um canhão de slop"), `loop-me`, `claude-handoff`, `setup-ts-deep-modules` e o trio de escrita; detalhes no [resumo do repositório](../sources/2026-11-14_source-matt-pocock-repo-skills.md).
+- **Novidades que a wiki ainda não tinha**: `retro` (melhorar o ambiente do agente, preferindo checagens determinísticas a regras), `writing-for-agents` (ponteiros de contexto, leading words, negação), `diagnosing-bugs` (loop de feedback apertado antes de teorizar), `code-review` em dois eixos, `handoff`, `to-questionnaire`, `wizard`, `teach` (workspace com `MISSION.md` e registros de aprendizagem).
+
 ## Fontes de Suporte
 
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
@@ -193,6 +203,10 @@ If a question can be answered by exploring the codebase, explore the codebase in
 - [Matt Pocock — The Home Repo Pattern (vídeo e artigo)](../sources/2026-11-12_source-matt-pocock-home-repo.md)
 - [Matt Pocock — Entrevista ao The Pragmatic Engineer (Wayfinder, leading words, fundamentos)](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md)
 - [Uncle Bob e Matt Pocock — live sobre fundamentos na era da IA](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md) (Matt como entrevistador; fala principal é de Bob)
+
+- [mattpocock/skills — conteúdo dos SKILL.md](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md): texto das 27 skills; fluxo principal, `wayfinder`, `teach`, `retro`, `writing-for-agents`.
+- [Repositório mattpocock/skills (GitHub)](../sources/2026-11-14_source-matt-pocock-repo-skills.md): 27 skills de Matt (Grill Me, `grill-with-docs`, `to-spec`, `to-tickets`, `tdd`, Wayfinder, `retro`, `teach`...) e instalação como plugin; referência do próprio autor.
+- [Matt Pocock — short sobre a skill `/teach`](../sources/2026-07-16_source-matt-pocock-teach-skill.md): skill para aprender assuntos (exemplo: medir terreno por triangulação; também cubo mágico e técnicas sêniores). Uso de skills voltado à aprendizagem do desenvolvedor, não ao processo de código; relato pessoal, sem o conteúdo da skill.
 
 ## Conceitos Relacionados
 
@@ -205,15 +219,20 @@ If a question can be answered by exploring the codebase, explore the codebase in
 
 ## Questões Não Resolvidas
 
+- ~~**Skills**: onde obter as Skills?~~ → **Respondida em 2026-11-14**: repositório público [mattpocock/skills](https://github.com/mattpocock/skills), ver [resumo](../sources/2026-11-14_source-matt-pocock-repo-skills.md). Falta ler o conteúdo de cada `SKILL.md`.
 - **Sand Castle**: como configurar e usar a biblioteca de Matt Pocock? Documentação disponível?
-- **Skills**: onde obter as Skills mencionadas por Matt Pocock (Grill Me, PRD, TDD, improve architecture)? Repositório público?
+
 - ~~**Doc rot**: PRDs apodrecem — mas e decisões arquiteturais importantes? Como preservá-las?~~ → **Parcialmente resolvida** no short "Delete (most of) your docs" (2026-07-16): manter ADRs, glossário de domínio e camada fina de navegação; evitar docs que descrevem o código. Heurística de um autor, sem dados.
-- **Limite de paralelização**: há limite prático de quantos agentes simultâneos? Custo/latência?
-- **Wayfinder e "grill with docs"**: onde estão publicadas? A entrevista não cita o endereço.
-- **Push vs. Pull**: como implementar sistema de Pull (Skills consultáveis) na prática? MCP? Arquivos `.md` no repo?
+- **Limite de paralelização**: há limite prático de quantos agentes simultâneos? Custo/latência? (`implement-spec` paraleliza pela fronteira do grafo de tickets, sem fixar um limite no texto lido.)
+- ~~**Wayfinder e "grill with docs"**: onde estão publicadas?~~ → Estão em [mattpocock/skills](https://github.com/mattpocock/skills) (`wayfinder`, `grill-with-docs`), segundo o README.
+- ~~**Push vs. Pull**: como implementar Pull na prática?~~ → **Parcialmente respondida** por `SKILL-MECHANICS.md`: Pull é a skill model-invoked, cuja `description` fica sempre carregada como ponteiro (custo de contexto em troca de descoberta); referência compartilhada vive numa skill só de referência ou em arquivo apontado. Resta a variante via MCP.
 
 ## Notas de Atualização
 
+- 2026-11-14: renomeações confirmadas pelo CHANGELOG; adicionadas as skills beta e a resposta parcial de Push vs. Pull (ingestão dos auxiliares).
+- 2026-11-14: adicionada a seção "Skills hoje no repositório" com base nos `SKILL.md` (ingestão).
+- 2026-11-14: adicionada a fonte do repositório de skills (ingestão), com respostas a duas questões abertas.
+- 2026-11-14: adicionado o short `/teach` (ingestão) às fontes de suporte.
 - 2026-11-12: adicionada a seção da live com Uncle Bob (ingestão).
 - 2026-11-12: adicionada a seção da entrevista ao The Pragmatic Engineer (ingestão).
 - 2026-11-12: status passou a `draft`, com nota de evidência (higienização, etapa 3).

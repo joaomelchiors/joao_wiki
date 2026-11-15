@@ -3,7 +3,7 @@ title: "TDD (Test-Driven Development) com IA"
 type: concept
 status: draft
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-14
 tags: ["tdd", "testes", "feedback-loop", "ai-driven-development"]
 source_files:
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
@@ -64,10 +64,22 @@ Fonte: [live com Uncle Bob](../sources/2026-08-19_source-uncle-bob-live-fundamen
 - Em vez de TDD estrito, ele depende de **verificação determinística** depois do fato: cobertura, escore CRAP e teste de mutação. Ver [Verificação determinística](./verificacao-deterministica.md).
 - **Convergência com Matt** (entrevista de set/2026): TDD serve à memória humana e agentes precisam de feedback. **Divergência de ênfase** com a palestra de abril/2026 (TDD "essencial para IA"): as fontes discordam; ficam as três posições, sem conclusão. Bob (que popularizou TDD) é a fonte mais cética sobre impô-lo a agentes; ainda é uma única voz de opinião.
 
+### O que o `SKILL.md` de `tdd` prescreve (nov/2026)
+
+Fonte: [`SKILL.md` do repositório de Matt](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md); instrução do próprio autor, sem avaliação de resultados.
+
+- Testes verificam **comportamento por interfaces públicas**, não implementação.
+- **Só em seams pré-acordados com o usuário**: antes de escrever qualquer teste, listar os seams e confirmar; nenhum teste em seam não confirmado.
+- Antipadrões: **acoplado à implementação**, **tautológico** (a asserção recalcula o esperado como o código) e **fatiamento horizontal** (todos os testes primeiro); o certo é fatia vertical, um teste → uma implementação, cada teste como tracer bullet.
+- Regras do loop: vermelho antes de verde; uma fatia por vez; **"refatoração não faz parte do loop"**, ela pertence à etapa de revisão (`code-review`).
+- Auxiliar `mocking.md` (lido em 2026-11-14): **mock só em fronteiras de sistema** (APIs externas, tempo, aleatoriedade; para banco, preferir banco de teste), nunca nos próprios módulos ou colaboradores internos; injeção de dependência e interfaces estilo SDK (uma função por operação externa) para dar forma ao mock.
+- Observação do mantenedor: isso difere do "red-green-refactor" da palestra de abril/2026. As fontes são de épocas diferentes; não há como saber por esta fonte se é mudança de posição ou só enquadramento da skill.
+
 ## Fontes de Suporte
 
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
 - [Matt Pocock — Entrevista ao The Pragmatic Engineer](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md)
+- [mattpocock/skills — conteúdo dos SKILL.md](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md) (skill `tdd`)
 - [Uncle Bob e Matt Pocock — live sobre fundamentos na era da IA](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md)
 
 ## Conceitos Relacionados
@@ -83,6 +95,7 @@ Fonte: [live com Uncle Bob](../sources/2026-08-19_source-uncle-bob-live-fundamen
 
 ## Notas de Atualização
 
+- 2026-11-14: adicionado o que o `SKILL.md` de `tdd` prescreve (ingestão).
 - 2026-11-12: adicionada a posição de Uncle Bob (live) e link para verificação determinística (ingestão).
 - 2026-11-12: adicionada a posição matizada da entrevista ao The Pragmatic Engineer (ingestão).
 - 2026-11-12: status passou a `draft` e os argumentos foram atribuídos a Matt Pocock (higienização, etapa 3).

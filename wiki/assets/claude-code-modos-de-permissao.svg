@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Escada de autonomia dos modos de permissão do Claude Code">
+<style>
+text{font-family:'Segoe UI',system-ui,sans-serif}
+.svg-ink{fill:#1d2520}.svg-muted{fill:#5b6660}.svg-acc{fill:#0e7a5f}
+.svg-box{fill:#fff;stroke:#dde2dc}.svg-boxacc{fill:#e3f0ea;stroke:#0e7a5f}
+.svg-warnbox{fill:#f7edd6;stroke:#9a6b0a}
+.svg-line{stroke:#5b6660;fill:none}
+.svg-t{font-size:12px}.svg-tb{font-size:12.5px;font-weight:600}
+.svg-m{font-family:Consolas,ui-monospace,monospace;font-size:10.5px}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="40" y1="262" x2="690" y2="262" class="svg-line" stroke-dasharray="4 4"/>
+<text x="40" y="286" class="svg-m svg-muted">menos autonomia</text>
+<text x="690" y="286" text-anchor="end" class="svg-m svg-muted">mais autonomia</text>
+<rect x="30" y="170" width="150" height="80" rx="9" class="svg-box"/>
+<text x="105" y="195" text-anchor="middle" class="svg-tb svg-ink">Plan</text>
+<text x="105" y="216" text-anchor="middle" class="svg-t svg-muted">só lê e planeja;</text>
+<text x="105" y="233" text-anchor="middle" class="svg-t svg-muted">você aprova o plano</text>
+<rect x="200" y="130" width="150" height="120" rx="9" class="svg-box"/>
+<text x="275" y="155" text-anchor="middle" class="svg-tb svg-ink">Accept Edits</text>
+<text x="275" y="178" text-anchor="middle" class="svg-t svg-muted">edita arquivos</text>
+<text x="275" y="195" text-anchor="middle" class="svg-t svg-muted">sozinho; pede</text>
+<text x="275" y="212" text-anchor="middle" class="svg-t svg-muted">permissão para</text>
+<text x="275" y="229" text-anchor="middle" class="svg-t svg-muted">rodar comandos</text>
+<rect x="370" y="90" width="150" height="160" rx="9" class="svg-boxacc"/>
+<text x="445" y="115" text-anchor="middle" class="svg-tb svg-acc">Auto</text>
+<text x="445" y="138" text-anchor="middle" class="svg-t svg-ink">edita e roda scripts;</text>
+<text x="445" y="155" text-anchor="middle" class="svg-t svg-ink">um "classificador de</text>
+<text x="445" y="172" text-anchor="middle" class="svg-t svg-ink">segurança" avalia cada</text>
+<text x="445" y="189" text-anchor="middle" class="svg-t svg-ink">comando e chama você</text>
+<text x="445" y="206" text-anchor="middle" class="svg-t svg-ink">quando precisa de</text>
+<text x="445" y="223" text-anchor="middle" class="svg-t svg-ink">humano no loop</text>
+<rect x="540" y="50" width="150" height="200" rx="9" class="svg-warnbox"/>
+<text x="615" y="75" text-anchor="middle" class="svg-tb" fill="#9a6b0a">Bypass</text>
+<text x="615" y="98" text-anchor="middle" class="svg-t svg-ink">sem restrições:</text>
+<text x="615" y="115" text-anchor="middle" class="svg-t svg-ink">roda tudo sem</text>
+<text x="615" y="132" text-anchor="middle" class="svg-t svg-ink">revisão</text>
+<text x="615" y="160" text-anchor="middle" class="svg-t svg-muted">indicado só para</text>
+<text x="615" y="177" text-anchor="middle" class="svg-t svg-muted">ambientes de teste /</text>
+<text x="615" y="194" text-anchor="middle" class="svg-t svg-muted">virtuais, sem dados</text>
+<text x="615" y="211" text-anchor="middle" class="svg-t svg-muted">sensíveis</text>
+<text x="615" y="236" text-anchor="middle" class="svg-m svg-muted">flag na linha de comando</text>
+</svg>
