@@ -1,5 +1,6 @@
 ---
 title: "Imersão DDD + Arq. Limpa — Aula 20: Repositório de Usuário (Adaptador Prisma + Controller NestJS)"
+descricao: 'Resumo da Aula 20 — adaptador `UsuarioPrisma` (implementação concreta do repositório via Prisma); controller NestJS `AutenticacaoController`; `DatabaseModule` com `PrismaService`.'
 type: source
 status: active
 created: 2026-04-27

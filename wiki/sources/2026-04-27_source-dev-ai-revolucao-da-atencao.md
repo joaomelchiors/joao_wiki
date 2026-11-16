@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 03: A Revolução da Atenção (Multi-Head Attention em detalhe)"
+descricao: 'Resumo da Aula IA-03 — detalhamento do Multi-Head Attention: projeção Q/K/V por head (768×64), cálculo de scores, softmax, concatenação de heads, atenção não-simétrica.'
 type: source
 status: active
 created: 2026-04-27

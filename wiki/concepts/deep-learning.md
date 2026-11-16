@@ -1,5 +1,6 @@
 ---
 title: "Deep Learning (Aprendizado Profundo)"
+descricao: '**(draft: definição sem fonte direta)** Deep Learning — redes de várias camadas, pré-treinamento, pesos/parâmetros e baixa interpretabilidade, montado a partir das aulas IA-01 a IA-03 (o termo não aparece literalmente nas fontes; definição formal é conhecimento geral, marcada como tal).'
 type: concept
 status: draft
 created: 2026-11-11

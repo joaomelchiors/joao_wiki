@@ -1,9 +1,10 @@
 ---
 title: "MCP (Model Context Protocol)"
+descricao: 'MCP — host/client/server, conector/tradutor, tools × resources × prompts, Skill × MCP e MCP × CLI.'
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-14
+updated: 2026-11-15
 tags: ["mcp", "integracao", "conectores", "ia-generativa", "cli"]
 source_files:
   - raw/sources/2026-05-07_transcricao_VisualStudio+Copilot.md
@@ -14,7 +15,11 @@ source_files:
   - raw/assets/agentesDeIa_SKILLvsMCP.png
   - raw/sources/2026-11-04_Curso_Certificacao_ClaudeCode.md
   - raw/sources/2026-08-05_claude-code-full-course-autonomous-goals-mcp-and-vs-code_en-orig_7l6bXLAKyEI.md
+  - raw/sources/2025-10-22_most-devs-don-t-understand-how-context-windows-work_en-corrigida_-uW5-TaVXu4.md
+  - raw/sources/2026-01-12_frontend-is-harder-for-ai-than-backend-here-s-how-to-fix-it_en-corrigida_pSritFeoYFo.md
 related_pages:
+  - ../sources/2025-10-22_source-matt-pocock-janela-de-contexto.md
+  - ../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md
   - ../sources/2026-08-05_source-claude-code-full-course-freecodecamp.md
   - ./ia-generativa.md
   - ./rules-e-skills.md
@@ -61,6 +66,8 @@ Padrão aberto (2024, Anthropic) para integrar ferramentas e dados externos a ag
 - **Local** (ex: Playwright): executa localmente, sem autenticação, abre browser via motor Chromium/Edge/Firefox
 - **Remoto** (ex: GitHub): requer OAuth; as permissões do MCP = permissões do usuário autenticado
 
+Outro exemplo de servidor local, `demonstrado` fora da palestra: Matt Pocock (jan/2026) configura o **Chrome DevTools MCP** num arquivo de MCP do projeto (dito "MCP.json"; provavelmente `.mcp.json`, não confirmado), apontado para um Chrome com depuração remota que uma skill manda subir em modo headless; o Claude Code usa o servidor para QA visual. Fonte: [vídeo sobre front-end](../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md).
+
 **Benefícios (segundo a palestra; sem dados apresentados)**: reduz alucinações (contexto mais preciso via dados externos em tempo real), permite compartilhar informações entre times (Jira, Zendesk, Azure), reduz tempo de integração (padrão universal).
 
 **Configuração no VS Code**: arquivo `.vscode/mcp.json` lista os servidores MCP. Ferramentas expostas ficam visíveis na interface da extensão.
@@ -90,6 +97,10 @@ Ambos permitem ao agente controlar aplicações de terceiros (Jira, Slack, Strip
 
 Demo da fonte: deploy e exclusão de projeto na Vercel via CLI, com o agente confirmando qual projeto apagar antes de executar.
 
+Segunda fonte sobre o custo de contexto, como opinião: segundo Matt Pocock (out/2025), MCP servers podem inflar o contexto rapidamente. No exemplo dele, as tools de "um par" de servidores ocupavam uma fatia grande da janela, e por isso ele diz ser "extremamente cauteloso" ao adicioná-los. Converge com a linha "Custo de tokens" da tabela. Fonte: [vídeo sobre janela de contexto](../sources/2025-10-22_source-matt-pocock-janela-de-contexto.md).
+
+Terceira menção, de segunda mão: segundo respostas no X repassadas por Matt Pocock (jan/2026), Playwright MCP e Chrome DevTools MCP são *context-hoggy* — screenshots devolvidos ao modelo consomem muitos tokens e os servidores trazem muitas tools com descrições longas. Alternativas citadas nessas respostas: Dev Browser e Playwriter, que ele diz não ter testado. Força: relato de terceiros. Fonte: [vídeo sobre front-end](../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md).
+
 ### Skill × MCP × SDD: os três pilares (Profissional AI)
 Fonte: [Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md) (com imagem-resumo em `raw/assets/agentesDeIa_SKILLvsMCP.png`).
 
@@ -109,6 +120,8 @@ Fonte: [Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md) (
 - [Agentes de IA (Profissional AI) — MCP e catálogo de MCPs](../sources/2026-11-08_source-agentes-ia-mcp.md)
 - [Agentes de IA (Profissional AI) — Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md)
 - [Curso de Certificação Claude Developer Foundations (CCDV-F)](../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md)
+- [Matt Pocock — Most devs don't understand how context windows work](../sources/2025-10-22_source-matt-pocock-janela-de-contexto.md): MCP inflando o contexto (opinião).
+- [Matt Pocock — Frontend is HARDER for AI than backend](../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md): Chrome DevTools MCP para QA visual (demonstrado); custo de contexto de MCPs de navegador (relato de terceiros).
 
 ## Conceitos Relacionados
 
@@ -128,3 +141,4 @@ Fonte: [Skill × MCP](../sources/2026-11-08_source-agentes-ia-skill-vs-mcp.md) (
 
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.
 - 2026-11-14: adicionada a seção MCP × ferramentas CLI (curso freeCodeCamp sobre Claude Code).
+- 2026-11-15: adicionada a opinião de Matt Pocock sobre MCP inflando o contexto em MCP × ferramentas CLI (ingestão).

@@ -1,5 +1,6 @@
 ---
 title: "Objeto de Valor (Value Object)"
+descricao: 'Value Object — validade por construção, imutabilidade, UUID v7 (`IdVO.generate()` vs `tryCreate()`), VOs como parâmetro de repositório, critério para manter VO vs. extrair `.value`; **ErroValidacao** como base do pipeline de validação (Modelagem de Domínio, Aula 48).'
 type: concept
 status: active
 created: 2026-04-20

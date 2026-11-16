@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Ferramentas Agênticas: Pastas das Skills, Skills Básica/Com Código/No Codex, Especificação Simples"
+descricao: 'Módulo Ferramentas Agênticas (Dev AI, Aulas 01–05) — pastas de Skills por ferramenta (`.claude/skills/` vs `.agents/skills/`); estrutura mínima de `skill.md`; gatilho implícito vs. chamada explícita; Skills determinísticas com scripts executáveis; Spec-Driven Development prático (pasta `specs/changes/`, checkboxes, paralelização via subagentes, arquivamento).'
 type: source
 status: active
 created: 2026-07-17

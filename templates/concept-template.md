@@ -1,5 +1,6 @@
 ---
 title: ""
+descricao: ''
 type: concept
 status: active
 created: YYYY-MM-DD

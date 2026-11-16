@@ -1,5 +1,6 @@
 ---
 title: "Contexto Delimitado (Bounded Context)"
+descricao: 'Bounded Context — fronteiras de módulo, tipos de subdomínio, proibição de dependências cíclicas.'
 type: concept
 status: active
 created: 2026-04-20

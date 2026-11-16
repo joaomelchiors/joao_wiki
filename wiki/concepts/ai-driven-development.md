@@ -1,5 +1,6 @@
 ---
 title: "AI-Driven Development (práticas de Matt Pocock)"
+descricao: '**(draft: método de um único autor)** Inclui as skills de Matt em nov/2026. Práticas de Matt Pocock (palestra, shorts, entrevista e vídeos demonstrados; Wayfinder, leading words) — HITL/AFK, Grill Me → PRD → issues → laço AFK (Ralph), módulos profundos, push × pull, docs e retro.'
 type: concept
 status: draft
 created: 2026-11-12
@@ -16,7 +17,18 @@ source_files:
   - raw/assets/2026-11-12_home-repo-pattern.png
   - raw/sources/2026-09-17_ai-skills-with-matt-pocock_en-revisada_4DhcSPkEbwI.md
   - raw/sources/2026-04-17_live-watch-me-build-a-brand-new-project-from-scratch_en-corrigida_K-mA3MZ_EzU.md
+  - raw/sources/2025-10-27_how-i-use-claude-code-for-real-engineering_en-corrigida_kZ-zzHVUrO4.md
+  - raw/sources/2026-01-05_ship-working-code-while-you-sleep-with-the-ralph-wiggum_en-corrigida__IK18goX4X8.md
+  - raw/sources/2026-01-15_i-was-an-ai-skeptic-then-i-tried-plan-mode_en-corrigida_WNx-s-RxVxk.md
+  - raw/sources/2026-02-21_i-m-using-claude-worktree-for-everything-now_en-corrigida_yv8VZpov8bk.md
+  - raw/sources/2026-02-23_red-green-refactor-is-op-with-claude-code_en-corrigida_hYZdIwFIy-c.md
+  - raw/sources/2026-02-24_never-run-claude-init_en-corrigida_9tmsq-Gvx6g.md
 related_pages:
+  - ../sources/2026-02-24_source-matt-pocock-never-run-claude-init.md
+  - ../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md
+  - ../sources/2026-01-15_source-matt-pocock-plan-mode.md
+  - ../sources/2026-02-21_source-matt-pocock-claude-worktree.md
+  - ../sources/2026-02-23_source-matt-pocock-red-green-refactor.md
   - ./ia-generativa.md
   - ./tdd.md
   - ./engenharia-de-contexto.md
@@ -31,13 +43,16 @@ related_pages:
   - ../sources/2026-11-12_source-matt-pocock-home-repo.md
   - ../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md
   - ../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md
+  - ../sources/2025-10-27_source-matt-pocock-claude-code-engenharia-real.md
+  - ../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md
+  - ./ralph-loop.md
 ---
 
 # AI-Driven Development (práticas de Matt Pocock)
 
 > Página derivada de [IA Generativa](./ia-generativa.md), dividida em 2026-11-12. O conteúdo foi movido das seções originais sem reescrita substancial; o histórico de atualizações anteriores está no hub.
 
-> **Evidência**: todo o conteúdo vem de um único autor, Matt Pocock. As fontes principais (palestra, shorts e entrevista) são de tipo `opiniao`; o artigo do Home Repo (`referencia`) só aparece como remissão. Desde 2026-11-15 há uma fonte `demonstrado` — a [live de abr/2026](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md), com 1h47 de execução ao vivo —, o que eleva a evidência da **fase de pesquisa** descrita abaixo, mas não tira a página do `draft`: continua sendo método e heurística de um único autor, não prática validada por outras fontes. Convergências com outras fontes estão indicadas onde existem (por exemplo, Opus para revisão em [Melhores Práticas do Claude Code](./melhores-praticas-claude-code.md)).
+> **Evidência**: todo o conteúdo vem de um único autor, Matt Pocock. As fontes principais (palestra, shorts e entrevista) são de tipo `opiniao`; o artigo do Home Repo (`referencia`) só aparece como remissão. Desde 2026-11-15 há uma fonte `demonstrado` — a [live de abr/2026](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md), com 1h47 de execução ao vivo —, o que eleva a evidência da **fase de pesquisa** descrita abaixo; o [vídeo de out/2025](../sources/2025-10-27_source-matt-pocock-claude-code-engenharia-real.md) é uma segunda fonte `demonstrado`, de um fluxo mais simples. Nada disso tira a página do `draft`: continua sendo método e heurística de um único autor, não prática validada por outras fontes. Convergências com outras fontes estão indicadas onde existem (por exemplo, Opus para revisão em [Melhores Práticas do Claude Code](./melhores-praticas-claude-code.md)).
 
 ## Definição
 
@@ -46,7 +61,7 @@ related_pages:
 ## Compreensão Atual
 
 ### Docs, Home Repo e Retro (posições posteriores de Matt Pocock)
-- **Menos docs, mais código autoexplicativo**: a camada de docs em markdown que descreve o código se desatualiza e cria duas fontes de verdade. Vale manter só ADRs, glossário de domínio e uma camada fina de navegação. Responde em parte à questão "doc rot" (ver Questões Não Resolvidas). Fonte: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md).
+- **Menos docs, mais código autoexplicativo**: a camada de docs em markdown que descreve o código se desatualiza e cria duas fontes de verdade. Vale manter só ADRs, glossário de domínio e uma camada fina de navegação. Responde em parte à questão "doc rot" (ver Questões Não Resolvidas). Fonte: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md). Antecedente de fev/2026: no vídeo [Never Run claude /init](../sources/2026-02-24_source-matt-pocock-never-run-claude-init.md) ele já argumentava que o `CLAUDE.md` gerado pelo `/init` repete o que é descobrível no código e apodrece, e que a estrutura de pastas deve mostrar a arquitetura (opinião).
 - **Home Repo**: um repo único com skills, `AGENTS.md` e ponteiros para os demais repos, onde o agente sempre roda. Ver [Home Repo](./home-repo.md).
 - **Skill `retro`**: analisa sessões passadas e sugere melhorias no repo (lint, code review); Matt defende **humano ou processo no loop** ("retro da retro") para validar se as mudanças ajudam. Fonte: [shorts](../sources/2026-07-16_source-matt-pocock-shorts.md); o artigo acadêmico citado não foi lido.
 
@@ -112,6 +127,10 @@ Ideia vaga → validar (vale construir?) → pesquisa do terreno (subagentes em 
 Ideia → Grill Me (HITL, 1h) → PRD (HITL) → Issues/Kanban (HITL) → Implementação (AFK, paralela) → QA (HITL) → Review (HITL) → Merge
 ```
 
+**Registro anterior (out/2025, demonstrado)**: no vídeo [How I use Claude Code for real engineering](../sources/2025-10-27_source-matt-pocock-claude-code-engenharia-real.md), o fluxo mostrado é plan mode com perguntas de esclarecimento → plano multifase com questões não resolvidas → plano salvo em GitHub issue → implementação em *accept edits*, fase a fase, com revisão no fim de cada uma. Nessa fonte não aparecem Grill Me, PRD nem paralelização. **Interpretação do mantenedor** (sem síntese própria; o vídeo não faz a ligação): é uma forma inicial do fluxo acima.
+
+**Registro de jan/2026 (opinião, com trace narrado)**: no vídeo [I was an AI skeptic. Then I tried plan mode](../sources/2026-01-15_source-matt-pocock-plan-mode.md), Matt descreve o laço que diz aplicar a todo o seu código: planejar em plan mode com a IA → a IA executa o plano → testar juntos (testes unitários, checagem de tipos ou QA manual) → commit → recomeçar. Segundo ele, as perguntas que o agente faz durante o planejamento são iteração sobre requisitos — *rubber ducking* com a IA, em que ela propõe e ele corrige até os dois saberem o que fazer. No trace que ele narra, quando surge algo que nenhum dos dois previu, ele volta ao plan mode e o agente atualiza o **mesmo arquivo de plano**, faz novas perguntas e executa de novo. Sem plano multifase nem GitHub issue, diferente de out/2025.
+
 #### 1. Grill Me: Sessão de Interrogatório
 **Objetivo**: alcançar **entendimento compartilhado** entre humano e agente (não apenas gerar artefato).
 
@@ -171,6 +190,10 @@ If a question can be answered by exploring the codebase, explore the codebase in
 
 **Paralelização (Sand Castle)**: planner escolhe múltiplas issues independentes → cada issue roda em sandbox isolada (git worktree em Docker) → implementadores trabalham em paralelo → revisor (Opus) revisa commits → merger mescla branches e resolve conflitos
 
+**Antecedente de fev/2026 (worktrees nativas, demonstrado)**: no [vídeo sobre `claude --worktree`](../sources/2026-02-21_source-matt-pocock-claude-worktree.md), Matt usa a worktree que o próprio Claude Code cria, uma por sessão, com o ciclo de vida preso ao agente, e diz que pretende usá-la sempre. Ainda não há sandbox Docker, planner nem merger: cada sessão termina em PR de volta para main. Cuidado relatado por ele: mandar o agente fazer push para o branch nomeado (`worktree-<nome>`), senão o push pode mirar o branch de origem; proteger main. Que isso torne a paralelização "mais livre" é opinião dele, sem medida.
+
+**Versão de jan/2026 (vídeo Ralph Wiggum, demonstrado)**: no [vídeo de jan/2026](../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md), anterior às issues locais e ao Sand Castle, o laço é um `ralph.sh` que invoca o agente pela CLI com número máximo de iterações como trava. Em vez de `issues/*.md`, as entradas são um `plans/prd.json` (user stories com flag `passes`) e um `progress.txt` que o agente só **anexa**; cada iteração escolhe a feature de maior prioridade (não a primeira da lista), roda type check e testes, marca `passes: true`, comita e, se o PRD acabou, emite um marcador "promise complete" que encerra o laço. Há uma variante interativa de uma iteração para features difíceis. Script explicado e uma iteração executada ao vivo; fonte única. As preferências (uma feature por vez, tarefas de tamanho parecido, "types, types, types") são heurística dele. Visão consolidada das versões em [Laço Ralph](./ralph-loop.md).
+
 #### 5. QA e Review
 **QA manual essencial**: impõe "bom gosto" humano; previne código genérico/malfeito (_slop_).
 
@@ -217,17 +240,23 @@ Fonte: [`SKILL.md` das 27 skills](../sources/2026-11-14_source-matt-pocock-skill
 
 - **Fluxo principal** descrito por `ask-matt`: `grill-with-docs` → (`prototype` se preciso) → `to-spec` → `to-tickets` → `implement` (por ticket, com `/clear`) ou `implement-spec` (subagentes em paralelo) → `code-review` → `retro`. Wayfinder entra para esforços grandes e nebulosos e entrega ao `to-spec`.
 - **Mudanças de nomes e de forma em relação à palestra de abril/2026** (acima): "Write PRD" virou `to-spec` e "PRD to Issues" foi fundida em `to-tickets` (**renomeações confirmadas no `CHANGELOG.md`**: `to-prd` → `to-spec` na PR #464; `to-plan` + `to-issues` → `to-tickets`; ver [resumo do repositório](../sources/2026-11-14_source-matt-pocock-repo-skills.md)); o Grill Me continua como `grill-me`, hoje uma casca de uma linha sobre a primitiva `grilling`, que pergunta em **rodadas** por fronteira da árvore de decisões, com resposta recomendada, em vez de uma única sessão de 40 a 100 perguntas (aquele número vem da palestra; o `SKILL.md` não fixa quantidade).
-- **TDD**: o `SKILL.md` de `tdd` coloca a refatoração **fora** do loop e exige seams de teste acordados com o usuário; a palestra de abril descrevia "red-green-refactor". Fontes de épocas diferentes; ver [tdd](./tdd.md).
+- **TDD**: o `SKILL.md` de `tdd` coloca a refatoração **fora** do loop e exige seams de teste acordados com o usuário; a palestra de abril descrevia "red-green-refactor". Fontes de épocas diferentes; ver [tdd](./tdd.md). Em fev/2026 a skill mostrada no [vídeo "Red Green Refactor is OP"](../sources/2026-02-23_source-matt-pocock-red-green-refactor.md) já fazia o loop um teste por vez e só depois buscava candidatos a refatoração.
 - **Beta (`in-progress/`)**: `chief-of-staff` (agente de longa duração com memória em wiki: ingest/query/lint), `software-factory` (fábrica de agentes com freios: "aceleradores sem freios fazem um canhão de slop"), `loop-me`, `claude-handoff`, `setup-ts-deep-modules` e o trio de escrita; detalhes no [resumo do repositório](../sources/2026-11-14_source-matt-pocock-repo-skills.md).
 - **Novidades que a wiki ainda não tinha**: `retro` (melhorar o ambiente do agente, preferindo checagens determinísticas a regras), `writing-for-agents` (ponteiros de contexto, leading words, negação), `diagnosing-bugs` (loop de feedback apertado antes de teorizar), `code-review` em dois eixos, `handoff`, `to-questionnaire`, `wizard`, `teach` (workspace com `MISSION.md` e registros de aprendizagem).
 
 ## Fontes de Suporte
 
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
-- [Matt Pocock — LIVE: construindo um projeto do zero](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md): única fonte `demonstrado` do conceito — a fase de pesquisa, o naming e a modelagem de domínio executados ao vivo (abr/2026).
+- [Matt Pocock — LIVE: construindo um projeto do zero](../sources/2026-04-17_source-matt-pocock-live-projeto-do-zero.md): primeira fonte `demonstrado` do fluxo de 2026 — a fase de pesquisa, o naming e a modelagem de domínio executados ao vivo (abr/2026).
 - [Matt Pocock — Quatro shorts (docs, dumb zone, Pragmatic Programmer, retro skill)](../sources/2026-07-16_source-matt-pocock-shorts.md)
 - [Matt Pocock — The Home Repo Pattern (vídeo e artigo)](../sources/2026-11-12_source-matt-pocock-home-repo.md)
 - [Matt Pocock — Entrevista ao The Pragmatic Engineer (Wayfinder, leading words, fundamentos)](../sources/2026-09-17_source-matt-pocock-pragmatic-engineer.md)
+- [Matt Pocock — How I use Claude Code for real engineering](../sources/2025-10-27_source-matt-pocock-claude-code-engenharia-real.md): fluxo de out/2025 (plan mode → plano multifase → GitHub issue → *accept edits*), demonstrado.
+- [Matt Pocock — I was an AI skeptic. Then I tried plan mode](../sources/2026-01-15_source-matt-pocock-plan-mode.md): laço planejar → executar → testar → commit de jan/2026, com replanejamento no mesmo arquivo; `opiniao` com trace narrado.
+- [Matt Pocock — I'm using claude --worktree for everything now](../sources/2026-02-21_source-matt-pocock-claude-worktree.md): worktree nativa do Claude Code por sessão (fev/2026), antecedente do Sandcastle; `demonstrado` com opinião.
+- [Matt Pocock — Red Green Refactor is OP With Claude Code](../sources/2026-02-23_source-matt-pocock-red-green-refactor.md): skill de TDD de fev/2026 (um teste por vez, refatoração depois do loop) e confiança por ver vermelho → verde; `opiniao`.
+- [Matt Pocock — Never Run claude /init](../sources/2026-02-24_source-matt-pocock-never-run-claude-init.md): contra o `CLAUDE.md` gerado; código e pastas como fonte de verdade, antecedente da posição sobre docs (fev/2026); `opiniao`.
+- [Matt Pocock — Ship working code while you sleep with the Ralph Wiggum technique](../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md): versão de jan/2026 do laço AFK (PRD em JSON com `passes`, `progress.txt`, trava de iterações), demonstrado.
 - [Uncle Bob e Matt Pocock — live sobre fundamentos na era da IA](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md) (Matt como entrevistador; fala principal é de Bob)
 
 - [mattpocock/skills — conteúdo dos SKILL.md](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md): texto das 27 skills; fluxo principal, `wayfinder`, `teach`, `retro`, `writing-for-agents`.
@@ -242,6 +271,7 @@ Fonte: [`SKILL.md` das 27 skills](../sources/2026-11-14_source-matt-pocock-skill
 - [home-repo](./home-repo.md)
 - [rules-e-skills](./rules-e-skills.md)
 - [spec-driven-development](./spec-driven-development.md)
+- [ralph-loop](./ralph-loop.md): o laço AFK da etapa 4, com as versões de jan/2026 e abr/2026
 
 ## Questões Não Resolvidas
 
@@ -255,6 +285,13 @@ Fonte: [`SKILL.md` das 27 skills](../sources/2026-11-14_source-matt-pocock-skill
 
 ## Notas de Atualização
 
+- 2026-11-15: em "Docs, Home Repo e Retro", acrescentado o antecedente de fev/2026 (vídeo contra o `/init`); página segue `draft`.
+- 2026-11-15: em "4. Implementação AFK", acrescentado o antecedente de fev/2026 com worktrees nativas do Claude Code (ingestão do vídeo sobre `claude --worktree`).
+- 2026-11-15: adicionado o "Registro de jan/2026" em Fluxo Completo de Desenvolvimento, do vídeo sobre plan mode (ingestão); fonte `opiniao`, página segue `draft`.
+
+- 2026-11-15: adicionada a "Versão de jan/2026" em Implementação AFK, do vídeo Ralph Wiggum (ingestão), com remissão à nova página [Laço Ralph](./ralph-loop.md); página segue `draft` (terceira fonte `demonstrado`, mesmo autor).
+
+- 2026-11-15: adicionado o "Registro anterior (out/2025)" em Fluxo Completo de Desenvolvimento, do vídeo sobre Claude Code em engenharia real (ingestão); página segue `draft`.
 - 2026-11-15: adicionada a seção "Antes do PRD: a fase de pesquisa", da live de abr/2026 (ingestão) — primeira fonte `demonstrado` da página; registrada a tensão entre "memória de longo prazo é má ideia" (abr/2026) e a skill `chief-of-staff` (nov/2026).
 - 2026-11-14: renomeações confirmadas pelo CHANGELOG; adicionadas as skills beta e a resposta parcial de Push vs. Pull (ingestão dos auxiliares).
 - 2026-11-14: adicionada a seção "Skills hoje no repositório" com base nos `SKILL.md` (ingestão).

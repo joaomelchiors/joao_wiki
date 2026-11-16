@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 08: Engenharia de Prompt e Engenharia de Contexto"
+descricao: 'Resumo da Aula IA-08 — engenharia de prompt (estrutura CORFT); engenharia de contexto como #1; meta-prompt; hierarquia prática; Skills/Rules/Spec Driven Development.'
 type: source
 status: active
 created: 2026-04-28

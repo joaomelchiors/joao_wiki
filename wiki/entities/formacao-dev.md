@@ -1,5 +1,6 @@
 ---
 title: "formacao.dev"
+descricao: 'Plataforma de ensino online; instrutor Leonardo; cursos "Arquiteto Dev: DDD + Arquitetura Limpa", "Dev AI: Desenvolvimento com IA", "Profissional AI — Agentes" e projeto "Organizador de E-mails" (2 aulas de planejamento ingeridas). Inclui criação de Skill do zero, SDD e MCP na visão do curso Profissional AI, tabela Skill × MCP e dumb zone (~150k).'
 type: entity
 status: active
 created: 2026-04-20

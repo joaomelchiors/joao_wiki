@@ -1,9 +1,10 @@
 ---
 title: "Home Repo (repositório-casa para agentes)"
+descricao: 'Home Repo — repo único com skills, `AGENTS.md` e ponteiros para os demais repos, onde o agente sempre roda; escala, alternativas (monorepo, submodules) e relação com esta wiki.'
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["home-repo", "agents-md", "multi-repo", "skills", "harness", "llm-wiki", "ai-coding"]
 source_files:
   - raw/sources/2026-11-12_artigo-home-repo-pattern.md
@@ -12,6 +13,7 @@ source_files:
 related_pages:
   - ../sources/2026-11-12_source-matt-pocock-home-repo.md
   - ../entities/matt-pocock.md
+  - ../sources/2026-02-24_source-matt-pocock-never-run-claude-init.md
   - ./ia-generativa.md
   - ../syntheses/2026-11-12_home-repo-nesta-wiki.md
 ---
@@ -53,10 +55,11 @@ Interpretação: a aplicação do padrão a este repositório (quando adotar, no
 
 - Como Matt organiza a wiki e as ferramentas do home repo (vídeo futuro).
 - Segurança e permissões quando o home repo reúne ferramentas com acesso a e-mail, chat e GitHub.
-- Quanto contexto o `AGENTS.md` com muitos ponteiros consome antes do trabalho começar (relação com [Smart/Dumb Zone](./engenharia-de-contexto.md)).
+- Quanto contexto o `AGENTS.md` com muitos ponteiros consome antes do trabalho começar (relação com [Smart/Dumb Zone](./engenharia-de-contexto.md)). Em fev/2026, no vídeo [Never Run claude /init](../sources/2026-02-24_source-matt-pocock-never-run-claude-init.md), o mesmo autor defendia manter o arquivo global no mínimo (o dele tinha uma linha); o artigo do home repo não retoma o tema.
 - Convivência de skills do home repo com skills do próprio repo filho.
 
 ## Notas de Atualização
 
 - 2026-11-12: página criada a partir do vídeo e do artigo de Matt Pocock.
 - 2026-11-12: a seção de interpretação "Relação com esta wiki" foi movida para a síntese [2026-11-12_home-repo-nesta-wiki](../syntheses/2026-11-12_home-repo-nesta-wiki.md) (higienização, etapa 5).
+- 2026-11-15: em Questões Não Resolvidas, remissão ao vídeo de fev/2026 sobre arquivo global mínimo (ingestão de "Never Run claude /init").

@@ -1,5 +1,6 @@
 ---
 title: "Verificação Completa da Wiki — Abril 2026"
+descricao: 'Verificação completa da wiki — 28 páginas analisadas; 1 arquivo obsoleto detectado; 4 conceitos não promovidos identificados; open-questions.md vazio (50+ questões espalhadas).'
 type: maintenance
 status: active
 created: 2026-04-28

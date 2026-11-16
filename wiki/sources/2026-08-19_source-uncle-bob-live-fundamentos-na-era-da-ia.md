@@ -1,13 +1,16 @@
 ---
 title: "Uncle Bob e Matt Pocock — fundamentos de software na era da IA (live)"
+descricao: 'Live de Matt Pocock com Uncle Bob (56 min, legenda revisada) — agentes cercados por CRAP, teste de mutação e regras de dependência; cadeia de cinco agentes; "não impor disciplinas humanas" (TDD); ceticismo com SDD e planejamento prévio; fundamentos e como iniciantes aprendem estratégia.'
 type: source
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["uncle-bob", "matt-pocock", "entrevista", "crap", "mutation-testing", "multiagentes", "tdd", "spec-driven-development", "fundamentos"]
 source_files:
   - raw/sources/2026-08-19_live-uncle-bob-on-software-fundamentals-in-the-age-of-ai_en-revisada_zcLPGC-tvgk.md
 related_pages:
+  - ./2026-01-15_source-matt-pocock-plan-mode.md
+  - ./2025-10-22_source-matt-pocock-janela-de-contexto.md
   - ../entities/uncle-bob.md
   - ../entities/matt-pocock.md
   - ../concepts/verificacao-deterministica.md

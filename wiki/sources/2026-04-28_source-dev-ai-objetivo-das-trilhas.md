@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 06: Objetivo das Trilhas — Arquitetura para AI-Driven Development"
+descricao: 'Resumo da Aula IA-06 — objetivos de AI-Driven Development; três pilares (modularização > arq. limpa > CQRS); prioridade de cuidado por camada; expectativas realistas sobre código gerado por IA.'
 type: source
 status: active
 created: 2026-04-28

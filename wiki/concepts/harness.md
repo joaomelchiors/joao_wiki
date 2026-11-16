@@ -1,14 +1,18 @@
 ---
 title: "Harness (infraestrutura do agente)"
+descricao: 'Harness — loop de execução, compressão de contexto, responsabilidades do desenvolvedor, autonomia e isolamento.'
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["harness", "agentes", "claude-code", "contexto", "ia-generativa"]
 source_files:
   - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-06-HarnessParte1.md
   - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-07-HarnessParte2.md
   - raw/sources/2026-11-04_Curso_Certificacao_ClaudeCode.md
+  - raw/sources/2025-10-08_most-devs-don-t-understand-what-agents-are_en-corrigida_AtYtuVTZCQU.md
+  - raw/sources/2026-01-05_ship-working-code-while-you-sleep-with-the-ralph-wiggum_en-corrigida__IK18goX4X8.md
+  - raw/sources/2026-01-12_frontend-is-harder-for-ai-than-backend-here-s-how-to-fix-it_en-corrigida_pSritFeoYFo.md
 related_pages:
   - ./ia-generativa.md
   - ./melhores-praticas-claude-code.md
@@ -18,6 +22,10 @@ related_pages:
   - ./seguranca-de-agentes.md
   - ../sources/2026-07-17_source-ferramentas-agenticas-harness.md
   - ../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md
+  - ../sources/2025-10-08_source-matt-pocock-agentes-workflows.md
+  - ../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md
+  - ../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md
+  - ./ralph-loop.md
 ---
 
 # Harness (infraestrutura do agente)
@@ -70,6 +78,10 @@ LLM decide: "já tenho tudo, posso dar resposta final"
 Resumo final para o usuário
 ```
 
+Matt Pocock descreve o mesmo loop (LLM pede a tool → sistema executa → resultado volta ao LLM) e cita o Claude Code como exemplo; reforço de fonte `explicacao` ([resumo](../sources/2025-10-08_source-matt-pocock-agentes-workflows.md)).
+
+**Laço por fora do harness**: no [laço Ralph](./ralph-loop.md) (Matt Pocock, jan/2026, `demonstrado`, fonte única; [resumo](../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md)), um script bash envolve a CLI do agente e a reinvoca a cada tarefa. O loop interno acima continua dentro de cada iteração; a memória **entre** iterações não fica no contexto, e sim em arquivos (PRD em JSON com flag `passes`, `progress.txt`) e no histórico do git.
+
 **A ordem do contexto importa**: itens mais recentes (final do contexto) têm mais peso na tomada de decisão do LLM. Por isso carregar uma Skill no final de cada passo de uma spec aumenta sua relevância.
 
 #### Compressão de Contexto
@@ -93,6 +105,7 @@ Quando o contexto excede a **janela de contexto** (limite de tokens do modelo), 
 - Adicionar passo de "execute os testes do projeto" após passos críticos nas specs
 - Pedir testes de integração em pontos estratégicos da especificação
 - Instruir o agente a abrir browser interno para validar UI (Claude Code tem browser embutido)
+  - Convergência: Matt Pocock (jan/2026, `demonstrado`) dá ao Claude Code um navegador via **Chrome DevTools MCP**, com uma skill que sobe o Chrome headless antes do uso, e o agente faz QA visual ad hoc ([resumo](../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md)). A fonte não confirma nem contradiz o "browser embutido" acima: usa MCP e cita a extensão de Chrome do Claude como outra via.
 - Usar subagente diferente para criar testes (contexto limpo evita viés de confirmação)
 
 **Distinção importante**: harness ≠ arquivo ou técnica. A técnica é **Skills + Spec-Driven Development**; o harness é a infraestrutura. As verificações inseridas nas Skills e specs **fortalecem o harness**.
@@ -104,6 +117,9 @@ Modos de permissão, *auto mode* (meio-termo entre aprovar tudo e `--dangerously
 
 - [Dev AI — Ferramentas Agênticas: Harness (Partes 1 e 2)](../sources/2026-07-17_source-ferramentas-agenticas-harness.md)
 - [Curso de Certificação Claude Developer Foundations (CCDV-F)](../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md)
+- [Matt Pocock — Most devs don't understand what agents are](../sources/2025-10-08_source-matt-pocock-agentes-workflows.md): mesmo loop LLM → tool → resultado
+- [Matt Pocock — Ship working code while you sleep with the Ralph Wiggum technique](../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md): laço bash sobre a CLI do agente, com estado em arquivos e git (jan/2026)
+- [Matt Pocock — Frontend is HARDER for AI than backend](../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md): navegador via MCP como sensor visual (jan/2026)
 
 ## Conceitos Relacionados
 
@@ -120,4 +136,5 @@ Modos de permissão, *auto mode* (meio-termo entre aprovar tudo e `--dangerously
 
 ## Notas de Atualização
 
+- 2026-11-15: em "Loop de Execução", reforço de Matt Pocock (vídeo de out/2025).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

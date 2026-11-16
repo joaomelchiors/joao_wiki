@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 02: IA Generativa — Attention, Feed-Forward e Geração Autorregressiva"
+descricao: 'Resumo da Aula IA-02 — Multi-Head Attention (Q/K/V); Feed-Forward (expansão/compressão); camada de saída (logits + softmax); temperatura; geração autorregressiva + KV-cache.'
 type: source
 status: active
 created: 2026-04-27

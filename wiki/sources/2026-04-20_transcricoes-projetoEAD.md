@@ -1,5 +1,6 @@
 ---
 title: "Transcrições Projeto EAD - Imersão DDD e Arquitetura Limpa"
+descricao: 'Resumo agregado das 14 transcrições da imersão DDD + Arquitetura Limpa; substituído pelas páginas por aula listadas acima. Mantido como histórico.'
 type: source
 status: superseded
 created: 2026-04-20

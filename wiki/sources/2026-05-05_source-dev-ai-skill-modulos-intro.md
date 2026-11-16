@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula IA-13: Skill e Módulos — Introdução ao Capítulo"
+descricao: 'Aula IA-13 (Dev AI) — introdução ao Capítulo 3; Skills anunciadas (criar projeto + criar módulo); modularização como espectro gradual (1 → 2 → n módulos); princípio de não atrasar deploy por perfeccionismo.'
 type: source
 status: active
 created: 2026-05-05

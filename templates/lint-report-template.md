@@ -1,5 +1,6 @@
 ---
 title: ""
+descricao: ''
 type: maintenance
 status: active
 created: YYYY-MM-DD

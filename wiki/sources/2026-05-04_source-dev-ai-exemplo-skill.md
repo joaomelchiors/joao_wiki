@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 11: Exemplo Prático de Skill (Cursor)"
+descricao: 'Aula IA-11 (Dev AI) — exemplo prático de criação de Skill no Cursor (`criar-entidade-completa`); formato de arquivo Markdown de Skill; ciclo por engenharia reversa de código existente; heurística de granularidade; fraqueza de Skills sem few-shot.'
 type: source
 status: active
 created: 2026-05-04

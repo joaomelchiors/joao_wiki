@@ -1,5 +1,6 @@
 ---
 title: "Imersão DDD + Arquitetura Limpa — Série de Transcrições (14 aulas)"
+descricao: 'Resumo da série de 14 transcrições da imersão "DDD + Arquitetura Limpa" da formacao.dev — cobre configuração de monorepo TypeScript, padrões DDD táticos e estratégicos.'
 type: source
 status: active
 created: 2026-04-20

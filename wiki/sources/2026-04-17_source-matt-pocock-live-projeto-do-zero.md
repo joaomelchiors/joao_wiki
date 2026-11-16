@@ -1,5 +1,6 @@
 ---
 title: "Matt Pocock — LIVE: Watch me build a brand-new project from scratch"
+descricao: 'Live de Matt Pocock (1h47, abr/2026) — parte de "não tenho ideia de projeto" e chega a dois documentos de pesquisa, um nome (Slopwatch) e um glossário de linguagem ubíqua, sem código de aplicação: a fase anterior ao PRD, pesquisa com subagentes sobre 5 agentes de código, poda de contexto por `resume` e modelagem de domínio (session/turn/model request/listener/server). Única fonte `demonstrado` do método dele; legenda automática **corrigida** (a versão de referência é a `_en-corrigida_`).'
 type: source
 status: active
 created: 2026-11-15
@@ -8,6 +9,7 @@ tags: ["matt-pocock", "ai-driven-development", "greenfield", "grill-me", "lingua
 source_files:
   - raw/sources/2026-04-17_live-watch-me-build-a-brand-new-project-from-scratch_en-corrigida_K-mA3MZ_EzU.md
 related_pages:
+  - ./2026-01-15_source-matt-pocock-plan-mode.md
   - ../entities/matt-pocock.md
   - ../entities/claude-code.md
   - ../concepts/ai-driven-development.md

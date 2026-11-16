@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 07: Conceito de Agentes de IA"
+descricao: 'Resumo da Aula IA-07 — definição formal de Agente de IA (orquestrador de prompts + LLM como núcleo de decisão); loop iterativo; anti-pattern if/else; multi-agentes.'
 type: source
 status: active
 created: 2026-04-28

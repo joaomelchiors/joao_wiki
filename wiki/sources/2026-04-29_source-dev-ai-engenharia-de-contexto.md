@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula IA-09: Engenharia de Contexto (Rules, Skills, Spec Driven Development)"
+descricao: 'Aula IA-09 (Dev AI) — context rot; engenharia de contexto com Rules e Skills; Spec Driven Development como injeção de contexto por task em escala.'
 type: source
 status: active
 created: 2026-04-29

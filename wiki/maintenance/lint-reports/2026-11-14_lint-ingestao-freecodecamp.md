@@ -1,5 +1,6 @@
 ---
 title: "Lint — ingestão freeCodeCamp e checagens gerais"
+descricao: 'Lint da ingestão freeCodeCamp + checagens gerais — 0 links quebrados, fontes com classificação completa; corrigidos a contagem de sínteses (2→3), a grafia `/reload plugins` e a origem do `/goal` ("skill" segundo o instrutor).'
 type: maintenance
 status: active
 created: 2026-11-14

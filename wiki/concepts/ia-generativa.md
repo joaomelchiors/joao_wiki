@@ -1,16 +1,19 @@
 ---
 title: "IA Generativa (Modelos baseados em Transformer)"
+descricao: 'IA Generativa (hub) — fundamentos da arquitetura Transformer (tokenização, embeddings, atenção, feed-forward, saída, temperatura, KV-cache), limitações e debates; lista os conceitos derivados; encode/decode e treino do vocabulário (Matt Pocock). Dividida em 2026-11-12.'
 type: concept
 status: active
 created: 2026-04-27
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["ia-generativa", "transformer", "tokenização", "embeddings", "attention", "llm", "hub"]
 source_files:
   - raw/sources/2026-04-25_transcrição-IA-01-IntroducaoDesenvolvimentoIA-IaGenerativa01.md
   - raw/sources/2026-04-25_transcrição-IA-02-IntroducaoDesenvolvimentoIA-IaGenerativa02.md
   - raw/sources/2026-04-25_transcrição-IA-03-IntroducaoDesenvolvimentoIA-RevolucaoDaAtencao.md
   - raw/sources/2026-04-25_transcrição-IA-04-IntroducaoDesenvolvimentoIA-limitacoesDoModelo.md
+  - raw/sources/2025-09-19_most-devs-don-t-understand-how-llm-tokens-work_en-corrigida_nKSk_TiR8YA.md
 related_pages:
+  - ../sources/2025-10-22_source-matt-pocock-janela-de-contexto.md
   - ./deep-learning.md
   - ./system-prompt-e-guardrails.md
   - ./agentes-de-ia.md
@@ -31,6 +34,7 @@ related_pages:
   - ../sources/2026-04-27_source-dev-ai-ia-generativa-02.md
   - ../sources/2026-04-27_source-dev-ai-revolucao-da-atencao.md
   - ../sources/2026-04-27_source-dev-ai-limitacoes-do-modelo.md
+  - ../sources/2025-09-19_source-matt-pocock-tokens-llm.md
   - ../entities/formacao-dev.md
 ---
 
@@ -61,6 +65,16 @@ A entrada de texto é dividida em **tokens** — fragmentos intermediários entr
 | Pré-processamento | Pode incluir lowercase, remoção de espaços duplos, etc. |
 
 **Exemplo**: `"O ChatGPT é incrível!"` → `["chat", "GPT", " é", "incri", "vel", "!"]`
+
+#### Encode, decode e vocabulário (Matt Pocock, set/2025)
+Fonte: [vídeo sobre tokens](../sources/2025-09-19_source-matt-pocock-tokens-llm.md) — `demonstrado` (TypeScript ao vivo), legenda automática corrigida.
+
+- **Encode**: o texto é dividido nos **maiores** pedaços existentes no vocabulário, e cada pedaço é trocado pelo seu número. **Decode** é o inverso: buscar os pedaços pelos números e concatená-los. Toda a computação do modelo ocorre sobre os números.
+- **Cada provedor tem seu tokenizador**, logo o mesmo texto gera contagens diferentes. No demo, "hello world" deu 3 tokens no `o200k_base` (GPT-4o, via `js-tiktoken`), 4 de entrada no Gemini 2.0 Flash-Lite e 11 de entrada no Claude 3.5 Haiku — números de um único experimento, sem explicação para o 11.
+- **Treino do vocabulário**: parte de um corpus (segundo ele, em geral o mesmo do treino do modelo). Um tokenizador por caractere tem tokens = caracteres; um por subpalavra agrupa pares frequentes e reduz a contagem; tokenizadores reais agrupam "grupos de grupos".
+- **Tamanho do vocabulário é trade-off**: vocabulário maior → menos tokens por texto (exemplo ilustrativo: "understanding" em ~5, 3 ou 2 tokens com 1 mil, 50 mil e 200 mil itens), mas exige modelo maior e mais memória.
+- **Palavras raras viram mais tokens** ("frabjous" → 4 no `o200k_base`); segundo Matt, o mesmo vale para idiomas e linguagens de programação pouco frequentes no corpus (JavaScript mais barato que Haskell — afirmação dele, sem medição).
+- A limitação de contagem de letras (ver [Limitações Arquiteturais](#limitações-arquiteturais-aula-ia-04)) decorre disso: o modelo vê números de pedaços, não caracteres (ligação feita pelo mantenedor, não pela fonte).
 
 ### Etapa 2: Embeddings
 Cada token é mapeado para um **vetor multidimensional** (embedding) que representa sua posição semântica. Tokens com significado semelhante ficam próximos no espaço de embeddings.
@@ -216,6 +230,7 @@ Os conteúdos sobre **Modo Agente × Coding Agent** e **Copilot Instructions** f
 - [Dev AI — Aula 02: IA Generativa — Attention, Feed-Forward e Geração Autorregressiva](../sources/2026-04-27_source-dev-ai-ia-generativa-02.md)
 - [Dev AI — Aula 03: A Revolução da Atenção](../sources/2026-04-27_source-dev-ai-revolucao-da-atencao.md)
 - [Dev AI — Aula 04: Limitações dos Modelos](../sources/2026-04-27_source-dev-ai-limitacoes-do-modelo.md)
+- [Matt Pocock — Most devs don't understand how LLM tokens work](../sources/2025-09-19_source-matt-pocock-tokens-llm.md): encode/decode e treino do vocabulário, demonstrado em TypeScript
 
 Fontes de outros temas estão listadas nas páginas derivadas.
 
@@ -232,7 +247,7 @@ Fontes de outros temas estão listadas nas páginas derivadas.
 - ~~Como funciona o mecanismo de **Attention** (Self-Attention, Multi-Head Attention)?~~ → **Resolvida nas Aulas IA-02 e IA-03**: visão geral + detalhamento com projeção Q/K/V por head, cálculo de scores, softmax e concatenação. Fórmula de scaling (÷√d) não mencionada explicitamente pelo instrutor.
 - Qual o impacto da dimensionalidade dos embeddings na qualidade das respostas?
 - Como os embeddings são atualizados durante fine-tuning vs. pré-treinamento original?
-- Qual a relação entre tamanho do vocabulário (tokens) e performance do modelo?
+- Qual a relação entre tamanho do vocabulário (tokens) e performance do modelo? → **Parcialmente respondida** por Matt Pocock (set/2025): mais vocabulário = menos tokens, porém modelo maior e mais memória; sem números medidos.
 - Qual o impacto real da temperatura nos diferentes tipos de tarefa (código vs. texto criativo)?
 - Positional encoding — como o modelo sabe a posição dos tokens na sequência?
 - Layer normalization e residual connections — não cobertos nas aulas.
@@ -264,3 +279,4 @@ Questões de outros temas foram movidas para as páginas derivadas.
 - 2026-11-06: adicionada, na subseção "Tipos de Skill", a correspondência entre a taxonomia da IA-12 e os "estilos de Skill" do curso Profissional AI — Agentes (critério por meio de execução; pré-requisito Python + Node.js) — a partir da aula "Estilos de Skill".
 - 2026-11-05: adicionada seção "Arquitetura de Agentes e Certificação Claude (CCDV-F)" (agente × workflow, sub agentes, MCP resources, prompt injection, parâmetros de API, higiene de sessão, autonomia no Claude Code) e entidades Claude Code / Andrew Brown — a partir do curso CCDV-F (fonte em inglês). Questões novas: segurança do auto mode; verificação de comandos na documentação oficial.
 - 2026-11-12: página dividida em conceitos menores (ver Conceitos Derivados); apenas a arquitetura Transformer permanece aqui. Questões e fontes foram redistribuídas.
+- 2026-11-15: adicionada subseção "Encode, decode e vocabulário" (encode/decode, tokenizador por provedor, treino do vocabulário, trade-off do tamanho, palavras raras); questão sobre tamanho do vocabulário parcialmente respondida — a partir do vídeo de Matt Pocock sobre tokens (set/2025).

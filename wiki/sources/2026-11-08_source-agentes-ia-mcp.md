@@ -1,5 +1,6 @@
 ---
 title: "Agentes de IA (Profissional AI) — MCP e catálogo de MCPs prontos"
+descricao: 'MCP como tomada/tradutor entre IA e aplicações, ações dos conectores, código por baixo e catálogos de MCPs prontos.'
 type: source
 status: active
 created: 2026-11-12

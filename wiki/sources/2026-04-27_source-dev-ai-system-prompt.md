@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 05: System Prompt e Guardrails"
+descricao: 'Resumo da Aula IA-05 — system prompt como camada invisível; guardrails; estrutura de mensagens API; "honestidade consciente"; opinião sobre AGI.'
 type: source
 status: active
 created: 2026-04-27

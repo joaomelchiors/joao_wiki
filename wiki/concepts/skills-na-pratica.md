@@ -1,5 +1,6 @@
 ---
 title: "Skills na Prática (pastas, instalação e criação)"
+descricao: 'Pastas por ferramenta, `SKILL.md`, chamada explícita/implícita, instalação, plugins e Skill com código.'
 type: concept
 status: active
 created: 2026-11-12

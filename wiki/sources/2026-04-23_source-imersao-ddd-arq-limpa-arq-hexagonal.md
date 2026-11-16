@@ -1,5 +1,6 @@
 ---
 title: "Imersão DDD + Arquitetura Limpa — Aula 16: Arquitetura Hexagonal"
+descricao: 'Resumo da Aula 16 — Ports & Adapters na prática; repositório por agregado; separação repositório vs. queries (CQS); 1 UC por arquivo.'
 type: source
 status: active
 created: 2026-04-23

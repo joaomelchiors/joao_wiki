@@ -1,5 +1,6 @@
 ---
 title: "Esta wiki como home repo: quando e como"
+descricao: 'Esta wiki como home repo. É candidata natural, mas a decisão é adiar até haver projetos reais; prevê mover o esquema do `CLAUDE.md` para `docs/agents/wiki.md`. Interpretação e decisão de projeto.'
 type: synthesis
 status: active
 created: 2026-11-12

@@ -1,5 +1,6 @@
 ---
 title: "Organizador de E-mails — Estratégias de execução: sequencial e paralelo"
+descricao: 'Projeto Organizador de E-mails (formacao.dev) — estratégias de execução sequencial (menos tokens, mais tempo) × paralela (o inverso) × híbrida; isolamento por arquivos para paralelismo; planejamento com modelo avançado e execução com modelo barato. Legenda revisada.'
 type: source
 status: active
 created: 2026-11-15

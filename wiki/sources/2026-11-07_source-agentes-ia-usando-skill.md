@@ -1,5 +1,6 @@
 ---
 title: "Agentes de IA (Profissional AI) — Usando Skills: instalação, chamada com / e plugins"
+descricao: 'Aula "Usando Skills" do curso Profissional AI — Agentes — instalação (Personalizar → Habilidades/Plugins), chamada com `/`, plugin = conector/MCP + Skills, demos (GIF e imagem) e contorno para Skill não recarregada. Transcrição ruidosa.'
 type: source
 status: active
 created: 2026-11-07

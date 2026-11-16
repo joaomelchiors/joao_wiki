@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 01: IA Generativa — Tokenização e Embeddings"
+descricao: 'Resumo da Aula IA-01 — pipeline de modelos Transformer (tokenização, embeddings); matriz de entrada [nTokens × nDimensões]; analogia dimensional.'
 type: source
 status: active
 created: 2026-04-27

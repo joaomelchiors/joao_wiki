@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 04: Limitações dos Modelos (Arquitetura baseada em Tokens)"
+descricao: 'Resumo da Aula IA-04 — limitações arquiteturais (contagem de caracteres); trade-off de tokenização; LM Studio; chain-of-thought em loop.'
 type: source
 status: active
 created: 2026-04-27

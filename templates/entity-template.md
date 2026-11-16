@@ -1,5 +1,6 @@
 ---
 title: ""
+descricao: ''
 type: entity
 status: active
 created: YYYY-MM-DD

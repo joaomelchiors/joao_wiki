@@ -1,9 +1,10 @@
 ---
 title: "Essential Skills for AI Coding from Planning to Production"
+descricao: 'Palestra de Matt Pocock — práticas de AI-Driven Development; smart zone/dumb zone; HITL vs. AFK; Grill Me; PRD; tracer bullets; módulos profundos vs. rasos; TDD; paralelização com Sand Castle.'
 type: source
 status: active
 created: 2026-04-28
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["ai-driven-development", "arquitetura", "tdd", "modularizacao"]
 source_files:
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
@@ -15,6 +16,8 @@ related_pages:
   - ../concepts/engenharia-de-contexto.md
   - ../concepts/spec-driven-development.md
   - ../concepts/tdd.md
+  - ../concepts/ralph-loop.md
+  - ./2026-01-05_source-matt-pocock-ralph-wiggum.md
 tipo_conteudo: opiniao
 captura: automatica
 ---
@@ -141,6 +144,8 @@ Interview me relentlessly about every aspect of this plan until we reach a share
 - Para frontend: IA pode gerar protótipos descartáveis para escolha humana
 
 ### 9. Implementação AFK: Loop de Ralph
+
+> Versão anterior (jan/2026, PRD em JSON + `progress.txt`) e comparação em [Laço Ralph](../concepts/ralph-loop.md).
 
 **Estrutura do prompt do agente AFK**:
 - Recebe issues locais (concatenadas de `issues/*.md`) + últimos 5 commits

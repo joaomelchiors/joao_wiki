@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula 12: Tipos de Skill (Determinística, Híbrida e Aberta)"
+descricao: 'Aula IA-12 (Dev AI) — taxonomia de três tipos de Skill (determinística, híbrida, aberta); Skill como contêiner de arquivos (scripts, assets, templates); encadeamento de Skills no Spec Driven Development.'
 type: source
 status: active
 created: 2026-05-04

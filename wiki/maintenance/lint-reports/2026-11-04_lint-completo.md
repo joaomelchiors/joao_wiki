@@ -1,5 +1,6 @@
 ---
 title: "Lint Completo — 2026-11-04"
+descricao: 'Verificação completa da wiki — 37 páginas analisadas; index.md e log.md desatualizados desde set/2026; 2 páginas ausentes do index (fonte + entidade); 2 fontes brutas não ingeridas; open-questions.md vazio.'
 type: maintenance
 status: active
 created: 2026-11-04

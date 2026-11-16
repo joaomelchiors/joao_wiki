@@ -1,5 +1,6 @@
 ---
 title: "Imersão DDD + Arquitetura Limpa — Aula 15: Tratamento de Erros"
+descricao: 'Resumo da Aula 15 — implementação final da classe `Result<T>` com `ok`, `fail`, `try`, `combine`; tratamento de múltiplos erros de VOs; bug de `export type` vs `export`.'
 type: source
 status: active
 created: 2026-04-23

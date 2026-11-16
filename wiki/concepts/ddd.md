@@ -1,5 +1,6 @@
 ---
 title: "Domain-Driven Design (DDD)"
+descricao: 'Domain-Driven Design — ferramentas estratégicas e táticas (Repositório, Provedor, Result); distinção UseCase × Serviço de Domínio × Serviço de Aplicação; Entity como protocolo de ciclo de vida (`tryCreate`/`create`/`restore`/`cloneWith`); invariantes universais vs. regras de criação.'
 type: concept
 status: active
 created: 2026-04-20

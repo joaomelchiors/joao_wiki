@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Aula IA-10: Rule vs. Skill — Definições Canônicas"
+descricao: 'Aula IA-10 (Dev AI) — definições canônicas de Rule (declarativa, contextual) e Skill (ativa, passo a passo, few-shot); relação Rule→Skill; independência de ferramenta.'
 type: source
 status: active
 created: 2026-04-29

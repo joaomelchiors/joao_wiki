@@ -1,5 +1,6 @@
 ---
 title: "Andrew Brown"
+descricao: 'Instrutor da ExamPro/freeCodeCamp; autor do curso de certificação Claude Developer Foundations (CCDV-F).'
 type: entity
 status: active
 created: 2026-11-05

@@ -1,13 +1,16 @@
 ---
 title: "Claude Code Full Course — Autonomous Goals, MCP e VS Code (freeCodeCamp)"
+descricao: 'Curso introdutório do freeCodeCamp (Eric Tech, ~1h20, legenda automática) — Claude Code no VS Code: modos de permissão, `/goal` (loop com avaliador), skills/plugins (skills.sh, escopos, `/reload-plugins`), `.agents` × `.claude`, contexto (`/context`, `/compact`, heurística 50%), Git/GitHub para leigos, MCP × CLI (tokens × segurança) e deploy na Vercel. Tem apostila ilustrada em sínteses.'
 type: source
 status: active
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-15
 tags: ["claude-code", "vs-code", "skills", "mcp", "permissoes", "contexto", "git", "iniciantes"]
 source_files:
   - raw/sources/2026-08-05_claude-code-full-course-autonomous-goals-mcp-and-vs-code_en-orig_7l6bXLAKyEI.md
 related_pages:
+  - ./2026-01-15_source-matt-pocock-plan-mode.md
+  - ./2025-10-22_source-matt-pocock-janela-de-contexto.md
   - ../entities/claude-code.md
   - ../concepts/mcp.md
   - ../concepts/skills-na-pratica.md

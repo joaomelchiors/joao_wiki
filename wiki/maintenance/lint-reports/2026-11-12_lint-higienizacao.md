@@ -1,5 +1,6 @@
 ---
 title: "Lint — Higienização e classificação de fontes (2026-11-12)"
+descricao: 'Higienização: classificação das 37 fontes por tipo de conteúdo, 3 conceitos em draft, decisões do chat marcadas, interpretações movidas para sínteses, 0 links quebrados; pendências: verificar afirmações do chat, CQRS, seção ErroValidacao fora do lugar.'
 type: maintenance
 status: active
 created: 2026-11-12

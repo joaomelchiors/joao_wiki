@@ -1,5 +1,6 @@
 ---
 title: "Curso de Certificação Claude Certified Developer Foundations (CCDV-F)"
+descricao: 'Curso de certificação CCDV-F (Andrew Brown, em inglês, ~8 h) — exame (53 questões, 120 min, nota 720/1000), agente × workflow, sub agentes, MCP (tools × resources), prompt injection, parâmetros de API, custo (batch/caching), higiene de sessão, auto mode, sandbox, hooks, plugins e Agent SDK. Reescrito em formato didático (explicações, exemplos, autoteste). Leitura parcial.'
 type: source
 status: active
 created: 2026-11-04

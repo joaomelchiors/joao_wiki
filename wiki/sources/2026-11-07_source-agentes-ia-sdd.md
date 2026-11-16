@@ -1,5 +1,6 @@
 ---
 title: "Agentes de IA (Profissional AI) — Spec-Driven Development (aula teórica)"
+descricao: 'Aula teórica de Spec-Driven Development — spec como checklist Markdown, sub-agentes, evidência por passo; tensão com Matt Pocock sobre "specs to code".'
 type: source
 status: active
 created: 2026-11-12

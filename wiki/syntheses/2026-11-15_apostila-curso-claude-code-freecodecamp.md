@@ -1,5 +1,6 @@
 ---
 title: "Apostila — Curso Claude Code do freeCodeCamp (Eric Tech)"
+descricao: 'Apostila do curso Claude Code do freeCodeCamp: 11 capítulos (instalação, VS Code, permissões, `/goal`, skills, anatomia do projeto, contexto, slash commands, Git, MCP × CLI, FAQ), 9 diagramas em `wiki/assets/`, glossário e perguntas de revisão; distingue recursos nativos de customizações do instrutor.'
 type: synthesis
 status: active
 created: 2026-11-15

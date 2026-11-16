@@ -1,5 +1,6 @@
 ---
 title: "Imersão DDD + Arquitetura Limpa — Sessão Q&A 01"
+descricao: 'Resumo da sessão Q&A 01 — cobre regras de unicidade, Serviço de Domínio, Inversão vs. Injeção de Dependência, VOs vs. Zod e validação no front-end.'
 type: source
 status: active
 created: 2026-04-20

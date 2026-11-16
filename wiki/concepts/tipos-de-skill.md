@@ -1,9 +1,10 @@
 ---
 title: "Tipos de Skill"
+descricao: 'Skills determinística, híbrida e aberta; estilos do curso Profissional AI; Skills do Capítulo 3.'
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["skills", "taxonomia", "determinística", "híbrida", "ia-generativa"]
 source_files:
   - raw/sources/2026-05-04_transcrição-IA-12-ContextoRulesSkill-tiposDeSkill.md
@@ -17,6 +18,7 @@ related_pages:
   - ../sources/2026-05-04_source-dev-ai-tipos-de-skill.md
   - ../sources/2026-05-05_source-dev-ai-skill-modulos-intro.md
   - ../sources/2026-11-06_source-agentes-ia-estilos-de-skill.md
+  - ../sources/2026-02-21_source-matt-pocock-claude-worktree.md
 ---
 
 # Tipos de Skill
@@ -91,6 +93,7 @@ Ambas demonstram na prática a combinação determinística + híbrida introduzi
 - [Dev AI — Aula 12: Tipos de Skill](../sources/2026-05-04_source-dev-ai-tipos-de-skill.md)
 - [Dev AI — Aula 13: Skill e Módulos — Introdução ao Capítulo](../sources/2026-05-05_source-dev-ai-skill-modulos-intro.md)
 - [Agentes de IA (Profissional AI) — Estilos de Skill e Pré-requisitos](../sources/2026-11-06_source-agentes-ia-estilos-de-skill.md)
+- [Matt Pocock — I'm using claude --worktree for everything now](../sources/2026-02-21_source-matt-pocock-claude-worktree.md): o que a skill `paralelo.js` faz por script (criar worktrees para agentes em paralelo) o Claude Code passou a fazer de forma nativa com `claude --worktree` (fev/2026); a fonte não fala de skills.
 
 ## Conceitos Relacionados
 
@@ -109,4 +112,5 @@ Ambas demonstram na prática a combinação determinística + híbrida introduzi
 
 ## Notas de Atualização
 
+- 2026-11-15: em Fontes de Suporte, registrada a flag nativa `claude --worktree` como equivalente da skill `paralelo.js` (ingestão).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

@@ -1,5 +1,6 @@
 ---
 title: "Agentes de IA (Profissional AI) — Estilos de Skill e Pré-requisitos (Python e Node.js)"
+descricao: 'Aula curta do curso Profissional AI — Agentes (formacao.dev) — três estilos de Skill (só modelo, determinística, mista) e pré-requisito Python + Node.js; reforça a taxonomia da IA-12.'
 type: source
 status: active
 created: 2026-11-06

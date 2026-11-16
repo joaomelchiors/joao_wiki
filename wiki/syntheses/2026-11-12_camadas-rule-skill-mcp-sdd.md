@@ -1,5 +1,6 @@
 ---
 title: "Rule, Skill, MCP e SDD como camadas de contexto e ação"
+descricao: 'Rule, Skill, MCP e SDD como camadas complementares (o quê, como, com que ferramenta, em que ordem). Quadro unificado do mantenedor, não presente nas fontes.'
 type: synthesis
 status: draft
 created: 2026-11-12

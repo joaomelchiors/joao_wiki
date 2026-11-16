@@ -1,5 +1,6 @@
 ---
 title: "Imersão DDD + Arq. Limpa — Aula 18: Caso de Uso 01 (Registrar Usuário)"
+descricao: 'Resumo da Aula 18 — implementação concreta do UC `RegistrarUsuario`; CriptografiaProvider; VO ID (UUID); senha opcional na entidade; método `semSenha()`; segurança de hash.'
 type: source
 status: active
 created: 2026-04-27

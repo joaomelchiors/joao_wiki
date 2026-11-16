@@ -1,5 +1,6 @@
 ---
 title: "Matt Pocock — My /teach skill is still insane (short)"
+descricao: 'Short de Matt Pocock (1 min) — skill `/teach` para aprender assuntos; exemplo de medir terreno por triangulação; uso de skills para aprendizagem. Opinião, legenda automática.'
 type: source
 status: active
 created: 2026-11-14

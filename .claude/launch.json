@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "painel-ingestao",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [".orquestracao/servidor.ts"],
+      "port": 4517
+    }
+  ]
+}

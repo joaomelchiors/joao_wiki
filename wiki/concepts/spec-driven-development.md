@@ -1,5 +1,6 @@
 ---
 title: "Spec-Driven Development (SDD)"
+descricao: 'SDD — tasks em checklist, injeção de contexto, sub-agentes, pasta `specs/` e tensão com "specs to code"; conflitos de paralelismo parcialmente respondidos (arquivos por agente).'
 type: concept
 status: active
 created: 2026-11-12
@@ -15,6 +16,8 @@ source_files:
   - raw/sources/2026-07-17_transcrição-FerramentasAgenticas-06-HarnessParte1.md
   - raw/sources/2026-11-07-transcricao_AbentsDeIa_SDD.md
   - raw/sources/2026-04-26_transcrição-Essential Skills-for-AI-Coding-from Planning-to-Production.md
+  - raw/sources/2026-01-05_ship-working-code-while-you-sleep-with-the-ralph-wiggum_en-corrigida__IK18goX4X8.md
+  - raw/sources/2026-01-15_i-was-an-ai-skeptic-then-i-tried-plan-mode_en-corrigida_WNx-s-RxVxk.md
 related_pages:
   - ../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md
   - ./ia-generativa.md
@@ -27,6 +30,10 @@ related_pages:
   - ../sources/2026-07-17_source-ferramentas-agenticas.md
   - ../sources/2026-11-07_source-agentes-ia-sdd.md
   - ../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
+  - ../sources/2025-10-27_source-matt-pocock-claude-code-engenharia-real.md
+  - ../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md
+  - ../sources/2026-01-15_source-matt-pocock-plan-mode.md
+  - ./ralph-loop.md
 ---
 
 # Spec-Driven Development (SDD)
@@ -70,6 +77,7 @@ Fonte: [live com Uncle Bob](../sources/2026-08-19_source-uncle-bob-live-fundamen
 - Para ele, **especificações são efêmeras**: não as mantém no repositório; trata o resultado (e as ferramentas que verificam) como a especificação.
 - Matt Pocock concorda e ressalva que "spec-driven" tem muitas interpretações (passar informação a um agente já seria SDD?) e propõe como critério **persistir e revisitar** as specs.
 - **Tensão registrada** com a aula do curso Profissional AI (spec = checklist persistente e reexecutável): sentidos de "spec" diferem; as posições são mantidas lado a lado, sem conclusão.
+- Registro anterior de Matt sobre planejar (jan/2026, `opiniao`): no [vídeo sobre plan mode](../sources/2026-01-15_source-matt-pocock-plan-mode.md) ele defende planejar com o agente antes de **cada** tarefa, num laço curto planejar → executar → testar → commit, replanejando quando surge algo imprevisto. Nenhuma das fontes relaciona essa prática com o ceticismo de Bob; a comparação fica em aberto.
 
 ### Spec-Driven Development na Prática (Especificação Simples — Aula 05)
 **Estrutura de pasta recomendada**:
@@ -117,6 +125,7 @@ Fonte: [`SKILL.md` do repositório de Matt](../sources/2026-11-14_source-matt-po
 
 - `to-spec` **não entrevista**: sintetiza a conversa (depois de `grill-with-docs`) em uma spec com problema, solução, user stories, decisões de implementação e de teste, e fora de escopo, sem caminhos de arquivo nem código, e publica no issue tracker. `to-tickets` a quebra em fatias verticais com arestas de bloqueio, e `implement-spec` executa o **grafo de tarefas** com subagentes em paralelo (um worktree por ticket, branch de integração).
 - **Tensão com as fontes anteriores**: Matt e Bob rejeitam "specs to code" (a spec escrita antes e transformada em código). Pelo texto lido, a spec de Matt nasce da conversa e é consumida por tickets, não substitui o raciocínio. Se isso concilia as posições é interpretação, não confirmada pelo autor. Diferença em relação ao curso Profissional AI: aqui a spec e os tickets vivem no **issue tracker** (ou em `.scratch/`), não em `specs/changes/` com checklist.
+- **Antecedente de jan/2026** ([vídeo Ralph Wiggum](../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md), `demonstrado`): o `plans/prd.json` com user stories, passos de verificação e flag `passes` funciona ao mesmo tempo como PRD e lista de tarefas verificável, consumida uma tarefa por iteração pelo [laço Ralph](./ralph-loop.md). **Interpretação do mantenedor**: lembra a spec em checklist; Matt não usa o termo SDD.
 
 ## Fontes de Suporte
 
@@ -126,6 +135,8 @@ Fonte: [`SKILL.md` do repositório de Matt](../sources/2026-11-14_source-matt-po
 - [Matt Pocock — Essential Skills for AI Coding from Planning to Production](../sources/2026-04-28_source-matt-pocock-essential-skills-ai-coding.md)
 - [mattpocock/skills — conteúdo dos SKILL.md](../sources/2026-11-14_source-matt-pocock-skills-skill-md.md) (`to-spec`, `to-tickets`, `implement-spec`)
 - [Uncle Bob e Matt Pocock — live sobre fundamentos na era da IA](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md) (visão cética)
+- [Matt Pocock — How I use Claude Code for real engineering](../sources/2025-10-27_source-matt-pocock-claude-code-engenharia-real.md): plano multifase com itens marcados numa GitHub issue, usado como contexto da fase seguinte (out/2025). Ligação do mantenedor (**interpretação**): lembra a spec em checklist; Matt não usa o termo SDD.
+- [Matt Pocock — Ship working code while you sleep with the Ralph Wiggum technique](../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md): PRD em JSON com flag `passes` como lista de tarefas verificável (jan/2026); mesma ressalva de interpretação.
 
 ## Conceitos Relacionados
 
@@ -142,6 +153,11 @@ Fonte: [`SKILL.md` do repositório de Matt](../sources/2026-11-14_source-matt-po
 
 ## Notas de Atualização
 
+- 2026-11-15: adicionado em "Ceticismo de Uncle Bob" o registro de Matt sobre planejar por tarefa (vídeo sobre plan mode, ingestão), sem a comparação interpretativa.
+
+- 2026-11-15: adicionado o antecedente de jan/2026 (PRD em JSON com `passes`, vídeo Ralph Wiggum), como ligação do mantenedor (ingestão).
+
+- 2026-11-15: adicionado em Fontes de Suporte o vídeo de Matt sobre Claude Code em engenharia real, como ligação do mantenedor (ingestão).
 - 2026-11-15: questão dos conflitos em subagentes paralelos parcialmente respondida (arquivos separados por agente — Organizador de E-mails); registrado que o "arquivo de fluxo" desse projeto (`organizacao-gmail.md` com tarefas em checkbox chamando Skills e MCPs) é o mesmo padrão da spec aplicado a automação pessoal ([fonte](../sources/2026-11-12_source-organizador-emails-planejamento.md)).
 - 2026-11-14: adicionada a versão de Matt em skills (`to-spec`, `to-tickets`, `implement-spec`) (ingestão).
 - 2026-11-12: adicionada a posição cética de Uncle Bob (ingestão da live).

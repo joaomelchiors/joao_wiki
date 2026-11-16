@@ -1,5 +1,6 @@
 ---
 title: "Imersão DDD + Arq. Limpa — Aula 19: Caso de Uso 02 (Registrar Usuário — continuação)"
+descricao: 'Resumo da Aula 19 — refinamento do UC `RegistrarUsuario`; verificação de unicidade; método `comSenha(hash)`; exceção única com erros acumulados; UC como maior cliente do domínio.'
 type: source
 status: active
 created: 2026-04-27

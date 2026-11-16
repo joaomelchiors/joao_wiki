@@ -1,5 +1,6 @@
 ---
 title: "System Prompt e Guardrails"
+descricao: 'System prompt do operador, estrutura de mensagens e guardrails (IA-05).'
 type: concept
 status: active
 created: 2026-11-12

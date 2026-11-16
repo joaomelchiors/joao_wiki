@@ -1,5 +1,6 @@
 ---
 title: "Agentes de IA (Profissional AI) — Skill × MCP (e SDD): os três pilares"
+descricao: 'Skill × MCP (como executar × que ferramenta acessar) e os três pilares com SDD; inclui imagem-resumo.'
 type: source
 status: active
 created: 2026-11-12

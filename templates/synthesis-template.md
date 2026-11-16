@@ -1,5 +1,6 @@
 ---
 title: ""
+descricao: ''
 type: synthesis
 status: active
 created: YYYY-MM-DD

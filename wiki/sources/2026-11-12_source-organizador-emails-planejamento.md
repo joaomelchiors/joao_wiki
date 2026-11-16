@@ -1,5 +1,6 @@
 ---
 title: "Organizador de E-mails — Planejamento da solução (fluxo em 6 fases)"
+descricao: 'Projeto Organizador de E-mails (formacao.dev) — solução em 6 fases (coleta via MCP em grupos de 50 threads, classificação por Skills com ação planejada, revisão, confirmação HITL, execução, relatório); camadas Fluxo → Skill → MCP; Full Agent paralelizável. Legenda revisada.'
 type: source
 status: active
 created: 2026-11-15

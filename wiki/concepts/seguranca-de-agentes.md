@@ -1,5 +1,6 @@
 ---
 title: "Segurança de Agentes: Prompt Injection, Jailbreak e Higiene de Sessão"
+descricao: 'Prompt injection, jailbreak, defesas em camadas e higiene de sessão (CCDV-F).'
 type: concept
 status: active
 created: 2026-11-12

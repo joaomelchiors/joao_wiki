@@ -1,9 +1,10 @@
 ---
 title: "Matt Pocock no The Pragmatic Engineer — AI Skills (entrevista)"
+descricao: 'Entrevista de Matt Pocock ao The Pragmatic Engineer (1h36, legenda revisada) — trajetória, Grill Me, Wayfinder, leading words, linguagem ubíqua com agentes, TDD matizado, estratégia × tática, agentes na nuvem.'
 type: source
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["matt-pocock", "entrevista", "skills", "grill-me", "wayfinder", "leading-words", "ddd", "tdd", "fundamentos", "ai-coding"]
 source_files:
   - raw/sources/2026-09-17_ai-skills-with-matt-pocock_en-revisada_4DhcSPkEbwI.md
@@ -18,6 +19,8 @@ related_pages:
   - ./2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
   - ./2026-07-16_source-matt-pocock-shorts.md
   - ./2026-11-12_source-matt-pocock-home-repo.md
+  - ./2026-01-05_source-matt-pocock-ralph-wiggum.md
+  - ../concepts/ralph-loop.md
 tipo_conteudo: opiniao
 captura: automatica
 ---

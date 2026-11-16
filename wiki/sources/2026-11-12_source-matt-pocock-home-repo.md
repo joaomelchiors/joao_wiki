@@ -1,5 +1,6 @@
 ---
 title: "Matt Pocock — The Home Repo Pattern (vídeo e artigo)"
+descricao: 'Vídeo e artigo "The Home Repo Pattern" — repo único com skills, `AGENTS.md` e ponteiros para os demais repos; prompt de configuração e FAQ.'
 type: source
 status: active
 created: 2026-11-12

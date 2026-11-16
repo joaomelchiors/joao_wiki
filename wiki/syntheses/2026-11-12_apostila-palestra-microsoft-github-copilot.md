@@ -1,5 +1,6 @@
 ---
 title: "Apostila — Palestra Microsoft/GitHub sobre Copilot (visão geral e modernização)"
+descricao: 'Apostila de estudo da palestra Microsoft/GitHub sobre Copilot: 15 capítulos (Completion, Chat, Instructions, modo agente, Coding Agent, Code Review, MCP, CLI, Spaces, Custom Agents, Modernization), demos, glossário, perguntas de revisão e roteiro para explicar a um colega. Fonte de fornecedor.'
 type: synthesis
 status: draft
 created: 2026-11-12

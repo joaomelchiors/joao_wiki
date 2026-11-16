@@ -1,5 +1,6 @@
 ---
 title: "Arquitetura Limpa (Clean Architecture)"
+descricao: 'Clean Architecture — camadas, Ports & Adapters, Inversão de Dependência, Composition Root/Factory, Controller desacoplado (`HttpRequest`/`HttpResponse`), Mapper como tradutor puro.'
 type: concept
 status: active
 created: 2026-04-20

@@ -1,9 +1,10 @@
 ---
 title: "Matt Pocock — Quatro shorts: docs, dumb zone, Pragmatic Programmer e retro skill"
+descricao: 'Quatro shorts de Matt Pocock — deletar docs (manter ADRs, glossário, navegação), dumb zone (~150k tokens), Pragmatic Programmer, skill `retro` e humano no loop.'
 type: source
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["matt-pocock", "ai-coding", "docs", "dumb-zone", "contexto", "pragmatic-programmer", "retro-skill", "harness"]
 source_files:
   - raw/sources/2026-07-16_delete-most-of-your-docs_en-orig_Fj8DKMbdIzU.md
@@ -11,6 +12,7 @@ source_files:
   - raw/sources/2026-07-16_my-1-book-recommendation-for-strategic-programming_en-orig_t34UuBxB2YQ.md
   - raw/sources/2026-11-06_someone-wrote-a-paper-about-my-skill_en-orig_KJr1Q-k-yH0.md
 related_pages:
+  - ./2026-02-24_source-matt-pocock-never-run-claude-init.md
   - ../entities/matt-pocock.md
   - ../concepts/ia-generativa.md
   - ./2026-04-28_source-matt-pocock-essential-skills-ai-coding.md
@@ -66,6 +68,8 @@ Legendas de quatro vídeos curtos (1 a 2 min) do canal de [Matt Pocock](../entit
 | Autoevolução de harness precisa de humano no loop | Interpretação dele de um artigo que não foi lido aqui | Fraca |
 
 ## Impacto na Wiki Existente
+
+- [Matt Pocock — Never Run claude /init](./2026-02-24_source-matt-pocock-never-run-claude-init.md): antecedente de fev/2026 da tese sobre docs: o `CLAUDE.md` gerado pelo `/init` repete o que é descobrível no código e apodrece.
 
 > **Nota (2026-11-12)**: `ia-generativa.md` foi dividido e virou hub. As seções citadas abaixo como "ia-generativa" estão hoje em: [AI-Driven Development (práticas de Matt Pocock)](../concepts/ai-driven-development.md), [Engenharia de Contexto](../concepts/engenharia-de-contexto.md).
 

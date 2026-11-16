@@ -1,5 +1,6 @@
 ---
 title: "Agentes de IA (Profissional AI) — Criando uma Skill do zero e Skill com Código"
+descricao: 'Profissional AI — Agentes, aulas 3 e 4: criar Skill do zero (`SKILL.md`, gatilhos na `description`, pastas `.claude/skills` e `.agents/skills`) e Skill com código (Node.js, determinístico × probabilístico).'
 type: source
 status: active
 created: 2026-11-12

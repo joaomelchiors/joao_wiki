@@ -1,5 +1,6 @@
 ---
 title: "Modelagem de Domínio — Aula 48: Classe ErroValidacao"
+descricao: 'Aula 48 da série Modelagem de Domínio (formacao.dev) — introdução da classe `ErroValidacao` (estende `Error` JS) como ponto de partida do modelo; atributos `codigo`/`valor`/`extras`; catálogo de constantes de erros; métodos estáticos `criar`/`lancar`; justificativa da ordem causal erro → validação → VOs → entidades.'
 type: source
 status: active
 created: 2026-08-03

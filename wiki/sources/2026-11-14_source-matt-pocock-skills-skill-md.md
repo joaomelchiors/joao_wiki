@@ -1,5 +1,6 @@
 ---
 title: "mattpocock/skills — conteúdo dos SKILL.md (27 skills)"
+descricao: 'Conteúdo dos `SKILL.md` das 27 skills de Matt e dos seus arquivos auxiliares (PHASE-BOUNDARIES, AGENT-BRIEF, DEEPENING, formatos do teach e do domain-modeling...) — fluxo principal, Wayfinder, `teach`, `tdd`, `retro`, `writing-for-agents`. Instruções do autor, em inglês.'
 type: source
 status: active
 created: 2026-11-14

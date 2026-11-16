@@ -1,5 +1,6 @@
 ---
 title: "Conversa DDD + Express + Ports & Adapters"
+descricao: 'Conversa prática (~935 KB) construindo backend Express com TypeScript usando DDD + Ports & Adapters — Entity abstrata (`tryCreate`/`create`/`restore`/`cloneWith`), UUID v7, Mapper, Repository, Composition Root e Controller desacoplado do framework.'
 type: source
 status: active
 created: 2026-09-07

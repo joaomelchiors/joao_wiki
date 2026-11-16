@@ -1,5 +1,6 @@
 ---
 title: "Augusto Galego — A Própria Anthropic Explica Como Usar o Claude Code (Melhores Práticas)"
+descricao: 'Vídeo de Augusto Galego resumindo ~20 melhores práticas do Claude Code segundo a documentação oficial Anthropic — método de verificação no prompt, gestão de sessões (`/rename`, `/rewind`, `/goal`), hierarquia de modelos (Opus=planejamento/Sonnet=implementação), sandbox para auto mode, `.claude` do projeto versionado.'
 type: source
 status: active
 created: 2026-07-19

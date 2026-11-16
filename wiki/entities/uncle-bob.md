@@ -1,12 +1,14 @@
 ---
 title: "Uncle Bob (Robert C. Martin)"
+descricao: 'Robert C. Martin, autor de *Clean Code*; método com agentes (verificação determinística, cadeia de agentes) e posições sobre TDD, SDD e fundamentos, segundo a live com Matt Pocock.'
 type: entity
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["pessoa", "clean-code", "agentes", "tdd"]
 source_files:
   - raw/sources/2026-08-19_live-uncle-bob-on-software-fundamentals-in-the-age-of-ai_en-revisada_zcLPGC-tvgk.md
+  - raw/sources/2026-01-15_i-was-an-ai-skeptic-then-i-tried-plan-mode_en-corrigida_WNx-s-RxVxk.md
 related_pages:
   - ../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md
   - ../concepts/verificacao-deterministica.md
@@ -14,6 +16,7 @@ related_pages:
   - ../concepts/spec-driven-development.md
   - ../concepts/arquitetura-limpa.md
   - ./matt-pocock.md
+  - ../sources/2026-01-15_source-matt-pocock-plan-mode.md
 ---
 
 # Uncle Bob (Robert C. Martin)
@@ -45,6 +48,7 @@ Todos os dados biográficos abaixo são **relato do próprio Bob na live**, não
 ## Relacionamentos
 
 - [Matt Pocock](./matt-pocock.md): entrevistador; Matt cita *Clean Code* como o livro mais citado em suas conversas e diz que a live era uma conversa que queria ter havia tempo. Convergem em fundamentos, estratégia × tática e custo de mudança baixo; divergem em ênfase sobre TDD (Matt: essencial em abril/2026, "mista" em set/2026; Bob: não impor).
+- Planejamento: Matt Pocock defende, em jan/2026, planejar com o agente em plan mode antes de cada tarefa ([resumo](../sources/2026-01-15_source-matt-pocock-plan-mode.md)); nenhuma das fontes relaciona isso com a posição de Bob contra planejar tudo antes. Ver [SDD](../concepts/spec-driven-development.md).
 - John Ousterhout: Bob e Matt o usam como referência (módulos profundos, estratégico × tático); Bob cita um debate longo entre os dois em apêndice de livro.
 
 ## Pontos para Monitorar

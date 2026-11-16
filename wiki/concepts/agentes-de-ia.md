@@ -1,5 +1,6 @@
 ---
 title: "Agentes de IA"
+descricao: 'Definição de agente, loop iterativo, agente × workflow, sub agentes; estratégias sequencial × paralela × híbrida (tokens × tempo, arquivos por agente) e fluxo em 6 fases com HITL do Organizador de E-mails.'
 type: concept
 status: active
 created: 2026-11-12
@@ -10,7 +11,12 @@ source_files:
   - raw/sources/2026-11-04_Curso_Certificacao_ClaudeCode.md
   - raw/sources/2026-11-12_transcricao-formacaoDEV-porcessamento-sequencial-paralelo.md
   - raw/sources/2026-11-12_transcricao-formacaoDEV-planejamento-organizando-email.md
+  - raw/sources/2025-10-08_most-devs-don-t-understand-what-agents-are_en-corrigida_AtYtuVTZCQU.md
+  - raw/sources/2026-01-05_ship-working-code-while-you-sleep-with-the-ralph-wiggum_en-corrigida__IK18goX4X8.md
+  - raw/sources/2026-02-21_i-m-using-claude-worktree-for-everything-now_en-corrigida_yv8VZpov8bk.md
 related_pages:
+  - ../sources/2026-01-15_source-matt-pocock-plan-mode.md
+  - ../sources/2026-02-21_source-matt-pocock-claude-worktree.md
   - ./ia-generativa.md
   - ./harness.md
   - ./spec-driven-development.md
@@ -18,6 +24,10 @@ related_pages:
   - ./mcp.md
   - ../sources/2026-04-28_source-dev-ai-conceito-de-agentes.md
   - ../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md
+  - ../sources/2025-10-08_source-matt-pocock-agentes-workflows.md
+  - ../entities/matt-pocock.md
+  - ../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md
+  - ./ralph-loop.md
 ---
 
 # Agentes de IA
@@ -45,10 +55,20 @@ Agente é um sistema de IA no qual um LLM atua como núcleo de decisão, percebe
 - **Workflow**: passos predeterminados (n8n, código comum) = máquina de estados. Bom para automação e garantias; **não** serve como loop agêntico externo.
 - **Combinação**: um estado do workflow pode chamar um agente. Se o problema cabe em código determinístico, usar código.
 
+**Segundo Matt Pocock** (vídeo de out/2025, fonte `explicacao`, uma só; [resumo](../sources/2025-10-08_source-matt-pocock-agentes-workflows.md)), que adota a definição do artigo "Building Effective Agents" da Anthropic, citado de segunda mão:
+
+- **Critério**: a diferença central é **quem decide quando o programa para** — no agente, o LLM; no workflow, os passos predeterminados. Uma única chamada de LLM não é nem agente nem workflow ("é só uma chamada de API").
+- **Espectro, não categorias**: três formas intermediárias — (a) agente com limite de **max steps** no código; (b) agente que chama workflows de dentro de tools (caminho inverso ao "estado do workflow chama agente" do CCDV-F); (c) workflow que contém loops (gerar e avaliar várias vezes). O teste que ele propõe: se o LLM pode quebrar o loop antes do fim, é agente.
+- **Quando usar**: caminho incerto ou tarefa que precisa generalizar (ex.: assistentes de código) → agente; caminho conhecido ou "a mesma coisa mil vezes" → workflow, que pode ser otimizado e paralelizado.
+- Converge com o CCDV-F (política dinâmica × máquina de estados) e com o loop da IA-07; nenhuma contradição entre as três fontes.
+
+**Laço externo sobre o agente** (Matt Pocock, jan/2026, `demonstrado`, fonte única; [resumo](../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md)): no [laço Ralph](./ralph-loop.md), um script bash reinvoca o agente pela CLI, com contexto limpo a cada iteração, um número máximo de iterações como trava e parada quando o agente emite um marcador de conclusão na saída. Segundo ele, um "for loop" assim é "vastamente superior" a enxames, malhas e orquestradores de agentes que tentou (opinião, sem comparação mostrada). *Interpretação do mantenedor, não dita por ele*: pelo critério "quem decide parar" do vídeo de out/2025, o arranjo corresponde à forma (a) — o LLM decide parar, e o código impõe o limite de passos.
+
 ### Sub Agentes
 - Ganhos: especialização, paralelismo, contexto enxuto por tarefa, **verificação independente** (agente revisor com nota + justificativa), ferramentas/permissões restritas e isolamento.
 - Custos: dinheiro, latência, coordenação, erros de comunicação; evitar *tool stuffing* (cada ferramenta consome tokens em toda chamada).
 - No Claude Code são arquivos `.md` com frontmatter ([Claude Code](../entities/claude-code.md)). Padrões vistos no curso: pesquisa com coordenador + particionamento + **loop de refinamento** (máx. 4 iterações).
+- **Isolamento por worktree**: segundo Matt Pocock (fev/2026), desde o anúncio do suporte nativo a worktrees os subagentes do Claude Code podem rodar cada um na sua worktree e abrir PR de volta para main, orquestrados pelo agente principal, mas só se isso for pedido explicitamente. Fonte única, sobre o anúncio, sem demonstração ([claude --worktree](../sources/2026-02-21_source-matt-pocock-claude-worktree.md)).
 
 ### Estratégias de execução: sequencial × paralela (Organizador de E-mails, formacao.dev)
 Fonte: [Estratégias de execução](../sources/2026-11-12_source-organizador-emails-sequencial-paralelo.md) (aula conceitual, legenda revisada).
@@ -71,6 +91,9 @@ Fonte: [Planejamento da solução](../sources/2026-11-12_source-organizador-emai
 - [Curso de Certificação Claude Developer Foundations (CCDV-F)](../sources/2026-11-04_source-curso-certificacao-claude-developer-foundations.md)
 - [Organizador de E-mails — Estratégias de execução](../sources/2026-11-12_source-organizador-emails-sequencial-paralelo.md)
 - [Organizador de E-mails — Planejamento da solução](../sources/2026-11-12_source-organizador-emails-planejamento.md)
+- [Matt Pocock — Most devs don't understand what agents are](../sources/2025-10-08_source-matt-pocock-agentes-workflows.md): critério "quem decide parar" e espectro agente × workflow
+- [Matt Pocock — Ship working code while you sleep with the Ralph Wiggum technique](../sources/2026-01-05_source-matt-pocock-ralph-wiggum.md): laço bash que reinvoca o agente, com trava de iterações e parada por marcador (jan/2026)
+- [Matt Pocock — I'm using claude --worktree for everything now](../sources/2026-02-21_source-matt-pocock-claude-worktree.md): subagentes com worktree própria, segundo ele só sob pedido (fev/2026)
 
 ## Conceitos Relacionados
 
@@ -87,5 +110,7 @@ Fonte: [Planejamento da solução](../sources/2026-11-12_source-organizador-emai
 
 ## Notas de Atualização
 
+- 2026-11-15: em "Sub Agentes", acrescentado o isolamento por worktree, atribuído a Matt Pocock (ingestão do vídeo de fev/2026).
+- 2026-11-15: em "Agente × Workflow", acrescentados o critério "quem decide parar", o espectro (max steps, agente → workflow, workflow com loop) e a regra de uso, atribuídos a Matt Pocock (ingestão do vídeo de out/2025).
 - 2026-11-15: adicionadas as estratégias de execução (sequencial × paralela × híbrida) e o exemplo de fluxo em 6 fases com HITL, do projeto Organizador de E-mails (ingestão).
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.

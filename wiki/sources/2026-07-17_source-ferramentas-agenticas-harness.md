@@ -1,5 +1,6 @@
 ---
 title: "Dev AI — Ferramentas Agênticas: Harness (Partes 1 e 2)"
+descricao: 'Harness (Dev AI, Aulas 06–07) — definição formal de harness (camada de software que envolve o LLM); LLM como stateless; loop de execução (montagem de contexto → LLM → ferramenta → resultado → loop); compressão automática de contexto; ferramentas disponíveis (FS, Bash, MCP, Skills); responsabilidades embutidas vs. responsabilidade do desenvolvedor (verificações em Skills e specs).'
 type: source
 status: active
 created: 2026-07-17

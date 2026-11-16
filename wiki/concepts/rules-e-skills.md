@@ -1,14 +1,29 @@
 ---
 title: "Rules e Skills"
+descricao: 'Rule (declarativa) × Skill (ativa), arquivo global mínimo, *instruction budget* e hooks/lint no lugar de regras segundo Matt Pocock, formato prático no Cursor e ciclo de criação por engenharia reversa.'
 type: concept
 status: active
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-15
 tags: ["rules", "skills", "few-shot", "engenharia-de-contexto", "ia-generativa"]
 source_files:
   - raw/sources/2026-04-27_transcrição-IA-10-ContextoRulesSkill-ruleSkill.md
   - raw/sources/2026-05-04_transcrição-IA-11-ContextoRulesSkill-exemploSkill.md
+  - raw/sources/2025-10-22_most-devs-don-t-understand-how-context-windows-work_en-corrigida_-uW5-TaVXu4.md
+  - raw/sources/2025-10-27_how-i-use-claude-code-for-real-engineering_en-corrigida_kZ-zzHVUrO4.md
+  - raw/sources/2026-01-12_frontend-is-harder-for-ai-than-backend-here-s-how-to-fix-it_en-corrigida_pSritFeoYFo.md
+  - raw/sources/2026-01-15_i-was-an-ai-skeptic-then-i-tried-plan-mode_en-corrigida_WNx-s-RxVxk.md
+  - raw/sources/2026-02-24_never-run-claude-init_en-corrigida_9tmsq-Gvx6g.md
+  - raw/sources/2026-02-25_how-to-actually-force-claude-code-to-use-the-right-cli-don_en-corrigida_3CSi8QAoN-s.md
 related_pages:
+  - ../sources/2026-01-15_source-matt-pocock-plan-mode.md
+  - ../sources/2026-02-24_source-matt-pocock-never-run-claude-init.md
+  - ../sources/2026-02-25_source-matt-pocock-hooks-cli.md
+  - ./verificacao-deterministica.md
+  - ../sources/2025-10-22_source-matt-pocock-janela-de-contexto.md
+  - ../sources/2025-10-27_source-matt-pocock-claude-code-engenharia-real.md
+  - ../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md
+  - ../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md
   - ./ia-generativa.md
   - ./tipos-de-skill.md
   - ./skills-na-pratica.md
@@ -50,6 +65,18 @@ Dois instrumentos de engenharia de contexto com natures distintas (definições 
 - Ambos podem ser usados simultaneamente; a documentação deve ser amigável para humanos e para IA.
 
 **Independência de ferramenta**: Rule e Skill são conceitos agnósticos. Cursor, Claude Code, Codex e Antigravity implementam os mesmos princípios com nomes ou mecanismos ligeiramente diferentes. O conceito importa mais que a ferramenta.
+
+**Tamanho das rules (opinião)**: segundo Matt Pocock (out/2025), ele evita Cursor rules ou Claude rules muito grandes por medo do lost in the middle ([vídeo sobre janela de contexto](../sources/2025-10-22_source-matt-pocock-janela-de-contexto.md)). A posição converge com a de Uncle Bob na [live de ago/2026](../sources/2026-08-19_source-uncle-bob-live-fundamentos-na-era-da-ia.md): regras longas no prompt "viram diretrizes". Ver [Engenharia de Contexto](./engenharia-de-contexto.md).
+
+**Exemplo de rules de usuário curtas (demonstrado, out/2025)**: na memória do usuário do Claude Code (`/memory`), Matt mantém cerca de 43 linhas, entre elas "seja extremamente conciso e sacrifique a gramática pela concisão" e "liste as questões não resolvidas no fim de cada plano". Na demo, o efeito aparece no formato do plano, curto e fechado com as questões em aberto ([How I use Claude Code for real engineering](../sources/2025-10-27_source-matt-pocock-claude-code-engenharia-real.md)). O caso é coerente com a cautela dele com rules longas.
+
+**As mesmas regras, três meses depois (opinião, jan/2026)**: no [vídeo sobre plan mode](../sources/2026-01-15_source-matt-pocock-plan-mode.md), Matt reafirma as linhas para planos — "faça o plano extremamente conciso; sacrifique a gramática pela concisão" e "no fim de cada plano, dê uma lista de questões não resolvidas, se houver" — e recomenda copiá-las. Segundo ele, a primeira leva planos de ~2.000 para ~400 palavras (estimativa, sem medição) e a segunda põe o agente num modo "exploratório, um pouco paranoico". Justifica o arquivo curto com a heurística do ***instruction budget***: o arquivo de regras entra em toda sessão, e quanto menos instruções, mais orçamento sobra ao modelo. A heurística não é desenvolvida no vídeo (ele promete outro sobre o tema). Local das regras: o vídeo cita o `CLAUDE.md` e, no fim, um `agents.md` (inconsistência do próprio vídeo ou da legenda), enquanto em out/2025 elas estavam na memória do usuário; não resolvido.
+
+**Skill como "AGENTS.md sob demanda" (opinião/explicação)**: segundo Matt Pocock (jan/2026), uma skill é algo como o que iria no `AGENTS.md`, mas que o agente puxa só quando precisa. Exemplo mínimo dele: uma skill de "Chrome debugging" que manda lançar o Chrome headless com depuração remota antes de usar o MCP de navegador ([vídeo sobre front-end](../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md)). Converge com a definição canônica acima (instrução ativa, carregada no contexto relevante); é a definição de um autor, não formal.
+
+**Arquivo global mínimo e *instruction budget* com números (opinião, fev/2026)**: no vídeo [Never Run claude /init](../sources/2026-02-24_source-matt-pocock-never-run-claude-init.md), Matt Pocock desenvolve a heurística anunciada em jan/2026. Segundo ele, além da janela de contexto o LLM tem um orçamento de quantas instruções segue de uma vez, de **~300 a 400**, que cresce com modelos maiores mas chega a "uns 500"; cada frase de um `CLAUDE.md`/`AGENTS.md` conta como instrução, e o arquivo entra em toda requisição. Os números são dele, **sem fonte citada**. Daí as recomendações, todas opinião atribuída: não gerar o arquivo com `/init`; não acrescentar regras a cada comportamento indesejado do agente, porque o escopo é global e regras de React, por exemplo, pesam numa sessão só de API; levar a direção de comportamento para **skills**, que o agente descobre sem gastar o orçamento logo de início (exemplo dele: orientar o uso de reducers no front-end). O `CLAUDE.md` dele passou a ter **uma linha** ("você está no WSL no Windows"). **Mudança de posição datada**: a regra de concisão que em out/2025 ele "nunca ia tirar" e em jan/2026 mantinha no `CLAUDE.md` agora, segundo ele, "cabe melhor numa skill", que ele ainda não usa. É evolução do mesmo autor, não contradição entre fontes.
+
+**Terceiro destino: hooks e lint para o que é determinístico (fev/2026)**: no dia seguinte, no [vídeo sobre hooks](../sources/2026-02-25_source-matt-pocock-hooks-cli.md), Matt Pocock acrescenta um destino para o que sai do arquivo global. Regras do tipo "use pnpm, não npm" ou "nunca dê `git push`" viram **hooks** do Claude Code, que bloqueiam o comando e orientam o agente (demonstrado); regras de estilo viram regras de **ESLint**. Os motivos são opinião dele: a regra só importa em algumas tarefas, mas o arquivo a torna global; gasta o *instruction budget*; e não garante nada, só reduz a chance. Instruções **negativas** ("nunca faça X") ele considera especialmente ruins. Aqui o orçamento aparece como "uns 500", um dia depois de ~300–400 (até ~500) — mesmo autor, números próximos, ainda sem fonte. Ver [Verificação determinística](./verificacao-deterministica.md).
 
 ### Formato Prático de uma Skill (Aula IA-11 — Cursor)
 No Cursor, uma Skill é um arquivo Markdown salvo em `.cursor/skills/<nome-da-skill>.md`. Estrutura mínima observada na aula:
@@ -95,6 +122,12 @@ Executar nessa ordem:
 
 - [Dev AI — Aula 10: Rule vs. Skill — Definições Canônicas](../sources/2026-04-29_source-dev-ai-rule-skill.md)
 - [Dev AI — Aula 11: Exemplo Prático de Skill (Cursor)](../sources/2026-05-04_source-dev-ai-exemplo-skill.md)
+- [Matt Pocock — Most devs don't understand how context windows work](../sources/2025-10-22_source-matt-pocock-janela-de-contexto.md): evitar rules longas (opinião).
+- [Matt Pocock — How I use Claude Code for real engineering](../sources/2025-10-27_source-matt-pocock-claude-code-engenharia-real.md): exemplo de memória de usuário curta que muda o formato do plano (demonstrado).
+- [Matt Pocock — Frontend is HARDER for AI than backend](../sources/2026-01-12_source-matt-pocock-frontend-feedback-visual.md): skill como `AGENTS.md` sob demanda e skill mínima de setup (opinião/demonstrado).
+- [Matt Pocock — I was an AI skeptic. Then I tried plan mode](../sources/2026-01-15_source-matt-pocock-plan-mode.md): as três linhas de regra para planos e a heurística do *instruction budget* (opinião, jan/2026).
+- [Matt Pocock — Never Run claude /init](../sources/2026-02-24_source-matt-pocock-never-run-claude-init.md): *instruction budget* com números (~300–400, até ~500), arquivo global de uma linha e direção de comportamento em skills (opinião, fev/2026).
+- [Matt Pocock — How to actually force Claude Code to use the right CLI](../sources/2026-02-25_source-matt-pocock-hooks-cli.md): hooks e ESLint no lugar de regras no arquivo global (demonstrado com opinião, fev/2026).
 
 ## Conceitos Relacionados
 
@@ -102,6 +135,7 @@ Executar nessa ordem:
 - [skills-na-pratica](./skills-na-pratica.md)
 - [engenharia-de-contexto](./engenharia-de-contexto.md)
 - [mcp](./mcp.md)
+- [verificacao-deterministica](./verificacao-deterministica.md): impor por hook ou lint o que a regra em texto só pede.
 
 ## Questões Não Resolvidas
 
@@ -113,3 +147,8 @@ Executar nessa ordem:
 ## Notas de Atualização
 
 - 2026-11-12: página criada ao dividir [ia-generativa.md](./ia-generativa.md) em conceitos menores.
+- 2026-11-15: adicionada a opinião de Matt Pocock sobre o tamanho das rules em Rule vs. Skill (ingestão).
+- 2026-11-15: adicionado o exemplo das rules de usuário curtas de Matt Pocock em Rule vs. Skill (ingestão).
+- 2026-11-15: adicionadas as regras de plano reafirmadas em jan/2026 e a heurística do *instruction budget* (ingestão do vídeo sobre plan mode).
+- 2026-11-15: adicionado o parágrafo sobre arquivo global mínimo e *instruction budget* com números, e a mudança de posição sobre a regra de concisão (ingestão do vídeo "Never Run claude /init").
+- 2026-11-15: adicionado o parágrafo sobre hooks e lint como terceiro destino das regras (ingestão do vídeo sobre hooks e CLI).

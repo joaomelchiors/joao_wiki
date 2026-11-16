@@ -1,5 +1,6 @@
 ---
 title: "Agregado (Aggregate)"
+descricao: 'Aggregate — coleção atômica; 1 repositório por agregado; CQS prático; métodos de transformação via clone; modelo rico; contrato de repositório (`create`/`update` explícito).'
 type: concept
 status: active
 created: 2026-04-20

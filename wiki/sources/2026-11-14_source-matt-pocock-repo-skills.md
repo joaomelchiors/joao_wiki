@@ -1,5 +1,6 @@
 ---
 title: "Repositório mattpocock/skills (GitHub)"
+descricao: 'Repositório mattpocock/skills no GitHub — 27 skills promovidas, governança (SCOPE, buckets, CLAUDE.md do repo), pastas in-progress (chief-of-staff, software-factory...) e misc, renomeações confirmadas no CHANGELOG (to-prd → to-spec), instalação como plugin. Referência do autor; os `SKILL.md` têm página própria.'
 type: source
 status: active
 created: 2026-11-14

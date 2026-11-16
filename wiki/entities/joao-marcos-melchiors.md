@@ -1,5 +1,6 @@
 ---
 title: "João Marcos Melchiors"
+descricao: 'Proprietário da wiki; desenvolvedor TypeScript com stack Express/PostgreSQL/Docker; princípios arquiteturais e perfil de aprendizagem observados na conversa DDD+Express.'
 type: entity
 status: active
 created: 2026-09-07

@@ -1,5 +1,6 @@
 ---
 title: "Visão Geral do Tema de Pesquisa"
+descricao: 'Página pai organizando os temas (DDD + Arquitetura Limpa; IA Generativa; AI-Driven Development), propósito, hipóteses e perspectivas desta wiki.'
 type: maintenance
 status: active
 created: 2026-04-07

@@ -1,5 +1,6 @@
 ---
 title: "GitHub Copilot"
+descricao: 'Assistente de IA da GitHub (Microsoft); plataforma com Code Completion, Chat (Ask/Plan/Agent), Coding Agent (background em ambiente efêmero), Code Review Agent, Instructions, MCP (host/client/server), Copilot Spaces e extensão de modernização (Java/.NET).'
 type: entity
 status: active
 created: 2026-05-07
